@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://kingjinsight.github.io/posts/first/</loc>
+    <loc>https://example.org/posts/first/</loc>
     <lastmod>2025-02-06T15:36:43+00:00</lastmod>
   </url><url>
-    <loc>https://kingjinsight.github.io/</loc>
+    <loc>https://example.org/</loc>
     <lastmod>2025-02-06T15:36:43+00:00</lastmod>
   </url><url>
-    <loc>https://kingjinsight.github.io/posts/</loc>
+    <loc>https://example.org/posts/</loc>
     <lastmod>2025-02-06T15:36:43+00:00</lastmod>
   </url><url>
-    <loc>https://kingjinsight.github.io/archives/</loc>
+    <loc>https://example.org/archives/</loc>
   </url><url>
-    <loc>https://kingjinsight.github.io/categories/</loc>
+    <loc>https://example.org/categories/</loc>
   </url><url>
-    <loc>https://kingjinsight.github.io/search/</loc>
+    <loc>https://example.org/search/</loc>
   </url><url>
-    <loc>https://kingjinsight.github.io/tags/</loc>
+    <loc>https://example.org/tags/</loc>
   </url>
 </urlset>

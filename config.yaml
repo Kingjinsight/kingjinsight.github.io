@@ -1,12 +1,11 @@
-# baseURL: https://example.org/
-baseURL: https://kingjinsight.github.io/
+baseURL: https://example.org/
 languageCode: en-us
 title: King's Blog
 theme: ["PaperMod"]
 
 
 params:
-  defaultTheme: auto
+  defaultTheme: autogit
   disableThemeToggle: false
   ShowShareButtons: false
   ShowReadingTime: true
