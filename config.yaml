@@ -1,7 +1,5 @@
-baseURL: https://example.org/
-languageCode: en-us
-title: My New Hugo Site
-baseURL:  "https://examplesite.com/"
+# baseURL: https://example.org/
+baseURL: https://kingjinsight.github.io/
 languageCode: en-us
 title: King's Blog
 theme: ["PaperMod"]
