@@ -1,0 +1,64 @@
+baseURL: https://example.org/
+languageCode: en-us
+title: My New Hugo Site
+baseURL:  "https://examplesite.com/"
+languageCode: en-us
+title: King's Blog
+theme: ["PaperMod"]
+
+
+params:
+  defaultTheme: auto
+  disableThemeToggle: false
+  ShowShareButtons: false
+  ShowReadingTime: true
+  ShowPostNavLinks: true
+
+  ShowCodeCopyButtons: true
+  homeInfoParams:
+    Title: "Welcome to King's Blog"
+    Content: Hi, this is King. I'm studying CS at The Universiy of Edinburgh. This blog is documenting my learning journey and some random thoughts since 2025. Let's learning cool stuff together!
+  socialIcons:
+    - name: github
+      url: "https://github.com/Kingjinsight"
+    
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    # limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+  
+
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /
+      weight: 10
+  
+    - identifier: archives
+      name: Archive
+      url: /archives/
+      weight: 12
+
+
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 16
+
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 18
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
