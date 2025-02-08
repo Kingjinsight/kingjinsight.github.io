@@ -1,6 +1,6 @@
 baseURL: https://example.org/
 languageCode: en-us
-title: /
+title: King's Blog
 theme: ["PaperMod"]
 
 
@@ -14,7 +14,7 @@ params:
   ShowCodeCopyButtons: true
   homeInfoParams:
     Title: "![King's Blog](/fontbolt.png)"
-    Content: Hi, this is King. I'm studying CS at The Universiy of Edinburgh. This blog is documenting my learning journey and some random thoughts since 2025. Let's learning cool stuff together!
+    Content: Hi, this is King. I'm studying CS at The Universiy of Edinburgh😎. This blog is documenting my learning journey and some random thoughts since 2025. Let's learning cool stuff together!
   socialIcons:
     - name: github
       url: "https://github.com/Kingjinsight"
