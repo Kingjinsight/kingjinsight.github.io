@@ -4,7 +4,7 @@
     <title>Posts on King&#39;s Blog</title>
     <link>https://example.org/posts/</link>
     <description>Recent content in Posts on King&#39;s Blog</description>
-    <generator>Hugo -- 0.142.0</generator>
+    <generator>Hugo -- 0.143.1</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 06 Feb 2025 15:36:43 +0000</lastBuildDate>
     <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -15,6 +15,9 @@
       <guid>https://example.org/posts/starting/</guid>
       <description>&lt;p&gt;This is the first blog for my insight space, I hope to using a summary for my past 6 years experience to make a new starting point, by sharing the story of learning computer science.&lt;/p&gt;
 &lt;p&gt;The story should begin with grade 9, I learned python as my first programing language&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>This is the first blog for my insight space, I hope to using a summary for my past 6 years experience to make a new starting point, by sharing the story of learning computer science.</p>
+<p>The story should begin with grade 9, I learned python as my first programing language</p>
+]]></content:encoded>
     </item>
   </channel>
 </rss>
