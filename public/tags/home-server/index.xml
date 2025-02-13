@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Home Server on King&#39;s Blog</title>
+    <link>http://localhost:1313/tags/home-server/</link>
+    <description>Recent content in Home Server on King&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 06 Feb 2025 15:36:43 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/home-server/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/homeserver/</link>
+      <pubDate>Thu, 06 Feb 2025 15:36:43 +0000</pubDate>
+      <guid>http://localhost:1313/posts/homeserver/</guid>
+      <description>&lt;h1 id=&#34;title&#34;&gt;Title&lt;/h1&gt;
+&lt;h2 id=&#34;type&#34;&gt;Type&lt;/h2&gt;
+&lt;p&gt;Within the research for old machine in the last 3 days, I choose to build a good performance server rather than buy a garbage(cost 1200 rmb). I have 100 credit for azure, maybe it&amp;rsquo;s a good choice to spend all the credits first. Another reason is, when the excitement fades, only a few ideas about the function for my server comes to mind. Maybe learn the components of the server first, and evaluate the specs and pick the best value-for-money option rather than blindly following others.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1 id="title">Title</h1>
+<h2 id="type">Type</h2>
+<p>Within the research for old machine in the last 3 days, I choose to build a good performance server rather than buy a garbage(cost 1200 rmb). I have 100 credit for azure, maybe it&rsquo;s a good choice to spend all the credits first. Another reason is, when the excitement fades, only a few ideas about the function for my server comes to mind. Maybe learn the components of the server first, and evaluate the specs and pick the best value-for-money option rather than blindly following others.</p>
+<ul>
+<li>
+<p>old machine</p>
+<ul>
+<li>
+<p>mini PC
+HP: Elite mini(medium performance), Pro mini(low performance)<br>
+Dell: Optiplex Micro</p>
+<p>Elite 800 G3: (total cost: 1000 rmb)</p>
+<ol>
+<li>8G RAM * 2</li>
+<li>2T HDD</li>
+<li>256G sdd</li>
+</ol>
+</li>
+<li>
+<p>server</p>
+</li>
+</ul>
+</li>
+<li>
+<p>DIY case</p>
+</li>
+</ul>
+<h1 id="parameter">Parameter</h1>
+<h2 id="hardware">Hardware</h2>
+<p>a recommendation customization:
+Motherboard: <a href="https://www.ebay.de/sch/i.html?_nkw=g">https://www.ebay.de/sch/i.html?_nkw=g</a>&hellip;<br>
+CPU: <a href="https://www.ebay.com/sch/i.html?_nkw=">https://www.ebay.com/sch/i.html?_nkw=</a>&hellip;<br>
+CPU Cooler: <a href="https://geni.us/qrJO">https://geni.us/qrJO</a> (Amazon)<br>
+PSU: <a href="https://geni.us/P24H">https://geni.us/P24H</a> (Amazon)<br>
+RAM: <a href="https://geni.us/BFLCBd">https://geni.us/BFLCBd</a> (Amazon)<br>
+Case: <a href="https://vi.aliexpress.com/item/100500">https://vi.aliexpress.com/item/100500</a>&hellip;<br>
+Case fans: <a href="https://geni.us/iqPfvg2">https://geni.us/iqPfvg2</a> (Amazon) <br>
+SSD: <a href="https://geni.us/BlOgci">https://geni.us/BlOgci</a> (Amazon) <br>
+Custom SATA Cables: <a href="https://geni.us/BPbmDd">https://geni.us/BPbmDd</a> (Amazon)<br>
+Molex splitter: <a href="https://geni.us/eWgW">https://geni.us/eWgW</a> (Amazon)</p>
+<h3 id="motherboard">Motherboard</h3>
+<h3 id="cpu">CPU</h3>
+<h3 id="cpu-cooler">CPU Cooler</h3>
+<h3 id="ram">RAM</h3>
+<h3 id="psu">PSU</h3>
+<h3 id="ram-1">RAM</h3>
+<h3 id="case">Case</h3>
+<h3 id="case-fans">Case fans</h3>
+<h3 id="ssd">SSD</h3>
+<h2 id="software">Software</h2>
+<p>nextcloud
+email domain
+minecraft server
+docker
+jellyin
+synthing
+proxy?router?gateway?</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

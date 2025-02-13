@@ -6,17 +6,70 @@
     <description>Recent content on King&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 Feb 2025 15:36:43 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
-      <link>https://example.org/posts/starting/</link>
-      <pubDate>Thu, 06 Feb 2025 15:36:43 +0000</pubDate>
-      <guid>https://example.org/posts/starting/</guid>
-      <description>&lt;p&gt;This is the first blog for my insight space, I hope to using a summary for my past 6 years experience to make a new starting point, by sharing the story of learning computer science.&lt;/p&gt;
-&lt;p&gt;The story should begin with grade 9, I learned python as my first programing language&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p>This is the first blog for my insight space, I hope to using a summary for my past 6 years experience to make a new starting point, by sharing the story of learning computer science.</p>
-<p>The story should begin with grade 9, I learned python as my first programing language</p>
+      <title>Ambitious Cross-Platform Dream: JVM&#39;s Achievements and Limitations</title>
+      <link>https://example.org/posts/jvm/</link>
+      <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/jvm/</guid>
+      <description>&lt;p&gt;In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambitious dream: &amp;ldquo;Write Once, Run Anywhere.&amp;rdquo; This WORA philosophy became a reality through the JVM, enabling Java applications to run on any operating system with a compatible JVM. Before talking about the archivements and limitations, Let&amp;rsquo;s have a look about how JVM works.&lt;/p&gt;
+&lt;h2 id=&#34;how-the-jvm-works&#34;&gt;How the JVM works&lt;/h2&gt;
+&lt;p&gt;The JVM executes er programs in several stages:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Compilation: Java source code (.java) is compiled into bytecode (.class) by the Java Compiler (javac).&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambitious dream: &ldquo;Write Once, Run Anywhere.&rdquo; This WORA philosophy became a reality through the JVM, enabling Java applications to run on any operating system with a compatible JVM. Before talking about the archivements and limitations, Let&rsquo;s have a look about how JVM works.</p>
+<h2 id="how-the-jvm-works">How the JVM works</h2>
+<p>The JVM executes er programs in several stages:</p>
+<ol>
+<li>
+<p>Compilation: Java source code (.java) is compiled into bytecode (.class) by the Java Compiler (javac).</p>
+</li>
+<li>
+<p>Class Loading: The JVM loads compiled bytecode when required.</p>
+</li>
+<li>
+<p>Bytecode Verification: Ensures security and correctness before execution.</p>
+</li>
+<li>
+<p>Execution: The JVM interprets or compiles bytecode using Just-In-Time (JIT) compilation.</p>
+</li>
+<li>
+<p>Garbage Collection: The JVM automatically manages memory, reclaiming unused objects.</p>
+</li>
+</ol>
+<h2 id="class-loader">Class loader</h2>
+<p>One of the organizational units of JVM byte code is a class. A class loader implementation must be able to recognize and load anything that conforms to the Java class file format. Any implementation is free to recognize other binary forms besides class files, but it must recognize class files.</p>
+<p>Let&rsquo;s explore this concept with an example:   <br>
+Imagine you&rsquo;re watching a movie on a streaming service.</p>
+<ul>
+<li>Loading:<br>
+The service first finds and imports the movie data you want to watch. Similarly, the class loader locates the binary data for a Java class.</li>
+<li>Linking:
+<ul>
+<li>Verification: Before you watch the movie, the service checks that the file isn&rsquo;t corrupted. In Java, the class loader verifies the correctness of the class.</li>
+<li>Preparation: The service sets up the necessary space in memory to buffer the movie. Java allocates memory for variables and sets default values.</li>
+<li>Resolution: The service ensures all necessary subtitles or audio tracks are ready to play. Java resolves references to make them direct.</li>
+</ul>
+</li>
+<li>Initialization:<br>
+As you start watching, the service begins playing the movie. Similarly, Java runs code to set up variables with their starting values.</li>
+</ul>
+<p>Class Loader Types:</p>
+<ul>
+<li>Bootstrap Class Loader: Like the service&rsquo;s core library of well-known movies, it loads fundamental, trusted classes.</li>
+<li>Extension Class Loader: Similar to special add-on features, it loads additional classes outside the core library.</li>
+<li>System/Application Class Loader: Like searching for new releases or user-uploaded content, it loads classes specific to the application you’re using.</li>
+</ul>
+<h2 id="virtual-machine-architecture">Virtual machine architecture</h2>
+<p><img loading="lazy" src="/JvmSpec7.png"></p>
+<h2 id="cross-platform-compatibility-and-limitations">Cross-Platform Compatibility and Limitations</h2>
+<p>The JVM abstracts away the underlying hardware and operating system specifics, allowing Java bytecode to run on any device equipped with a compatible JVM. This cross-platform capability greatly simplified software distribution and development, as developers could write code once and deploy it across various platforms without modification.</p>
+<p>Despite its strong cross-platform capabilities, the JVM faced significant challenges due to competitive corporate strategies, particularly the &ldquo;Embrace, Extend, and Extinguish&rdquo; (EEE) approach adopted by some companies like Microsoft in the late 1990s. This strategy involved embracing a technology, extending it with proprietary features, and eventually using those extensions to undermine the original technology.</p>
+<p>Microsoft initially embraced Java by integrating it into their Internet Explorer browser and Windows platforms. However, they extended Java with proprietary features that were specific to Windows, creating a version of Java that was incompatible with the standard JVM specifications set by Sun Microsystems. This move fragmented the Java platform and undermined the &ldquo;Write Once, Run Anywhere&rdquo; philosophy.</p>
+<p>With the development and rise of programming languages like Swift, Kotlin, and JavaScript, the JVM faced significant challenges in maintaining its performance edge. Swift, designed by Apple for iOS and macOS platforms, offers high performance and safety due to its compiled nature and modern language features. Kotlin, although initially running on the JVM, introduced concise syntax and advanced features that surpassed Java in many ways, leading it to become the preferred language for Android development. JavaScript&rsquo;s performance greatly improved with engines like V8, and its versatility expanded through technologies like Node.js for server-side development. These languages not only matched but often exceeded the JVM&rsquo;s performance and adaptability in their respective domains, leading to a shift in developer preferences and a relative decline in the JVM&rsquo;s dominance.</p>
+<p>Nowadays, Java has become to a normal programming lauguage.</p>
 ]]></content:encoded>
     </item>
   </channel>
