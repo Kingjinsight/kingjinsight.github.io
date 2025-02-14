@@ -6,8 +6,49 @@
     <description>Recent content in Posts on King&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Homelab</title>
+      <link>https://example.org/posts/homeserver/</link>
+      <pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/homeserver/</guid>
+      <description>&lt;p&gt;This week, I browsed many old machines at ebay to use for my first attempt at setting up a homelab. Initially, I planned to build a machine myself during the summer holiday, but in today I found a great performance and a high cost-effective machine that changed my mind.&lt;/p&gt;
+&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;The machine model is &lt;code&gt;HP-Elitedesk-800-G4-SFF&lt;/code&gt;. Compared to its previous generation, the chipset supports 8th and 9th generation of intel core cpu, which offers a significant improvement(6c6t) compare with 6th/7th core cpu(4c4t). Furthermore it provides NVme express in this generation. With these components, I can build a highly cost-effective homelab. The total cost is £150.&lt;br&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://example.org/serverbill.png&#34;&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>This week, I browsed many old machines at ebay to use for my first attempt at setting up a homelab. Initially, I planned to build a machine myself during the summer holiday, but in today I found a great performance and a high cost-effective machine that changed my mind.</p>
+<h1 id="overview">Overview</h1>
+<p>The machine model is <code>HP-Elitedesk-800-G4-SFF</code>. Compared to its previous generation, the chipset supports 8th and 9th generation of intel core cpu, which offers a significant improvement(6c6t) compare with 6th/7th core cpu(4c4t). Furthermore it provides NVme express in this generation. With these components, I can build a highly cost-effective homelab. The total cost is £150.<br>
+<img loading="lazy" src="/serverbill.png"></p>
+<blockquote>
+<p>If you want to learn more here is the machine datasheet:<a href="/server_datasheet.pdf">server_datasheet</a></p></blockquote>
+<h1 id="hardware">Hardware</h1>
+<ul>
+<li>Motherboard: Q370
+<ul>
+<li><a href="/server_motherboard.pdf">viewer</a></li>
+</ul>
+</li>
+<li>CPU: i5-8500</li>
+<li>GPU: intel UHD 630</li>
+<li>RAM: 16G</li>
+<li>SSD:  256G</li>
+<li>HDD: 500G * 1</li>
+</ul>
+<p>The motherboard provides a high flexibility to expand more internal storage, also it has 4 PCie expansion slots which can used to expand more storage space or other components you want.</p>
+<h1 id="software">Software</h1>
+<p>nextcloud<br>
+email domain<br>
+gitlab<br>
+minecraft server<br>
+docker<br>
+jellyin<br>
+synthing<br>
+proxy?router?gateway?<br>
+virtual machine</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Ambitious Cross-Platform Dream: JVM&#39;s Achievements and Limitations</title>
       <link>https://example.org/posts/jvm/</link>

@@ -1,63 +1,35 @@
 ---
-date: '2025-02-06T15:36:43Z'
-draft: true
-title: 'My homelab'
+date: "2025-02-14"
+draft: false
+title: 'My Homelab'
 author: 'King Jin'
 tags: ["home server"]
 showtoc: true
 ---
+This week, I browsed many old machines at ebay to use for my first attempt at setting up a homelab. Initially, I planned to build a machine myself during the summer holiday, but in today I found a great performance and a high cost-effective machine that changed my mind.
+# Overview
+The machine model is `HP-Elitedesk-800-G4-SFF`. Compared to its previous generation, the chipset supports 8th and 9th generation of intel core cpu, which offers a significant improvement(6c6t) compare with 6th/7th core cpu(4c4t). Furthermore it provides NVme express in this generation. With these components, I can build a highly cost-effective homelab. The total cost is £150.  
+![](/serverbill.png)
+> If you want to learn more here is the machine datasheet:[server_datasheet](/server_datasheet.pdf)
 
-# Title
+# Hardware
+- Motherboard: Q370
+  - [viewer](/server_motherboard.pdf)
+- CPU: i5-8500
+- GPU: intel UHD 630
+- RAM: 16G
+- SSD:  256G
+- HDD: 500G * 1
 
+The motherboard provides a high flexibility to expand more internal storage, also it has 4 PCie expansion slots which can used to expand more storage space or other components you want.
 
-## Type
-Within the research for old machine in the last 3 days, I choose to build a good performance server rather than buy a garbage(cost 1200 rmb). I have 100 credit for azure, maybe it's a good choice to spend all the credits first. Another reason is, when the excitement fades, only a few ideas about the function for my server comes to mind. Maybe learn the components of the server first, and evaluate the specs and pick the best value-for-money option rather than blindly following others. 
-
-- old machine
-    - mini PC
-        HP: Elite mini(medium performance), Pro mini(low performance)   
-        Dell: Optiplex Micro   
-
-        Elite 800 G3: (total cost: 1000 rmb)
-        1. 8G RAM * 2
-        2. 2T HDD
-        3. 256G sdd
-
-    - server
-    
-- DIY case
-
-# Parameter
-
-## Hardware
-a recommendation customization:
-Motherboard: https://www.ebay.de/sch/i.html?_nkw=g...   
-CPU: https://www.ebay.com/sch/i.html?_nkw=...  
-CPU Cooler: https://geni.us/qrJO (Amazon)   
-PSU: https://geni.us/P24H (Amazon)   
-RAM: https://geni.us/BFLCBd (Amazon)   
-Case: https://vi.aliexpress.com/item/100500...   
-Case fans: https://geni.us/iqPfvg2 (Amazon)    
-SSD: https://geni.us/BlOgci (Amazon)    
-Custom SATA Cables: https://geni.us/BPbmDd (Amazon)   
-Molex splitter: https://geni.us/eWgW (Amazon)    
-
-### Motherboard
-### CPU
-### CPU Cooler
-### RAM
-### PSU
-### RAM
-### Case
-### Case fans
-### SSD
-
-
-## Software
-nextcloud
-email domain
-minecraft server
-docker
-jellyin
-synthing
-proxy?router?gateway?
+# Software
+nextcloud  
+email domain  
+gitlab  
+minecraft server  
+docker  
+jellyin  
+synthing  
+proxy?router?gateway?  
+virtual machine  

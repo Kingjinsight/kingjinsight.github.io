@@ -6,8 +6,15 @@
     <description>Recent content in Tags on King&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Home Server</title>
+      <link>https://example.org/tags/home-server/</link>
+      <pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/home-server/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Java</title>
       <link>https://example.org/tags/java/</link>
