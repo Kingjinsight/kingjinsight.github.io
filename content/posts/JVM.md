@@ -6,7 +6,9 @@ author: 'King Jin'
 tags: ["JVM","Java","Programming"]
 showtoc: true
 ---
-In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambitious dream: "Write Once, Run Anywhere." This WORA philosophy became a reality through the JVM, enabling Java applications to run on any operating system with a compatible JVM. Before talking about the archivements and limitations, Let's have a look about how JVM works.
+This semester, I learned OOP from Inf1B, which using java as the official teaching language. What fascinates me the most is why Java has the JVM. I learned Python, C++, js and Haskell before, but all of them doesn't have a jargon for virtual machine. And then I went to wikipeidia to find out why.
+
+> In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambitious dream: "Write Once, Run Anywhere." This WORA philosophy became a reality through the JVM, enabling Java applications to run on any operating system with a compatible JVM. Before talking about the archivements and limitations, Let's have a look about how JVM works.
 
 ## How the JVM works
 The JVM executes er programs in several stages:
@@ -53,4 +55,5 @@ Microsoft initially embraced Java by integrating it into their Internet Explorer
 
 With the development and rise of programming languages like Swift, Kotlin, and JavaScript, the JVM faced significant challenges in maintaining its performance edge. Swift, designed by Apple for iOS and macOS platforms, offers high performance and safety due to its compiled nature and modern language features. Kotlin, although initially running on the JVM, introduced concise syntax and advanced features that surpassed Java in many ways, leading it to become the preferred language for Android development. JavaScript's performance greatly improved with engines like V8, and its versatility expanded through technologies like Node.js for server-side development. These languages not only matched but often exceeded the JVM's performance and adaptability in their respective domains, leading to a shift in developer preferences and a relative decline in the JVM's dominance.
 
-Nowadays, Java has become to a normal programming lauguage.
+## Overall
+Nowadays, Java has become to a normal programming lauguage. And the question is obvious solved. Python has its own interpreter to transfer the source code into machine code. Haskell has its own compiler, C++/C are compiled directly into machine code. However,they can't generate a compiled file that enable to run in every operating system. If there is no EEE strategy, Linux may have a stronger effects in today's world.
