@@ -2,21 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>King&#39;s Blog</title>
-    <link>https://example.org/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on King&#39;s Blog</description>
-    <generator>Hugo -- 0.143.1</generator>
+    <generator>Hugo -- 0.144.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Difference between T(n) , O(n) and θ(n)</title>
+      <link>http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/</link>
+      <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/</guid>
+      <description>&lt;p&gt;In this semester, I listened the course mit 6.006 in youtube channel. Duirng the course, the professor used different notations to represents time complexity of an algorithm. I learned Big O &lt;code&gt;O(n)&lt;/code&gt; notation before, but for Big theta &lt;code&gt;θ(n)&lt;/code&gt; and reccurence relations &lt;code&gt;T(n)&lt;/code&gt;, I never heard them before. Today, I hope I can finally figure them out.&lt;/p&gt;
+&lt;h1 id=&#34;what&#34;&gt;What&lt;/h1&gt;
+&lt;p&gt;T(n) represents the actual running time of an algorithm&lt;br&gt;
+O(n) represents the asymptotic upper bound of the running time of an algorithm&lt;br&gt;
+θ(n) represents the running time when asymptotic upper bound and lower bound of an algorithm ares the same.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>In this semester, I listened the course mit 6.006 in youtube channel. Duirng the course, the professor used different notations to represents time complexity of an algorithm. I learned Big O <code>O(n)</code> notation before, but for Big theta <code>θ(n)</code> and reccurence relations <code>T(n)</code>, I never heard them before. Today, I hope I can finally figure them out.</p>
+<h1 id="what">What</h1>
+<p>T(n) represents the actual running time of an algorithm<br>
+O(n) represents the asymptotic upper bound of the running time of an algorithm<br>
+θ(n) represents the running time when asymptotic upper bound and lower bound of an algorithm ares the same.</p>
+<h1 id="how-to-convert-the-three-of-them">How to convert the three of them</h1>
+<ul>
+<li>Normally we can directly transfer T(n) to O(n) or θ(n).</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Int sum <span style="color:#f92672">=</span> 0
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">for</span> (i <span style="color:#f92672">=</span> 1; i <span style="color:#f92672">&lt;=</span> n, i <span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    sum <span style="color:#f92672">=</span> sum <span style="color:#f92672">+</span> i
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This is a classical example,
+First of all, we initialize variable <code>sum</code> requires one unit of running time. There are three statements inside the for loop, statement 1 <code>i = 1</code> requires one unit of the running time, statement 2 <code>i &lt;= n</code> requires n+1 units of the running time,
+statement 3 <code>i ++</code> requires n units of the runningn time,
+and <code>sum = sum + i</code> requires 2n units of the running time, n for addition and n for assignment. Therefore T(n) = 1+1+(n+1)+n+2n = 4n + 3.  In O(n), we ignore the constant and the lower-order terms, therefore the time complexity is O(n) / θ(n).</p>
+<p>When the algorithm is a recursion, such as karatsuba multiplication and high precision multiplication.
+<img alt="High Precision Multiplication and Karatsuba Multiplication example" loading="lazy" src="/Hand_write_note/IMG_2181.jpeg">
+There are two methods to convert T(n) into O(n)</p>
+<ol>
+<li><img alt="Recursion tree method" loading="lazy" src="/Hand_write_note/IMG_2183.jpeg"></li>
+<li><img alt="Master method" loading="lazy" src="/Hand_write_note/IMG_2184.jpeg"></li>
+</ol>
+]]></content:encoded>
+    </item>
     <item>
       <title>My Homelab</title>
-      <link>https://example.org/posts/homeserver/</link>
+      <link>http://localhost:1313/posts/homeserver/</link>
       <pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/homeserver/</guid>
+      <guid>http://localhost:1313/posts/homeserver/</guid>
       <description>&lt;p&gt;This week, I browsed many old machines at ebay to use for my first attempt at setting up a homelab. Initially, I planned to build a machine myself during the summer holiday, but in today I found a great performance and a high cost-effective machine that changed my mind.&lt;/p&gt;
 &lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;The machine model is &lt;code&gt;HP-Elitedesk-800-G4-SFF&lt;/code&gt;. Compared to its previous generation, the chipset supports 8th and 9th generation of intel core cpu, which offers a significant improvement(6c6t) compare with 6th/7th core cpu(4c4t). Furthermore it provides NVme express in this generation. With these components, I can build a highly cost-effective homelab. The total cost is £150.&lt;br&gt;
-&lt;img loading=&#34;lazy&#34; src=&#34;https://example.org/serverbill.png&#34;&gt;&lt;/p&gt;</description>
+&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/serverbill.png&#34;&gt;&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>This week, I browsed many old machines at ebay to use for my first attempt at setting up a homelab. Initially, I planned to build a machine myself during the summer holiday, but in today I found a great performance and a high cost-effective machine that changed my mind.</p>
 <h1 id="overview">Overview</h1>
 <p>The machine model is <code>HP-Elitedesk-800-G4-SFF</code>. Compared to its previous generation, the chipset supports 8th and 9th generation of intel core cpu, which offers a significant improvement(6c6t) compare with 6th/7th core cpu(4c4t). Furthermore it provides NVme express in this generation. With these components, I can build a highly cost-effective homelab. The total cost is £150.<br>
@@ -47,20 +83,31 @@ jellyin<br>
 synthing<br>
 proxy?router?gateway?<br>
 virtual machine</p>
+<p>I host my server with <strong>ubuntu server</strong> distro. The reason I didn&rsquo;t choose proxmox is because I want to learn server step by step,
+proxmox is great in visualization, maybe in the future, I will try it.</p>
+<p>Durign the process of configuring storage, I learned <strong>LVM</strong>, which is a wonderful tool for those users that has multiple drives. User can create a storage pool called volume group.
+Firstly, user add their physical volumes into volumn group, and we create logical volumn based on the storage area had in volumn groups, and then we mount those LVs with the actural dirctory.
+It seems like Windows is not able to achieve this function. For <strong>RAID</strong>, we seperate it into 4 different categories, radi0, raid1, raid5 and raid10. This tools shows how to save files in different number of drives or in LVM.</p>
+<p>For external access, I plan to use cloudflare tunnel. They provide such service, I need to buy a domain name and combine it with the cloudflare tunnel, and when I access the server, I firstly type the domain name in my browser
+to ask cloudflare, and they will guide me to the tunnel to my server, also in server end, I need to install cloudflared docker image as an end, then it works! It&rsquo;s so convenient for those people who live in school accommodation.
+And it&rsquo;s totally free!</p>
+<p>In my network configuration. I didn&rsquo;t install a router, but the best choice is to use a router for all devices in my home, and assign each of them an static IP address.
+To access the server, I bought a portable monitor, since the IP address of my server using DHCP, which required to check the IP address manually when the machine
+reboot or close. This issue will be solved easily when I have a router. Nowadays, I need to change the tunnels configuration to enable external access.</p>
+<p>since I have 3 different operating systems in my three daily devices, phone for android, laptop for arachlinux and ipad for ipados, I installed nextcloud docker to try to integrate them into one ecosystem, that pretty awesome.</p>
 ]]></content:encoded>
     </item>
     <item>
       <title>Ambitious Cross-Platform Dream: JVM&#39;s Achievements and Limitations</title>
-      <link>https://example.org/posts/jvm/</link>
+      <link>http://localhost:1313/posts/jvm/</link>
       <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/jvm/</guid>
-      <description>&lt;p&gt;In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambitious dream: &amp;ldquo;Write Once, Run Anywhere.&amp;rdquo; This WORA philosophy became a reality through the JVM, enabling Java applications to run on any operating system with a compatible JVM. Before talking about the archivements and limitations, Let&amp;rsquo;s have a look about how JVM works.&lt;/p&gt;
-&lt;h2 id=&#34;how-the-jvm-works&#34;&gt;How the JVM works&lt;/h2&gt;
-&lt;p&gt;The JVM executes er programs in several stages:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Compilation: Java source code (.java) is compiled into bytecode (.class) by the Java Compiler (javac).&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p>In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambitious dream: &ldquo;Write Once, Run Anywhere.&rdquo; This WORA philosophy became a reality through the JVM, enabling Java applications to run on any operating system with a compatible JVM. Before talking about the archivements and limitations, Let&rsquo;s have a look about how JVM works.</p>
+      <guid>http://localhost:1313/posts/jvm/</guid>
+      <description>&lt;p&gt;This semester, I learned OOP from Inf1B, which using java as the official teaching language. What fascinates me the most is why Java has the JVM. I learned Python, C++, js and Haskell before, but all of them doesn&amp;rsquo;t have a jargon for virtual machine. And then I went to wikipeidia to find out why.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambitious dream: &amp;ldquo;Write Once, Run Anywhere.&amp;rdquo; This WORA philosophy became a reality through the JVM, enabling Java applications to run on any operating system with a compatible JVM. Before talking about the archivements and limitations, Let&amp;rsquo;s have a look about how JVM works.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>This semester, I learned OOP from Inf1B, which using java as the official teaching language. What fascinates me the most is why Java has the JVM. I learned Python, C++, js and Haskell before, but all of them doesn&rsquo;t have a jargon for virtual machine. And then I went to wikipeidia to find out why.</p>
+<blockquote>
+<p>In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambitious dream: &ldquo;Write Once, Run Anywhere.&rdquo; This WORA philosophy became a reality through the JVM, enabling Java applications to run on any operating system with a compatible JVM. Before talking about the archivements and limitations, Let&rsquo;s have a look about how JVM works.</p></blockquote>
 <h2 id="how-the-jvm-works">How the JVM works</h2>
 <p>The JVM executes er programs in several stages:</p>
 <ol>
@@ -110,7 +157,8 @@ As you start watching, the service begins playing the movie. Similarly, Java run
 <p>Despite its strong cross-platform capabilities, the JVM faced significant challenges due to competitive corporate strategies, particularly the &ldquo;Embrace, Extend, and Extinguish&rdquo; (EEE) approach adopted by some companies like Microsoft in the late 1990s. This strategy involved embracing a technology, extending it with proprietary features, and eventually using those extensions to undermine the original technology.</p>
 <p>Microsoft initially embraced Java by integrating it into their Internet Explorer browser and Windows platforms. However, they extended Java with proprietary features that were specific to Windows, creating a version of Java that was incompatible with the standard JVM specifications set by Sun Microsystems. This move fragmented the Java platform and undermined the &ldquo;Write Once, Run Anywhere&rdquo; philosophy.</p>
 <p>With the development and rise of programming languages like Swift, Kotlin, and JavaScript, the JVM faced significant challenges in maintaining its performance edge. Swift, designed by Apple for iOS and macOS platforms, offers high performance and safety due to its compiled nature and modern language features. Kotlin, although initially running on the JVM, introduced concise syntax and advanced features that surpassed Java in many ways, leading it to become the preferred language for Android development. JavaScript&rsquo;s performance greatly improved with engines like V8, and its versatility expanded through technologies like Node.js for server-side development. These languages not only matched but often exceeded the JVM&rsquo;s performance and adaptability in their respective domains, leading to a shift in developer preferences and a relative decline in the JVM&rsquo;s dominance.</p>
-<p>Nowadays, Java has become to a normal programming lauguage.</p>
+<h2 id="overall">Overall</h2>
+<p>Nowadays, Java has become to a normal programming lauguage. And the question is obvious solved. Python has its own interpreter to transfer the source code into machine code. Haskell has its own compiler, C++/C are compiled directly into machine code. However,they can&rsquo;t generate a compiled file that enable to run in every operating system. If there is no EEE strategy, Linux may have a stronger effects in today&rsquo;s world.</p>
 ]]></content:encoded>
     </item>
   </channel>

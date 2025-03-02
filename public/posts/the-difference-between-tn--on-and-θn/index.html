@@ -5,11 +5,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Programming | King&#39;s Blog</title>
-<meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/tags/programming/">
+<title>The Difference between T(n) , O(n) and θ(n) | King&#39;s Blog</title>
+<meta name="keywords" content="Algorithm, Programming">
+<meta name="description" content="In this semester, I listened the course mit 6.006 in youtube channel. Duirng the course, the professor used different notations to represents time complexity of an algorithm. I learned Big O O(n) notation before, but for Big theta θ(n) and reccurence relations T(n), I never heard them before. Today, I hope I can finally figure them out.
+What
+T(n) represents the actual running time of an algorithm
+O(n) represents the asymptotic upper bound of the running time of an algorithm
+θ(n) represents the running time when asymptotic upper bound and lower bound of an algorithm ares the same.">
+<meta name="author" content="King Jin">
+<link rel="canonical" href="http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.c7dd8f013da21415110eaa3c557f9d597424456614d716deaf75cf91d33c2ccf.css" integrity="sha256-x92PAT2iFBURDqo8VX&#43;dWXQkRWYU1xber3XPkdM8LM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -18,8 +22,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/programming/index.xml">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/programming/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/">
 <noscript>
     <style>
         #theme-toggle,
@@ -59,7 +62,7 @@
 </noscript>
 </head>
 
-<body class="list" id="top">
+<body class="" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
@@ -122,41 +125,76 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
-<header class="page-header">
-  <h1>
-    Programming
-  </h1>
-</header>
+<main class="main">
 
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">The Difference between T(n) , O(n) and θ(n)
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>In this semester, I listened the course mit 6.006 in youtube channel. Duirng the course, the professor used different notations to represents time complexity of an algorithm. I learned Big O O(n) notation before, but for Big theta θ(n) and reccurence relations T(n), I never heard them before. Today, I hope I can finally figure them out.
-What T(n) represents the actual running time of an algorithm
-O(n) represents the asymptotic upper bound of the running time of an algorithm
-θ(n) represents the running time when asymptotic upper bound and lower bound of an algorithm ares the same.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-01 00:00:00 +0000 UTC'>March 1, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;King Jin</footer>
-  <a class="entry-link" aria-label="post link to The Difference between T(n) , O(n) and θ(n)" href="http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/"></a>
-</article>
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      The Difference between T(n) , O(n) and θ(n)
+    </h1>
+    <div class="post-meta"><span title='2025-03-01 00:00:00 +0000 UTC'>March 1, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;King Jin
 
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Ambitious Cross-Platform Dream: JVM&#39;s Achievements and Limitations
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>This semester, I learned OOP from Inf1B, which using java as the official teaching language. What fascinates me the most is why Java has the JVM. I learned Python, C&#43;&#43;, js and Haskell before, but all of them doesn’t have a jargon for virtual machine. And then I went to wikipeidia to find out why.
-In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambitious dream: “Write Once, Run Anywhere.” This WORA philosophy became a reality through the JVM, enabling Java applications to run on any operating system with a compatible JVM. Before talking about the archivements and limitations, Let’s have a look about how JVM works.
-...</p>
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#what" aria-label="What">What</a></li>
+                <li>
+                    <a href="#how-to-convert-the-three-of-them" aria-label="How to convert the three of them">How to convert the three of them</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>In this semester, I listened the course mit 6.006 in youtube channel. Duirng the course, the professor used different notations to represents time complexity of an algorithm. I learned Big O <code>O(n)</code> notation before, but for Big theta <code>θ(n)</code> and reccurence relations <code>T(n)</code>, I never heard them before. Today, I hope I can finally figure them out.</p>
+<h1 id="what">What<a hidden class="anchor" aria-hidden="true" href="#what">#</a></h1>
+<p>T(n) represents the actual running time of an algorithm<br>
+O(n) represents the asymptotic upper bound of the running time of an algorithm<br>
+θ(n) represents the running time when asymptotic upper bound and lower bound of an algorithm ares the same.</p>
+<h1 id="how-to-convert-the-three-of-them">How to convert the three of them<a hidden class="anchor" aria-hidden="true" href="#how-to-convert-the-three-of-them">#</a></h1>
+<ul>
+<li>Normally we can directly transfer T(n) to O(n) or θ(n).</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Int sum <span style="color:#f92672">=</span> 0
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">for</span> (i <span style="color:#f92672">=</span> 1; i <span style="color:#f92672">&lt;=</span> n, i <span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    sum <span style="color:#f92672">=</span> sum <span style="color:#f92672">+</span> i
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This is a classical example,
+First of all, we initialize variable <code>sum</code> requires one unit of running time. There are three statements inside the for loop, statement 1 <code>i = 1</code> requires one unit of the running time, statement 2 <code>i &lt;= n</code> requires n+1 units of the running time,
+statement 3 <code>i ++</code> requires n units of the runningn time,
+and <code>sum = sum + i</code> requires 2n units of the running time, n for addition and n for assignment. Therefore T(n) = 1+1+(n+1)+n+2n = 4n + 3.  In O(n), we ignore the constant and the lower-order terms, therefore the time complexity is O(n) / θ(n).</p>
+<p>When the algorithm is a recursion, such as karatsuba multiplication and high precision multiplication.
+<img alt="High Precision Multiplication and Karatsuba Multiplication example" loading="lazy" src="/Hand_write_note/IMG_2181.jpeg">
+There are two methods to convert T(n) into O(n)</p>
+<ol>
+<li><img alt="Recursion tree method" loading="lazy" src="/Hand_write_note/IMG_2183.jpeg"></li>
+<li><img alt="Master method" loading="lazy" src="/Hand_write_note/IMG_2184.jpeg"></li>
+</ol>
+
+
   </div>
-  <footer class="entry-footer"><span title='2025-02-13 00:00:00 +0000 UTC'>February 13, 2025</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;King Jin</footer>
-  <a class="entry-link" aria-label="post link to Ambitious Cross-Platform Dream: JVM&#39;s Achievements and Limitations" href="http://localhost:1313/posts/jvm/"></a>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/algorithm/">Algorithm</a></li>
+      <li><a href="http://localhost:1313/tags/programming/">Programming</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/homeserver/">
+    <span class="title">»</span>
+    <br>
+    <span>My Homelab</span>
+  </a>
+</nav>
+
+  </footer>
 </article>
     </main>
     
@@ -228,6 +266,53 @@ In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambit
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

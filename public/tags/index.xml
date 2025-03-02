@@ -2,38 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on King&#39;s Blog</title>
-    <link>https://example.org/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on King&#39;s Blog</description>
-    <generator>Hugo -- 0.143.1</generator>
+    <generator>Hugo -- 0.144.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Home Server</title>
-      <link>https://example.org/tags/home-server/</link>
-      <pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/tags/home-server/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Java</title>
-      <link>https://example.org/tags/java/</link>
-      <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/tags/java/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>JVM</title>
-      <link>https://example.org/tags/jvm/</link>
-      <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/tags/jvm/</guid>
+      <title>Algorithm</title>
+      <link>http://localhost:1313/tags/algorithm/</link>
+      <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/algorithm/</guid>
       <description></description>
     </item>
     <item>
       <title>Programming</title>
-      <link>https://example.org/tags/programming/</link>
+      <link>http://localhost:1313/tags/programming/</link>
+      <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Home Server</title>
+      <link>http://localhost:1313/tags/home-server/</link>
+      <pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/home-server/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>http://localhost:1313/tags/java/</link>
       <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/tags/programming/</guid>
+      <guid>http://localhost:1313/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JVM</title>
+      <link>http://localhost:1313/tags/jvm/</link>
+      <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/jvm/</guid>
       <description></description>
     </item>
   </channel>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Algorithm on King&#39;s Blog</title>
+    <link>http://localhost:1313/tags/algorithm/</link>
+    <description>Recent content in Algorithm on King&#39;s Blog</description>
+    <generator>Hugo -- 0.144.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Difference between T(n) , O(n) and θ(n)</title>
+      <link>http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/</link>
+      <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/</guid>
+      <description>&lt;p&gt;In this semester, I listened the course mit 6.006 in youtube channel. Duirng the course, the professor used different notations to represents time complexity of an algorithm. I learned Big O &lt;code&gt;O(n)&lt;/code&gt; notation before, but for Big theta &lt;code&gt;θ(n)&lt;/code&gt; and reccurence relations &lt;code&gt;T(n)&lt;/code&gt;, I never heard them before. Today, I hope I can finally figure them out.&lt;/p&gt;
+&lt;h1 id=&#34;what&#34;&gt;What&lt;/h1&gt;
+&lt;p&gt;T(n) represents the actual running time of an algorithm&lt;br&gt;
+O(n) represents the asymptotic upper bound of the running time of an algorithm&lt;br&gt;
+θ(n) represents the running time when asymptotic upper bound and lower bound of an algorithm ares the same.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>In this semester, I listened the course mit 6.006 in youtube channel. Duirng the course, the professor used different notations to represents time complexity of an algorithm. I learned Big O <code>O(n)</code> notation before, but for Big theta <code>θ(n)</code> and reccurence relations <code>T(n)</code>, I never heard them before. Today, I hope I can finally figure them out.</p>
+<h1 id="what">What</h1>
+<p>T(n) represents the actual running time of an algorithm<br>
+O(n) represents the asymptotic upper bound of the running time of an algorithm<br>
+θ(n) represents the running time when asymptotic upper bound and lower bound of an algorithm ares the same.</p>
+<h1 id="how-to-convert-the-three-of-them">How to convert the three of them</h1>
+<ul>
+<li>Normally we can directly transfer T(n) to O(n) or θ(n).</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Int sum <span style="color:#f92672">=</span> 0
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">for</span> (i <span style="color:#f92672">=</span> 1; i <span style="color:#f92672">&lt;=</span> n, i <span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    sum <span style="color:#f92672">=</span> sum <span style="color:#f92672">+</span> i
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This is a classical example,
+First of all, we initialize variable <code>sum</code> requires one unit of running time. There are three statements inside the for loop, statement 1 <code>i = 1</code> requires one unit of the running time, statement 2 <code>i &lt;= n</code> requires n+1 units of the running time,
+statement 3 <code>i ++</code> requires n units of the runningn time,
+and <code>sum = sum + i</code> requires 2n units of the running time, n for addition and n for assignment. Therefore T(n) = 1+1+(n+1)+n+2n = 4n + 3.  In O(n), we ignore the constant and the lower-order terms, therefore the time complexity is O(n) / θ(n).</p>
+<p>When the algorithm is a recursion, such as karatsuba multiplication and high precision multiplication.
+<img alt="High Precision Multiplication and Karatsuba Multiplication example" loading="lazy" src="/Hand_write_note/IMG_2181.jpeg">
+There are two methods to convert T(n) into O(n)</p>
+<ol>
+<li><img alt="Recursion tree method" loading="lazy" src="/Hand_write_note/IMG_2183.jpeg"></li>
+<li><img alt="Master method" loading="lazy" src="/Hand_write_note/IMG_2184.jpeg"></li>
+</ol>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

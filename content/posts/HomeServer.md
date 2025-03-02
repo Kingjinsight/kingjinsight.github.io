@@ -33,3 +33,21 @@ jellyin
 synthing  
 proxy?router?gateway?  
 virtual machine  
+
+I host my server with **ubuntu server** distro. The reason I didn't choose proxmox is because I want to learn server step by step,
+proxmox is great in visualization, maybe in the future, I will try it.
+
+Durign the process of configuring storage, I learned **LVM**, which is a wonderful tool for those users that has multiple drives. User can create a storage pool called volume group.
+Firstly, user add their physical volumes into volumn group, and we create logical volumn based on the storage area had in volumn groups, and then we mount those LVs with the actural dirctory.
+It seems like Windows is not able to achieve this function. For **RAID**, we seperate it into 4 different categories, radi0, raid1, raid5 and raid10. This tools shows how to save files in different number of drives or in LVM.
+
+
+For external access, I plan to use cloudflare tunnel. They provide such service, I need to buy a domain name and combine it with the cloudflare tunnel, and when I access the server, I firstly type the domain name in my browser 
+to ask cloudflare, and they will guide me to the tunnel to my server, also in server end, I need to install cloudflared docker image as an end, then it works! It's so convenient for those people who live in school accommodation.
+ And it's totally free!
+
+In my network configuration. I didn't install a router, but the best choice is to use a router for all devices in my home, and assign each of them an static IP address.
+To access the server, I bought a portable monitor, since the IP address of my server using DHCP, which required to check the IP address manually when the machine
+reboot or close. This issue will be solved easily when I have a router. Nowadays, I need to change the tunnels configuration to enable external access.
+
+since I have 3 different operating systems in my three daily devices, phone for android, laptop for arachlinux and ipad for ipados, I installed nextcloud docker to try to integrate them into one ecosystem, that pretty awesome.

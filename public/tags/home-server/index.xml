@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Home Server on King&#39;s Blog</title>
-    <link>https://example.org/tags/home-server/</link>
+    <link>http://localhost:1313/tags/home-server/</link>
     <description>Recent content in Home Server on King&#39;s Blog</description>
-    <generator>Hugo -- 0.143.1</generator>
+    <generator>Hugo -- 0.144.1</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 14 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/home-server/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/home-server/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My Homelab</title>
-      <link>https://example.org/posts/homeserver/</link>
+      <link>http://localhost:1313/posts/homeserver/</link>
       <pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/homeserver/</guid>
+      <guid>http://localhost:1313/posts/homeserver/</guid>
       <description>&lt;p&gt;This week, I browsed many old machines at ebay to use for my first attempt at setting up a homelab. Initially, I planned to build a machine myself during the summer holiday, but in today I found a great performance and a high cost-effective machine that changed my mind.&lt;/p&gt;
 &lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;The machine model is &lt;code&gt;HP-Elitedesk-800-G4-SFF&lt;/code&gt;. Compared to its previous generation, the chipset supports 8th and 9th generation of intel core cpu, which offers a significant improvement(6c6t) compare with 6th/7th core cpu(4c4t). Furthermore it provides NVme express in this generation. With these components, I can build a highly cost-effective homelab. The total cost is £150.&lt;br&gt;
-&lt;img loading=&#34;lazy&#34; src=&#34;https://example.org/serverbill.png&#34;&gt;&lt;/p&gt;</description>
+&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/serverbill.png&#34;&gt;&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>This week, I browsed many old machines at ebay to use for my first attempt at setting up a homelab. Initially, I planned to build a machine myself during the summer holiday, but in today I found a great performance and a high cost-effective machine that changed my mind.</p>
 <h1 id="overview">Overview</h1>
 <p>The machine model is <code>HP-Elitedesk-800-G4-SFF</code>. Compared to its previous generation, the chipset supports 8th and 9th generation of intel core cpu, which offers a significant improvement(6c6t) compare with 6th/7th core cpu(4c4t). Furthermore it provides NVme express in this generation. With these components, I can build a highly cost-effective homelab. The total cost is £150.<br>
@@ -47,6 +47,18 @@ jellyin<br>
 synthing<br>
 proxy?router?gateway?<br>
 virtual machine</p>
+<p>I host my server with <strong>ubuntu server</strong> distro. The reason I didn&rsquo;t choose proxmox is because I want to learn server step by step,
+proxmox is great in visualization, maybe in the future, I will try it.</p>
+<p>Durign the process of configuring storage, I learned <strong>LVM</strong>, which is a wonderful tool for those users that has multiple drives. User can create a storage pool called volume group.
+Firstly, user add their physical volumes into volumn group, and we create logical volumn based on the storage area had in volumn groups, and then we mount those LVs with the actural dirctory.
+It seems like Windows is not able to achieve this function. For <strong>RAID</strong>, we seperate it into 4 different categories, radi0, raid1, raid5 and raid10. This tools shows how to save files in different number of drives or in LVM.</p>
+<p>For external access, I plan to use cloudflare tunnel. They provide such service, I need to buy a domain name and combine it with the cloudflare tunnel, and when I access the server, I firstly type the domain name in my browser
+to ask cloudflare, and they will guide me to the tunnel to my server, also in server end, I need to install cloudflared docker image as an end, then it works! It&rsquo;s so convenient for those people who live in school accommodation.
+And it&rsquo;s totally free!</p>
+<p>In my network configuration. I didn&rsquo;t install a router, but the best choice is to using a router for all devices in my home, and assign each of them an static IP address.
+To access the server, I bought a portable monitor, since the IP address of my server using DHCP, which required to check the IP address manually when the machine
+reboot or close. This issue will be solved easily when I have a router. Nowadays, I need to change the tunnels configuration to enable external access.</p>
+<p>since I have 3 different operating 3systems in my three daily devices, phone for android, laptop for arachlinux and ipad for ipados, I installed nextcloud docker to try to integrate them into one ecosystem, that pretty awesome.</p>
 ]]></content:encoded>
     </item>
   </channel>
