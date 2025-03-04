@@ -4,7 +4,7 @@
     <title>Home Server on King&#39;s Blog</title>
     <link>http://localhost:1313/tags/home-server/</link>
     <description>Recent content in Home Server on King&#39;s Blog</description>
-    <generator>Hugo -- 0.144.1</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 14 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/home-server/index.xml" rel="self" type="application/rss+xml" />
@@ -55,10 +55,10 @@ It seems like Windows is not able to achieve this function. For <strong>RAID</st
 <p>For external access, I plan to use cloudflare tunnel. They provide such service, I need to buy a domain name and combine it with the cloudflare tunnel, and when I access the server, I firstly type the domain name in my browser
 to ask cloudflare, and they will guide me to the tunnel to my server, also in server end, I need to install cloudflared docker image as an end, then it works! It&rsquo;s so convenient for those people who live in school accommodation.
 And it&rsquo;s totally free!</p>
-<p>In my network configuration. I didn&rsquo;t install a router, but the best choice is to using a router for all devices in my home, and assign each of them an static IP address.
+<p>In my network configuration. I didn&rsquo;t install a router, but the best choice is to use a router for all devices in my home, and assign each of them an static IP address.
 To access the server, I bought a portable monitor, since the IP address of my server using DHCP, which required to check the IP address manually when the machine
 reboot or close. This issue will be solved easily when I have a router. Nowadays, I need to change the tunnels configuration to enable external access.</p>
-<p>since I have 3 different operating 3systems in my three daily devices, phone for android, laptop for arachlinux and ipad for ipados, I installed nextcloud docker to try to integrate them into one ecosystem, that pretty awesome.</p>
+<p>since I have 3 different operating systems in my three daily devices, phone for android, laptop for arachlinux and ipad for ipados, I installed nextcloud docker to try to integrate them into one ecosystem, that pretty awesome.</p>
 ]]></content:encoded>
     </item>
   </channel>

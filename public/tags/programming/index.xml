@@ -4,12 +4,12 @@
     <title>Programming on King&#39;s Blog</title>
     <link>http://localhost:1313/tags/programming/</link>
     <description>Recent content in Programming on King&#39;s Blog</description>
-    <generator>Hugo -- 0.144.1</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 01 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>The Difference between T(n) , O(n) and θ(n)</title>
+      <title>Time complexity notations</title>
       <link>http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/</link>
       <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/</guid>
@@ -39,9 +39,12 @@ and <code>sum = sum + i</code> requires 2n units of the running time, n for addi
 <img alt="High Precision Multiplication and Karatsuba Multiplication example" loading="lazy" src="/Hand_write_note/IMG_2181.jpeg">
 There are two methods to convert T(n) into O(n)</p>
 <ol>
-<li><img alt="Recursion tree method" loading="lazy" src="/Hand_write_note/IMG_2183.jpeg"></li>
-<li><img alt="Master method" loading="lazy" src="/Hand_write_note/IMG_2184.jpeg"></li>
+<li>Recursion tree method
+<img alt="Recursion tree method" loading="lazy" src="/Hand_write_note/IMG_2183.jpeg"></li>
+<li>According to Recursion tree method, we derive master theorem
+<img alt="Master Theorem" loading="lazy" src="/Hand_write_note/IMG_2184.jpeg"></li>
 </ol>
+<p>The time complexity of multiplication is equal to the time complexity of division</p>
 ]]></content:encoded>
     </item>
     <item>

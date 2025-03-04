@@ -30,7 +30,9 @@ and ``sum = sum + i`` requires 2n units of the running time, n for addition and 
 When the algorithm is a recursion, such as karatsuba multiplication and high precision multiplication. 
 ![High Precision Multiplication and Karatsuba Multiplication example](/Hand_write_note/IMG_2181.jpeg)
 There are two methods to convert T(n) into O(n)  
-First is Recursion tree method
-1. ![Recursion tree method](/Hand_write_note/IMG_2183.jpeg)
-According to Recursion tree method, we derive master theorem
-2. ![Master Theorem](/Hand_write_note/IMG_2184.jpeg)
+1. Recursion tree method
+![Recursion tree method](/Hand_write_note/IMG_2183.jpeg)
+2. According to Recursion tree method, we derive master theorem
+![Master Theorem](/Hand_write_note/IMG_2184.jpeg)
+
+The time complexity of multiplication is equal to the time complexity of division

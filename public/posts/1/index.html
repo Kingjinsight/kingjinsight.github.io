@@ -5,14 +5,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>My Homelab | King&#39;s Blog</title>
-<meta name="keywords" content="home server">
-<meta name="description" content="This week, I browsed many old machines at ebay to use for my first attempt at setting up a homelab. Initially, I planned to build a machine myself during the summer holiday, but in today I found a great performance and a high cost-effective machine that changed my mind.
-Overview
-The machine model is HP-Elitedesk-800-G4-SFF. Compared to its previous generation, the chipset supports 8th and 9th generation of intel core cpu, which offers a significant improvement(6c6t) compare with 6th/7th core cpu(4c4t). Furthermore it provides NVme express in this generation. With these components, I can build a highly cost-effective homelab. The total cost is £150.
-">
+<title>Week1 - Origin | King&#39;s Blog</title>
+<meta name="keywords" content="Weekly Record">
+<meta name="description" content="Emial sending and receiving system
+The main system is build based on three protocols: SMTP, POP3 and IMAP.
+
+SMTP is used for sending emails to the recipient’s email server, but it does not handle receiving emails.
+User1 sends an email via an email client, and the email is first sent to User1&rsquo;s email server using SMTP. Then, the email server forwards it to the recipient&rsquo;s email server using SMTP as well.">
 <meta name="author" content="King Jin">
-<link rel="canonical" href="http://localhost:1313/posts/homeserver/">
+<link rel="canonical" href="http://localhost:1313/posts/1/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.6e591b5865d633db2924f5db15545b1b7b3c306d625eb079c9d4274312ba88fd.css" integrity="sha256-blkbWGXWM9spJPXbFVRbG3s8MG1iXrB5ydQnQxK6iP0=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -21,7 +22,7 @@ The machine model is HP-Elitedesk-800-G4-SFF. Compared to its previous generatio
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/homeserver/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/1/">
 <noscript>
     <style>
         #theme-toggle,
@@ -130,9 +131,9 @@ The machine model is HP-Elitedesk-800-G4-SFF. Compared to its previous generatio
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      My Homelab
+      Week1 - Origin
     </h1>
-    <div class="post-meta"><span title='2025-02-14 00:00:00 +0000 UTC'>February 14, 2025</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;King Jin
+    <div class="post-meta"><span title='2025-03-02 00:00:00 +0000 UTC'>March 2, 2025</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;King Jin
 
 </div>
   </header> <div class="toc">
@@ -143,77 +144,82 @@ The machine model is HP-Elitedesk-800-G4-SFF. Compared to its previous generatio
 
         <div class="inner"><ul>
                 <li>
-                    <a href="#overview" aria-label="Overview">Overview</a></li>
+                    <a href="#emial-sending-and-receiving-system" aria-label="Emial sending and receiving system">Emial sending and receiving system</a></li>
                 <li>
-                    <a href="#hardware" aria-label="Hardware">Hardware</a></li>
+                    <a href="#trivias" aria-label="Trivias">Trivias</a></li>
                 <li>
-                    <a href="#software" aria-label="Software">Software</a>
+                    <a href="#resources" aria-label="Resources">Resources</a></li>
+                <li>
+                    <a href="#abstract" aria-label="Abstract">Abstract</a>
                 </li>
             </ul>
         </div>
     </details>
 </div>
 
-  <div class="post-content"><p>This week, I browsed many old machines at ebay to use for my first attempt at setting up a homelab. Initially, I planned to build a machine myself during the summer holiday, but in today I found a great performance and a high cost-effective machine that changed my mind.</p>
-<h1 id="overview">Overview<a hidden class="anchor" aria-hidden="true" href="#overview">#</a></h1>
-<p>The machine model is <code>HP-Elitedesk-800-G4-SFF</code>. Compared to its previous generation, the chipset supports 8th and 9th generation of intel core cpu, which offers a significant improvement(6c6t) compare with 6th/7th core cpu(4c4t). Furthermore it provides NVme express in this generation. With these components, I can build a highly cost-effective homelab. The total cost is £150.<br>
-<img loading="lazy" src="/serverbill.png"></p>
-<blockquote>
-<p>If you want to learn more here is the machine datasheet:<a href="/server_datasheet.pdf">server_datasheet</a></p></blockquote>
-<h1 id="hardware">Hardware<a hidden class="anchor" aria-hidden="true" href="#hardware">#</a></h1>
-<ul>
-<li>Motherboard: Q370
-<ul>
-<li><a href="/server_motherboard.pdf">viewer</a></li>
-</ul>
-</li>
-<li>CPU: i5-8500</li>
-<li>GPU: intel UHD 630</li>
-<li>RAM: 16G</li>
-<li>SSD:  256G</li>
-<li>HDD: 500G * 1</li>
-</ul>
-<p>The motherboard provides a high flexibility to expand more internal storage, also it has 4 PCie expansion slots which can used to expand more storage space or other components you want.</p>
-<h1 id="software">Software<a hidden class="anchor" aria-hidden="true" href="#software">#</a></h1>
-<p>nextcloud<br>
-email domain<br>
-gitlab<br>
-minecraft server<br>
-docker<br>
-jellyin<br>
-synthing<br>
-proxy?router?gateway?<br>
-virtual machine</p>
-<p>I host my server with <strong>ubuntu server</strong> distro. The reason I didn&rsquo;t choose proxmox is because I want to learn server step by step,
-proxmox is great in visualization, maybe in the future, I will try it.</p>
-<p>Durign the process of configuring storage, I learned <strong>LVM</strong>, which is a wonderful tool for those users that has multiple drives. User can create a storage pool called volume group.
-Firstly, user add their physical volumes into volumn group, and we create logical volumn based on the storage area had in volumn groups, and then we mount those LVs with the actural dirctory.
-It seems like Windows is not able to achieve this function. For <strong>RAID</strong>, we seperate it into 4 different categories, radi0, raid1, raid5 and raid10. This tools shows how to save files in different number of drives or in LVM.</p>
-<p>For external access, I plan to use cloudflare tunnel. They provide such service, I need to buy a domain name and combine it with the cloudflare tunnel, and when I access the server, I firstly type the domain name in my browser
-to ask cloudflare, and they will guide me to the tunnel to my server, also in server end, I need to install cloudflared docker image as an end, then it works! It&rsquo;s so convenient for those people who live in school accommodation.
-And it&rsquo;s totally free!</p>
-<p>In my network configuration. I didn&rsquo;t install a router, but the best choice is to use a router for all devices in my home, and assign each of them an static IP address.
-To access the server, I bought a portable monitor, since the IP address of my server using DHCP, which required to check the IP address manually when the machine
-reboot or close. This issue will be solved easily when I have a router. Nowadays, I need to change the tunnels configuration to enable external access.</p>
-<p>since I have 3 different operating systems in my three daily devices, phone for android, laptop for arachlinux and ipad for ipados, I installed nextcloud docker to try to integrate them into one ecosystem, that pretty awesome.</p>
+  <div class="post-content"><h2 id="emial-sending-and-receiving-system">Emial sending and receiving system<a hidden class="anchor" aria-hidden="true" href="#emial-sending-and-receiving-system">#</a></h2>
+<p>The main system is build based on three protocols: SMTP, POP3 and IMAP.
+<img alt="process of email system" loading="lazy" src="/emailsys.png"></p>
+<p>SMTP is used for sending emails to the recipient’s email server, but it does not handle receiving emails.
+User1 sends an email via an email client, and the email is first sent to User1&rsquo;s email server using SMTP. Then, the email server forwards it to the recipient&rsquo;s email server using SMTP as well.</p>
+<p>POP3 downloads emails from the email server to the email client. By default, it removes emails from the server after downloading, but some email clients allow users to keep copies on the server.
+IMAP keeps emails on the server and synchronizes them across multiple devices. The email client initially loads only the headers, and the full email content is fetched from the server when the user opens it.</p>
+<p>If you want to customize an email domain. You need to have your own SMTP and IMAP/POP3 server and a domain, the other steps are the same as above.</p>
+<h2 id="trivias">Trivias<a hidden class="anchor" aria-hidden="true" href="#trivias">#</a></h2>
+<ol>
+<li>Newton&rsquo;s method is quadratic convergence when we want to calculate the root of a number</li>
+<li>Catalan number is a group of sequence that appear widely in combinatorics. e.g. ways to arrange n brackets, number of triangles in an n+2 convex polygon. The common property of these applications is that they are recursive and have a constrained structure.</li>
+<li>Toom cook: It divide a d-digit number into n parts and doing arithmatic calculations.</li>
+<li>Schonhage-strassen scheme: It multiplies two integers of length 𝑛 in O (𝑛 log𝑛 log log𝑛) steps on a multitape Turing machine</li>
+<li>A Naive algorithm is usually the most obvious solution when one is asked a problem. It may not be a smart algorithm but will probably get the job done</li>
+<li>The taste of red wine is determined by acidity, sweetness, alcohol content, tannins, and body. Wines are categorized into New World and Old World. New World wines (from countries like the USA, Chile, Argentina, and China) are named after the grape variety, while Old World wines (mainly from Europe) are named after their place of origin.<br>
+Red wine is made by fermenting red grapes with their skins. White wine is made from either white grapes or red grapes without their skins. Rosé wine is made by soaking the grape skins briefly but fermenting without them. Sparkling wine undergoes a second fermentation to produce bubbles.</li>
+</ol>
+<h2 id="resources">Resources<a hidden class="anchor" aria-hidden="true" href="#resources">#</a></h2>
+<ol>
+<li>Code question(leetcode), system design question(crack the code interview), teamwork, communication are all important in the interview.</li>
+<li>An old guideline to learn ai: <a href="https://www.captainai.net/itcoke/">https://www.captainai.net/itcoke/</a></li>
+<li>A guideline to learn CS: <a href="https://csdiy.wiki/%E5%90%8E%E8%AE%B0/">https://csdiy.wiki/后记/</a></li>
+<li>Useful tips to integrate by parts, 反对幂指三, to choose u.</li>
+<li>Customize your zsh: <a href="https://ohmyz.sh">oh my zsh</a></li>
+<li>Xiaomi releases a concept modular camera, it looks pretty awesome and innovative.
+<img loading="lazy" src="/Interesting_thing/Xiaomi_modular_camera.png"></li>
+</ol>
+<h2 id="abstract">Abstract<a hidden class="anchor" aria-hidden="true" href="#abstract">#</a></h2>
+<p>If no one is reading blogs anymore, why should we write them?
+Let’s make it simple: you write a blog, but nobody cares, nobody reads it.
+At least, the number of readers is not as many as you thought.
+You put your personal ideas and thoughts into the article, carefully structuring each sentence, and choose a great image—then, no response, no likes, no shares, no activity.
+So, what is the meaning of writing a blog?
+First, there are two misconceptions about blogging.
+One is that if I write a good article, readers will come naturally.
+No, they won’t come. There are billions of blogs on the internet, like a massive hurricane, and yours is just a single leaf in the wind. Who would notice?
+Another misconception is that if nobody reads it, writing is a waste of time.
+Blogs have their own hidden value.
+You write blogs not for the applause of others, but for your own needs.
+Blogs help clear your mind. They help you organize your thoughts and sharpen your perspective.
+When you think better, you will achieve better results.
+The target audience of a blog is actually not the people on the internet, but your future self. Your article will help you see the evolution of your own thoughts.
+Additionally, one day in the future, someone who truly needs your article will find it.
+A deep, thoughtful article has a longer-lasting impact than a viral article.
+Writing a blog is quite like street photography. You take your camera and walk through the city.
+You see a scene—a moment filled with light, shadow, and humanity—and then you capture it.
+Nobody cares about what you actually captured. But that’s not the reason you photograph; you photograph because you see something interesting.
+Writing a blog is the same. You write a blog because you are thinking, observing new things, and hope to store them somewhere.
+If someone reads it, that&rsquo;s great. If not, you’ve still completed your work.</p>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/home-server/">Home Server</a></li>
+      <li><a href="http://localhost:1313/tags/weekly-record/">Weekly Record</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/">
-    <span class="title">«</span>
-    <br>
-    <span>Time complexity notations</span>
-  </a>
-  <a class="next" href="http://localhost:1313/posts/jvm/">
+  <a class="next" href="http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/">
     <span class="title">»</span>
     <br>
-    <span>Ambitious Cross-Platform Dream: JVM&#39;s Achievements and Limitations</span>
+    <span>Time complexity notations</span>
   </a>
 </nav>
 
