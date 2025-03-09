@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Weekly Record on King&#39;s Blog</title>
-    <link>http://localhost:1313/tags/weekly-record/</link>
-    <description>Recent content in Weekly Record on King&#39;s Blog</description>
+    <title>Tech_Weekly on King&#39;s Blog</title>
+    <link>http://localhost:1313/tags/tech_weekly/</link>
+    <description>Recent content in Tech_Weekly on King&#39;s Blog</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 02 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/weekly-record/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/tech_weekly/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Tech Recording Weekly (Issue 1): Origin</title>
+      <title>King Weekly | 1. Start</title>
       <link>http://localhost:1313/posts/techweekly/techweek1/</link>
       <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/techweekly/techweek1/</guid>
@@ -26,6 +26,20 @@ User1 sends an email via an email client, and the email is first sent to User1&r
 <p>POP3 downloads emails from the email server to the email client. By default, it removes emails from the server after downloading, but some email clients allow users to keep copies on the server.
 IMAP keeps emails on the server and synchronizes them across multiple devices. The email client initially loads only the headers, and the full email content is fetched from the server when the user opens it.</p>
 <p>If you want to customize an email domain. You need to have your own SMTP and IMAP/POP3 server and a domain, the other steps are the same as above.</p>
+<h2 id="pkgbuild-in-arch-linux">PKGBUILD in Arch Linux</h2>
+<p>PKGBUILD is a bash script contain the build information required by archlinux package
+we use makepkg script to build the package, it will search PKGBUILD first in the current folder.
+<img alt="PKGBUILD process" loading="lazy" src="/Hand_write_note/pkgbuild.jpg">
+Benefits:</p>
+<ul>
+<li>using pacman to manage, user can update and uninstall easily</li>
+<li>some pkgbuild file include the commands to generate a binary file and store it in /user/bin</li>
+</ul>
+<p>Drawbacks:</p>
+<ul>
+<li>Not friendly to starter</li>
+</ul>
+<p>Although we can use yay to help us do all these stuff.</p>
 <h2 id="trivias">Trivias</h2>
 <ol>
 <li>Newton&rsquo;s method is quadratic convergence when we want to calculate the root of a number</li>
@@ -45,6 +59,11 @@ Red wine is made by fermenting red grapes with their skins. White wine is made f
 <li>Customize your zsh: <a href="https://ohmyz.sh">oh my zsh</a></li>
 <li>Xiaomi releases a concept modular camera, it looks pretty awesome and innovative.
 <img loading="lazy" src="/Interesting_thing/Xiaomi_modular_camera.png"></li>
+<li>3b1b&rsquo;s taylor series explaination:https://www.youtube.com/watch?v=3d6DsjIBzJ4</li>
+<li>3b1b&rsquo;s explaination of why we have exponential e:https://www.youtube.com/watch?v=m2MIpDrF7Es</li>
+<li>This website is all about competitive writing of source code that is as short as possible: <a href="https://codegolf.stackexchange.com/">Codewolf</a></li>
+<li>Explaination of greedy algorithm: <a href="https://houbb.github.io/2020/01/23/data-struct-learn-07-base-greedy">greedy algorithm</a></li>
+<li>Explaination of dynamic programming: <a href="https://houbb.github.io/2020/01/23/data-struct-learn-07-base-dp#%E9%A2%98%E7%9B%AE">dynamic programming</a></li>
 </ol>
 <h2 id="abstract">Abstract</h2>
 <p>If no one is reading blogs anymore, why should we write them?
@@ -67,7 +86,7 @@ Writing a blog is quite like street photography. You take your camera and walk t
 You see a scene—a moment filled with light, shadow, and humanity—and then you capture it.
 Nobody cares about what you actually captured. But that’s not the reason you photograph; you photograph because you see something interesting.
 Writing a blog is the same. You write a blog because you are thinking, observing new things, and hope to store them somewhere.
-If someone reads it, that&rsquo;s great. If not, you’ve still completed your work.</p>
+If someone reads it, that&rsquo;s great. If not, you’ve still completed your work</p>
 ]]></content:encoded>
     </item>
   </channel>
