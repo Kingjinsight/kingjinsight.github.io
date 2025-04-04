@@ -1,7 +1,7 @@
 ---
 date:  "2025-03-01"
 draft: false
-title: "Time complexity notations"
+title: "Time Complexity Notations"
 author: 'King Jin'
 tags: ["Algorithm","Programming"]
 showtoc: true

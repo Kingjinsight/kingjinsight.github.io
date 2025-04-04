@@ -1,7 +1,7 @@
 ---
 date: "2025-03-11"
 draft: false
-title: 'King Weekly | 2: Jarvis Will coming soon'
+title: 'King Weekly | 2: Jarvis Will Coming Soon'
 author: 'King Jin'
 tags: ["Tech_Weekly"]
 showtoc: true
@@ -12,7 +12,7 @@ MCP (Model Context Protocol) can be understood as a "universal language" for com
 
 #### Why is MCP needed?
 
-In the past, if you wanted an AI assistant to access different tools, like a calendar, email, or task manager, you would need to develop a separate interface for each tool, which resulted in a huge amount of work (N AI applications × M tools = N×M interfaces).   
+In the past, if you wanted an AI assistant to access different tools, like a calendar, email, or task manager, you would need to develop a separate interface for each tool (function calling), which resulted in a huge amount of work (N AI applications × M tools = N×M interfaces).   
 MCP simplifies everything: all AI applications only need to support MCP, and all tools only need to support MCP. This way, they can communicate with each other, reducing development costs (N+M interfaces).
 ![components mcp include](/TechStuff/mcp.png)
 
