@@ -245,11 +245,11 @@ There are two methods to convert T(n) into O(n)</p>
       <description>&lt;p&gt;This week, I browsed many old machines at ebay to use for my first attempt at setting up a homelab. Initially, I planned to build a machine myself during the summer holiday, but in today I found a great performance and a high cost-effective machine that changed my mind.&lt;/p&gt;
 &lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;The machine model is &lt;code&gt;HP-Elitedesk-800-G4-SFF&lt;/code&gt;. Compared to its previous generation, the chipset supports 8th and 9th generation of intel core cpu, which offers a significant improvement(6c6t) compare with 6th/7th core cpu(4c4t). Furthermore it provides NVme express in this generation. With these components, I can build a highly cost-effective homelab. The total cost is £150.&lt;br&gt;
-&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/serverbill.png&#34;&gt;&lt;/p&gt;</description>
+&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/TechStuff/serverbill.png&#34;&gt;&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>This week, I browsed many old machines at ebay to use for my first attempt at setting up a homelab. Initially, I planned to build a machine myself during the summer holiday, but in today I found a great performance and a high cost-effective machine that changed my mind.</p>
 <h1 id="overview">Overview</h1>
 <p>The machine model is <code>HP-Elitedesk-800-G4-SFF</code>. Compared to its previous generation, the chipset supports 8th and 9th generation of intel core cpu, which offers a significant improvement(6c6t) compare with 6th/7th core cpu(4c4t). Furthermore it provides NVme express in this generation. With these components, I can build a highly cost-effective homelab. The total cost is £150.<br>
-<img loading="lazy" src="/serverbill.png"></p>
+<img loading="lazy" src="/TechStuff/serverbill.png"></p>
 <blockquote>
 <p>If you want to learn more here is the machine datasheet:<a href="/server_datasheet.pdf">server_datasheet</a></p></blockquote>
 <h1 id="hardware">Hardware</h1>
@@ -344,7 +344,7 @@ As you start watching, the service begins playing the movie. Similarly, Java run
 <li>System/Application Class Loader: Like searching for new releases or user-uploaded content, it loads classes specific to the application you’re using.</li>
 </ul>
 <h2 id="virtual-machine-architecture">Virtual machine architecture</h2>
-<p><img loading="lazy" src="/JvmSpec7.png"></p>
+<p><img loading="lazy" src="/TechStuff/JvmSpec7.png"></p>
 <h2 id="cross-platform-compatibility-and-limitations">Cross-Platform Compatibility and Limitations</h2>
 <p>The JVM abstracts away the underlying hardware and operating system specifics, allowing Java bytecode to run on any device equipped with a compatible JVM. This cross-platform capability greatly simplified software distribution and development, as developers could write code once and deploy it across various platforms without modification.</p>
 <p>Despite its strong cross-platform capabilities, the JVM faced significant challenges due to competitive corporate strategies, particularly the &ldquo;Embrace, Extend, and Extinguish&rdquo; (EEE) approach adopted by some companies like Microsoft in the late 1990s. This strategy involved embracing a technology, extending it with proprietary features, and eventually using those extensions to undermine the original technology.</p>

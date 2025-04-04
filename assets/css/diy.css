@@ -1,0 +1,15 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .gallery img {
+    width: calc(50% - 10px); /* Two images per row with a 10px gap */
+    max-width: 300px;       /* Limit max image size */
+    height: auto;
+    border: 2px solid #eee;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  

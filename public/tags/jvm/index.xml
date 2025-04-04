@@ -62,7 +62,7 @@ As you start watching, the service begins playing the movie. Similarly, Java run
 <li>System/Application Class Loader: Like searching for new releases or user-uploaded content, it loads classes specific to the application you’re using.</li>
 </ul>
 <h2 id="virtual-machine-architecture">Virtual machine architecture</h2>
-<p><img loading="lazy" src="/JvmSpec7.png"></p>
+<p><img loading="lazy" src="/TechStuff/JvmSpec7.png"></p>
 <h2 id="cross-platform-compatibility-and-limitations">Cross-Platform Compatibility and Limitations</h2>
 <p>The JVM abstracts away the underlying hardware and operating system specifics, allowing Java bytecode to run on any device equipped with a compatible JVM. This cross-platform capability greatly simplified software distribution and development, as developers could write code once and deploy it across various platforms without modification.</p>
 <p>Despite its strong cross-platform capabilities, the JVM faced significant challenges due to competitive corporate strategies, particularly the &ldquo;Embrace, Extend, and Extinguish&rdquo; (EEE) approach adopted by some companies like Microsoft in the late 1990s. This strategy involved embracing a technology, extending it with proprietary features, and eventually using those extensions to undermine the original technology.</p>

@@ -43,7 +43,7 @@ Class Loader Types:
 - System/Application Class Loader: Like searching for new releases or user-uploaded content, it loads classes specific to the application you’re using.   
  
 ## Virtual machine architecture
-![](/JvmSpec7.png)
+![](/TechStuff/JvmSpec7.png)
 
 
 ## Cross-Platform Compatibility and Limitations
