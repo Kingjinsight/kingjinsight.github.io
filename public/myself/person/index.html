@@ -5,13 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Ambitious Cross-Platform Dream: JVM&#39;s Achievements and Limitations | King&#39;s Blog</title>
-<meta name="keywords" content="JVM, Java, Programming">
-<meta name="description" content="This semester, I learned OOP from Inf1B, which using java as the official teaching language. What fascinates me the most is why Java has the JVM. I learned Python, C&#43;&#43;, js and Haskell before, but all of them doesn&rsquo;t have a jargon for virtual machine. And then I went to wikipeidia to find out why.
-
-In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambitious dream: &ldquo;Write Once, Run Anywhere.&rdquo; This WORA philosophy became a reality through the JVM, enabling Java applications to run on any operating system with a compatible JVM. Before talking about the archivements and limitations, Let&rsquo;s have a look about how JVM works.">
-<meta name="author" content="King Jin">
-<link rel="canonical" href="http://localhost:1313/posts/jvm/">
+<title>King&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="some picture">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/myself/person/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.6e591b5865d633db2924f5db15545b1b7b3c306d625eb079c9d4274312ba88fd.css" integrity="sha256-blkbWGXWM9spJPXbFVRbG3s8MG1iXrB5ydQnQxK6iP0=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -20,7 +18,7 @@ In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambit
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/jvm/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/myself/person/">
 <noscript>
     <style>
         #theme-toggle,
@@ -101,6 +99,11 @@ In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambit
         </div>
         <ul id="menu">
             <li>
+                <a href="http://localhost:1313/myself/" title="Myself">
+                    <span>Myself</span>
+                </a>
+            </li>
+            <li>
                 <a href="http://localhost:1313/posts/" title="Posts">
                     <span>Posts</span>
                 </a>
@@ -129,105 +132,20 @@ In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambit
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Ambitious Cross-Platform Dream: JVM&#39;s Achievements and Limitations
+      
     </h1>
-    <div class="post-meta"><span title='2025-02-13 00:00:00 +0000 UTC'>February 13, 2025</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;King Jin
+    <div class="post-meta">1 min
 
 </div>
-  </header> <div class="toc">
-    <details >
-        <summary accesskey="c" title="(Alt + C)">
-            <span class="details">Table of Contents</span>
-        </summary>
-
-        <div class="inner"><ul>
-                <li>
-                    <a href="#how-the-jvm-works" aria-label="How the JVM works">How the JVM works</a></li>
-                <li>
-                    <a href="#class-loader" aria-label="Class loader">Class loader</a></li>
-                <li>
-                    <a href="#virtual-machine-architecture" aria-label="Virtual machine architecture">Virtual machine architecture</a></li>
-                <li>
-                    <a href="#cross-platform-compatibility-and-limitations" aria-label="Cross-Platform Compatibility and Limitations">Cross-Platform Compatibility and Limitations</a></li>
-                <li>
-                    <a href="#overall" aria-label="Overall">Overall</a>
-                </li>
-            </ul>
-        </div>
-    </details>
-</div>
-
-  <div class="post-content"><p>This semester, I learned OOP from Inf1B, which using java as the official teaching language. What fascinates me the most is why Java has the JVM. I learned Python, C++, js and Haskell before, but all of them doesn&rsquo;t have a jargon for virtual machine. And then I went to wikipeidia to find out why.</p>
-<blockquote>
-<p>In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambitious dream: &ldquo;Write Once, Run Anywhere.&rdquo; This WORA philosophy became a reality through the JVM, enabling Java applications to run on any operating system with a compatible JVM. Before talking about the archivements and limitations, Let&rsquo;s have a look about how JVM works.</p></blockquote>
-<h2 id="how-the-jvm-works">How the JVM works<a hidden class="anchor" aria-hidden="true" href="#how-the-jvm-works">#</a></h2>
-<p>The JVM executes er programs in several stages:</p>
-<ol>
-<li>
-<p>Compilation: Java source code (.java) is compiled into bytecode (.class) by the Java Compiler (javac).</p>
-</li>
-<li>
-<p>Class Loading: The JVM loads compiled bytecode when required.</p>
-</li>
-<li>
-<p>Bytecode Verification: Ensures security and correctness before execution.</p>
-</li>
-<li>
-<p>Execution: The JVM interprets or compiles bytecode using Just-In-Time (JIT) compilation.</p>
-</li>
-<li>
-<p>Garbage Collection: The JVM automatically manages memory, reclaiming unused objects.</p>
-</li>
-</ol>
-<h2 id="class-loader">Class loader<a hidden class="anchor" aria-hidden="true" href="#class-loader">#</a></h2>
-<p>One of the organizational units of JVM byte code is a class. A class loader implementation must be able to recognize and load anything that conforms to the Java class file format. Any implementation is free to recognize other binary forms besides class files, but it must recognize class files.</p>
-<p>Let&rsquo;s explore this concept with an example:   <br>
-Imagine you&rsquo;re watching a movie on a streaming service.</p>
-<ul>
-<li>Loading:<br>
-The service first finds and imports the movie data you want to watch. Similarly, the class loader locates the binary data for a Java class.</li>
-<li>Linking:
-<ul>
-<li>Verification: Before you watch the movie, the service checks that the file isn&rsquo;t corrupted. In Java, the class loader verifies the correctness of the class.</li>
-<li>Preparation: The service sets up the necessary space in memory to buffer the movie. Java allocates memory for variables and sets default values.</li>
-<li>Resolution: The service ensures all necessary subtitles or audio tracks are ready to play. Java resolves references to make them direct.</li>
-</ul>
-</li>
-<li>Initialization:<br>
-As you start watching, the service begins playing the movie. Similarly, Java runs code to set up variables with their starting values.</li>
-</ul>
-<p>Class Loader Types:</p>
-<ul>
-<li>Bootstrap Class Loader: Like the service&rsquo;s core library of well-known movies, it loads fundamental, trusted classes.</li>
-<li>Extension Class Loader: Similar to special add-on features, it loads additional classes outside the core library.</li>
-<li>System/Application Class Loader: Like searching for new releases or user-uploaded content, it loads classes specific to the application you’re using.</li>
-</ul>
-<h2 id="virtual-machine-architecture">Virtual machine architecture<a hidden class="anchor" aria-hidden="true" href="#virtual-machine-architecture">#</a></h2>
-<p><img loading="lazy" src="/JvmSpec7.png"></p>
-<h2 id="cross-platform-compatibility-and-limitations">Cross-Platform Compatibility and Limitations<a hidden class="anchor" aria-hidden="true" href="#cross-platform-compatibility-and-limitations">#</a></h2>
-<p>The JVM abstracts away the underlying hardware and operating system specifics, allowing Java bytecode to run on any device equipped with a compatible JVM. This cross-platform capability greatly simplified software distribution and development, as developers could write code once and deploy it across various platforms without modification.</p>
-<p>Despite its strong cross-platform capabilities, the JVM faced significant challenges due to competitive corporate strategies, particularly the &ldquo;Embrace, Extend, and Extinguish&rdquo; (EEE) approach adopted by some companies like Microsoft in the late 1990s. This strategy involved embracing a technology, extending it with proprietary features, and eventually using those extensions to undermine the original technology.</p>
-<p>Microsoft initially embraced Java by integrating it into their Internet Explorer browser and Windows platforms. However, they extended Java with proprietary features that were specific to Windows, creating a version of Java that was incompatible with the standard JVM specifications set by Sun Microsystems. This move fragmented the Java platform and undermined the &ldquo;Write Once, Run Anywhere&rdquo; philosophy.</p>
-<p>With the development and rise of programming languages like Swift, Kotlin, and JavaScript, the JVM faced significant challenges in maintaining its performance edge. Swift, designed by Apple for iOS and macOS platforms, offers high performance and safety due to its compiled nature and modern language features. Kotlin, although initially running on the JVM, introduced concise syntax and advanced features that surpassed Java in many ways, leading it to become the preferred language for Android development. JavaScript&rsquo;s performance greatly improved with engines like V8, and its versatility expanded through technologies like Node.js for server-side development. These languages not only matched but often exceeded the JVM&rsquo;s performance and adaptability in their respective domains, leading to a shift in developer preferences and a relative decline in the JVM&rsquo;s dominance.</p>
-<h2 id="overall">Overall<a hidden class="anchor" aria-hidden="true" href="#overall">#</a></h2>
-<p>Nowadays, Java has become to a normal programming lauguage. And the question is obvious solved. Python has its own interpreter to transfer the source code into machine code. Haskell has its own compiler, C++/C are compiled directly into machine code. However,they can&rsquo;t generate a compiled file that enable to run in every operating system. If there is no EEE strategy, Linux may have a stronger effects in today&rsquo;s world.</p>
+  </header> 
+  <div class="post-content"><h1 id="some-picture">some picture<a hidden class="anchor" aria-hidden="true" href="#some-picture">#</a></h1>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/jvm/">JVM</a></li>
-      <li><a href="http://localhost:1313/tags/java/">Java</a></li>
-      <li><a href="http://localhost:1313/tags/programming/">Programming</a></li>
     </ul>
-<nav class="paginav">
-  <a class="prev" href="http://localhost:1313/posts/homeserver/">
-    <span class="title">«</span>
-    <br>
-    <span>My Homelab</span>
-  </a>
-</nav>
 
   </footer>
 </article>

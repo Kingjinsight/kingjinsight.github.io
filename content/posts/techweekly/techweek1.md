@@ -1,9 +1,10 @@
 ---
-date: "2025-03-02"
+date: "2025-03-09"
 draft: false
 title: 'King Weekly | 1. Start'
 author: 'King Jin'
 tags: ["Tech_Weekly"]
+
 showtoc: true
 ---
 
@@ -19,7 +20,7 @@ IMAP keeps emails on the server and synchronizes them across multiple devices. T
 
 If you want to customize an email domain. You need to have your own SMTP and IMAP/POP3 server and a domain, the other steps are the same as above. 
 
-
+-------
 ## PKGBUILD in Arch Linux
 PKGBUILD is a bash script contain the build information required by archlinux package
 we use makepkg script to build the package, it will search PKGBUILD first in the current folder.
@@ -33,6 +34,7 @@ Drawbacks:
 
 Although we can use yay to help us do all these stuff.
 
+-------
 
 ## Trivias
 1. Newton's method is quadratic convergence when we want to calculate the root of a number
@@ -44,6 +46,7 @@ Although we can use yay to help us do all these stuff.
 Red wine is made by fermenting red grapes with their skins. White wine is made from either white grapes or red grapes without their skins. Rosé wine is made by soaking the grape skins briefly but fermenting without them. Sparkling wine undergoes a second fermentation to produce bubbles.
 7. Gabriel's horn is a type of geometric figure that has infinite surface area but finite volume. 
 
+-------
 
 ## Resources
 1. Code question(leetcode), system design question(crack the code interview), teamwork, communication are all important in the interview.

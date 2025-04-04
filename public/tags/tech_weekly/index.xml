@@ -6,12 +6,87 @@
     <description>Recent content in Tech_Weekly on King&#39;s Blog</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/tech_weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>King Weekly | 2: </title>
+      <link>http://localhost:1313/posts/techweekly/techweek2/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/techweekly/techweek2/</guid>
+      <description>&lt;h3 id=&#34;trivias&#34;&gt;Trivias:&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;Graph&lt;/code&gt; is a great data structure, it can be used to find the shortest path, solve a magic cube.
+Rely on this data structure, Human find the shortest steps to solve the worst case configured
+&lt;code&gt;3\*3\*3&lt;/code&gt; magic cube in &lt;strong&gt;20&lt;/strong&gt; steps (which also called god&amp;rsquo;s number) and 11 steps for &lt;code&gt;2\*2\*2&lt;/code&gt; one. What about n*n*n, Here is an interesing paper
+about time compleixity of solving a n*n*n magic cube: &lt;a href=&#34;http://localhost:1313/Demaine_Algoritms_for_solving.pdf&#34;&gt;Algorithms for Solving Rubik’s Cubes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Topological sort is an algorithm based on DFS and DAG, It&amp;rsquo;s not a traditional sorting algorithm, like comparing the size of each number and sort them, but sorting based on dependencies.&lt;/li&gt;
+&lt;li&gt;Dynamic programming is just like recursion + memorization + guessing&lt;/li&gt;
+&lt;li&gt;P vs NP problems: P is a problem  that can be solved easily by a computer, NP is a problem that you can check for correctness very easily once solved. However, P != NP for example wec can&amp;rsquo;t engineer luck.
+Also, NP hard means it is at least as hard as any problem in NP, and NP-complete is lke if you can solve one NP-complete question, you can solve all NP question.
+Reduction is like to prove a known NP-complete question, and transfer it into a NP question X, then X is also a NP-complete question&lt;/li&gt;
+&lt;li&gt;MCP(Model context protocol) can be understand as a uniform langauge between LLM and external services. Just like a translator, to let different AI application(llm, cursor) and different tools(github, calendar) to talk easily, rather than develop a new API between them. In the past, every time you want an AI assistant to interact with a new tool, you would need to develop a separate interface for each tool. This led to a huge amount of work because you&amp;rsquo;re have to create multiple integrations. MCP simplifies this by ensuring that all AI applications only need to support MCp, and all tools only need to support MCP, allowing them to communicate with each other easily  and reducing development cost.
+&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/TechStuff/mcp.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;REST API:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;resource&#34;&gt;Resource:&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;A tool to build a personal streaming music player: &lt;a href=&#34;https://www.navidrome.org/&#34;&gt;navidrome&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A great blog that introduce human visualization: &lt;a href=&#34;https://www-sciencedirect-com.eux.idm.oclc.org/science/article/pii/B9780128038130000040#f0015&#34;&gt;human visualization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Five basic algorithms explanation:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://houbb.github.io/2020/01/23/data-struct-learn-07-base-dp&#34;&gt;Dynamic programming&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://houbb.github.io/2020/01/23/data-struct-learn-07-base-greedy&#34;&gt;Greedy Algorithm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1wi4y157er?spm_id_from=333.788.videopod.sections&amp;amp;vd_source=783331b1d88fa190b5ce8305307e0af5&#34;&gt;Backtracking&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://chatgpt.com/share/67d76084-79f0-8006-8a37-4500841a7b9a&#34;&gt;Branch and Bounding&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;This week, Nvidia GTC 2025 brings a lot of new tech, PC in AI age, B300, new architecture, robots.
+After watched the coverage keynotes, I was just feel like our mankind is in an special stage with unpredictable pace. In science fiction films, at this point
+, it often leads to the arrival of an alien civilization.
+&lt;img alt=&#34;GTC_2025&#34; loading=&#34;lazy&#34; src=&#34;https://cdn.mos.cms.futurecdn.net/QQ6ZABoJtLbUEnGLXxz2GT-970-80.png.webp&#34;&gt;&lt;/li&gt;
+&lt;li&gt;A dijkstra algorithm visualiser that helps me understand it: &lt;a href=&#34;https://www.cs.usfca.edu/~galles/visualization/Dijkstra.html&#34;&gt;Dijkstra shortest path&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;MCP explain: &lt;a href=&#34;https://www.philschmid.de/mcp-introduction&#34;&gt;MCP explain&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <content:encoded><![CDATA[<h3 id="trivias">Trivias:</h3>
+<ol>
+<li><code>Graph</code> is a great data structure, it can be used to find the shortest path, solve a magic cube.
+Rely on this data structure, Human find the shortest steps to solve the worst case configured
+<code>3\*3\*3</code> magic cube in <strong>20</strong> steps (which also called god&rsquo;s number) and 11 steps for <code>2\*2\*2</code> one. What about n*n*n, Here is an interesing paper
+about time compleixity of solving a n*n*n magic cube: <a href="/Demaine_Algoritms_for_solving.pdf">Algorithms for Solving Rubik’s Cubes</a></li>
+<li>Topological sort is an algorithm based on DFS and DAG, It&rsquo;s not a traditional sorting algorithm, like comparing the size of each number and sort them, but sorting based on dependencies.</li>
+<li>Dynamic programming is just like recursion + memorization + guessing</li>
+<li>P vs NP problems: P is a problem  that can be solved easily by a computer, NP is a problem that you can check for correctness very easily once solved. However, P != NP for example wec can&rsquo;t engineer luck.
+Also, NP hard means it is at least as hard as any problem in NP, and NP-complete is lke if you can solve one NP-complete question, you can solve all NP question.
+Reduction is like to prove a known NP-complete question, and transfer it into a NP question X, then X is also a NP-complete question</li>
+<li>MCP(Model context protocol) can be understand as a uniform langauge between LLM and external services. Just like a translator, to let different AI application(llm, cursor) and different tools(github, calendar) to talk easily, rather than develop a new API between them. In the past, every time you want an AI assistant to interact with a new tool, you would need to develop a separate interface for each tool. This led to a huge amount of work because you&rsquo;re have to create multiple integrations. MCP simplifies this by ensuring that all AI applications only need to support MCp, and all tools only need to support MCP, allowing them to communicate with each other easily  and reducing development cost.
+<img loading="lazy" src="/TechStuff/mcp.png"></li>
+<li>REST API:</li>
+</ol>
+<h3 id="resource">Resource:</h3>
+<ol>
+<li>A tool to build a personal streaming music player: <a href="https://www.navidrome.org/">navidrome</a></li>
+<li>A great blog that introduce human visualization: <a href="https://www-sciencedirect-com.eux.idm.oclc.org/science/article/pii/B9780128038130000040#f0015">human visualization</a></li>
+<li>Five basic algorithms explanation:
+<ul>
+<li><a href="https://houbb.github.io/2020/01/23/data-struct-learn-07-base-dp">Dynamic programming</a></li>
+<li><a href="https://houbb.github.io/2020/01/23/data-struct-learn-07-base-greedy">Greedy Algorithm</a></li>
+<li><a href="https://www.bilibili.com/video/BV1wi4y157er?spm_id_from=333.788.videopod.sections&amp;vd_source=783331b1d88fa190b5ce8305307e0af5">Backtracking</a></li>
+<li><a href="https://chatgpt.com/share/67d76084-79f0-8006-8a37-4500841a7b9a">Branch and Bounding</a></li>
+</ul>
+</li>
+<li>This week, Nvidia GTC 2025 brings a lot of new tech, PC in AI age, B300, new architecture, robots.
+After watched the coverage keynotes, I was just feel like our mankind is in an special stage with unpredictable pace. In science fiction films, at this point
+, it often leads to the arrival of an alien civilization.
+<img alt="GTC_2025" loading="lazy" src="https://cdn.mos.cms.futurecdn.net/QQ6ZABoJtLbUEnGLXxz2GT-970-80.png.webp"></li>
+<li>A dijkstra algorithm visualiser that helps me understand it: <a href="https://www.cs.usfca.edu/~galles/visualization/Dijkstra.html">Dijkstra shortest path</a></li>
+<li>MCP explain: <a href="https://www.philschmid.de/mcp-introduction">MCP explain</a></li>
+</ol>
+]]></content:encoded>
+    </item>
     <item>
       <title>King Weekly | 1. Start</title>
       <link>http://localhost:1313/posts/techweekly/techweek1/</link>
-      <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/techweekly/techweek1/</guid>
       <description>&lt;h2 id=&#34;email-sending-and-receiving-system&#34;&gt;Email sending and receiving system&lt;/h2&gt;
 &lt;p&gt;The main system is build based on three protocols: SMTP, POP3 and IMAP.
@@ -49,6 +124,7 @@ Benefits:</p>
 <li>A Naive algorithm is usually the most obvious solution when one is asked a problem. It may not be a smart algorithm but will probably get the job done</li>
 <li>The taste of red wine is determined by acidity, sweetness, alcohol content, tannins, and body. Wines are categorized into New World and Old World. New World wines (from countries like the USA, Chile, Argentina, and China) are named after the grape variety, while Old World wines (mainly from Europe) are named after their place of origin.<br>
 Red wine is made by fermenting red grapes with their skins. White wine is made from either white grapes or red grapes without their skins. Rosé wine is made by soaking the grape skins briefly but fermenting without them. Sparkling wine undergoes a second fermentation to produce bubbles.</li>
+<li>Gabriel&rsquo;s horn is a type of geometric figure that has infinite surface area but finite volume.</li>
 </ol>
 <h2 id="resources">Resources</h2>
 <ol>
@@ -64,6 +140,7 @@ Red wine is made by fermenting red grapes with their skins. White wine is made f
 <li>This website is all about competitive writing of source code that is as short as possible: <a href="https://codegolf.stackexchange.com/">Codewolf</a></li>
 <li>Explaination of greedy algorithm: <a href="https://houbb.github.io/2020/01/23/data-struct-learn-07-base-greedy">greedy algorithm</a></li>
 <li>Explaination of dynamic programming: <a href="https://houbb.github.io/2020/01/23/data-struct-learn-07-base-dp#%E9%A2%98%E7%9B%AE">dynamic programming</a></li>
+<li>Deploy perosonal VPN tools: <a href="https://tailscale.com/">tailscale</a></li>
 </ol>
 <h2 id="abstract">Abstract</h2>
 <p>If no one is reading blogs anymore, why should we write them?

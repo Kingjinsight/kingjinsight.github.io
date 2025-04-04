@@ -5,13 +5,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Ambitious Cross-Platform Dream: JVM&#39;s Achievements and Limitations | King&#39;s Blog</title>
-<meta name="keywords" content="JVM, Java, Programming">
-<meta name="description" content="This semester, I learned OOP from Inf1B, which using java as the official teaching language. What fascinates me the most is why Java has the JVM. I learned Python, C&#43;&#43;, js and Haskell before, but all of them doesn&rsquo;t have a jargon for virtual machine. And then I went to wikipeidia to find out why.
-
-In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambitious dream: &ldquo;Write Once, Run Anywhere.&rdquo; This WORA philosophy became a reality through the JVM, enabling Java applications to run on any operating system with a compatible JVM. Before talking about the archivements and limitations, Let&rsquo;s have a look about how JVM works.">
+<title>King Weekly | 2:  | King&#39;s Blog</title>
+<meta name="keywords" content="Tech_Weekly">
+<meta name="description" content="Model Context Protocol overview
+MCP (Model Context Protocol) can be understood as a &ldquo;universal language&rdquo; for communication between AI and external tools. It&rsquo;s like a translator, allowing different AI applications (such as chatbots, code assistants) and different tools (like databases, GitHub, calendars) to easily communicate without needing to develop a new interface every time.
+Why is MCP needed?
+In the past, if you wanted an AI assistant to access different tools, like a calendar, email, or task manager, you would need to develop a separate interface for each tool, which resulted in a huge amount of work (N AI applications × M tools = N×M interfaces).
+MCP simplifies everything: all AI applications only need to support MCP, and all tools only need to support MCP. This way, they can communicate with each other, reducing development costs (N&#43;M interfaces).
+">
 <meta name="author" content="King Jin">
-<link rel="canonical" href="http://localhost:1313/posts/jvm/">
+<link rel="canonical" href="http://localhost:1313/posts/techweekly/techweek2/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.6e591b5865d633db2924f5db15545b1b7b3c306d625eb079c9d4274312ba88fd.css" integrity="sha256-blkbWGXWM9spJPXbFVRbG3s8MG1iXrB5ydQnQxK6iP0=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -20,7 +23,7 @@ In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambit
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/jvm/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/techweekly/techweek2/">
 <noscript>
     <style>
         #theme-toggle,
@@ -129,9 +132,9 @@ In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambit
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Ambitious Cross-Platform Dream: JVM&#39;s Achievements and Limitations
+      King Weekly | 2: 
     </h1>
-    <div class="post-meta"><span title='2025-02-13 00:00:00 +0000 UTC'>February 13, 2025</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;King Jin
+    <div class="post-meta"><span title='2025-03-11 00:00:00 +0000 UTC'>March 11, 2025</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;King Jin
 
 </div>
   </header> <div class="toc">
@@ -142,90 +145,133 @@ In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambit
 
         <div class="inner"><ul>
                 <li>
-                    <a href="#how-the-jvm-works" aria-label="How the JVM works">How the JVM works</a></li>
+                    <a href="#model-context-protocol-overview" aria-label="Model Context Protocol overview">Model Context Protocol overview</a><ul>
+                        <ul>
+                        
                 <li>
-                    <a href="#class-loader" aria-label="Class loader">Class loader</a></li>
+                    <a href="#why-is-mcp-needed" aria-label="Why is MCP needed?">Why is MCP needed?</a></li>
                 <li>
-                    <a href="#virtual-machine-architecture" aria-label="Virtual machine architecture">Virtual machine architecture</a></li>
+                    <a href="#how-does-mcp-work" aria-label="How does MCP work?">How does MCP work?</a></li>
                 <li>
-                    <a href="#cross-platform-compatibility-and-limitations" aria-label="Cross-Platform Compatibility and Limitations">Cross-Platform Compatibility and Limitations</a></li>
+                    <a href="#example" aria-label="Example:">Example:</a></li>
                 <li>
-                    <a href="#overall" aria-label="Overall">Overall</a>
+                    <a href="#core-functions-of-mcp" aria-label="Core Functions of MCP:">Core Functions of MCP:</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#trivias" aria-label="Trivias:">Trivias:</a></li>
+                <li>
+                    <a href="#resource" aria-label="Resource:">Resource:</a>
                 </li>
             </ul>
         </div>
     </details>
 </div>
 
-  <div class="post-content"><p>This semester, I learned OOP from Inf1B, which using java as the official teaching language. What fascinates me the most is why Java has the JVM. I learned Python, C++, js and Haskell before, but all of them doesn&rsquo;t have a jargon for virtual machine. And then I went to wikipeidia to find out why.</p>
-<blockquote>
-<p>In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambitious dream: &ldquo;Write Once, Run Anywhere.&rdquo; This WORA philosophy became a reality through the JVM, enabling Java applications to run on any operating system with a compatible JVM. Before talking about the archivements and limitations, Let&rsquo;s have a look about how JVM works.</p></blockquote>
-<h2 id="how-the-jvm-works">How the JVM works<a hidden class="anchor" aria-hidden="true" href="#how-the-jvm-works">#</a></h2>
-<p>The JVM executes er programs in several stages:</p>
+  <div class="post-content"><h2 id="model-context-protocol-overview">Model Context Protocol overview<a hidden class="anchor" aria-hidden="true" href="#model-context-protocol-overview">#</a></h2>
+<p>MCP (Model Context Protocol) can be understood as a &ldquo;universal language&rdquo; for communication between AI and external tools. It&rsquo;s like a translator, allowing different AI applications (such as chatbots, code assistants) and different tools (like databases, GitHub, calendars) to easily communicate without needing to develop a new interface every time.</p>
+<h4 id="why-is-mcp-needed">Why is MCP needed?<a hidden class="anchor" aria-hidden="true" href="#why-is-mcp-needed">#</a></h4>
+<p>In the past, if you wanted an AI assistant to access different tools, like a calendar, email, or task manager, you would need to develop a separate interface for each tool, which resulted in a huge amount of work (N AI applications × M tools = N×M interfaces).<br>
+MCP simplifies everything: all AI applications only need to support MCP, and all tools only need to support MCP. This way, they can communicate with each other, reducing development costs (N+M interfaces).
+<img alt="components mcp include" loading="lazy" src="/TechStuff/mcp.png"></p>
+<p>The current components of MCP servers include:
+<img alt="components mcp include" loading="lazy" src="/TechStuff/mcp_include.png"></p>
+<h4 id="how-does-mcp-work">How does MCP work?<a hidden class="anchor" aria-hidden="true" href="#how-does-mcp-work">#</a></h4>
+<p><img alt="how mcp work" loading="lazy" src="/TechStuff/mcp_work.png"></p>
+<h4 id="example">Example:<a hidden class="anchor" aria-hidden="true" href="#example">#</a></h4>
+<p>Suppose you&rsquo;re using an AI assistant to manage your work, and it wants to help you schedule today&rsquo;s meeting:</p>
+<ul>
+<li>
+<p>Without MCP, developers would need to write separate integration code for Outlook, Google Calendar, and Apple Calendar.</p>
+</li>
+<li>
+<p>With MCP, the AI only needs to call the MCP server, which will automatically interface with your calendar system. No matter which calendar service you use, the AI can work seamlessly.</p>
+</li>
+</ul>
+<h4 id="core-functions-of-mcp">Core Functions of MCP:<a hidden class="anchor" aria-hidden="true" href="#core-functions-of-mcp">#</a></h4>
+<ul>
+<li>
+<p>Reducing development costs (no need to develop separate integrations for each tool).</p>
+</li>
+<li>
+<p>Enhancing AI&rsquo;s ability to access external data (allowing AI to easily query and manipulate external data).</p>
+</li>
+<li>
+<p>Standardizing communication (making communication between different AI applications and tools smoother).</p>
+</li>
+</ul>
+<p>You can think of MCP as the &ldquo;USB interface for AI&rdquo;—any AI device can plug into different tools without needing to individually adapt to each one!</p>
+<hr>
+<h2 id="trivias">Trivias:<a hidden class="anchor" aria-hidden="true" href="#trivias">#</a></h2>
 <ol>
+<li><code>Graph</code> is a great data structure, it can be used to find the shortest path, solve a magic cube.
+Rely on this data structure, Human find the shortest steps to solve the worst case configured
+<code>3\*3\*3</code> magic cube in <strong>20</strong> steps (which also called god&rsquo;s number) and 11 steps for <code>2\*2\*2</code> one. What about n*n*n, Here is an interesing paper
+about time compleixity of solving a n*n*n magic cube: <a href="/Demaine_Algoritms_for_solving.pdf">Algorithms for Solving Rubik’s Cubes</a></li>
+<li>Topological sort is an algorithm based on DFS and DAG, It&rsquo;s not a traditional sorting algorithm, like comparing the size of each number and sort them, but sorting based on dependencies.</li>
+<li>Dynamic programming is just like recursion + memorization + guessing</li>
+<li>P vs NP problems: P is a problem  that can be solved easily by a computer, NP is a problem that you can check for correctness very easily once solved. However, P != NP for example wec can&rsquo;t engineer luck.
+Also, NP hard means it is at least as hard as any problem in NP, and NP-complete is lke if you can solve one NP-complete question, you can solve all NP question.
+Reduction is like to prove a known NP-complete question, and transfer it into a NP question X, then X is also a NP-complete question</li>
+<li>HTTP vs REST API
+<ul>
 <li>
-<p>Compilation: Java source code (.java) is compiled into bytecode (.class) by the Java Compiler (javac).</p>
+<p>HTTP is a protocol, and its core task is to define how to request and transfer data between your broswer and server</p>
+<ul>
+<li>It focuses on the data exchange level, regardless of whether the data is an image, text, video, or API response.</li>
+<li>For example, you can use an HTTP request to access a webpage (HTML page) or use an HTTP request to retrieve API data (JSON data). It doesn’t care about what data you&rsquo;re transmitting.</li>
+</ul>
 </li>
 <li>
-<p>Class Loading: The JVM loads compiled bytecode when required.</p>
+<p>REST API is a design style, based on the HTTP protocol, with rules and best practices:</p>
+<ul>
+<li>It views content on the server as &ldquo;resources&rdquo; and specifies how to operate on them using HTTP methods (GET, POST, PUT, DELETE).</li>
+<li>REST API design considers resource orientation: Resources (like users, articles, comments, etc.) have unique identifiers (URIs), and clients interact with these resources through HTTP requests.</li>
+</ul>
+<p>For example, in a REST API, you can:</p>
+<ul>
+<li>GET request: Retrieve a resource (e.g., get movie information).</li>
+<li>POST request: Create a new resource (e.g., submit a new comment).</li>
+<li>PUT request: Update a resource (e.g., modify user information).</li>
+<li>DELETE request: Delete a resource (e.g., remove an article).</li>
+</ul>
 </li>
-<li>
-<p>Bytecode Verification: Ensures security and correctness before execution.</p>
-</li>
-<li>
-<p>Execution: The JVM interprets or compiles bytecode using Just-In-Time (JIT) compilation.</p>
-</li>
-<li>
-<p>Garbage Collection: The JVM automatically manages memory, reclaiming unused objects.</p>
+</ul>
 </li>
 </ol>
-<h2 id="class-loader">Class loader<a hidden class="anchor" aria-hidden="true" href="#class-loader">#</a></h2>
-<p>One of the organizational units of JVM byte code is a class. A class loader implementation must be able to recognize and load anything that conforms to the Java class file format. Any implementation is free to recognize other binary forms besides class files, but it must recognize class files.</p>
-<p>Let&rsquo;s explore this concept with an example:   <br>
-Imagine you&rsquo;re watching a movie on a streaming service.</p>
+<hr>
+<h2 id="resource">Resource:<a hidden class="anchor" aria-hidden="true" href="#resource">#</a></h2>
+<ol>
+<li>A tool to build a personal streaming music player: <a href="https://www.navidrome.org/">navidrome</a></li>
+<li>A great blog that introduce human visualization: <a href="https://www-sciencedirect-com.eux.idm.oclc.org/science/article/pii/B9780128038130000040#f0015">human visualization</a></li>
+<li>Five basic algorithms explanation:
 <ul>
-<li>Loading:<br>
-The service first finds and imports the movie data you want to watch. Similarly, the class loader locates the binary data for a Java class.</li>
-<li>Linking:
-<ul>
-<li>Verification: Before you watch the movie, the service checks that the file isn&rsquo;t corrupted. In Java, the class loader verifies the correctness of the class.</li>
-<li>Preparation: The service sets up the necessary space in memory to buffer the movie. Java allocates memory for variables and sets default values.</li>
-<li>Resolution: The service ensures all necessary subtitles or audio tracks are ready to play. Java resolves references to make them direct.</li>
+<li><a href="https://houbb.github.io/2020/01/23/data-struct-learn-07-base-dp">Dynamic programming</a></li>
+<li><a href="https://houbb.github.io/2020/01/23/data-struct-learn-07-base-greedy">Greedy Algorithm</a></li>
+<li><a href="https://www.bilibili.com/video/BV1wi4y157er?spm_id_from=333.788.videopod.sections&amp;vd_source=783331b1d88fa190b5ce8305307e0af5">Backtracking</a></li>
+<li><a href="https://chatgpt.com/share/67d76084-79f0-8006-8a37-4500841a7b9a">Branch and Bounding</a></li>
 </ul>
 </li>
-<li>Initialization:<br>
-As you start watching, the service begins playing the movie. Similarly, Java runs code to set up variables with their starting values.</li>
-</ul>
-<p>Class Loader Types:</p>
-<ul>
-<li>Bootstrap Class Loader: Like the service&rsquo;s core library of well-known movies, it loads fundamental, trusted classes.</li>
-<li>Extension Class Loader: Similar to special add-on features, it loads additional classes outside the core library.</li>
-<li>System/Application Class Loader: Like searching for new releases or user-uploaded content, it loads classes specific to the application you’re using.</li>
-</ul>
-<h2 id="virtual-machine-architecture">Virtual machine architecture<a hidden class="anchor" aria-hidden="true" href="#virtual-machine-architecture">#</a></h2>
-<p><img loading="lazy" src="/JvmSpec7.png"></p>
-<h2 id="cross-platform-compatibility-and-limitations">Cross-Platform Compatibility and Limitations<a hidden class="anchor" aria-hidden="true" href="#cross-platform-compatibility-and-limitations">#</a></h2>
-<p>The JVM abstracts away the underlying hardware and operating system specifics, allowing Java bytecode to run on any device equipped with a compatible JVM. This cross-platform capability greatly simplified software distribution and development, as developers could write code once and deploy it across various platforms without modification.</p>
-<p>Despite its strong cross-platform capabilities, the JVM faced significant challenges due to competitive corporate strategies, particularly the &ldquo;Embrace, Extend, and Extinguish&rdquo; (EEE) approach adopted by some companies like Microsoft in the late 1990s. This strategy involved embracing a technology, extending it with proprietary features, and eventually using those extensions to undermine the original technology.</p>
-<p>Microsoft initially embraced Java by integrating it into their Internet Explorer browser and Windows platforms. However, they extended Java with proprietary features that were specific to Windows, creating a version of Java that was incompatible with the standard JVM specifications set by Sun Microsystems. This move fragmented the Java platform and undermined the &ldquo;Write Once, Run Anywhere&rdquo; philosophy.</p>
-<p>With the development and rise of programming languages like Swift, Kotlin, and JavaScript, the JVM faced significant challenges in maintaining its performance edge. Swift, designed by Apple for iOS and macOS platforms, offers high performance and safety due to its compiled nature and modern language features. Kotlin, although initially running on the JVM, introduced concise syntax and advanced features that surpassed Java in many ways, leading it to become the preferred language for Android development. JavaScript&rsquo;s performance greatly improved with engines like V8, and its versatility expanded through technologies like Node.js for server-side development. These languages not only matched but often exceeded the JVM&rsquo;s performance and adaptability in their respective domains, leading to a shift in developer preferences and a relative decline in the JVM&rsquo;s dominance.</p>
-<h2 id="overall">Overall<a hidden class="anchor" aria-hidden="true" href="#overall">#</a></h2>
-<p>Nowadays, Java has become to a normal programming lauguage. And the question is obvious solved. Python has its own interpreter to transfer the source code into machine code. Haskell has its own compiler, C++/C are compiled directly into machine code. However,they can&rsquo;t generate a compiled file that enable to run in every operating system. If there is no EEE strategy, Linux may have a stronger effects in today&rsquo;s world.</p>
+<li>This week, Nvidia GTC 2025 brings a lot of new tech, PC in AI age, B300, new architecture, robots.
+After watched the coverage keynotes, I was just feel like our mankind is in an special stage with unpredictable pace. In science fiction films, at this point
+, it often leads to the arrival of an alien civilization.
+<img alt="GTC_2025" loading="lazy" src="https://cdn.mos.cms.futurecdn.net/QQ6ZABoJtLbUEnGLXxz2GT-970-80.png.webp"></li>
+<li>A dijkstra algorithm visualiser that helps me understand it: <a href="https://www.cs.usfca.edu/~galles/visualization/Dijkstra.html">Dijkstra shortest path</a></li>
+<li>MCP explain: <a href="https://www.philschmid.de/mcp-introduction">A blog that explain MCP crystal clear</a></li>
+</ol>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/jvm/">JVM</a></li>
-      <li><a href="http://localhost:1313/tags/java/">Java</a></li>
-      <li><a href="http://localhost:1313/tags/programming/">Programming</a></li>
+      <li><a href="http://localhost:1313/tags/tech_weekly/">Tech_Weekly</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/posts/homeserver/">
-    <span class="title">«</span>
+  <a class="next" href="http://localhost:1313/posts/techweekly/techweek1/">
+    <span class="title">»</span>
     <br>
-    <span>My Homelab</span>
+    <span>King Weekly | 1. Start</span>
   </a>
 </nav>
 

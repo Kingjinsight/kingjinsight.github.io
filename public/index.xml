@@ -6,12 +6,116 @@
     <description>Recent content on King&#39;s Blog</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>King Weekly | 2: </title>
+      <link>http://localhost:1313/posts/techweekly/techweek2/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/techweekly/techweek2/</guid>
+      <description>&lt;h2 id=&#34;model-context-protocol-overview&#34;&gt;Model Context Protocol overview&lt;/h2&gt;
+&lt;p&gt;MCP (Model Context Protocol) can be understood as a &amp;ldquo;universal language&amp;rdquo; for communication between AI and external tools. It&amp;rsquo;s like a translator, allowing different AI applications (such as chatbots, code assistants) and different tools (like databases, GitHub, calendars) to easily communicate without needing to develop a new interface every time.&lt;/p&gt;
+&lt;h4 id=&#34;why-is-mcp-needed&#34;&gt;Why is MCP needed?&lt;/h4&gt;
+&lt;p&gt;In the past, if you wanted an AI assistant to access different tools, like a calendar, email, or task manager, you would need to develop a separate interface for each tool, which resulted in a huge amount of work (N AI applications × M tools = N×M interfaces).&lt;br&gt;
+MCP simplifies everything: all AI applications only need to support MCP, and all tools only need to support MCP. This way, they can communicate with each other, reducing development costs (N+M interfaces).
+&lt;img alt=&#34;components mcp include&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/TechStuff/mcp.png&#34;&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="model-context-protocol-overview">Model Context Protocol overview</h2>
+<p>MCP (Model Context Protocol) can be understood as a &ldquo;universal language&rdquo; for communication between AI and external tools. It&rsquo;s like a translator, allowing different AI applications (such as chatbots, code assistants) and different tools (like databases, GitHub, calendars) to easily communicate without needing to develop a new interface every time.</p>
+<h4 id="why-is-mcp-needed">Why is MCP needed?</h4>
+<p>In the past, if you wanted an AI assistant to access different tools, like a calendar, email, or task manager, you would need to develop a separate interface for each tool, which resulted in a huge amount of work (N AI applications × M tools = N×M interfaces).<br>
+MCP simplifies everything: all AI applications only need to support MCP, and all tools only need to support MCP. This way, they can communicate with each other, reducing development costs (N+M interfaces).
+<img alt="components mcp include" loading="lazy" src="/TechStuff/mcp.png"></p>
+<p>The current components of MCP servers include:
+<img alt="components mcp include" loading="lazy" src="/TechStuff/mcp_include.png"></p>
+<h4 id="how-does-mcp-work">How does MCP work?</h4>
+<p><img alt="how mcp work" loading="lazy" src="/TechStuff/mcp_work.png"></p>
+<h4 id="example">Example:</h4>
+<p>Suppose you&rsquo;re using an AI assistant to manage your work, and it wants to help you schedule today&rsquo;s meeting:</p>
+<ul>
+<li>
+<p>Without MCP, developers would need to write separate integration code for Outlook, Google Calendar, and Apple Calendar.</p>
+</li>
+<li>
+<p>With MCP, the AI only needs to call the MCP server, which will automatically interface with your calendar system. No matter which calendar service you use, the AI can work seamlessly.</p>
+</li>
+</ul>
+<h4 id="core-functions-of-mcp">Core Functions of MCP:</h4>
+<ul>
+<li>
+<p>Reducing development costs (no need to develop separate integrations for each tool).</p>
+</li>
+<li>
+<p>Enhancing AI&rsquo;s ability to access external data (allowing AI to easily query and manipulate external data).</p>
+</li>
+<li>
+<p>Standardizing communication (making communication between different AI applications and tools smoother).</p>
+</li>
+</ul>
+<p>You can think of MCP as the &ldquo;USB interface for AI&rdquo;—any AI device can plug into different tools without needing to individually adapt to each one!</p>
+<hr>
+<h2 id="trivias">Trivias:</h2>
+<ol>
+<li><code>Graph</code> is a great data structure, it can be used to find the shortest path, solve a magic cube.
+Rely on this data structure, Human find the shortest steps to solve the worst case configured
+<code>3\*3\*3</code> magic cube in <strong>20</strong> steps (which also called god&rsquo;s number) and 11 steps for <code>2\*2\*2</code> one. What about n*n*n, Here is an interesing paper
+about time compleixity of solving a n*n*n magic cube: <a href="/Demaine_Algoritms_for_solving.pdf">Algorithms for Solving Rubik’s Cubes</a></li>
+<li>Topological sort is an algorithm based on DFS and DAG, It&rsquo;s not a traditional sorting algorithm, like comparing the size of each number and sort them, but sorting based on dependencies.</li>
+<li>Dynamic programming is just like recursion + memorization + guessing</li>
+<li>P vs NP problems: P is a problem  that can be solved easily by a computer, NP is a problem that you can check for correctness very easily once solved. However, P != NP for example wec can&rsquo;t engineer luck.
+Also, NP hard means it is at least as hard as any problem in NP, and NP-complete is lke if you can solve one NP-complete question, you can solve all NP question.
+Reduction is like to prove a known NP-complete question, and transfer it into a NP question X, then X is also a NP-complete question</li>
+<li>HTTP vs REST API
+<ul>
+<li>
+<p>HTTP is a protocol, and its core task is to define how to request and transfer data between your broswer and server</p>
+<ul>
+<li>It focuses on the data exchange level, regardless of whether the data is an image, text, video, or API response.</li>
+<li>For example, you can use an HTTP request to access a webpage (HTML page) or use an HTTP request to retrieve API data (JSON data). It doesn’t care about what data you&rsquo;re transmitting.</li>
+</ul>
+</li>
+<li>
+<p>REST API is a design style, based on the HTTP protocol, with rules and best practices:</p>
+<ul>
+<li>It views content on the server as &ldquo;resources&rdquo; and specifies how to operate on them using HTTP methods (GET, POST, PUT, DELETE).</li>
+<li>REST API design considers resource orientation: Resources (like users, articles, comments, etc.) have unique identifiers (URIs), and clients interact with these resources through HTTP requests.</li>
+</ul>
+<p>For example, in a REST API, you can:</p>
+<ul>
+<li>GET request: Retrieve a resource (e.g., get movie information).</li>
+<li>POST request: Create a new resource (e.g., submit a new comment).</li>
+<li>PUT request: Update a resource (e.g., modify user information).</li>
+<li>DELETE request: Delete a resource (e.g., remove an article).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="resource">Resource:</h2>
+<ol>
+<li>A tool to build a personal streaming music player: <a href="https://www.navidrome.org/">navidrome</a></li>
+<li>A great blog that introduce human visualization: <a href="https://www-sciencedirect-com.eux.idm.oclc.org/science/article/pii/B9780128038130000040#f0015">human visualization</a></li>
+<li>Five basic algorithms explanation:
+<ul>
+<li><a href="https://houbb.github.io/2020/01/23/data-struct-learn-07-base-dp">Dynamic programming</a></li>
+<li><a href="https://houbb.github.io/2020/01/23/data-struct-learn-07-base-greedy">Greedy Algorithm</a></li>
+<li><a href="https://www.bilibili.com/video/BV1wi4y157er?spm_id_from=333.788.videopod.sections&amp;vd_source=783331b1d88fa190b5ce8305307e0af5">Backtracking</a></li>
+<li><a href="https://chatgpt.com/share/67d76084-79f0-8006-8a37-4500841a7b9a">Branch and Bounding</a></li>
+</ul>
+</li>
+<li>This week, Nvidia GTC 2025 brings a lot of new tech, PC in AI age, B300, new architecture, robots.
+After watched the coverage keynotes, I was just feel like our mankind is in an special stage with unpredictable pace. In science fiction films, at this point
+, it often leads to the arrival of an alien civilization.
+<img alt="GTC_2025" loading="lazy" src="https://cdn.mos.cms.futurecdn.net/QQ6ZABoJtLbUEnGLXxz2GT-970-80.png.webp"></li>
+<li>A dijkstra algorithm visualiser that helps me understand it: <a href="https://www.cs.usfca.edu/~galles/visualization/Dijkstra.html">Dijkstra shortest path</a></li>
+<li>MCP explain: <a href="https://www.philschmid.de/mcp-introduction">A blog that explain MCP crystal clear</a></li>
+</ol>
+]]></content:encoded>
+    </item>
     <item>
       <title>King Weekly | 1. Start</title>
       <link>http://localhost:1313/posts/techweekly/techweek1/</link>
-      <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/techweekly/techweek1/</guid>
       <description>&lt;h2 id=&#34;email-sending-and-receiving-system&#34;&gt;Email sending and receiving system&lt;/h2&gt;
 &lt;p&gt;The main system is build based on three protocols: SMTP, POP3 and IMAP.
@@ -26,6 +130,7 @@ User1 sends an email via an email client, and the email is first sent to User1&r
 <p>POP3 downloads emails from the email server to the email client. By default, it removes emails from the server after downloading, but some email clients allow users to keep copies on the server.
 IMAP keeps emails on the server and synchronizes them across multiple devices. The email client initially loads only the headers, and the full email content is fetched from the server when the user opens it.</p>
 <p>If you want to customize an email domain. You need to have your own SMTP and IMAP/POP3 server and a domain, the other steps are the same as above.</p>
+<hr>
 <h2 id="pkgbuild-in-arch-linux">PKGBUILD in Arch Linux</h2>
 <p>PKGBUILD is a bash script contain the build information required by archlinux package
 we use makepkg script to build the package, it will search PKGBUILD first in the current folder.
@@ -40,6 +145,7 @@ Benefits:</p>
 <li>Not friendly to starter</li>
 </ul>
 <p>Although we can use yay to help us do all these stuff.</p>
+<hr>
 <h2 id="trivias">Trivias</h2>
 <ol>
 <li>Newton&rsquo;s method is quadratic convergence when we want to calculate the root of a number</li>
@@ -49,7 +155,9 @@ Benefits:</p>
 <li>A Naive algorithm is usually the most obvious solution when one is asked a problem. It may not be a smart algorithm but will probably get the job done</li>
 <li>The taste of red wine is determined by acidity, sweetness, alcohol content, tannins, and body. Wines are categorized into New World and Old World. New World wines (from countries like the USA, Chile, Argentina, and China) are named after the grape variety, while Old World wines (mainly from Europe) are named after their place of origin.<br>
 Red wine is made by fermenting red grapes with their skins. White wine is made from either white grapes or red grapes without their skins. Rosé wine is made by soaking the grape skins briefly but fermenting without them. Sparkling wine undergoes a second fermentation to produce bubbles.</li>
+<li>Gabriel&rsquo;s horn is a type of geometric figure that has infinite surface area but finite volume.</li>
 </ol>
+<hr>
 <h2 id="resources">Resources</h2>
 <ol>
 <li>Code question(leetcode), system design question(crack the code interview), teamwork, communication are all important in the interview.</li>
@@ -64,6 +172,7 @@ Red wine is made by fermenting red grapes with their skins. White wine is made f
 <li>This website is all about competitive writing of source code that is as short as possible: <a href="https://codegolf.stackexchange.com/">Codewolf</a></li>
 <li>Explaination of greedy algorithm: <a href="https://houbb.github.io/2020/01/23/data-struct-learn-07-base-greedy">greedy algorithm</a></li>
 <li>Explaination of dynamic programming: <a href="https://houbb.github.io/2020/01/23/data-struct-learn-07-base-dp#%E9%A2%98%E7%9B%AE">dynamic programming</a></li>
+<li>Deploy perosonal VPN tools: <a href="https://tailscale.com/">tailscale</a></li>
 </ol>
 <h2 id="abstract">Abstract</h2>
 <p>If no one is reading blogs anymore, why should we write them?
