@@ -1,5 +1,5 @@
 ---
-date: "2025-03-11"
+date: "2025-04-03"
 draft: false
 title: 'King Weekly | 2: Jarvis Will Coming Soon'
 author: 'King Jin'

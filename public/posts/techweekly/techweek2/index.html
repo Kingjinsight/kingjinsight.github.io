@@ -5,12 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>King Weekly | 2:  | King&#39;s Blog</title>
+<title>King Weekly | 2: Jarvis Will Coming Soon | King&#39;s Blog</title>
 <meta name="keywords" content="Tech_Weekly">
 <meta name="description" content="Model Context Protocol overview
 MCP (Model Context Protocol) can be understood as a &ldquo;universal language&rdquo; for communication between AI and external tools. It&rsquo;s like a translator, allowing different AI applications (such as chatbots, code assistants) and different tools (like databases, GitHub, calendars) to easily communicate without needing to develop a new interface every time.
 Why is MCP needed?
-In the past, if you wanted an AI assistant to access different tools, like a calendar, email, or task manager, you would need to develop a separate interface for each tool, which resulted in a huge amount of work (N AI applications × M tools = N×M interfaces).
+In the past, if you wanted an AI assistant to access different tools, like a calendar, email, or task manager, you would need to develop a separate interface for each tool (function calling), which resulted in a huge amount of work (N AI applications × M tools = N×M interfaces).
 MCP simplifies everything: all AI applications only need to support MCP, and all tools only need to support MCP. This way, they can communicate with each other, reducing development costs (N&#43;M interfaces).
 ">
 <meta name="author" content="King Jin">
@@ -109,8 +109,8 @@ MCP simplifies everything: all AI applications only need to support MCP, and all
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/archives/" title="Archive">
-                    <span>Archive</span>
+                <a href="http://localhost:1313/archives/" title="Archives">
+                    <span>Archives</span>
                 </a>
             </li>
             <li>
@@ -123,6 +123,11 @@ MCP simplifies everything: all AI applications only need to support MCP, and all
                     <span>Search</span>
                 </a>
             </li>
+            <li>
+                <a href="http://localhost:1313/aboutme/" title="About me">
+                    <span>About me</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -132,9 +137,9 @@ MCP simplifies everything: all AI applications only need to support MCP, and all
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      King Weekly | 2: 
+      King Weekly | 2: Jarvis Will Coming Soon
     </h1>
-    <div class="post-meta"><span title='2025-03-11 00:00:00 +0000 UTC'>March 11, 2025</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;King Jin
+    <div class="post-meta"><span title='2025-04-03 00:00:00 +0000 UTC'>April 3, 2025</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;King Jin
 
 </div>
   </header> <div class="toc">
@@ -171,7 +176,7 @@ MCP simplifies everything: all AI applications only need to support MCP, and all
   <div class="post-content"><h2 id="model-context-protocol-overview">Model Context Protocol overview<a hidden class="anchor" aria-hidden="true" href="#model-context-protocol-overview">#</a></h2>
 <p>MCP (Model Context Protocol) can be understood as a &ldquo;universal language&rdquo; for communication between AI and external tools. It&rsquo;s like a translator, allowing different AI applications (such as chatbots, code assistants) and different tools (like databases, GitHub, calendars) to easily communicate without needing to develop a new interface every time.</p>
 <h4 id="why-is-mcp-needed">Why is MCP needed?<a hidden class="anchor" aria-hidden="true" href="#why-is-mcp-needed">#</a></h4>
-<p>In the past, if you wanted an AI assistant to access different tools, like a calendar, email, or task manager, you would need to develop a separate interface for each tool, which resulted in a huge amount of work (N AI applications × M tools = N×M interfaces).<br>
+<p>In the past, if you wanted an AI assistant to access different tools, like a calendar, email, or task manager, you would need to develop a separate interface for each tool (function calling), which resulted in a huge amount of work (N AI applications × M tools = N×M interfaces).<br>
 MCP simplifies everything: all AI applications only need to support MCP, and all tools only need to support MCP. This way, they can communicate with each other, reducing development costs (N+M interfaces).
 <img alt="components mcp include" loading="lazy" src="/TechStuff/mcp.png"></p>
 <p>The current components of MCP servers include:

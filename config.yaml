@@ -41,7 +41,7 @@ menu:
       weight: 10
   
     - identifier: archives
-      name: Archive
+      name: Archives
       url: /archives/
       weight: 12
 
@@ -55,9 +55,19 @@ menu:
       name: Search
       url: /search/
       weight: 18
+    
+    - identifier: aboutme
+      name: About me
+      url: /aboutme/
+      weight: 20
 
 outputs:
   home:
     - HTML
     - RSS
     - JSON
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
