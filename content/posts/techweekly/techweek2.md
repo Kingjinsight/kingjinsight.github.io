@@ -1,9 +1,9 @@
 ---
 date: "2025-04-03"
 draft: false
-title: 'King Weekly | 2: Jarvis Will Coming Soon'
+title: 'Jarvis Will Coming Soon | King Weekly'
 author: 'King Jin'
-tags: ["Tech_Weekly"]
+tags: ["Tech_Weekly","AI"]
 showtoc: true
 ---
 

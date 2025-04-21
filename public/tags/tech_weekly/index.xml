@@ -4,12 +4,94 @@
     <title>Tech_Weekly on King&#39;s Blog</title>
     <link>http://localhost:1313/tags/tech_weekly/</link>
     <description>Recent content in Tech_Weekly on King&#39;s Blog</description>
-    <generator>Hugo -- 0.145.0</generator>
+    <generator>Hugo -- 0.146.3</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 21 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/tech_weekly/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>King Weekly | 2: Jarvis Will Coming Soon</title>
+      <title>For UNIX Week | King Weekly</title>
+      <link>http://localhost:1313/posts/techweekly/techweek3/</link>
+      <pubDate>Mon, 21 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/techweekly/techweek3/</guid>
+      <description>&lt;h2 id=&#34;book---unix-a-history-and-a-memoir&#34;&gt;Book - Unix: A History and a Memoir&lt;/h2&gt;
+&lt;p&gt;Recently, I read this fantastic book. It bring me back to that 1960s - a period without modern computer and how the most clever minds in this world changed the world.
+During the reading, I found many answers to the &amp;ldquo;why&amp;rdquo; questions I had when I learning linux system.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;AT&amp;amp;T built Bell Labs and invited some of the most brilliant people in the world to do the most advanced scientific work. There was no limit on funding and no fixed goals for individuals.&lt;/li&gt;
+&lt;li&gt;The system developed before Unix was called Multics.&lt;/li&gt;
+&lt;li&gt;Since “Multics” already used “multi,” the early name of Unix was “Unics.”&lt;/li&gt;
+&lt;li&gt;Unix was first written on the PDP-7. The next version, written in C, was developed on the PDP-11. Fortunately, it wasn’t written for the PDP-10.&lt;/li&gt;
+&lt;li&gt;Tools like the shell, grep, regular expressions, the C language, the C compiler, yacc, lex, make, sed, awk, and troff were all invented at Bell Labs.&lt;/li&gt;
+&lt;li&gt;Unix eventually declined due to copyright issues. AT&amp;amp;T sold it as a product and made it proprietary, which gave rise to open-source Unix-like systems.&lt;/li&gt;
+&lt;li&gt;GNU is a Unix-like project that provides free and open-source alternatives. Under the GNU license, if you modify the source code of a project, the modified version must also remain open-source.&lt;/li&gt;
+&lt;li&gt;MacOS is based on BSD, which is a Unix-like system. The Linux kernel combined with GNU forms GNU/Linux. They both follow POSIX.&lt;/li&gt;
+&lt;li&gt;In the early days, operating systems were not portable. This changed with the invention of the C language and its compiler.&lt;/li&gt;
+&lt;li&gt;MINIX was widely used because it was embedded in Intel chips.&lt;/li&gt;
+&lt;li&gt;The working environment at Bell Labs in the 1970s are of hard problems, brilliant colleagues with shared dreams, and a unique management style that encouraged innovation.&lt;/li&gt;
+&lt;li&gt;Microsoft once had its 3own Unix-like system.&lt;/li&gt;
+&lt;li&gt;Another completely different path from Unix was MS-DOS, which eventually evolved into today’s Windows.&lt;/li&gt;
+&lt;li&gt;You can also get to know the geniuses of that era, like Ken Thompson, Richard Stallman, and Brian Kernighan.&lt;/li&gt;
+&lt;li&gt;“Everything is a file” is one of the core principles of Unix.&lt;/li&gt;
+&lt;li&gt;The KISS principle (“Keep It Simple, Stupid”) is a fundamental part of Unix philosophy.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The UNIX philosophy is very similar to some programming concepts I&amp;rsquo;ve recently learned at university. That&amp;rsquo;s why, Its impact not only on system desisgn but also software deveopemnt and beyond.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="book---unix-a-history-and-a-memoir">Book - Unix: A History and a Memoir</h2>
+<p>Recently, I read this fantastic book. It bring me back to that 1960s - a period without modern computer and how the most clever minds in this world changed the world.
+During the reading, I found many answers to the &ldquo;why&rdquo; questions I had when I learning linux system.</p>
+<ol>
+<li>AT&amp;T built Bell Labs and invited some of the most brilliant people in the world to do the most advanced scientific work. There was no limit on funding and no fixed goals for individuals.</li>
+<li>The system developed before Unix was called Multics.</li>
+<li>Since “Multics” already used “multi,” the early name of Unix was “Unics.”</li>
+<li>Unix was first written on the PDP-7. The next version, written in C, was developed on the PDP-11. Fortunately, it wasn’t written for the PDP-10.</li>
+<li>Tools like the shell, grep, regular expressions, the C language, the C compiler, yacc, lex, make, sed, awk, and troff were all invented at Bell Labs.</li>
+<li>Unix eventually declined due to copyright issues. AT&amp;T sold it as a product and made it proprietary, which gave rise to open-source Unix-like systems.</li>
+<li>GNU is a Unix-like project that provides free and open-source alternatives. Under the GNU license, if you modify the source code of a project, the modified version must also remain open-source.</li>
+<li>MacOS is based on BSD, which is a Unix-like system. The Linux kernel combined with GNU forms GNU/Linux. They both follow POSIX.</li>
+<li>In the early days, operating systems were not portable. This changed with the invention of the C language and its compiler.</li>
+<li>MINIX was widely used because it was embedded in Intel chips.</li>
+<li>The working environment at Bell Labs in the 1970s are of hard problems, brilliant colleagues with shared dreams, and a unique management style that encouraged innovation.</li>
+<li>Microsoft once had its 3own Unix-like system.</li>
+<li>Another completely different path from Unix was MS-DOS, which eventually evolved into today’s Windows.</li>
+<li>You can also get to know the geniuses of that era, like Ken Thompson, Richard Stallman, and Brian Kernighan.</li>
+<li>“Everything is a file” is one of the core principles of Unix.</li>
+<li>The KISS principle (“Keep It Simple, Stupid”) is a fundamental part of Unix philosophy.</li>
+</ol>
+<p>The UNIX philosophy is very similar to some programming concepts I&rsquo;ve recently learned at university. That&rsquo;s why, Its impact not only on system desisgn but also software deveopemnt and beyond.</p>
+<ol>
+<li>Keep it simple stupid</li>
+<li>Do one thing, and do it well</li>
+<li>Everything is a file</li>
+<li>Make each program a filter</li>
+<li>Fail loudly</li>
+<li>Modularity</li>
+<li>Prototyping early</li>
+</ol>
+<p>In today, many barriers had already been removed.<br>
+And I realise.<br>
+The revolution of AI is just like the reenactment of Unix&rsquo;s development.<br>
+So.<br>
+KISS.</p>
+<h2 id="trivias">Trivias</h2>
+<ol>
+<li>tty - TeleTYpewriter, terminal in the old time, before lcd screen been invented.<img src="/TechStuff/Teletype_model_33.jpg" alt="teletype model 33" width="500" height="600"></li>
+<li>UNIX was developed on the PDP-7, a computer with no screen, no mouse and only 8KB of RAM. It weighted nearly 500kg. <img alt="pdp7" loading="lazy" src="/TechStuff/Pdp7.jpeg"></li>
+<li>UNIX and UNIX-like system use abbreviated commands because typing on TTY terminals in the 1960s was slow and insufficient.</li>
+<li>Second-system effect: It believes that after completing a small, elegant, and successful system, people tend to have overly high expectations for the next projects, which may lead to the creation of a huge, feature-rich but monstrous system.The &ldquo;second-system effect&rdquo; can result in software project plans being overdesigned, with too many variables and excessive complexity, ultimately falling short of expectations and leading to failure. such as PL/I in Multics</li>
+<li>Fortran(formular translation): The purpose of this lagnauge is to proceed mathematics formular and float number in an efficient way, like integration, linear algebra. That&rsquo;s why fortran is still popular in some supercomputer and scientific calculation.</li>
+<li>B lagnauge is designed in a bit-unit computer PCP-7, where C langauge is designed in a byte-unit computer. Therefore the main difference between B and C is B langauge doesn&rsquo;t support types and C does.</li>
+<li>Development of Clang: PL/I -&gt; BCPL -&gt; B -&gt; New B(C)</li>
+<li>If computers using the same cpu architecture, they will using the same assembly language.<img alt="assembly_langauge_with_architecture" loading="lazy" src="/TechStuff/assembly_langauge_diff.png"></li>
+<li>The grep command is used to find lines that match a specific pattern in a file while the sed command is used to insert, replace and delete text from a file. Finally, the awk command supports programming logic and is often used for advanced data processing tasks.</li>
+<li>The development of UNIX from 1970 until now. <img alt="road of unix" loading="lazy" src="/TechStuff/roadOfUNIX.png"></li>
+</ol>
+<h2 id="talks">Talks</h2>
+<ol>
+<li>&ldquo;A new technological discovery is often discredited by older generations of professionals - especially those with high authority and prestige in the existing field - in order to protect their own status&rdquo;</li>
+</ol>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Jarvis Will Coming Soon | King Weekly</title>
       <link>http://localhost:1313/posts/techweekly/techweek2/</link>
       <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/techweekly/techweek2/</guid>
@@ -113,7 +195,7 @@ After watched the coverage keynotes, I was just feel like our mankind is in an s
 ]]></content:encoded>
     </item>
     <item>
-      <title>King Weekly | 1. Start</title>
+      <title>Start | King Weekly</title>
       <link>http://localhost:1313/posts/techweekly/techweek1/</link>
       <pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/techweekly/techweek1/</guid>

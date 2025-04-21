@@ -1,9 +1,9 @@
 ---
 date: "2025-03-09"
 draft: false
-title: 'King Weekly | 1. Start'
+title: 'Start | King Weekly'
 author: 'King Jin'
-tags: ["Tech_Weekly"]
+tags: ["Tech_Weekly","Algorithm","Email_system"]
 
 showtoc: true
 ---
