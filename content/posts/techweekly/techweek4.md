@@ -3,7 +3,7 @@ date: "2025-04-30"
 draft: false
 title: 'A Dive into the Bitcoin Technology | King Weekly'
 author: 'King Jin'
-tags: ["Tech_Weekly","Bitcoin"]
+tags: ["Tech_Weekly","Bitcoin","AI"]
 showtoc: true
 ---
 ## Bitcoin
@@ -89,8 +89,10 @@ Youtube channels
 6. The main difference between the Hopfield Network and the Boltzmann nachine is the presence of hidden layers. Other differences include the fact that the Hopfield network is deterministic, whereas the Boltzmann machine is stochastic, and the defintions of their energy function also differ.
 7. The fovea has many photoreceptors, with a high density of cones(for colors) and nearly no rods(for dark). This structure allows us to see the world clearly. If you develop myopia, the image formed after light is reflected by the eye may not be focused directly on the fovea.
 8. The idea of CNN was mainly inspired by the HMAX model(hierarchical, pooling, convolution), and the HMAX model was proposed by Tomaso Poggio, to simulate primate visual system, specifically ventral stream.
-9. Ethereum and ether is not the same as bitcoin. Ethereum has a longer vision, and the number of ether is unlimited.
+9. Pytorch for research area, Tensorflow for industry and JAX for high level usage.
+10. Ethereum and ether is not the same as bitcoin. Ethereum has a longer vision, and the number of ether is unlimited.
 
 ## Resource
 1. Documentary of AlphaGo: https://www.youtube.com/watch?v=WXuK6gekU1Y
-2. This is the most comprehensive guide for AI beginner I had ever seen: [Guide link](https://www.reddit.com/r/DTU__Delhi/comments/1g0luec/mastering_aiml_in_2024_the_only_resource_guide/) 
+2. How to use hugging face: https://www.youtube.com/watch?v=3kRB2TXewus
+3. This is the most comprehensive guide for AI beginner I had ever seen: [Guide link](https://www.reddit.com/r/DTU__Delhi/comments/1g0luec/mastering_aiml_in_2024_the_only_resource_guide/) 
