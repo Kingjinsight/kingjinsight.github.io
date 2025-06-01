@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>AIa on King&#39;s Blog</title>
+    <link>http://localhost:1313/tags/aia/</link>
+    <description>Recent content in AIa on King&#39;s Blog</description>
+    <generator>Hugo -- 0.147.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 30 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/aia/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title> | King Weekly</title>
+      <link>http://localhost:1313/posts/techweekly/techweek4/</link>
+      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/techweekly/techweek4/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Charles_Scott_Sherrington&#34;&gt;Sherrington&lt;/a&gt;, coined the word &amp;ldquo;synapse&amp;rdquo; to define the connection between two neurons&lt;/li&gt;
+&lt;li&gt;Two different roads of AI: connectionism and Symbolism.&lt;/li&gt;
+&lt;li&gt;Hidden layer was firstly been implemented in Boltzmann machine, although Rosenblatt had some idea about multilayer perceptrons, but he didn&amp;rsquo;t find any useful training algorithm.&lt;/li&gt;
+&lt;li&gt;Restricted Boltzmann machine - each layer is only allowed to be fully connectted to the next layer, current layer nodes are not connectted to each other. The advantages of this machine is it allows to update bodes within the same layer in parallel&lt;/li&gt;
+&lt;li&gt;The invention of hidden layer allows model to understand abstract features. It also becomes to one of the most significant component in deep learning.&lt;/li&gt;
+&lt;li&gt;The main difference between the Hopfield Network and the Boltzmann nachine is the presence of hidden layers. Other differences include the fact that the Hopfield network is deterministic, whereas the Boltzmann machine is stochastic, and the defintions of their energy function also differ.&lt;/li&gt;
+&lt;li&gt;The fovea has many photoreceptors, with a high density of cones(for colors) and nearly no rods(for dark). This structure allows us to see the world clearly. If you develop myopia, the image formed after light is reflected by the eye may not be focused directly on the fovea.&lt;/li&gt;
+&lt;li&gt;The idea of CNN was mainly inspired by the HMAX model(hierarchical, pooling, convolution), and the HMAX model was proposed by Tomaso Poggio, to simulate primate visual system, specifically ventral stream.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <content:encoded><![CDATA[<ol>
+<li><a href="https://en.wikipedia.org/wiki/Charles_Scott_Sherrington">Sherrington</a>, coined the word &ldquo;synapse&rdquo; to define the connection between two neurons</li>
+<li>Two different roads of AI: connectionism and Symbolism.</li>
+<li>Hidden layer was firstly been implemented in Boltzmann machine, although Rosenblatt had some idea about multilayer perceptrons, but he didn&rsquo;t find any useful training algorithm.</li>
+<li>Restricted Boltzmann machine - each layer is only allowed to be fully connectted to the next layer, current layer nodes are not connectted to each other. The advantages of this machine is it allows to update bodes within the same layer in parallel</li>
+<li>The invention of hidden layer allows model to understand abstract features. It also becomes to one of the most significant component in deep learning.</li>
+<li>The main difference between the Hopfield Network and the Boltzmann nachine is the presence of hidden layers. Other differences include the fact that the Hopfield network is deterministic, whereas the Boltzmann machine is stochastic, and the defintions of their energy function also differ.</li>
+<li>The fovea has many photoreceptors, with a high density of cones(for colors) and nearly no rods(for dark). This structure allows us to see the world clearly. If you develop myopia, the image formed after light is reflected by the eye may not be focused directly on the fovea.</li>
+<li>The idea of CNN was mainly inspired by the HMAX model(hierarchical, pooling, convolution), and the HMAX model was proposed by Tomaso Poggio, to simulate primate visual system, specifically ventral stream.</li>
+</ol>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

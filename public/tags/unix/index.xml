@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Unix on King&#39;s Blog</title>
-    <link>http://localhost:1313/tags/unix/</link>
+    <link>https://example.org/tags/unix/</link>
     <description>Recent content in Unix on King&#39;s Blog</description>
-    <generator>Hugo -- 0.146.3</generator>
+    <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 21 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/unix/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/tags/unix/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>For UNIX Week | King Weekly</title>
-      <link>http://localhost:1313/posts/techweekly/techweek3/</link>
+      <link>https://example.org/posts/techweekly/techweek3/</link>
       <pubDate>Mon, 21 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/techweekly/techweek3/</guid>
+      <guid>https://example.org/posts/techweekly/techweek3/</guid>
       <description>&lt;h2 id=&#34;book---unix-a-history-and-a-memoir&#34;&gt;Book - Unix: A History and a Memoir&lt;/h2&gt;
 &lt;p&gt;Recently, I read this fantastic book. It bring me back to that 1960s - a period without modern computer and how the most clever minds in this world changed the world.
 During the reading, I found many answers to the &amp;ldquo;why&amp;rdquo; questions I had when I learning linux system.&lt;/p&gt;

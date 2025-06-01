@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title> | King Weekly | King&#39;s Blog</title>
+<meta name="keywords" content="Tech_Weekly, AI">
+<meta name="description" content="Bitcoin: A Deep Dive into the Technology
+The legend of Bitcoin has shown its magic for a long time. Recently, I have started to explore this field, and this is a record of my learning.
+
+The Blockchain: A Digital Chain of Trust ⛓️
+The blockchain is the foundational technology of Bitcoin. Think of it as a public, digital ledger or receipt book that is shared across thousands of computers worldwide.">
+<meta name="author" content="King Jin">
+<link rel="canonical" href="https://example.org/posts/techweekly/techweek4/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.832afcd01590e9ef11f610767d26e7d7b6dc1aedff8fa1d558ad41f5b8bc062d.css" integrity="sha256-gyr80BWQ6e8R9hB2fSbn17bcGu3/j6HVWK1B9bi8Bi0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://example.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://example.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://example.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://example.org/apple-touch-icon.png">
+<link rel="mask-icon" href="https://example.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://example.org/posts/techweekly/techweek4/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://example.org/" accesskey="h" title="King&#39;s Blog (Alt + H)">King&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://example.org/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/aboutme/" title="About me">
+                    <span>About me</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+       | King Weekly
+    </h1>
+    <div class="post-meta"><span title='2025-04-30 00:00:00 +0000 UTC'>April 30, 2025</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;King Jin
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#bitcoin-a-deep-dive-into-the-technology" aria-label="Bitcoin: A Deep Dive into the Technology">Bitcoin: A Deep Dive into the Technology</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#the-blockchain-a-digital-chain-of-trust-" aria-label="The Blockchain: A Digital Chain of Trust ⛓️">The Blockchain: A Digital Chain of Trust ⛓️</a></li>
+                <li>
+                    <a href="#the-genesis-block-where-it-all-began-" aria-label="The Genesis Block: Where It All Began 📜">The Genesis Block: Where It All Began 📜</a></li>
+                <li>
+                    <a href="#mining-securing-the-network-and-creating-coins-" aria-label="Mining: Securing the Network and Creating Coins ⛏️">Mining: Securing the Network and Creating Coins ⛏️</a></li>
+                <li>
+                    <a href="#how-to-mine-choosing-your-method" aria-label="How to Mine: Choosing Your Method">How to Mine: Choosing Your Method</a></li>
+                <li>
+                    <a href="#block-forks-when-the-chain-splits-" aria-label="Block Forks: When the Chain Splits 🍴">Block Forks: When the Chain Splits 🍴</a></li>
+                <li>
+                    <a href="#ethics" aria-label="Ethics">Ethics</a></li>
+                <li>
+                    <a href="#tools" aria-label="Tools">Tools</a></li>
+                <li>
+                    <a href="#resources" aria-label="Resources:">Resources:</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#trivias" aria-label="Trivias">Trivias</a></li>
+                <li>
+                    <a href="#resource" aria-label="Resource">Resource</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="bitcoin-a-deep-dive-into-the-technology">Bitcoin: A Deep Dive into the Technology<a hidden class="anchor" aria-hidden="true" href="#bitcoin-a-deep-dive-into-the-technology">#</a></h2>
+<p>The legend of Bitcoin has shown its magic for a long time. Recently, I have started to explore this field, and this is a record of my learning.</p>
+<hr>
+<h4 id="the-blockchain-a-digital-chain-of-trust-">The Blockchain: A Digital Chain of Trust ⛓️<a hidden class="anchor" aria-hidden="true" href="#the-blockchain-a-digital-chain-of-trust-">#</a></h4>
+<p>The <strong>blockchain</strong> is the foundational technology of Bitcoin. Think of it as a public, digital ledger or receipt book that is shared across thousands of computers worldwide.</p>
+<ul>
+<li><strong>It&rsquo;s a Chain of Blocks:</strong> Each &ldquo;block&rdquo; contains a list of recent transactions. When a new block is created, it is cryptographically linked to the previous one, forming an unbroken chain leading all the way back to the very first block.</li>
+<li><strong>It&rsquo;s Immutable:</strong> Because each block is linked to the one before it, changing a transaction in an old block would require re-doing all the work for every single block that came after it. This makes the ledger permanent and tamper-proof. This structure is what proves each coin&rsquo;s history and prevents fraud like double-spending.</li>
+</ul>
+<hr>
+<h4 id="the-genesis-block-where-it-all-began-">The Genesis Block: Where It All Began 📜<a hidden class="anchor" aria-hidden="true" href="#the-genesis-block-where-it-all-began-">#</a></h4>
+<p>The very first block, known as the <strong>Genesis Block</strong>, was mined on <strong>2009.01.04</strong>, by Bitcoin&rsquo;s mysterious creator, <strong>Satoshi Nakamoto</strong>. This single block was the start of the entire Bitcoin network. Once it was created, the race to mine the second block began, and the chain has been growing continuously ever since.</p>
+<hr>
+<h4 id="mining-securing-the-network-and-creating-coins-">Mining: Securing the Network and Creating Coins ⛏️<a hidden class="anchor" aria-hidden="true" href="#mining-securing-the-network-and-creating-coins-">#</a></h4>
+<p>Mining is the process of creating new blocks. It&rsquo;s a competitive race that serves two critical purposes:</p>
+<ol>
+<li><strong>Validating Transactions:</strong> Miners group pending transactions into a new block.</li>
+<li><strong>Creating New Bitcoin:</strong> The winner of the race is rewarded with new bitcoin.</li>
+</ol>
+<p>Here’s how a miner wins the race and proves their block is valid:</p>
+<ul>
+<li><strong>The Hashing Puzzle:</strong> Miners take the data in their block and use their computers to find a specific number called a <strong>nonce</strong>. When the block data and the nonce are combined and put through a cryptographic function (SHA-256), they produce a unique digital fingerprint called a <strong>hash</strong>.</li>
+<li><strong>The &ldquo;Lower Than&rdquo; Rule:</strong> To win, a miner must find a hash that is <strong>lower than the current network &ldquo;target&rdquo;</strong>. This target is a very large number that the entire network agrees on. Finding a hash below this target is incredibly difficult and requires immense computational power—it&rsquo;s like trying to win a global lottery every 10 minutes.</li>
+<li><strong>The Reward and The Halving:</strong> The first miner to find a valid hash wins the <strong>block reward</strong>.
+<ul>
+<li>Initially, the reward was <strong>50 BTC</strong>.</li>
+<li>However, this reward is programmed to cut in half roughly every four years (or 210,000 blocks) in an event called the <strong>halving</strong>.</li>
+<li>As of the April 2024 halving, the reward is now <strong>3.125 BTC</strong>.</li>
+<li>This mechanism controls the supply of new bitcoin, making the currency scarce and ensuring its total amount will never exceed <strong>21 million coins</strong>.</li>
+</ul>
+</li>
+</ul>
+<p>When a winning block is found, its hash is broadcast across the P2P network. All other participants quickly verify that the hash is valid. Once confirmed, they add the new block to their copy of the blockchain and immediately start competing to solve the <em>next</em> block.</p>
+<hr>
+<h4 id="how-to-mine-choosing-your-method">How to Mine: Choosing Your Method<a hidden class="anchor" aria-hidden="true" href="#how-to-mine-choosing-your-method">#</a></h4>
+<p>There are a few ways to participate in Bitcoin mining, each with its own pros and cons.</p>
+<ul>
+<li><strong>Solo Mining:</strong> This is you, on your own, trying to solve a block. If you succeed, you get the <em>entire</em> block reward (3.125 BTC + transaction fees). However, the odds of a single person solving a block today are astronomically low due to the immense competition. It&rsquo;s like buying a single lottery ticket and hoping to win the grand prize.</li>
+<li><strong>Mining Pool:</strong> This is the most common method. You join a &ldquo;pool&rdquo; with thousands of other miners, combining your computing power. The pool works together to find blocks much more frequently. When the pool wins, the reward is split among all participants based on how much computing power they contributed. This provides smaller, but much more consistent and predictable, payouts.</li>
+</ul>
+<hr>
+<h4 id="block-forks-when-the-chain-splits-">Block Forks: When the Chain Splits 🍴<a hidden class="anchor" aria-hidden="true" href="#block-forks-when-the-chain-splits-">#</a></h4>
+<p>A <strong>fork</strong> happens when the blockchain temporarily or permanently splits into two different paths.</p>
+<ul>
+<li><strong>Accidental Fork:</strong> Sometimes, two miners find a valid block at almost the exact same time. The network briefly splits as some nodes follow one miner and some follow the other. This is usually resolved within a few minutes when the next block is found and added to one of the chains, making it the &ldquo;longest&rdquo; and therefore the official one. The shorter chain is then abandoned.</li>
+<li><strong>Hard Fork:</strong> This is an intentional split that happens when the network&rsquo;s software rules are changed in a way that is not backward-compatible. All participants must upgrade to the new rules to continue. If a significant portion of the community refuses to upgrade, the split becomes permanent, resulting in the creation of a new, separate cryptocurrency (e.g., Bitcoin Cash was created from a hard fork of Bitcoin).</li>
+</ul>
+<hr>
+<h4 id="ethics">Ethics<a hidden class="anchor" aria-hidden="true" href="#ethics">#</a></h4>
+<p>Mining bitcoin always consume immense energy, which critics view as a wasteful environmental cost for a seemingly meaningless computation. Proponents argue this mechanism decentralized financial system that offers freedom from the control of banks and governments.</p>
+<h4 id="tools">Tools<a hidden class="anchor" aria-hidden="true" href="#tools">#</a></h4>
+<p>Calculate computing performance: <a href="https://www.nicehash.com/profitability-calculator">https://www.nicehash.com/profitability-calculator</a></p>
+<blockquote>
+<p>This is the computating power of my personal game laptop(one dollar per day hhh)
+<img loading="lazy" src="/Interesting_thing/computating_power.png"></p></blockquote>
+<h4 id="resources">Resources:<a hidden class="anchor" aria-hidden="true" href="#resources">#</a></h4>
+<p>Youtube channels</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=5hgdekVZb3A&amp;list=PL5TbbtexT8T0JbaWR0Zbf-aVm2onpSjHT&amp;index=3">https://www.youtube.com/watch?v=5hgdekVZb3A&amp;list=PL5TbbtexT8T0JbaWR0Zbf-aVm2onpSjHT&amp;index=3</a></li>
+<li><a href="https://www.youtube.com/watch?v=a41DMDfJjsU&amp;list=PL5TbbtexT8T0JbaWR0Zbf-aVm2onpSjHT&amp;index=2">https://www.youtube.com/watch?v=a41DMDfJjsU&amp;list=PL5TbbtexT8T0JbaWR0Zbf-aVm2onpSjHT&amp;index=2</a></li>
+<li><a href="https://Gemini.google.com">https://Gemini.google.com</a></li>
+</ul>
+<h2 id="trivias">Trivias<a hidden class="anchor" aria-hidden="true" href="#trivias">#</a></h2>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Charles_Scott_Sherrington">Sherrington</a>, coined the word &ldquo;synapse&rdquo; to define the connection between two neurons</li>
+<li>Two different roads of AI: connectionism and Symbolism.</li>
+<li>Hidden layer was firstly been implemented in Boltzmann machine, although Rosenblatt had some idea about multilayer perceptrons, but he didn&rsquo;t find any useful training algorithm.</li>
+<li>Restricted Boltzmann machine - each layer is only allowed to be fully connectted to the next layer, current layer nodes are not connectted to each other. The advantages of this machine is it allows to update bodes within the same layer in parallel</li>
+<li>The invention of hidden layer allows model to understand abstract features. It also becomes to one of the most significant component in deep learning.</li>
+<li>The main difference between the Hopfield Network and the Boltzmann nachine is the presence of hidden layers. Other differences include the fact that the Hopfield network is deterministic, whereas the Boltzmann machine is stochastic, and the defintions of their energy function also differ.</li>
+<li>The fovea has many photoreceptors, with a high density of cones(for colors) and nearly no rods(for dark). This structure allows us to see the world clearly. If you develop myopia, the image formed after light is reflected by the eye may not be focused directly on the fovea.</li>
+<li>The idea of CNN was mainly inspired by the HMAX model(hierarchical, pooling, convolution), and the HMAX model was proposed by Tomaso Poggio, to simulate primate visual system, specifically ventral stream.</li>
+</ol>
+<h2 id="resource">Resource<a hidden class="anchor" aria-hidden="true" href="#resource">#</a></h2>
+<ol>
+<li>Documentary of AlphaGo: <a href="https://www.youtube.com/watch?v=WXuK6gekU1Y">https://www.youtube.com/watch?v=WXuK6gekU1Y</a></li>
+<li>This is the most comprehensive guide for AI beginner I had ever seen: <a href="https://www.reddit.com/r/DTU__Delhi/comments/1g0luec/mastering_aiml_in_2024_the_only_resource_guide/">Guide link</a></li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://example.org/tags/tech_weekly/">Tech_Weekly</a></li>
+      <li><a href="https://example.org/tags/ai/">AI</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://example.org/posts/hopfieldnetwork/">
+    <span class="title">»</span>
+    <br>
+    <span>Hopfield Network</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://example.org/">King&#39;s Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

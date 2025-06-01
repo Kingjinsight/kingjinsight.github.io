@@ -2,17 +2,150 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on King&#39;s Blog</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://example.org/posts/</link>
     <description>Recent content in Posts on King&#39;s Blog</description>
-    <generator>Hugo -- 0.146.3</generator>
+    <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title> | King Weekly</title>
+      <link>https://example.org/posts/techweekly/techweek4/</link>
+      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/techweekly/techweek4/</guid>
+      <description>&lt;h2 id=&#34;bitcoin-a-deep-dive-into-the-technology&#34;&gt;Bitcoin: A Deep Dive into the Technology&lt;/h2&gt;
+&lt;p&gt;The legend of Bitcoin has shown its magic for a long time. Recently, I have started to explore this field, and this is a record of my learning.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;the-blockchain-a-digital-chain-of-trust-&#34;&gt;The Blockchain: A Digital Chain of Trust ⛓️&lt;/h4&gt;
+&lt;p&gt;The &lt;strong&gt;blockchain&lt;/strong&gt; is the foundational technology of Bitcoin. Think of it as a public, digital ledger or receipt book that is shared across thousands of computers worldwide.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="bitcoin-a-deep-dive-into-the-technology">Bitcoin: A Deep Dive into the Technology</h2>
+<p>The legend of Bitcoin has shown its magic for a long time. Recently, I have started to explore this field, and this is a record of my learning.</p>
+<hr>
+<h4 id="the-blockchain-a-digital-chain-of-trust-">The Blockchain: A Digital Chain of Trust ⛓️</h4>
+<p>The <strong>blockchain</strong> is the foundational technology of Bitcoin. Think of it as a public, digital ledger or receipt book that is shared across thousands of computers worldwide.</p>
+<ul>
+<li><strong>It&rsquo;s a Chain of Blocks:</strong> Each &ldquo;block&rdquo; contains a list of recent transactions. When a new block is created, it is cryptographically linked to the previous one, forming an unbroken chain leading all the way back to the very first block.</li>
+<li><strong>It&rsquo;s Immutable:</strong> Because each block is linked to the one before it, changing a transaction in an old block would require re-doing all the work for every single block that came after it. This makes the ledger permanent and tamper-proof. This structure is what proves each coin&rsquo;s history and prevents fraud like double-spending.</li>
+</ul>
+<hr>
+<h4 id="the-genesis-block-where-it-all-began-">The Genesis Block: Where It All Began 📜</h4>
+<p>The very first block, known as the <strong>Genesis Block</strong>, was mined on <strong>2009.01.04</strong>, by Bitcoin&rsquo;s mysterious creator, <strong>Satoshi Nakamoto</strong>. This single block was the start of the entire Bitcoin network. Once it was created, the race to mine the second block began, and the chain has been growing continuously ever since.</p>
+<hr>
+<h4 id="mining-securing-the-network-and-creating-coins-">Mining: Securing the Network and Creating Coins ⛏️</h4>
+<p>Mining is the process of creating new blocks. It&rsquo;s a competitive race that serves two critical purposes:</p>
+<ol>
+<li><strong>Validating Transactions:</strong> Miners group pending transactions into a new block.</li>
+<li><strong>Creating New Bitcoin:</strong> The winner of the race is rewarded with new bitcoin.</li>
+</ol>
+<p>Here’s how a miner wins the race and proves their block is valid:</p>
+<ul>
+<li><strong>The Hashing Puzzle:</strong> Miners take the data in their block and use their computers to find a specific number called a <strong>nonce</strong>. When the block data and the nonce are combined and put through a cryptographic function (SHA-256), they produce a unique digital fingerprint called a <strong>hash</strong>.</li>
+<li><strong>The &ldquo;Lower Than&rdquo; Rule:</strong> To win, a miner must find a hash that is <strong>lower than the current network &ldquo;target&rdquo;</strong>. This target is a very large number that the entire network agrees on. Finding a hash below this target is incredibly difficult and requires immense computational power—it&rsquo;s like trying to win a global lottery every 10 minutes.</li>
+<li><strong>The Reward and The Halving:</strong> The first miner to find a valid hash wins the <strong>block reward</strong>.
+<ul>
+<li>Initially, the reward was <strong>50 BTC</strong>.</li>
+<li>However, this reward is programmed to cut in half roughly every four years (or 210,000 blocks) in an event called the <strong>halving</strong>.</li>
+<li>As of the April 2024 halving, the reward is now <strong>3.125 BTC</strong>.</li>
+<li>This mechanism controls the supply of new bitcoin, making the currency scarce and ensuring its total amount will never exceed <strong>21 million coins</strong>.</li>
+</ul>
+</li>
+</ul>
+<p>When a winning block is found, its hash is broadcast across the P2P network. All other participants quickly verify that the hash is valid. Once confirmed, they add the new block to their copy of the blockchain and immediately start competing to solve the <em>next</em> block.</p>
+<hr>
+<h4 id="how-to-mine-choosing-your-method">How to Mine: Choosing Your Method</h4>
+<p>There are a few ways to participate in Bitcoin mining, each with its own pros and cons.</p>
+<ul>
+<li><strong>Solo Mining:</strong> This is you, on your own, trying to solve a block. If you succeed, you get the <em>entire</em> block reward (3.125 BTC + transaction fees). However, the odds of a single person solving a block today are astronomically low due to the immense competition. It&rsquo;s like buying a single lottery ticket and hoping to win the grand prize.</li>
+<li><strong>Mining Pool:</strong> This is the most common method. You join a &ldquo;pool&rdquo; with thousands of other miners, combining your computing power. The pool works together to find blocks much more frequently. When the pool wins, the reward is split among all participants based on how much computing power they contributed. This provides smaller, but much more consistent and predictable, payouts.</li>
+</ul>
+<hr>
+<h4 id="block-forks-when-the-chain-splits-">Block Forks: When the Chain Splits 🍴</h4>
+<p>A <strong>fork</strong> happens when the blockchain temporarily or permanently splits into two different paths.</p>
+<ul>
+<li><strong>Accidental Fork:</strong> Sometimes, two miners find a valid block at almost the exact same time. The network briefly splits as some nodes follow one miner and some follow the other. This is usually resolved within a few minutes when the next block is found and added to one of the chains, making it the &ldquo;longest&rdquo; and therefore the official one. The shorter chain is then abandoned.</li>
+<li><strong>Hard Fork:</strong> This is an intentional split that happens when the network&rsquo;s software rules are changed in a way that is not backward-compatible. All participants must upgrade to the new rules to continue. If a significant portion of the community refuses to upgrade, the split becomes permanent, resulting in the creation of a new, separate cryptocurrency (e.g., Bitcoin Cash was created from a hard fork of Bitcoin).</li>
+</ul>
+<hr>
+<h4 id="ethics">Ethics</h4>
+<p>Mining bitcoin always consume immense energy, which critics view as a wasteful environmental cost for a seemingly meaningless computation. Proponents argue this mechanism decentralized financial system that offers freedom from the control of banks and governments.</p>
+<h4 id="tools">Tools</h4>
+<p>Calculate computing performance: <a href="https://www.nicehash.com/profitability-calculator">https://www.nicehash.com/profitability-calculator</a></p>
+<blockquote>
+<p>This is the computating power of my personal game laptop(one dollar per day hhh)
+<img loading="lazy" src="/Interesting_thing/computating_power.png"></p></blockquote>
+<h4 id="resources">Resources:</h4>
+<p>Youtube channels</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=5hgdekVZb3A&amp;list=PL5TbbtexT8T0JbaWR0Zbf-aVm2onpSjHT&amp;index=3">https://www.youtube.com/watch?v=5hgdekVZb3A&amp;list=PL5TbbtexT8T0JbaWR0Zbf-aVm2onpSjHT&amp;index=3</a></li>
+<li><a href="https://www.youtube.com/watch?v=a41DMDfJjsU&amp;list=PL5TbbtexT8T0JbaWR0Zbf-aVm2onpSjHT&amp;index=2">https://www.youtube.com/watch?v=a41DMDfJjsU&amp;list=PL5TbbtexT8T0JbaWR0Zbf-aVm2onpSjHT&amp;index=2</a></li>
+<li><a href="https://Gemini.google.com">https://Gemini.google.com</a></li>
+</ul>
+<h2 id="trivias">Trivias</h2>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Charles_Scott_Sherrington">Sherrington</a>, coined the word &ldquo;synapse&rdquo; to define the connection between two neurons</li>
+<li>Two different roads of AI: connectionism and Symbolism.</li>
+<li>Hidden layer was firstly been implemented in Boltzmann machine, although Rosenblatt had some idea about multilayer perceptrons, but he didn&rsquo;t find any useful training algorithm.</li>
+<li>Restricted Boltzmann machine - each layer is only allowed to be fully connectted to the next layer, current layer nodes are not connectted to each other. The advantages of this machine is it allows to update bodes within the same layer in parallel</li>
+<li>The invention of hidden layer allows model to understand abstract features. It also becomes to one of the most significant component in deep learning.</li>
+<li>The main difference between the Hopfield Network and the Boltzmann nachine is the presence of hidden layers. Other differences include the fact that the Hopfield network is deterministic, whereas the Boltzmann machine is stochastic, and the defintions of their energy function also differ.</li>
+<li>The fovea has many photoreceptors, with a high density of cones(for colors) and nearly no rods(for dark). This structure allows us to see the world clearly. If you develop myopia, the image formed after light is reflected by the eye may not be focused directly on the fovea.</li>
+<li>The idea of CNN was mainly inspired by the HMAX model(hierarchical, pooling, convolution), and the HMAX model was proposed by Tomaso Poggio, to simulate primate visual system, specifically ventral stream.</li>
+</ol>
+<h2 id="resource">Resource</h2>
+<ol>
+<li>Documentary of AlphaGo: <a href="https://www.youtube.com/watch?v=WXuK6gekU1Y">https://www.youtube.com/watch?v=WXuK6gekU1Y</a></li>
+<li>This is the most comprehensive guide for AI beginner I had ever seen: <a href="https://www.reddit.com/r/DTU__Delhi/comments/1g0luec/mastering_aiml_in_2024_the_only_resource_guide/">Guide link</a></li>
+</ol>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Hopfield Network</title>
+      <link>https://example.org/posts/hopfieldnetwork/</link>
+      <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/hopfieldnetwork/</guid>
+      <description>&lt;p&gt;2024 Nobel Physics prize was earned by Professor John Hopfield and Professor Geoffrey Hinton, to thanks their distribution on machine learning.
+However, I felt very suprised that why it gives to machine learning? Anyway, I hadn&amp;rsquo;t deeply find the answer in that time.&lt;/p&gt;
+&lt;p&gt;Recently, Professor Geoffrey Hinton gived us a short lecture about Boltzmann machine virtually.
+And before the lecture, I learned Hopfield Network(the predecessor of Boltzimann machine) at my accommodation.
+So today I will record this moment.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>2024 Nobel Physics prize was earned by Professor John Hopfield and Professor Geoffrey Hinton, to thanks their distribution on machine learning.
+However, I felt very suprised that why it gives to machine learning? Anyway, I hadn&rsquo;t deeply find the answer in that time.</p>
+<p>Recently, Professor Geoffrey Hinton gived us a short lecture about Boltzmann machine virtually.
+And before the lecture, I learned Hopfield Network(the predecessor of Boltzimann machine) at my accommodation.
+So today I will record this moment.</p>
+<p>Hopfield Network was invented at 1982. Processor John Hopfield designed it based on ideas from statistical mechanics.</p>
+<p><img alt="metaphor" loading="lazy" src="/Hand_write_note/hopfield_network_metaphor.png">
+The graph above shows two states of a ball
+From the left part, we can see the energy system of the ball is at the highest, which means the ball is very unstable
+From the right part, we can see the ball had already fall into the bottom, which means the ball is very stable.
+Although it is a classical physics model, but it definitly explain the main idea of hopfield network.</p>
+<p>So now we can say hopfield network is just make a system move from an unstable state to stable state.</p>
+<p>If you interested how exactly hopfield network work. See the video below, it&rsquo;s pretty nice.</p>
+<iframe width=100% height=475 
+src="https://www.youtube.com/embed/1WPJdAW-sFo?start=505" 
+title="YouTube video player" 
+frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen>
+</iframe>
+<p>This idea is also useful in today.
+In LLM, we can say the user&rsquo;s prompt and question is the most unstable states while the answer is the stable state.</p>
+<p>Based on the concept of Hopfield networks, many different architectures had been invented, which makes Connectionism and Deep Learning great again.</p>
+<p>After all, I catch the reason why nobel prize gives to physics.</p>
+<ol>
+<li>how hopfield work</li>
+<li>why we have hopfield</li>
+<li>how it work in ai</li>
+<li>how the concept can be used in llm</li>
+<li>why nobel physics prize gives to ai in 2024</li>
+</ol>
+]]></content:encoded>
+    </item>
     <item>
       <title>For UNIX Week | King Weekly</title>
-      <link>http://localhost:1313/posts/techweekly/techweek3/</link>
+      <link>https://example.org/posts/techweekly/techweek3/</link>
       <pubDate>Mon, 21 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/techweekly/techweek3/</guid>
+      <guid>https://example.org/posts/techweekly/techweek3/</guid>
       <description>&lt;h2 id=&#34;book---unix-a-history-and-a-memoir&#34;&gt;Book - Unix: A History and a Memoir&lt;/h2&gt;
 &lt;p&gt;Recently, I read this fantastic book. It bring me back to that 1960s - a period without modern computer and how the most clever minds in this world changed the world.
 During the reading, I found many answers to the &amp;ldquo;why&amp;rdquo; questions I had when I learning linux system.&lt;/p&gt;
@@ -92,15 +225,15 @@ KISS.</p>
     </item>
     <item>
       <title>Jarvis Will Coming Soon | King Weekly</title>
-      <link>http://localhost:1313/posts/techweekly/techweek2/</link>
+      <link>https://example.org/posts/techweekly/techweek2/</link>
       <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/techweekly/techweek2/</guid>
+      <guid>https://example.org/posts/techweekly/techweek2/</guid>
       <description>&lt;h2 id=&#34;model-context-protocol-overview&#34;&gt;Model Context Protocol overview&lt;/h2&gt;
 &lt;p&gt;MCP (Model Context Protocol) can be understood as a &amp;ldquo;universal language&amp;rdquo; for communication between AI and external tools. It&amp;rsquo;s like a translator, allowing different AI applications (such as chatbots, code assistants) and different tools (like databases, GitHub, calendars) to easily communicate without needing to develop a new interface every time.&lt;/p&gt;
 &lt;h4 id=&#34;why-is-mcp-needed&#34;&gt;Why is MCP needed?&lt;/h4&gt;
 &lt;p&gt;In the past, if you wanted an AI assistant to access different tools, like a calendar, email, or task manager, you would need to develop a separate interface for each tool (function calling), which resulted in a huge amount of work (N AI applications × M tools = N×M interfaces).&lt;br&gt;
 MCP simplifies everything: all AI applications only need to support MCP, and all tools only need to support MCP. This way, they can communicate with each other, reducing development costs (N+M interfaces).
-&lt;img alt=&#34;components mcp include&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/TechStuff/mcp.png&#34;&gt;&lt;/p&gt;</description>
+&lt;img alt=&#34;components mcp include&#34; loading=&#34;lazy&#34; src=&#34;https://example.org/TechStuff/mcp.png&#34;&gt;&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="model-context-protocol-overview">Model Context Protocol overview</h2>
 <p>MCP (Model Context Protocol) can be understood as a &ldquo;universal language&rdquo; for communication between AI and external tools. It&rsquo;s like a translator, allowing different AI applications (such as chatbots, code assistants) and different tools (like databases, GitHub, calendars) to easily communicate without needing to develop a new interface every time.</p>
 <h4 id="why-is-mcp-needed">Why is MCP needed?</h4>
@@ -196,12 +329,12 @@ After watched the coverage keynotes, I was just feel like our mankind is in an s
     </item>
     <item>
       <title>Start | King Weekly</title>
-      <link>http://localhost:1313/posts/techweekly/techweek1/</link>
+      <link>https://example.org/posts/techweekly/techweek1/</link>
       <pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/techweekly/techweek1/</guid>
+      <guid>https://example.org/posts/techweekly/techweek1/</guid>
       <description>&lt;h2 id=&#34;email-sending-and-receiving-system&#34;&gt;Email sending and receiving system&lt;/h2&gt;
 &lt;p&gt;The main system is build based on three protocols: SMTP, POP3 and IMAP.
-&lt;img alt=&#34;process of email system&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/emailsys.png&#34;&gt;&lt;/p&gt;
+&lt;img alt=&#34;process of email system&#34; loading=&#34;lazy&#34; src=&#34;https://example.org/emailsys.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;SMTP is used for sending emails to the recipient’s email server, but it does not handle receiving emails.
 User1 sends an email via an email client, and the email is first sent to User1&amp;rsquo;s email server using SMTP. Then, the email server forwards it to the recipient&amp;rsquo;s email server using SMTP as well.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="email-sending-and-receiving-system">Email sending and receiving system</h2>
@@ -282,9 +415,9 @@ If someone reads it, that&rsquo;s great. If not, you’ve still completed your w
     </item>
     <item>
       <title>Time Complexity Notations</title>
-      <link>http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/</link>
+      <link>https://example.org/posts/the-difference-between-tn--on-and-%CE%B8n/</link>
       <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/</guid>
+      <guid>https://example.org/posts/the-difference-between-tn--on-and-%CE%B8n/</guid>
       <description>&lt;p&gt;In this semester, I listened the course mit 6.006 in youtube channel. Duirng the course, the professor used different notations to represents time complexity of an algorithm. I learned Big O &lt;code&gt;O(n)&lt;/code&gt; notation before, but for Big theta &lt;code&gt;θ(n)&lt;/code&gt; and reccurence relations &lt;code&gt;T(n)&lt;/code&gt;, I never heard them before. Today, I hope I can finally figure them out.&lt;/p&gt;
 &lt;h1 id=&#34;what&#34;&gt;What&lt;/h1&gt;
 &lt;p&gt;T(n) represents the actual running time of an algorithm&lt;br&gt;
@@ -321,13 +454,13 @@ There are two methods to convert T(n) into O(n)</p>
     </item>
     <item>
       <title>My Homelab</title>
-      <link>http://localhost:1313/posts/homeserver/</link>
+      <link>https://example.org/posts/homeserver/</link>
       <pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/homeserver/</guid>
+      <guid>https://example.org/posts/homeserver/</guid>
       <description>&lt;p&gt;This week, I browsed many old machines at ebay to use for my first attempt at setting up a homelab. Initially, I planned to build a machine myself during the summer holiday, but in today I found a great performance and a high cost-effective machine that changed my mind.&lt;/p&gt;
 &lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;The machine model is &lt;code&gt;HP-Elitedesk-800-G4-SFF&lt;/code&gt;. Compared to its previous generation, the chipset supports 8th and 9th generation of intel core cpu, which offers a significant improvement(6c6t) compare with 6th/7th core cpu(4c4t). Furthermore it provides NVme express in this generation. With these components, I can build a highly cost-effective homelab. The total cost is £150.&lt;br&gt;
-&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/TechStuff/serverbill.png&#34;&gt;&lt;/p&gt;</description>
+&lt;img loading=&#34;lazy&#34; src=&#34;https://example.org/TechStuff/serverbill.png&#34;&gt;&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>This week, I browsed many old machines at ebay to use for my first attempt at setting up a homelab. Initially, I planned to build a machine myself during the summer holiday, but in today I found a great performance and a high cost-effective machine that changed my mind.</p>
 <h1 id="overview">Overview</h1>
 <p>The machine model is <code>HP-Elitedesk-800-G4-SFF</code>. Compared to its previous generation, the chipset supports 8th and 9th generation of intel core cpu, which offers a significant improvement(6c6t) compare with 6th/7th core cpu(4c4t). Furthermore it provides NVme express in this generation. With these components, I can build a highly cost-effective homelab. The total cost is £150.<br>
@@ -374,9 +507,9 @@ reboot or close. This issue will be solved easily when I have a router. Nowadays
     </item>
     <item>
       <title>Ambitious Cross-Platform Dream: JVM&#39;s Achievements and Limitations</title>
-      <link>http://localhost:1313/posts/jvm/</link>
+      <link>https://example.org/posts/jvm/</link>
       <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/jvm/</guid>
+      <guid>https://example.org/posts/jvm/</guid>
       <description>&lt;p&gt;This semester, I learned OOP from Inf1B, which using java as the official teaching language. What fascinates me the most is why Java has the JVM. I learned Python, C++, js and Haskell before, but all of them doesn&amp;rsquo;t have a jargon for virtual machine. And then I went to wikipeidia to find out why.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambitious dream: &amp;ldquo;Write Once, Run Anywhere.&amp;rdquo; This WORA philosophy became a reality through the JVM, enabling Java applications to run on any operating system with a compatible JVM. Before talking about the archivements and limitations, Let&amp;rsquo;s have a look about how JVM works.&lt;/p&gt;</description>
