@@ -51,3 +51,11 @@ To access the server, I bought a portable monitor, since the IP address of my se
 reboot or close. This issue will be solved easily when I have a router. Nowadays, I need to change the tunnels configuration to enable external access.
 
 since I have 3 different operating systems in my three daily devices, phone for android, laptop for arachlinux and ipad for ipados, I installed nextcloud docker to try to integrate them into one ecosystem, that pretty awesome.
+
+# Update
+1. Nextcloud for cloud storage
+2. Able to build game server
+3. Music and video live streaming server.
+
+# Future
+1. Mining bitcoin
