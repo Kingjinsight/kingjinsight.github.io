@@ -1,7 +1,7 @@
 ---
 date: "2025-04-30"
 draft: false
-title: 'A Deep Dive into the Bitcoin Technology | King Weekly'
+title: 'A Dive into the Bitcoin Technology | King Weekly'
 author: 'King Jin'
 tags: ["Tech_Weekly","AI"]
 showtoc: true
@@ -11,7 +11,7 @@ The legend of Bitcoin has shown its magic for a long time. Recently, I have star
 
 ---
 
-#### The Blockchain: A Digital Chain of Trust ⛓️
+#### The Blockchain⛓️
 
 The **blockchain** is the foundational technology of Bitcoin. Think of it as a public, digital ledger or receipt book that is shared across thousands of computers worldwide.
 
@@ -20,13 +20,13 @@ The **blockchain** is the foundational technology of Bitcoin. Think of it as a p
 
 ---
 
-#### The Genesis Block: Where It All Began 📜
+#### The Genesis Block📜
 
 The very first block, known as the **Genesis Block**, was mined on **2009.01.04**, by Bitcoin's mysterious creator, **Satoshi Nakamoto**. This single block was the start of the entire Bitcoin network. Once it was created, the race to mine the second block began, and the chain has been growing continuously ever since.
 
 ---
 
-#### Mining: Securing the Network and Creating Coins ⛏️
+#### Mining⛏️
 
 Mining is the process of creating new blocks. It's a competitive race that serves two critical purposes:
 1.  **Validating Transactions:** Miners group pending transactions into a new block.
@@ -46,7 +46,7 @@ When a winning block is found, its hash is broadcast across the P2P network. All
 
 ---
 
-#### How to Mine: Choosing Your Method
+#### How to Mine:
 
 There are a few ways to participate in Bitcoin mining, each with its own pros and cons.
 
@@ -56,7 +56,7 @@ There are a few ways to participate in Bitcoin mining, each with its own pros an
 
 ---
 
-#### Block Forks: When the Chain Splits 🍴
+#### Block Forks🍴
 
 A **fork** happens when the blockchain temporarily or permanently splits into two different paths.
 
@@ -89,7 +89,7 @@ Youtube channels
 6. The main difference between the Hopfield Network and the Boltzmann nachine is the presence of hidden layers. Other differences include the fact that the Hopfield network is deterministic, whereas the Boltzmann machine is stochastic, and the defintions of their energy function also differ.
 7. The fovea has many photoreceptors, with a high density of cones(for colors) and nearly no rods(for dark). This structure allows us to see the world clearly. If you develop myopia, the image formed after light is reflected by the eye may not be focused directly on the fovea.
 8. The idea of CNN was mainly inspired by the HMAX model(hierarchical, pooling, convolution), and the HMAX model was proposed by Tomaso Poggio, to simulate primate visual system, specifically ventral stream.
-
+9. Ethereum and ether is not the same as bitcoin. Ethereum has a longer vision, and the number of ether is unlimited.
 
 ## Resource
 1. Documentary of AlphaGo: https://www.youtube.com/watch?v=WXuK6gekU1Y
