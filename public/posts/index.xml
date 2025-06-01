@@ -9,16 +9,23 @@
     <lastBuildDate>Wed, 30 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title> | King Weekly</title>
+      <title>A Deep Dive into the Bitcoin Technology | King Weekly</title>
       <link>https://example.org/posts/techweekly/techweek4/</link>
       <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
       <guid>https://example.org/posts/techweekly/techweek4/</guid>
-      <description>&lt;h2 id=&#34;bitcoin-a-deep-dive-into-the-technology&#34;&gt;Bitcoin: A Deep Dive into the Technology&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;bitcoin&#34;&gt;Bitcoin&lt;/h2&gt;
 &lt;p&gt;The legend of Bitcoin has shown its magic for a long time. Recently, I have started to explore this field, and this is a record of my learning.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h4 id=&#34;the-blockchain-a-digital-chain-of-trust-&#34;&gt;The Blockchain: A Digital Chain of Trust ⛓️&lt;/h4&gt;
-&lt;p&gt;The &lt;strong&gt;blockchain&lt;/strong&gt; is the foundational technology of Bitcoin. Think of it as a public, digital ledger or receipt book that is shared across thousands of computers worldwide.&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<h2 id="bitcoin-a-deep-dive-into-the-technology">Bitcoin: A Deep Dive into the Technology</h2>
+&lt;p&gt;The &lt;strong&gt;blockchain&lt;/strong&gt; is the foundational technology of Bitcoin. Think of it as a public, digital ledger or receipt book that is shared across thousands of computers worldwide.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;It&amp;rsquo;s a Chain of Blocks:&lt;/strong&gt; Each &amp;ldquo;block&amp;rdquo; contains a list of recent transactions. When a new block is created, it is cryptographically linked to the previous one, forming an unbroken chain leading all the way back to the very first block.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It&amp;rsquo;s Immutable:&lt;/strong&gt; Because each block is linked to the one before it, changing a transaction in an old block would require re-doing all the work for every single block that came after it. This makes the ledger permanent and tamper-proof. This structure is what proves each coin&amp;rsquo;s history and prevents fraud like double-spending.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;the-genesis-block-where-it-all-began-&#34;&gt;The Genesis Block: Where It All Began 📜&lt;/h4&gt;
+&lt;p&gt;The very first block, known as the &lt;strong&gt;Genesis Block&lt;/strong&gt;, was mined on &lt;strong&gt;2009.01.04&lt;/strong&gt;, by Bitcoin&amp;rsquo;s mysterious creator, &lt;strong&gt;Satoshi Nakamoto&lt;/strong&gt;. This single block was the start of the entire Bitcoin network. Once it was created, the race to mine the second block began, and the chain has been growing continuously ever since.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="bitcoin">Bitcoin</h2>
 <p>The legend of Bitcoin has shown its magic for a long time. Recently, I have started to explore this field, and this is a record of my learning.</p>
 <hr>
 <h4 id="the-blockchain-a-digital-chain-of-trust-">The Blockchain: A Digital Chain of Trust ⛓️</h4>

@@ -1,12 +1,12 @@
 ---
 date: "2025-04-30"
 draft: false
-title: ' | King Weekly'
+title: 'A Deep Dive into the Bitcoin Technology | King Weekly'
 author: 'King Jin'
 tags: ["Tech_Weekly","AI"]
 showtoc: true
 ---
-## Bitcoin: A Deep Dive into the Technology
+## Bitcoin
 The legend of Bitcoin has shown its magic for a long time. Recently, I have started to explore this field, and this is a record of my learning.
 
 ---
