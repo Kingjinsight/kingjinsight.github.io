@@ -5,6 +5,7 @@ title: "Ambitious Cross-Platform Dream: JVM\'s Achievements and Limitations"
 author: 'King Jin'
 tags: ["JVM","Java","Software Engineering"]
 showtoc: true
+comments: true
 ---
 This semester, I learned OOP from Inf1B, which using java as the official teaching language. What fascinates me the most is why Java has the JVM. I learned Python, C++, js and Haskell before, but all of them doesn't have a jargon for virtual machine. And then I went to wikipeidia to find out why.
 

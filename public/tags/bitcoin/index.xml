@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>AI on King&#39;s Blog</title>
-    <link>http://localhost:1313/tags/ai/</link>
-    <description>Recent content in AI on King&#39;s Blog</description>
+    <title>Bitcoin on King&#39;s Blog</title>
+    <link>http://localhost:1313/tags/bitcoin/</link>
+    <description>Recent content in Bitcoin on King&#39;s Blog</description>
     <generator>Hugo -- 0.147.7</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 30 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/bitcoin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Dive into the Bitcoin Technology | King Weekly</title>
       <link>http://localhost:1313/posts/techweekly/techweek4/</link>
@@ -105,153 +105,6 @@
 <li>Documentary of AlphaGo: <a href="https://www.youtube.com/watch?v=WXuK6gekU1Y">https://www.youtube.com/watch?v=WXuK6gekU1Y</a></li>
 <li>How to use hugging face: <a href="https://www.youtube.com/watch?v=3kRB2TXewus">https://www.youtube.com/watch?v=3kRB2TXewus</a></li>
 <li>This is the most comprehensive guide for AI beginner I had ever seen: <a href="https://www.reddit.com/r/DTU__Delhi/comments/1g0luec/mastering_aiml_in_2024_the_only_resource_guide/">Guide link</a></li>
-</ol>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Hopfield Network</title>
-      <link>http://localhost:1313/posts/hopfieldnetwork/</link>
-      <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/hopfieldnetwork/</guid>
-      <description>&lt;p&gt;2024 Nobel Physics prize was earned by Professor John Hopfield and Professor Geoffrey Hinton, to thanks their distribution on machine learning.
-However, I felt very suprised that why it gives to machine learning? Anyway, I hadn&amp;rsquo;t deeply find the answer in that time.&lt;/p&gt;
-&lt;p&gt;Recently, Professor Geoffrey Hinton gived us a short lecture about Boltzmann machine virtually.
-And before the lecture, I learned Hopfield Network(the predecessor of Boltzimann machine) at my accommodation.
-So today I will record this moment.&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p>2024 Nobel Physics prize was earned by Professor John Hopfield and Professor Geoffrey Hinton, to thanks their distribution on machine learning.
-However, I felt very suprised that why it gives to machine learning? Anyway, I hadn&rsquo;t deeply find the answer in that time.</p>
-<p>Recently, Professor Geoffrey Hinton gived us a short lecture about Boltzmann machine virtually.
-And before the lecture, I learned Hopfield Network(the predecessor of Boltzimann machine) at my accommodation.
-So today I will record this moment.</p>
-<p>Hopfield Network was invented at 1982. Processor John Hopfield designed it based on ideas from statistical mechanics.</p>
-<p><img alt="metaphor" loading="lazy" src="/Hand_write_note/hopfield_network_metaphor.png">
-The graph above shows two states of a ball
-From the left part, we can see the energy system of the ball is at the highest, which means the ball is very unstable
-From the right part, we can see the ball had already fall into the bottom, which means the ball is very stable.
-Although it is a classical physics model, but it definitly explain the main idea of hopfield network.</p>
-<p>So now we can say hopfield network is just make a system move from an unstable state to stable state.</p>
-<p>If you interested how exactly hopfield network work. See the video below, it&rsquo;s pretty nice.</p>
-<iframe width=100% height=475 
-src="https://www.youtube.com/embed/1WPJdAW-sFo?start=505" 
-title="YouTube video player" 
-frameborder="0" 
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-allowfullscreen>
-</iframe>
-<p>This idea is also useful in today.
-In LLM, we can say the user&rsquo;s prompt and question is the most unstable states while the answer is the stable state.</p>
-<p>Based on the concept of Hopfield networks, many different architectures had been invented, which makes Connectionism and Deep Learning great again.</p>
-<p>After all, I catch the reason why nobel prize gives to physics.</p>
-<ol>
-<li>how hopfield work</li>
-<li>why we have hopfield</li>
-<li>how it work in ai</li>
-<li>how the concept can be used in llm</li>
-<li>why nobel physics prize gives to ai in 2024</li>
-</ol>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Jarvis Will Coming Soon | King Weekly</title>
-      <link>http://localhost:1313/posts/techweekly/techweek2/</link>
-      <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/techweekly/techweek2/</guid>
-      <description>&lt;h2 id=&#34;model-context-protocol-overview&#34;&gt;Model Context Protocol overview&lt;/h2&gt;
-&lt;p&gt;MCP (Model Context Protocol) can be understood as a &amp;ldquo;universal language&amp;rdquo; for communication between AI and external tools. It&amp;rsquo;s like a translator, allowing different AI applications (such as chatbots, code assistants) and different tools (like databases, GitHub, calendars) to easily communicate without needing to develop a new interface every time.&lt;/p&gt;
-&lt;h4 id=&#34;why-is-mcp-needed&#34;&gt;Why is MCP needed?&lt;/h4&gt;
-&lt;p&gt;In the past, if you wanted an AI assistant to access different tools, like a calendar, email, or task manager, you would need to develop a separate interface for each tool (function calling), which resulted in a huge amount of work (N AI applications × M tools = N×M interfaces).&lt;br&gt;
-MCP simplifies everything: all AI applications only need to support MCP, and all tools only need to support MCP. This way, they can communicate with each other, reducing development costs (N+M interfaces).
-&lt;img alt=&#34;components mcp include&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/TechStuff/mcp.png&#34;&gt;&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<h2 id="model-context-protocol-overview">Model Context Protocol overview</h2>
-<p>MCP (Model Context Protocol) can be understood as a &ldquo;universal language&rdquo; for communication between AI and external tools. It&rsquo;s like a translator, allowing different AI applications (such as chatbots, code assistants) and different tools (like databases, GitHub, calendars) to easily communicate without needing to develop a new interface every time.</p>
-<h4 id="why-is-mcp-needed">Why is MCP needed?</h4>
-<p>In the past, if you wanted an AI assistant to access different tools, like a calendar, email, or task manager, you would need to develop a separate interface for each tool (function calling), which resulted in a huge amount of work (N AI applications × M tools = N×M interfaces).<br>
-MCP simplifies everything: all AI applications only need to support MCP, and all tools only need to support MCP. This way, they can communicate with each other, reducing development costs (N+M interfaces).
-<img alt="components mcp include" loading="lazy" src="/TechStuff/mcp.png"></p>
-<p>The current components of MCP servers include:
-<img alt="components mcp include" loading="lazy" src="/TechStuff/mcp_include.png"></p>
-<h4 id="how-does-mcp-work">How does MCP work?</h4>
-<p><img alt="how mcp work" loading="lazy" src="/TechStuff/mcp_work.png"></p>
-<h4 id="example">Example:</h4>
-<p>Suppose you&rsquo;re using an AI assistant to manage your work, and it wants to help you schedule today&rsquo;s meeting:</p>
-<ul>
-<li>
-<p>Without MCP, developers would need to write separate integration code for Outlook, Google Calendar, and Apple Calendar.</p>
-</li>
-<li>
-<p>With MCP, the AI only needs to call the MCP server, which will automatically interface with your calendar system. No matter which calendar service you use, the AI can work seamlessly.</p>
-</li>
-</ul>
-<h4 id="core-functions-of-mcp">Core Functions of MCP:</h4>
-<ul>
-<li>
-<p>Reducing development costs (no need to develop separate integrations for each tool).</p>
-</li>
-<li>
-<p>Enhancing AI&rsquo;s ability to access external data (allowing AI to easily query and manipulate external data).</p>
-</li>
-<li>
-<p>Standardizing communication (making communication between different AI applications and tools smoother).</p>
-</li>
-</ul>
-<p>You can think of MCP as the &ldquo;USB interface for AI&rdquo;—any AI device can plug into different tools without needing to individually adapt to each one!</p>
-<hr>
-<h2 id="trivias">Trivias:</h2>
-<ol>
-<li><code>Graph</code> is a great data structure, it can be used to find the shortest path, solve a magic cube.
-Rely on this data structure, Human find the shortest steps to solve the worst case configured
-<code>3\*3\*3</code> magic cube in <strong>20</strong> steps (which also called god&rsquo;s number) and 11 steps for <code>2\*2\*2</code> one. What about n*n*n, Here is an interesing paper
-about time compleixity of solving a n*n*n magic cube: <a href="/Demaine_Algoritms_for_solving.pdf">Algorithms for Solving Rubik’s Cubes</a></li>
-<li>Topological sort is an algorithm based on DFS and DAG, It&rsquo;s not a traditional sorting algorithm, like comparing the size of each number and sort them, but sorting based on dependencies.</li>
-<li>Dynamic programming is just like recursion + memorization + guessing</li>
-<li>P vs NP problems: P is a problem  that can be solved easily by a computer, NP is a problem that you can check for correctness very easily once solved. However, P != NP for example wec can&rsquo;t engineer luck.
-Also, NP hard means it is at least as hard as any problem in NP, and NP-complete is lke if you can solve one NP-complete question, you can solve all NP question.
-Reduction is like to prove a known NP-complete question, and transfer it into a NP question X, then X is also a NP-complete question</li>
-<li>HTTP vs REST API
-<ul>
-<li>
-<p>HTTP is a protocol, and its core task is to define how to request and transfer data between your broswer and server</p>
-<ul>
-<li>It focuses on the data exchange level, regardless of whether the data is an image, text, video, or API response.</li>
-<li>For example, you can use an HTTP request to access a webpage (HTML page) or use an HTTP request to retrieve API data (JSON data). It doesn’t care about what data you&rsquo;re transmitting.</li>
-</ul>
-</li>
-<li>
-<p>REST API is a design style, based on the HTTP protocol, with rules and best practices:</p>
-<ul>
-<li>It views content on the server as &ldquo;resources&rdquo; and specifies how to operate on them using HTTP methods (GET, POST, PUT, DELETE).</li>
-<li>REST API design considers resource orientation: Resources (like users, articles, comments, etc.) have unique identifiers (URIs), and clients interact with these resources through HTTP requests.</li>
-</ul>
-<p>For example, in a REST API, you can:</p>
-<ul>
-<li>GET request: Retrieve a resource (e.g., get movie information).</li>
-<li>POST request: Create a new resource (e.g., submit a new comment).</li>
-<li>PUT request: Update a resource (e.g., modify user information).</li>
-<li>DELETE request: Delete a resource (e.g., remove an article).</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="resource">Resource:</h2>
-<ol>
-<li>A tool to build a personal streaming music player: <a href="https://www.navidrome.org/">navidrome</a></li>
-<li>A great blog that introduce human visualization: <a href="https://www-sciencedirect-com.eux.idm.oclc.org/science/article/pii/B9780128038130000040#f0015">human visualization</a></li>
-<li>Five basic algorithms explanation:
-<ul>
-<li><a href="https://houbb.github.io/2020/01/23/data-struct-learn-07-base-dp">Dynamic programming</a></li>
-<li><a href="https://houbb.github.io/2020/01/23/data-struct-learn-07-base-greedy">Greedy Algorithm</a></li>
-<li><a href="https://www.bilibili.com/video/BV1wi4y157er?spm_id_from=333.788.videopod.sections&amp;vd_source=783331b1d88fa190b5ce8305307e0af5">Backtracking</a></li>
-<li><a href="https://chatgpt.com/share/67d76084-79f0-8006-8a37-4500841a7b9a">Branch and Bounding</a></li>
-</ul>
-</li>
-<li>This week, Nvidia GTC 2025 brings a lot of new tech, PC in AI age, B300, new architecture, robots.
-After watched the coverage keynotes, I was just feel like our mankind is in an special stage with unpredictable pace. In science fiction films, at this point
-, it often leads to the arrival of an alien civilization.
-<img alt="GTC_2025" loading="lazy" src="https://cdn.mos.cms.futurecdn.net/QQ6ZABoJtLbUEnGLXxz2GT-970-80.png.webp"></li>
-<li>A dijkstra algorithm visualiser that helps me understand it: <a href="https://www.cs.usfca.edu/~galles/visualization/Dijkstra.html">Dijkstra shortest path</a></li>
-<li>MCP explain: <a href="https://www.philschmid.de/mcp-introduction">A blog that explain MCP crystal clear</a></li>
 </ol>
 ]]></content:encoded>
     </item>

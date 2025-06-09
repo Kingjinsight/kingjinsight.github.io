@@ -12,6 +12,7 @@ params:
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
   ShowFullTextinRSS: true
+
   
   homeInfoParams:
     Title: "![King's Blog](/fontbolt.png)"

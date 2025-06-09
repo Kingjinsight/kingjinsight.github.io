@@ -2,43 +2,70 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>King&#39;s Blog</title>
-    <link>https://example.org/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on King&#39;s Blog</description>
-    <generator>Hugo -- 0.147.5</generator>
+    <generator>Hugo -- 0.147.7</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 30 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>A Deep Dive into the Bitcoin Technology | King Weekly</title>
-      <link>https://example.org/posts/techweekly/techweek4/</link>
+      <title>| King Weekly</title>
+      <link>http://localhost:1313/posts/techweekly/techweek5/</link>
       <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/techweekly/techweek4/</guid>
+      <guid>http://localhost:1313/posts/techweekly/techweek5/</guid>
+      <description>&lt;h2 id=&#34;trivias&#34;&gt;Trivias:&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Generating functions are a powerful mathematical tool that transform discrete sequences into algebraic functions, enabling us to solve complex combinatorial counting problems through function operations.&lt;/li&gt;
+&lt;li&gt;GPOS vs RTOS
+&lt;ol&gt;
+&lt;li&gt;General purpose operating systems like Windows, macOS, and Linux are designed to provide a versatile, user-friendly computing environment. They prioritize overall system efficiency, with more flexible restrictions on task response times.&lt;/li&gt;
+&lt;li&gt;Real time operating systems such as VxWorks, focus on strict time limitations for individual tasks, ensuring predictable and deterministic responses. These systems are typically used in environments demanding high reliability and precise time control, featuring a smaller, more streamlined kernel that guarantees real-time performance.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <content:encoded><![CDATA[<h2 id="trivias">Trivias:</h2>
+<ol>
+<li>Generating functions are a powerful mathematical tool that transform discrete sequences into algebraic functions, enabling us to solve complex combinatorial counting problems through function operations.</li>
+<li>GPOS vs RTOS
+<ol>
+<li>General purpose operating systems like Windows, macOS, and Linux are designed to provide a versatile, user-friendly computing environment. They prioritize overall system efficiency, with more flexible restrictions on task response times.</li>
+<li>Real time operating systems such as VxWorks, focus on strict time limitations for individual tasks, ensuring predictable and deterministic responses. These systems are typically used in environments demanding high reliability and precise time control, featuring a smaller, more streamlined kernel that guarantees real-time performance.</li>
+</ol>
+</li>
+</ol>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>A Dive into the Bitcoin Technology | King Weekly</title>
+      <link>http://localhost:1313/posts/techweekly/techweek4/</link>
+      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/techweekly/techweek4/</guid>
       <description>&lt;h2 id=&#34;bitcoin&#34;&gt;Bitcoin&lt;/h2&gt;
 &lt;p&gt;The legend of Bitcoin has shown its magic for a long time. Recently, I have started to explore this field, and this is a record of my learning.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h4 id=&#34;the-blockchain-a-digital-chain-of-trust-&#34;&gt;The Blockchain: A Digital Chain of Trust ⛓️&lt;/h4&gt;
+&lt;h4 id=&#34;the-blockchain&#34;&gt;The Blockchain⛓️&lt;/h4&gt;
 &lt;p&gt;The &lt;strong&gt;blockchain&lt;/strong&gt; is the foundational technology of Bitcoin. Think of it as a public, digital ledger or receipt book that is shared across thousands of computers worldwide.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;It&amp;rsquo;s a Chain of Blocks:&lt;/strong&gt; Each &amp;ldquo;block&amp;rdquo; contains a list of recent transactions. When a new block is created, it is cryptographically linked to the previous one, forming an unbroken chain leading all the way back to the very first block.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;It&amp;rsquo;s Immutable:&lt;/strong&gt; Because each block is linked to the one before it, changing a transaction in an old block would require re-doing all the work for every single block that came after it. This makes the ledger permanent and tamper-proof. This structure is what proves each coin&amp;rsquo;s history and prevents fraud like double-spending.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h4 id=&#34;the-genesis-block-where-it-all-began-&#34;&gt;The Genesis Block: Where It All Began 📜&lt;/h4&gt;
+&lt;h4 id=&#34;the-genesis-block&#34;&gt;The Genesis Block📜&lt;/h4&gt;
 &lt;p&gt;The very first block, known as the &lt;strong&gt;Genesis Block&lt;/strong&gt;, was mined on &lt;strong&gt;2009.01.04&lt;/strong&gt;, by Bitcoin&amp;rsquo;s mysterious creator, &lt;strong&gt;Satoshi Nakamoto&lt;/strong&gt;. This single block was the start of the entire Bitcoin network. Once it was created, the race to mine the second block began, and the chain has been growing continuously ever since.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="bitcoin">Bitcoin</h2>
 <p>The legend of Bitcoin has shown its magic for a long time. Recently, I have started to explore this field, and this is a record of my learning.</p>
 <hr>
-<h4 id="the-blockchain-a-digital-chain-of-trust-">The Blockchain: A Digital Chain of Trust ⛓️</h4>
+<h4 id="the-blockchain">The Blockchain⛓️</h4>
 <p>The <strong>blockchain</strong> is the foundational technology of Bitcoin. Think of it as a public, digital ledger or receipt book that is shared across thousands of computers worldwide.</p>
 <ul>
 <li><strong>It&rsquo;s a Chain of Blocks:</strong> Each &ldquo;block&rdquo; contains a list of recent transactions. When a new block is created, it is cryptographically linked to the previous one, forming an unbroken chain leading all the way back to the very first block.</li>
 <li><strong>It&rsquo;s Immutable:</strong> Because each block is linked to the one before it, changing a transaction in an old block would require re-doing all the work for every single block that came after it. This makes the ledger permanent and tamper-proof. This structure is what proves each coin&rsquo;s history and prevents fraud like double-spending.</li>
 </ul>
 <hr>
-<h4 id="the-genesis-block-where-it-all-began-">The Genesis Block: Where It All Began 📜</h4>
+<h4 id="the-genesis-block">The Genesis Block📜</h4>
 <p>The very first block, known as the <strong>Genesis Block</strong>, was mined on <strong>2009.01.04</strong>, by Bitcoin&rsquo;s mysterious creator, <strong>Satoshi Nakamoto</strong>. This single block was the start of the entire Bitcoin network. Once it was created, the race to mine the second block began, and the chain has been growing continuously ever since.</p>
 <hr>
-<h4 id="mining-securing-the-network-and-creating-coins-">Mining: Securing the Network and Creating Coins ⛏️</h4>
+<h4 id="mining">Mining⛏️</h4>
 <p>Mining is the process of creating new blocks. It&rsquo;s a competitive race that serves two critical purposes:</p>
 <ol>
 <li><strong>Validating Transactions:</strong> Miners group pending transactions into a new block.</li>
@@ -59,14 +86,14 @@
 </ul>
 <p>When a winning block is found, its hash is broadcast across the P2P network. All other participants quickly verify that the hash is valid. Once confirmed, they add the new block to their copy of the blockchain and immediately start competing to solve the <em>next</em> block.</p>
 <hr>
-<h4 id="how-to-mine-choosing-your-method">How to Mine: Choosing Your Method</h4>
+<h4 id="how-to-mine">How to Mine:</h4>
 <p>There are a few ways to participate in Bitcoin mining, each with its own pros and cons.</p>
 <ul>
 <li><strong>Solo Mining:</strong> This is you, on your own, trying to solve a block. If you succeed, you get the <em>entire</em> block reward (3.125 BTC + transaction fees). However, the odds of a single person solving a block today are astronomically low due to the immense competition. It&rsquo;s like buying a single lottery ticket and hoping to win the grand prize.</li>
 <li><strong>Mining Pool:</strong> This is the most common method. You join a &ldquo;pool&rdquo; with thousands of other miners, combining your computing power. The pool works together to find blocks much more frequently. When the pool wins, the reward is split among all participants based on how much computing power they contributed. This provides smaller, but much more consistent and predictable, payouts.</li>
 </ul>
 <hr>
-<h4 id="block-forks-when-the-chain-splits-">Block Forks: When the Chain Splits 🍴</h4>
+<h4 id="block-forks">Block Forks🍴</h4>
 <p>A <strong>fork</strong> happens when the blockchain temporarily or permanently splits into two different paths.</p>
 <ul>
 <li><strong>Accidental Fork:</strong> Sometimes, two miners find a valid block at almost the exact same time. The network briefly splits as some nodes follow one miner and some follow the other. This is usually resolved within a few minutes when the next block is found and added to one of the chains, making it the &ldquo;longest&rdquo; and therefore the official one. The shorter chain is then abandoned.</li>
@@ -97,19 +124,22 @@
 <li>The main difference between the Hopfield Network and the Boltzmann nachine is the presence of hidden layers. Other differences include the fact that the Hopfield network is deterministic, whereas the Boltzmann machine is stochastic, and the defintions of their energy function also differ.</li>
 <li>The fovea has many photoreceptors, with a high density of cones(for colors) and nearly no rods(for dark). This structure allows us to see the world clearly. If you develop myopia, the image formed after light is reflected by the eye may not be focused directly on the fovea.</li>
 <li>The idea of CNN was mainly inspired by the HMAX model(hierarchical, pooling, convolution), and the HMAX model was proposed by Tomaso Poggio, to simulate primate visual system, specifically ventral stream.</li>
+<li>Pytorch for research area, Tensorflow for industry and JAX for high level usage.</li>
+<li>Ethereum and ether is not the same as bitcoin. Ethereum has a longer vision, and the number of ether is unlimited.</li>
 </ol>
 <h2 id="resource">Resource</h2>
 <ol>
 <li>Documentary of AlphaGo: <a href="https://www.youtube.com/watch?v=WXuK6gekU1Y">https://www.youtube.com/watch?v=WXuK6gekU1Y</a></li>
+<li>How to use hugging face: <a href="https://www.youtube.com/watch?v=3kRB2TXewus">https://www.youtube.com/watch?v=3kRB2TXewus</a></li>
 <li>This is the most comprehensive guide for AI beginner I had ever seen: <a href="https://www.reddit.com/r/DTU__Delhi/comments/1g0luec/mastering_aiml_in_2024_the_only_resource_guide/">Guide link</a></li>
 </ol>
 ]]></content:encoded>
     </item>
     <item>
       <title>Hopfield Network</title>
-      <link>https://example.org/posts/hopfieldnetwork/</link>
+      <link>http://localhost:1313/posts/hopfieldnetwork/</link>
       <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/hopfieldnetwork/</guid>
+      <guid>http://localhost:1313/posts/hopfieldnetwork/</guid>
       <description>&lt;p&gt;2024 Nobel Physics prize was earned by Professor John Hopfield and Professor Geoffrey Hinton, to thanks their distribution on machine learning.
 However, I felt very suprised that why it gives to machine learning? Anyway, I hadn&amp;rsquo;t deeply find the answer in that time.&lt;/p&gt;
 &lt;p&gt;Recently, Professor Geoffrey Hinton gived us a short lecture about Boltzmann machine virtually.
@@ -150,9 +180,9 @@ In LLM, we can say the user&rsquo;s prompt and question is the most unstable sta
     </item>
     <item>
       <title>For UNIX Week | King Weekly</title>
-      <link>https://example.org/posts/techweekly/techweek3/</link>
+      <link>http://localhost:1313/posts/techweekly/techweek3/</link>
       <pubDate>Mon, 21 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/techweekly/techweek3/</guid>
+      <guid>http://localhost:1313/posts/techweekly/techweek3/</guid>
       <description>&lt;h2 id=&#34;book---unix-a-history-and-a-memoir&#34;&gt;Book - Unix: A History and a Memoir&lt;/h2&gt;
 &lt;p&gt;Recently, I read this fantastic book. It bring me back to that 1960s - a period without modern computer and how the most clever minds in this world changed the world.
 During the reading, I found many answers to the &amp;ldquo;why&amp;rdquo; questions I had when I learning linux system.&lt;/p&gt;
@@ -232,15 +262,15 @@ KISS.</p>
     </item>
     <item>
       <title>Jarvis Will Coming Soon | King Weekly</title>
-      <link>https://example.org/posts/techweekly/techweek2/</link>
+      <link>http://localhost:1313/posts/techweekly/techweek2/</link>
       <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/techweekly/techweek2/</guid>
+      <guid>http://localhost:1313/posts/techweekly/techweek2/</guid>
       <description>&lt;h2 id=&#34;model-context-protocol-overview&#34;&gt;Model Context Protocol overview&lt;/h2&gt;
 &lt;p&gt;MCP (Model Context Protocol) can be understood as a &amp;ldquo;universal language&amp;rdquo; for communication between AI and external tools. It&amp;rsquo;s like a translator, allowing different AI applications (such as chatbots, code assistants) and different tools (like databases, GitHub, calendars) to easily communicate without needing to develop a new interface every time.&lt;/p&gt;
 &lt;h4 id=&#34;why-is-mcp-needed&#34;&gt;Why is MCP needed?&lt;/h4&gt;
 &lt;p&gt;In the past, if you wanted an AI assistant to access different tools, like a calendar, email, or task manager, you would need to develop a separate interface for each tool (function calling), which resulted in a huge amount of work (N AI applications × M tools = N×M interfaces).&lt;br&gt;
 MCP simplifies everything: all AI applications only need to support MCP, and all tools only need to support MCP. This way, they can communicate with each other, reducing development costs (N+M interfaces).
-&lt;img alt=&#34;components mcp include&#34; loading=&#34;lazy&#34; src=&#34;https://example.org/TechStuff/mcp.png&#34;&gt;&lt;/p&gt;</description>
+&lt;img alt=&#34;components mcp include&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/TechStuff/mcp.png&#34;&gt;&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="model-context-protocol-overview">Model Context Protocol overview</h2>
 <p>MCP (Model Context Protocol) can be understood as a &ldquo;universal language&rdquo; for communication between AI and external tools. It&rsquo;s like a translator, allowing different AI applications (such as chatbots, code assistants) and different tools (like databases, GitHub, calendars) to easily communicate without needing to develop a new interface every time.</p>
 <h4 id="why-is-mcp-needed">Why is MCP needed?</h4>
@@ -336,12 +366,12 @@ After watched the coverage keynotes, I was just feel like our mankind is in an s
     </item>
     <item>
       <title>Start | King Weekly</title>
-      <link>https://example.org/posts/techweekly/techweek1/</link>
+      <link>http://localhost:1313/posts/techweekly/techweek1/</link>
       <pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/techweekly/techweek1/</guid>
+      <guid>http://localhost:1313/posts/techweekly/techweek1/</guid>
       <description>&lt;h2 id=&#34;email-sending-and-receiving-system&#34;&gt;Email sending and receiving system&lt;/h2&gt;
 &lt;p&gt;The main system is build based on three protocols: SMTP, POP3 and IMAP.
-&lt;img alt=&#34;process of email system&#34; loading=&#34;lazy&#34; src=&#34;https://example.org/emailsys.png&#34;&gt;&lt;/p&gt;
+&lt;img alt=&#34;process of email system&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/emailsys.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;SMTP is used for sending emails to the recipient’s email server, but it does not handle receiving emails.
 User1 sends an email via an email client, and the email is first sent to User1&amp;rsquo;s email server using SMTP. Then, the email server forwards it to the recipient&amp;rsquo;s email server using SMTP as well.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="email-sending-and-receiving-system">Email sending and receiving system</h2>
@@ -422,9 +452,9 @@ If someone reads it, that&rsquo;s great. If not, you’ve still completed your w
     </item>
     <item>
       <title>Time Complexity Notations</title>
-      <link>https://example.org/posts/the-difference-between-tn--on-and-%CE%B8n/</link>
+      <link>http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/</link>
       <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/the-difference-between-tn--on-and-%CE%B8n/</guid>
+      <guid>http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/</guid>
       <description>&lt;p&gt;In this semester, I listened the course mit 6.006 in youtube channel. Duirng the course, the professor used different notations to represents time complexity of an algorithm. I learned Big O &lt;code&gt;O(n)&lt;/code&gt; notation before, but for Big theta &lt;code&gt;θ(n)&lt;/code&gt; and reccurence relations &lt;code&gt;T(n)&lt;/code&gt;, I never heard them before. Today, I hope I can finally figure them out.&lt;/p&gt;
 &lt;h1 id=&#34;what&#34;&gt;What&lt;/h1&gt;
 &lt;p&gt;T(n) represents the actual running time of an algorithm&lt;br&gt;
@@ -461,13 +491,13 @@ There are two methods to convert T(n) into O(n)</p>
     </item>
     <item>
       <title>My Homelab</title>
-      <link>https://example.org/posts/homeserver/</link>
+      <link>http://localhost:1313/posts/homeserver/</link>
       <pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/homeserver/</guid>
+      <guid>http://localhost:1313/posts/homeserver/</guid>
       <description>&lt;p&gt;This week, I browsed many old machines at ebay to use for my first attempt at setting up a homelab. Initially, I planned to build a machine myself during the summer holiday, but in today I found a great performance and a high cost-effective machine that changed my mind.&lt;/p&gt;
 &lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;The machine model is &lt;code&gt;HP-Elitedesk-800-G4-SFF&lt;/code&gt;. Compared to its previous generation, the chipset supports 8th and 9th generation of intel core cpu, which offers a significant improvement(6c6t) compare with 6th/7th core cpu(4c4t). Furthermore it provides NVme express in this generation. With these components, I can build a highly cost-effective homelab. The total cost is £150.&lt;br&gt;
-&lt;img loading=&#34;lazy&#34; src=&#34;https://example.org/TechStuff/serverbill.png&#34;&gt;&lt;/p&gt;</description>
+&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/TechStuff/serverbill.png&#34;&gt;&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>This week, I browsed many old machines at ebay to use for my first attempt at setting up a homelab. Initially, I planned to build a machine myself during the summer holiday, but in today I found a great performance and a high cost-effective machine that changed my mind.</p>
 <h1 id="overview">Overview</h1>
 <p>The machine model is <code>HP-Elitedesk-800-G4-SFF</code>. Compared to its previous generation, the chipset supports 8th and 9th generation of intel core cpu, which offers a significant improvement(6c6t) compare with 6th/7th core cpu(4c4t). Furthermore it provides NVme express in this generation. With these components, I can build a highly cost-effective homelab. The total cost is £150.<br>
@@ -510,13 +540,23 @@ And it&rsquo;s totally free!</p>
 To access the server, I bought a portable monitor, since the IP address of my server using DHCP, which required to check the IP address manually when the machine
 reboot or close. This issue will be solved easily when I have a router. Nowadays, I need to change the tunnels configuration to enable external access.</p>
 <p>since I have 3 different operating systems in my three daily devices, phone for android, laptop for arachlinux and ipad for ipados, I installed nextcloud docker to try to integrate them into one ecosystem, that pretty awesome.</p>
+<h1 id="update">Update</h1>
+<ol>
+<li>Nextcloud for cloud storage</li>
+<li>Able to build game server</li>
+<li>Music and video live streaming server.</li>
+</ol>
+<h1 id="future">Future</h1>
+<ol>
+<li>Mining bitcoin</li>
+</ol>
 ]]></content:encoded>
     </item>
     <item>
       <title>Ambitious Cross-Platform Dream: JVM&#39;s Achievements and Limitations</title>
-      <link>https://example.org/posts/jvm/</link>
+      <link>http://localhost:1313/posts/jvm/</link>
       <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/jvm/</guid>
+      <guid>http://localhost:1313/posts/jvm/</guid>
       <description>&lt;p&gt;This semester, I learned OOP from Inf1B, which using java as the official teaching language. What fascinates me the most is why Java has the JVM. I learned Python, C++, js and Haskell before, but all of them doesn&amp;rsquo;t have a jargon for virtual machine. And then I went to wikipeidia to find out why.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambitious dream: &amp;ldquo;Write Once, Run Anywhere.&amp;rdquo; This WORA philosophy became a reality through the JVM, enabling Java applications to run on any operating system with a compatible JVM. Before talking about the archivements and limitations, Let&amp;rsquo;s have a look about how JVM works.&lt;/p&gt;</description>
@@ -578,22 +618,22 @@ As you start watching, the service begins playing the movie. Similarly, Java run
     </item>
     <item>
       <title></title>
-      <link>https://example.org/aboutme/gallery/</link>
+      <link>http://localhost:1313/aboutme/gallery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/aboutme/gallery/</guid>
+      <guid>http://localhost:1313/aboutme/gallery/</guid>
       <description></description>
     </item>
     <item>
       <title>About me</title>
-      <link>https://example.org/aboutme/</link>
+      <link>http://localhost:1313/aboutme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/aboutme/</guid>
+      <guid>http://localhost:1313/aboutme/</guid>
       <description>aboutme</description>
       <content:encoded><![CDATA[<h1></h1>
 <div class="card" style="border: 1px solid #ccc; padding: 1rem; margin-bottom: 1rem;">
   <div class="card-body">
     <p><a href="/aboutme/gallery">
-    <img src=https://example.org/Aboutme/photo_main.jpg alt="a">
+    <img src=http://localhost:1313/Aboutme/photo_main.jpg alt="a">
     </a></p>
     <p><a href="/aboutme/gallery"><h2 style="text-align: center;">Photo & Video</h2></a></p>
   <p>Above: A collection of memorable moments in my life - fragments of lights and time, captured with my vivo X100 Ultra. Each photo holds a memory, a feeling, a story worth remembering</p>
