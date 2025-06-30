@@ -2,28 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on King&#39;s Blog</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://example.org/posts/</link>
     <description>Recent content in Posts on King&#39;s Blog</description>
-    <generator>Hugo -- 0.147.7</generator>
+    <generator>Hugo -- 0.147.8</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>| King Weekly</title>
-      <link>http://localhost:1313/posts/techweekly/techweek5/</link>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/techweekly/techweek5/</guid>
-      <description>&lt;h2 id=&#34;trivias&#34;&gt;Trivias:&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Generating functions are a powerful mathematical tool that transform discrete sequences into algebraic functions, enabling us to solve complex combinatorial counting problems through function operations.&lt;/li&gt;
-&lt;li&gt;GPOS vs RTOS
-&lt;ol&gt;
-&lt;li&gt;General purpose operating systems like Windows, macOS, and Linux are designed to provide a versatile, user-friendly computing environment. They prioritize overall system efficiency, with more flexible restrictions on task response times.&lt;/li&gt;
-&lt;li&gt;Real time operating systems such as VxWorks, focus on strict time limitations for individual tasks, ensuring predictable and deterministic responses. These systems are typically used in environments demanding high reliability and precise time control, featuring a smaller, more streamlined kernel that guarantees real-time performance.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</description>
-      <content:encoded><![CDATA[<h2 id="trivias">Trivias:</h2>
+      <title>Some notes about Python | King Weekly</title>
+      <link>https://example.org/posts/techweekly/techweek5/</link>
+      <pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/techweekly/techweek5/</guid>
+      <description>&lt;h2 id=&#34;the-global-interpreter-lock-gil&#34;&gt;The Global Interpreter Lock (GIL)&lt;/h2&gt;
+&lt;p&gt;At its core, the Global Interpreter Lock, or GIL, is a lock that only allows one thread to execute Python bytecode at a time within a single process. This means that even on a multi-core processor, a standard Python program with multiple threads will only utilize a single core for executing Python code.
+It is also for compatibility with large number extension modules written in C. These C extensions may not have built-in thread safety mechanisms, so GIL provides a safety net to ensure that they are executed in a single-threaded environment.
+The primary reason for the GIL&amp;rsquo;s existence lies in Python&amp;rsquo;s memory management.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="the-global-interpreter-lock-gil">The Global Interpreter Lock (GIL)</h2>
+<p>At its core, the Global Interpreter Lock, or GIL, is a lock that only allows one thread to execute Python bytecode at a time within a single process. This means that even on a multi-core processor, a standard Python program with multiple threads will only utilize a single core for executing Python code.
+It is also for compatibility with large number extension modules written in C. These C extensions may not have built-in thread safety mechanisms, so GIL provides a safety net to ensure that they are executed in a single-threaded environment.
+The primary reason for the GIL&rsquo;s existence lies in Python&rsquo;s memory management.</p>
+<h2 id="pythons-memory-management">Python&rsquo;s Memory Management</h2>
+<p>Python uses a system called automatic memory management. Each object in Python has a reference count, which is a number that keeps track of how many variables or other object refer to it. When you assign a variable to an object, its reference count increases by one. When a reference is removed (for instance, when a variable goes out of scope), the count decreases. Once an object&rsquo;s reference count drops to zero, it means nothing is using it.</p>
+<p>This is where GIL becomes important. In a multi-threaded program, multiple threads could try to increase or decrease the same object&rsquo;s reference count simultaneously, which may cause memory leaks.</p>
+<h2 id="python-313">Python 3.13</h2>
+<p>GIL has become a bottleneck for CPU program performance, by reconstruct python, the development team has made a groundbreaking change in Python 3.13: the ability to disable the GIL.</p>
+<h2 id="why-python-slow">Why python slow</h2>
+<ol>
+<li>GIL</li>
+<li>Dynamic Datatype.</li>
+<li>It&rsquo;s an interpreter language</li>
+<li>Easy to read makes python very abstract</li>
+</ol>
+<h2 id="trivias">Trivias</h2>
 <ol>
 <li>Generating functions are a powerful mathematical tool that transform discrete sequences into algebraic functions, enabling us to solve complex combinatorial counting problems through function operations.</li>
 <li>GPOS vs RTOS
@@ -32,14 +42,81 @@
 <li>Real time operating systems such as VxWorks, focus on strict time limitations for individual tasks, ensuring predictable and deterministic responses. These systems are typically used in environments demanding high reliability and precise time control, featuring a smaller, more streamlined kernel that guarantees real-time performance.</li>
 </ol>
 </li>
+<li>In python, Boolean type is essentially a subclass of the integer type, True == 1 and False == 0. This design is mainly due to historical reasons and pragmatic considerations. In early version of Python(before 2.3), there was no dedicated bool type, and people used integers 1 and 0 to represent true and false. When the bool type was introuced, in order to allow old code to continue to run seamlessly, it was the best choice to continue to design it as a subclass of int.
+<code>True + 1 = 2, False * 1 = 0</code></li>
+<li>Huffman coding, an algorithm to compress data losslessly. Huffman coding assigns variable-length binary codes to input symbols.
+<ul>
+<li>More frequent symbols -&gt; shorter codes</li>
+<li>Less frequent symbols -&gt; longer codes</li>
+</ul>
+</li>
+<li>Windows vs Linux
+<table>
+  <thead>
+      <tr>
+          <th>Aspect</th>
+          <th>Linux</th>
+          <th>Windows</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>System Usage</strong></td>
+          <td>Lightweight, minimal background processes</td>
+          <td>Heavy, many preloaded services and features</td>
+      </tr>
+      <tr>
+          <td><strong>Bloatware</strong></td>
+          <td>No pre-installed junk, user chooses all</td>
+          <td>Comes with many default apps and features</td>
+      </tr>
+      <tr>
+          <td><strong>Transparency</strong></td>
+          <td>Fully open, config files are plain text</td>
+          <td>Many hidden processes, registry-based config</td>
+      </tr>
+      <tr>
+          <td><strong>Customizability</strong></td>
+          <td>Highly customizable, from kernel to GUI</td>
+          <td>Limited customization without hacking</td>
+      </tr>
+      <tr>
+          <td><strong>Privacy &amp; Security</strong></td>
+          <td>User-controlled, minimal telemetry</td>
+          <td>Sends telemetry, often needs antivirus</td>
+      </tr>
+      <tr>
+          <td><strong>Software Support</strong></td>
+          <td>Great for dev tools, less for gaming</td>
+          <td>Excellent app/game compatibility</td>
+      </tr>
+      <tr>
+          <td><strong>System Control</strong></td>
+          <td>Full control over system and services</td>
+          <td>Some restrictions, frequent auto-updates</td>
+      </tr>
+      <tr>
+          <td><strong>Hardware Support</strong></td>
+          <td>Good but sometimes manual setup required</td>
+          <td>Plug-and-play for most consumer hardware</td>
+      </tr>
+  </tbody>
+</table>
+</li>
 </ol>
-]]></content:encoded>
+<h2 id="resouces">Resouces</h2>
+<ol>
+<li>Why the formular of normal distribution has a pi:<a href="https://www.youtube.com/results?search_query=normal+distrubution+in+astronomy">explain from 3b1b</a></li>
+</ol>
+<h2 id="talks">Talks</h2>
+<p>漫士！</p>
+<iframe width=100% height=475  src="https://www.youtube.com/embed/nBkr4u_xKms?si=6CY9MwRS2KIN2mzr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>]]></content:encoded>
     </item>
     <item>
       <title>A Dive into the Bitcoin Technology | King Weekly</title>
-      <link>http://localhost:1313/posts/techweekly/techweek4/</link>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/techweekly/techweek4/</guid>
+      <link>https://example.org/posts/techweekly/techweek4/</link>
+      <pubDate>Fri, 30 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/techweekly/techweek4/</guid>
       <description>&lt;h2 id=&#34;bitcoin&#34;&gt;Bitcoin&lt;/h2&gt;
 &lt;p&gt;The legend of Bitcoin has shown its magic for a long time. Recently, I have started to explore this field, and this is a record of my learning.&lt;/p&gt;
 &lt;hr&gt;
@@ -137,9 +214,9 @@
     </item>
     <item>
       <title>Hopfield Network</title>
-      <link>http://localhost:1313/posts/hopfieldnetwork/</link>
+      <link>https://example.org/posts/hopfieldnetwork/</link>
       <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/hopfieldnetwork/</guid>
+      <guid>https://example.org/posts/hopfieldnetwork/</guid>
       <description>&lt;p&gt;2024 Nobel Physics prize was earned by Professor John Hopfield and Professor Geoffrey Hinton, to thanks their distribution on machine learning.
 However, I felt very suprised that why it gives to machine learning? Anyway, I hadn&amp;rsquo;t deeply find the answer in that time.&lt;/p&gt;
 &lt;p&gt;Recently, Professor Geoffrey Hinton gived us a short lecture about Boltzmann machine virtually.
@@ -180,9 +257,9 @@ In LLM, we can say the user&rsquo;s prompt and question is the most unstable sta
     </item>
     <item>
       <title>For UNIX Week | King Weekly</title>
-      <link>http://localhost:1313/posts/techweekly/techweek3/</link>
+      <link>https://example.org/posts/techweekly/techweek3/</link>
       <pubDate>Mon, 21 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/techweekly/techweek3/</guid>
+      <guid>https://example.org/posts/techweekly/techweek3/</guid>
       <description>&lt;h2 id=&#34;book---unix-a-history-and-a-memoir&#34;&gt;Book - Unix: A History and a Memoir&lt;/h2&gt;
 &lt;p&gt;Recently, I read this fantastic book. It bring me back to that 1960s - a period without modern computer and how the most clever minds in this world changed the world.
 During the reading, I found many answers to the &amp;ldquo;why&amp;rdquo; questions I had when I learning linux system.&lt;/p&gt;
@@ -262,15 +339,15 @@ KISS.</p>
     </item>
     <item>
       <title>Jarvis Will Coming Soon | King Weekly</title>
-      <link>http://localhost:1313/posts/techweekly/techweek2/</link>
+      <link>https://example.org/posts/techweekly/techweek2/</link>
       <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/techweekly/techweek2/</guid>
+      <guid>https://example.org/posts/techweekly/techweek2/</guid>
       <description>&lt;h2 id=&#34;model-context-protocol-overview&#34;&gt;Model Context Protocol overview&lt;/h2&gt;
 &lt;p&gt;MCP (Model Context Protocol) can be understood as a &amp;ldquo;universal language&amp;rdquo; for communication between AI and external tools. It&amp;rsquo;s like a translator, allowing different AI applications (such as chatbots, code assistants) and different tools (like databases, GitHub, calendars) to easily communicate without needing to develop a new interface every time.&lt;/p&gt;
 &lt;h4 id=&#34;why-is-mcp-needed&#34;&gt;Why is MCP needed?&lt;/h4&gt;
 &lt;p&gt;In the past, if you wanted an AI assistant to access different tools, like a calendar, email, or task manager, you would need to develop a separate interface for each tool (function calling), which resulted in a huge amount of work (N AI applications × M tools = N×M interfaces).&lt;br&gt;
 MCP simplifies everything: all AI applications only need to support MCP, and all tools only need to support MCP. This way, they can communicate with each other, reducing development costs (N+M interfaces).
-&lt;img alt=&#34;components mcp include&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/TechStuff/mcp.png&#34;&gt;&lt;/p&gt;</description>
+&lt;img alt=&#34;components mcp include&#34; loading=&#34;lazy&#34; src=&#34;https://example.org/TechStuff/mcp.png&#34;&gt;&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="model-context-protocol-overview">Model Context Protocol overview</h2>
 <p>MCP (Model Context Protocol) can be understood as a &ldquo;universal language&rdquo; for communication between AI and external tools. It&rsquo;s like a translator, allowing different AI applications (such as chatbots, code assistants) and different tools (like databases, GitHub, calendars) to easily communicate without needing to develop a new interface every time.</p>
 <h4 id="why-is-mcp-needed">Why is MCP needed?</h4>
@@ -366,12 +443,12 @@ After watched the coverage keynotes, I was just feel like our mankind is in an s
     </item>
     <item>
       <title>Start | King Weekly</title>
-      <link>http://localhost:1313/posts/techweekly/techweek1/</link>
+      <link>https://example.org/posts/techweekly/techweek1/</link>
       <pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/techweekly/techweek1/</guid>
+      <guid>https://example.org/posts/techweekly/techweek1/</guid>
       <description>&lt;h2 id=&#34;email-sending-and-receiving-system&#34;&gt;Email sending and receiving system&lt;/h2&gt;
 &lt;p&gt;The main system is build based on three protocols: SMTP, POP3 and IMAP.
-&lt;img alt=&#34;process of email system&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/emailsys.png&#34;&gt;&lt;/p&gt;
+&lt;img alt=&#34;process of email system&#34; loading=&#34;lazy&#34; src=&#34;https://example.org/emailsys.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;SMTP is used for sending emails to the recipient’s email server, but it does not handle receiving emails.
 User1 sends an email via an email client, and the email is first sent to User1&amp;rsquo;s email server using SMTP. Then, the email server forwards it to the recipient&amp;rsquo;s email server using SMTP as well.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="email-sending-and-receiving-system">Email sending and receiving system</h2>
@@ -452,9 +529,9 @@ If someone reads it, that&rsquo;s great. If not, you’ve still completed your w
     </item>
     <item>
       <title>Time Complexity Notations</title>
-      <link>http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/</link>
+      <link>https://example.org/posts/the-difference-between-tn--on-and-%CE%B8n/</link>
       <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/</guid>
+      <guid>https://example.org/posts/the-difference-between-tn--on-and-%CE%B8n/</guid>
       <description>&lt;p&gt;In this semester, I listened the course mit 6.006 in youtube channel. Duirng the course, the professor used different notations to represents time complexity of an algorithm. I learned Big O &lt;code&gt;O(n)&lt;/code&gt; notation before, but for Big theta &lt;code&gt;θ(n)&lt;/code&gt; and reccurence relations &lt;code&gt;T(n)&lt;/code&gt;, I never heard them before. Today, I hope I can finally figure them out.&lt;/p&gt;
 &lt;h1 id=&#34;what&#34;&gt;What&lt;/h1&gt;
 &lt;p&gt;T(n) represents the actual running time of an algorithm&lt;br&gt;
@@ -491,13 +568,13 @@ There are two methods to convert T(n) into O(n)</p>
     </item>
     <item>
       <title>My Homelab</title>
-      <link>http://localhost:1313/posts/homeserver/</link>
+      <link>https://example.org/posts/homeserver/</link>
       <pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/homeserver/</guid>
+      <guid>https://example.org/posts/homeserver/</guid>
       <description>&lt;p&gt;This week, I browsed many old machines at ebay to use for my first attempt at setting up a homelab. Initially, I planned to build a machine myself during the summer holiday, but in today I found a great performance and a high cost-effective machine that changed my mind.&lt;/p&gt;
 &lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;The machine model is &lt;code&gt;HP-Elitedesk-800-G4-SFF&lt;/code&gt;. Compared to its previous generation, the chipset supports 8th and 9th generation of intel core cpu, which offers a significant improvement(6c6t) compare with 6th/7th core cpu(4c4t). Furthermore it provides NVme express in this generation. With these components, I can build a highly cost-effective homelab. The total cost is £150.&lt;br&gt;
-&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/TechStuff/serverbill.png&#34;&gt;&lt;/p&gt;</description>
+&lt;img loading=&#34;lazy&#34; src=&#34;https://example.org/TechStuff/serverbill.png&#34;&gt;&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>This week, I browsed many old machines at ebay to use for my first attempt at setting up a homelab. Initially, I planned to build a machine myself during the summer holiday, but in today I found a great performance and a high cost-effective machine that changed my mind.</p>
 <h1 id="overview">Overview</h1>
 <p>The machine model is <code>HP-Elitedesk-800-G4-SFF</code>. Compared to its previous generation, the chipset supports 8th and 9th generation of intel core cpu, which offers a significant improvement(6c6t) compare with 6th/7th core cpu(4c4t). Furthermore it provides NVme express in this generation. With these components, I can build a highly cost-effective homelab. The total cost is £150.<br>
@@ -554,9 +631,9 @@ reboot or close. This issue will be solved easily when I have a router. Nowadays
     </item>
     <item>
       <title>Ambitious Cross-Platform Dream: JVM&#39;s Achievements and Limitations</title>
-      <link>http://localhost:1313/posts/jvm/</link>
+      <link>https://example.org/posts/jvm/</link>
       <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/jvm/</guid>
+      <guid>https://example.org/posts/jvm/</guid>
       <description>&lt;p&gt;This semester, I learned OOP from Inf1B, which using java as the official teaching language. What fascinates me the most is why Java has the JVM. I learned Python, C++, js and Haskell before, but all of them doesn&amp;rsquo;t have a jargon for virtual machine. And then I went to wikipeidia to find out why.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambitious dream: &amp;ldquo;Write Once, Run Anywhere.&amp;rdquo; This WORA philosophy became a reality through the JVM, enabling Java applications to run on any operating system with a compatible JVM. Before talking about the archivements and limitations, Let&amp;rsquo;s have a look about how JVM works.&lt;/p&gt;</description>

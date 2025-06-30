@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Python on King&#39;s Blog</title>
+    <link>https://example.org/tags/python/</link>
+    <description>Recent content in Python on King&#39;s Blog</description>
+    <generator>Hugo -- 0.147.8</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.org/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Some notes about Python | King Weekly</title>
+      <link>https://example.org/posts/techweekly/techweek5/</link>
+      <pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/techweekly/techweek5/</guid>
+      <description>&lt;h2 id=&#34;the-global-interpreter-lock-gil&#34;&gt;The Global Interpreter Lock (GIL)&lt;/h2&gt;
+&lt;p&gt;At its core, the Global Interpreter Lock, or GIL, is a lock that only allows one thread to execute Python bytecode at a time within a single process. This means that even on a multi-core processor, a standard Python program with multiple threads will only utilize a single core for executing Python code.
+It is also for compatibility with large number extension modules written in C. These C extensions may not have built-in thread safety mechanisms, so GIL provides a safety net to ensure that they are executed in a single-threaded environment.
+The primary reason for the GIL&amp;rsquo;s existence lies in Python&amp;rsquo;s memory management.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="the-global-interpreter-lock-gil">The Global Interpreter Lock (GIL)</h2>
+<p>At its core, the Global Interpreter Lock, or GIL, is a lock that only allows one thread to execute Python bytecode at a time within a single process. This means that even on a multi-core processor, a standard Python program with multiple threads will only utilize a single core for executing Python code.
+It is also for compatibility with large number extension modules written in C. These C extensions may not have built-in thread safety mechanisms, so GIL provides a safety net to ensure that they are executed in a single-threaded environment.
+The primary reason for the GIL&rsquo;s existence lies in Python&rsquo;s memory management.</p>
+<h2 id="pythons-memory-management">Python&rsquo;s Memory Management</h2>
+<p>Python uses a system called automatic memory management. Each object in Python has a reference count, which is a number that keeps track of how many variables or other object refer to it. When you assign a variable to an object, its reference count increases by one. When a reference is removed (for instance, when a variable goes out of scope), the count decreases. Once an object&rsquo;s reference count drops to zero, it means nothing is using it.</p>
+<p>This is where GIL becomes important. In a multi-threaded program, multiple threads could try to increase or decrease the same object&rsquo;s reference count simultaneously, which may cause memory leaks.</p>
+<h2 id="python-313">Python 3.13</h2>
+<p>GIL has become a bottleneck for CPU program performance, by reconstruct python, the development team has made a groundbreaking change in Python 3.13: the ability to disable the GIL.</p>
+<h2 id="why-python-slow">Why python slow</h2>
+<ol>
+<li>GIL</li>
+<li>Dynamic Datatype.</li>
+<li>It&rsquo;s an interpreter language</li>
+<li>Easy to read makes python very abstract</li>
+</ol>
+<h2 id="trivias">Trivias</h2>
+<ol>
+<li>Generating functions are a powerful mathematical tool that transform discrete sequences into algebraic functions, enabling us to solve complex combinatorial counting problems through function operations.</li>
+<li>GPOS vs RTOS
+<ol>
+<li>General purpose operating systems like Windows, macOS, and Linux are designed to provide a versatile, user-friendly computing environment. They prioritize overall system efficiency, with more flexible restrictions on task response times.</li>
+<li>Real time operating systems such as VxWorks, focus on strict time limitations for individual tasks, ensuring predictable and deterministic responses. These systems are typically used in environments demanding high reliability and precise time control, featuring a smaller, more streamlined kernel that guarantees real-time performance.</li>
+</ol>
+</li>
+<li>In python, Boolean type is essentially a subclass of the integer type, True == 1 and False == 0. This design is mainly due to historical reasons and pragmatic considerations. In early version of Python(before 2.3), there was no dedicated bool type, and people used integers 1 and 0 to represent true and false. When the bool type was introuced, in order to allow old code to continue to run seamlessly, it was the best choice to continue to design it as a subclass of int.
+<code>True + 1 = 2, False * 1 = 0</code></li>
+<li>Huffman coding, an algorithm to compress data losslessly. Huffman coding assigns variable-length binary codes to input symbols.
+<ul>
+<li>More frequent symbols -&gt; shorter codes</li>
+<li>Less frequent symbols -&gt; longer codes</li>
+</ul>
+</li>
+<li>Windows vs Linux
+<table>
+  <thead>
+      <tr>
+          <th>Aspect</th>
+          <th>Linux</th>
+          <th>Windows</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>System Usage</strong></td>
+          <td>Lightweight, minimal background processes</td>
+          <td>Heavy, many preloaded services and features</td>
+      </tr>
+      <tr>
+          <td><strong>Bloatware</strong></td>
+          <td>No pre-installed junk, user chooses all</td>
+          <td>Comes with many default apps and features</td>
+      </tr>
+      <tr>
+          <td><strong>Transparency</strong></td>
+          <td>Fully open, config files are plain text</td>
+          <td>Many hidden processes, registry-based config</td>
+      </tr>
+      <tr>
+          <td><strong>Customizability</strong></td>
+          <td>Highly customizable, from kernel to GUI</td>
+          <td>Limited customization without hacking</td>
+      </tr>
+      <tr>
+          <td><strong>Privacy &amp; Security</strong></td>
+          <td>User-controlled, minimal telemetry</td>
+          <td>Sends telemetry, often needs antivirus</td>
+      </tr>
+      <tr>
+          <td><strong>Software Support</strong></td>
+          <td>Great for dev tools, less for gaming</td>
+          <td>Excellent app/game compatibility</td>
+      </tr>
+      <tr>
+          <td><strong>System Control</strong></td>
+          <td>Full control over system and services</td>
+          <td>Some restrictions, frequent auto-updates</td>
+      </tr>
+      <tr>
+          <td><strong>Hardware Support</strong></td>
+          <td>Good but sometimes manual setup required</td>
+          <td>Plug-and-play for most consumer hardware</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+</ol>
+<h2 id="resouces">Resouces</h2>
+<ol>
+<li>Why the formular of normal distribution has a pi:<a href="https://www.youtube.com/results?search_query=normal+distrubution+in+astronomy">explain from 3b1b</a></li>
+</ol>
+<h2 id="talks">Talks</h2>
+<p>漫士！</p>
+<iframe width=100% height=475  src="https://www.youtube.com/embed/nBkr4u_xKms?si=6CY9MwRS2KIN2mzr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

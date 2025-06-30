@@ -1,5 +1,5 @@
 ---
-date: "2025-04-30"
+date: "2025-05-30"
 draft: false
 title: 'A Dive into the Bitcoin Technology | King Weekly'
 author: 'King Jin'

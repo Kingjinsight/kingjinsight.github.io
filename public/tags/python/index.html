@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>King&#39;s Blog</title>
+<title>Python | King&#39;s Blog</title>
 <meta name="keywords" content="">
-<meta name="description" content=" - King&#39;s Blog">
+<meta name="description" content="">
 <meta name="author" content="">
-<link rel="canonical" href="https://example.org/aboutme/gallery/">
+<link rel="canonical" href="https://example.org/tags/python/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.832afcd01590e9ef11f610767d26e7d7b6dc1aedff8fa1d558ad41f5b8bc062d.css" integrity="sha256-gyr80BWQ6e8R9hB2fSbn17bcGu3/j6HVWK1B9bi8Bi0=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://example.org/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://example.org/favicon-16x16.png">
@@ -18,7 +18,8 @@
 <link rel="mask-icon" href="https://example.org/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://example.org/aboutme/gallery/">
+<link rel="alternate" type="application/rss+xml" href="https://example.org/tags/python/index.xml">
+<link rel="alternate" hreflang="en" href="https://example.org/tags/python/">
 <noscript>
     <style>
         #theme-toggle,
@@ -61,7 +62,7 @@
 
 </head>
 
-<body class="" id="top">
+<body class="list" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
@@ -129,24 +130,24 @@
         </ul>
     </nav>
 </header>
-<main class="main">
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Python
+  </h1>
+</header>
 
-<article class="post-single">
-  <header class="post-header">
-    
-    <h1 class="post-title entry-hint-parent">
-      
-    </h1>
-    <div class="post-meta">
-
-</div>
-  </header> 
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-
-  </footer>
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Some notes about Python | King Weekly
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>The Global Interpreter Lock (GIL) At its core, the Global Interpreter Lock, or GIL, is a lock that only allows one thread to execute Python bytecode at a time within a single process. This means that even on a multi-core processor, a standard Python program with multiple threads will only utilize a single core for executing Python code. It is also for compatibility with large number extension modules written in C. These C extensions may not have built-in thread safety mechanisms, so GIL provides a safety net to ensure that they are executed in a single-threaded environment. The primary reason for the GIL’s existence lies in Python’s memory management.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-30 00:00:00 +0000 UTC'>June 30, 2025</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;King Jin</footer>
+  <a class="entry-link" aria-label="post link to Some notes about Python | King Weekly" href="https://example.org/posts/techweekly/techweek5/"></a>
 </article>
     </main>
     
@@ -218,53 +219,6 @@
         }
     })
 
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
 </script>
 </body>
 
