@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Algorithm on King&#39;s Blog</title>
-    <link>https://example.org/tags/algorithm/</link>
+    <link>http://localhost:1313/tags/algorithm/</link>
     <description>Recent content in Algorithm on King&#39;s Blog</description>
-    <generator>Hugo -- 0.147.8</generator>
+    <generator>Hugo -- 0.147.9</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 26 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hopfield Network</title>
-      <link>https://example.org/posts/hopfieldnetwork/</link>
+      <link>http://localhost:1313/posts/hopfieldnetwork/</link>
       <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/hopfieldnetwork/</guid>
+      <guid>http://localhost:1313/posts/hopfieldnetwork/</guid>
       <description>&lt;p&gt;2024 Nobel Physics prize was earned by Professor John Hopfield and Professor Geoffrey Hinton, to thanks their distribution on machine learning.
 However, I felt very suprised that why it gives to machine learning? Anyway, I hadn&amp;rsquo;t deeply find the answer in that time.&lt;/p&gt;
 &lt;p&gt;Recently, Professor Geoffrey Hinton gived us a short lecture about Boltzmann machine virtually.
@@ -42,23 +42,16 @@ allowfullscreen>
 In LLM, we can say the user&rsquo;s prompt and question is the most unstable states while the answer is the stable state.</p>
 <p>Based on the concept of Hopfield networks, many different architectures had been invented, which makes Connectionism and Deep Learning great again.</p>
 <p>After all, I catch the reason why nobel prize gives to physics.</p>
-<ol>
-<li>how hopfield work</li>
-<li>why we have hopfield</li>
-<li>how it work in ai</li>
-<li>how the concept can be used in llm</li>
-<li>why nobel physics prize gives to ai in 2024</li>
-</ol>
 ]]></content:encoded>
     </item>
     <item>
       <title>Start | King Weekly</title>
-      <link>https://example.org/posts/techweekly/techweek1/</link>
+      <link>http://localhost:1313/posts/techweekly/techweek1/</link>
       <pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/techweekly/techweek1/</guid>
+      <guid>http://localhost:1313/posts/techweekly/techweek1/</guid>
       <description>&lt;h2 id=&#34;email-sending-and-receiving-system&#34;&gt;Email sending and receiving system&lt;/h2&gt;
 &lt;p&gt;The main system is build based on three protocols: SMTP, POP3 and IMAP.
-&lt;img alt=&#34;process of email system&#34; loading=&#34;lazy&#34; src=&#34;https://example.org/emailsys.png&#34;&gt;&lt;/p&gt;
+&lt;img alt=&#34;process of email system&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/emailsys.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;SMTP is used for sending emails to the recipient’s email server, but it does not handle receiving emails.
 User1 sends an email via an email client, and the email is first sent to User1&amp;rsquo;s email server using SMTP. Then, the email server forwards it to the recipient&amp;rsquo;s email server using SMTP as well.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="email-sending-and-receiving-system">Email sending and receiving system</h2>
@@ -139,9 +132,9 @@ If someone reads it, that&rsquo;s great. If not, you’ve still completed your w
     </item>
     <item>
       <title>Time Complexity Notations</title>
-      <link>https://example.org/posts/the-difference-between-tn--on-and-%CE%B8n/</link>
+      <link>http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/</link>
       <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/the-difference-between-tn--on-and-%CE%B8n/</guid>
+      <guid>http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/</guid>
       <description>&lt;p&gt;In this semester, I listened the course mit 6.006 in youtube channel. Duirng the course, the professor used different notations to represents time complexity of an algorithm. I learned Big O &lt;code&gt;O(n)&lt;/code&gt; notation before, but for Big theta &lt;code&gt;θ(n)&lt;/code&gt; and reccurence relations &lt;code&gt;T(n)&lt;/code&gt;, I never heard them before. Today, I hope I can finally figure them out.&lt;/p&gt;
 &lt;h1 id=&#34;what&#34;&gt;What&lt;/h1&gt;
 &lt;p&gt;T(n) represents the actual running time of an algorithm&lt;br&gt;

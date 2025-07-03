@@ -38,9 +38,3 @@ In LLM, we can say the user's prompt and question is the most unstable states wh
 Based on the concept of Hopfield networks, many different architectures had been invented, which makes Connectionism and Deep Learning great again.
 
 After all, I catch the reason why nobel prize gives to physics.
-1. how hopfield work
-2. why we have hopfield
-3. how it work in ai
-4. how the concept can be used in llm
-5. why nobel physics prize gives to ai in 2024
-

@@ -1,7 +1,7 @@
 ---
 date: "2025-05-30"
 draft: false
-title: 'A Dive into the Bitcoin Technology | King Weekly'
+title: 'Bitcoin Basic | King Weekly'
 author: 'King Jin'
 tags: ["Tech_Weekly","Bitcoin","AI"]
 showtoc: true

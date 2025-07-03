@@ -1,7 +1,7 @@
 ---
 date: "2025-06-30"
 draft: false
-title: 'Some notes about Python | King Weekly'
+title: 'Some Python Notes | King Weekly'
 author: 'King Jin'
 tags: ["Tech_Weekly","Python"]
 showtoc: true

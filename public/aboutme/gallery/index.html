@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>King&#39;s Blog</title>
+<meta name="robots" content="noindex, nofollow">
+<title>Full Screen Gallery | King&#39;s Blog</title>
 <meta name="keywords" content="">
-<meta name="description" content=" - King&#39;s Blog">
+<meta name="description" content="📷
+Welcome to my photography exhibition!">
 <meta name="author" content="">
-<link rel="canonical" href="https://example.org/aboutme/gallery/">
+<link rel="canonical" href="http://localhost:1313/aboutme/gallery/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.832afcd01590e9ef11f610767d26e7d7b6dc1aedff8fa1d558ad41f5b8bc062d.css" integrity="sha256-gyr80BWQ6e8R9hB2fSbn17bcGu3/j6HVWK1B9bi8Bi0=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://example.org/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://example.org/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://example.org/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://example.org/apple-touch-icon.png">
-<link rel="mask-icon" href="https://example.org/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://example.org/aboutme/gallery/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/aboutme/gallery/">
 <noscript>
     <style>
         #theme-toggle,
@@ -56,9 +57,6 @@
 
     </style>
 </noscript>
-
-
-
 </head>
 
 <body class="" id="top">
@@ -76,7 +74,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://example.org/" accesskey="h" title="King&#39;s Blog (Alt + H)">King&#39;s Blog</a>
+            <a href="http://localhost:1313/" accesskey="h" title="King&#39;s Blog (Alt + H)">King&#39;s Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -102,27 +100,27 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://example.org/posts/" title="Posts">
+                <a href="http://localhost:1313/posts/" title="Posts">
                     <span>Posts</span>
                 </a>
             </li>
             <li>
-                <a href="https://example.org/archives/" title="Archives">
+                <a href="http://localhost:1313/archives/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="https://example.org/tags/" title="Tags">
+                <a href="http://localhost:1313/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="https://example.org/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://example.org/aboutme/" title="About me">
+                <a href="http://localhost:1313/aboutme/" title="About me">
                     <span>About me</span>
                 </a>
             </li>
@@ -131,27 +129,376 @@
 </header>
 <main class="main">
 
-<article class="post-single">
-  <header class="post-header">
+<style>
+    main.main {
+        max-width: 75%;
+        padding: 0; 
+    }
+
+    .gallery-intro {
+        box-sizing: border-box;
+        padding: 8rem 2rem; 
+        max-width: 800px;   
+        margin: 0 auto;    
+        text-align: center;
+    }
+
+
+
+    .archive-grid {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1rem; 
+        
+
+        column-count: 3;
+        column-gap: 3rem;
+    }
+
+
+    .archive-item {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        margin-bottom: 3rem;
+        break-inside: avoid;
+    }
+
+    .archive-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.4s ease-in-out;
+    }
     
-    <h1 class="post-title entry-hint-parent">
-      
-    </h1>
-    <div class="post-meta">
+
+    .archive-item-overlay {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+    }
+    .archive-item-title { font-size: 1.25rem; font-weight: bold; margin: 0; }
+    .archive-item-date { font-size: 0.9rem; margin-top: 0.5rem; color: #ddd; }
+    .archive-item:hover img { transform: scale(1.05); }
+    .archive-item:hover .archive-item-overlay { opacity: 1; }
+
+
+    @media (max-width: 1200px) { .archive-grid { column-count: 3; } }
+    @media (max-width: 992px) { .archive-grid { column-count: 2; } }
+    @media (max-width: 600px) { 
+        .archive-grid { 
+            column-count: 1;
+            padding: 0.5rem;
+        }
+         .archive-item {
+            margin-bottom: 0.5rem;
+        }
+    }
+</style>
+
+
+ <div class="gallery-intro">
+    <h1 id="heading">📷</h1>
+<pre tabindex="0"><code></code></pre><h1 id="welcome-to-my-photography-exhibition">Welcome to my photography exhibition!</h1>
 
 </div>
-  </header> 
 
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
+<div class="archive-grid">
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image19" alt="Project 1">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Forth Bridge</p>
+            <p class="archive-item-date">2024</p>
 
-  </footer>
-</article>
+        </div>
+    </a>
+
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image3" alt="Project 2">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Palace Museum</p>
+            <p class="archive-item-date">2025</p>
+        </div>
+    </a>
+ 
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image9" alt="Project 3">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">BaiJia Lake</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image4" alt="Project 4">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Palace Museum</p>
+            <p class="archive-item-date">2025</p>
+        </div>
+    </a>
+
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image2" alt="Project 5">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Nanjing Himalayas</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image6" alt="Project 6">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Xuanwu Lake</p>
+            <p class="archive-item-date">2025</p>
+        </div>
+    </a>
+    
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image7" alt="Project 7">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Palace Museum</p>
+            <p class="archive-item-date">2025</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image8" alt="Project 8">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Palace Museum</p>
+            <p class="archive-item-date">2025</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image5" alt="Project 9">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Nanjing Presidential palace</p>
+            <p class="archive-item-date">2025</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image11" alt="Project 10">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Nanjing</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image12" alt="Project 11">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Jixi</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image13" alt="Project 12">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">St.Andrews Park</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image14" alt="Project 13">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">New College</p>
+            <p class="archive-item-date">2025</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image15" alt="Project 14">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Brighton</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image16" alt="Project 15">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">St Abbs</p>
+            <p class="archive-item-date">2025</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image17" alt="Project 16">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Edinburgh Castle</p>
+            <p class="archive-item-date">2025</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image18" alt="Project 17">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Forth Bridge</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image1" alt="Project 18">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Appleton Tower</p>
+            <p class="archive-item-date">2025</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image20" alt="Project 19">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Edinburgh</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image21" alt="Project 20">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Forth Bridge</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image22" alt="Project 21">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Jixi</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image23" alt="Project 22">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Nanjing CBD</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image24" alt="Project 23">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">A Night in Nanjing</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image25" alt="Project 24">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Edinburgh</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image26" alt="Project 25">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Edinburgh Station</p>
+            <p class="archive-item-date">2025</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image27" alt="Project 26">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Old College</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image28" alt="Project 27">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">London Eric's flat</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image29" alt="Project 28">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">People in Brighton</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image30" alt="Project 29">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Brighton</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image31" alt="Project 30">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Brighton</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image32" alt="Project 31">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Great British Museum</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image33" alt="Project 32">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Berwick Bridge</p>
+            <p class="archive-item-date">2025</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image34" alt="Project 33">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">St Abbs</p>
+            <p class="archive-item-date">2025</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image35" alt="Project 34">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">St Abbs</p>
+            <p class="archive-item-date">2025</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image36" alt="Project 35">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">St Abbs</p>
+            <p class="archive-item-date">2025</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image10" alt="Project 36">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Edinburgh</p>
+            <p class="archive-item-date">2025</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image37" alt="Project 37">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Salisbury Court</p>
+            <p class="archive-item-date">2025</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image38" alt="Project 38">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Jixi</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+    <a href="#" class="archive-item">
+        <img src="/Aboutme/image39" alt="Project 35">
+        <div class="archive-item-overlay">
+            <p class="archive-item-title">Arthur's Seat Aurora</p>
+            <p class="archive-item-date">2024</p>
+        </div>
+    </a>
+    
+</div>
+
+
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://example.org/">King&#39;s Blog</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">King&#39;s Blog</a></span> · 
 
     <span>
         Powered by

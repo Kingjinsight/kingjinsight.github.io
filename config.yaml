@@ -13,6 +13,7 @@ params:
   ShowCodeCopyButtons: true
   ShowFullTextinRSS: true
 
+  customCSS: ["/css/diy.css"]
   
   homeInfoParams:
     Title: "![King's Blog](/fontbolt.png)"
