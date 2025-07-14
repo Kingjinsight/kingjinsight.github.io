@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Email_system on King&#39;s Blog</title>
-    <link>http://localhost:1313/tags/email_system/</link>
-    <description>Recent content in Email_system on King&#39;s Blog</description>
+    <title>Email_system on King.io</title>
+    <link>https://example.org/tags/email_system/</link>
+    <description>Recent content in Email_system on King.io</description>
     <generator>Hugo -- 0.147.9</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 09 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/email_system/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/tags/email_system/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Start | King Weekly</title>
-      <link>http://localhost:1313/posts/techweekly/techweek1/</link>
+      <link>https://example.org/posts/techweekly/techweek1/</link>
       <pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/techweekly/techweek1/</guid>
+      <guid>https://example.org/posts/techweekly/techweek1/</guid>
       <description>&lt;h2 id=&#34;email-sending-and-receiving-system&#34;&gt;Email sending and receiving system&lt;/h2&gt;
 &lt;p&gt;The main system is build based on three protocols: SMTP, POP3 and IMAP.
-&lt;img alt=&#34;process of email system&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/emailsys.png&#34;&gt;&lt;/p&gt;
+&lt;img alt=&#34;process of email system&#34; loading=&#34;lazy&#34; src=&#34;https://example.org/emailsys.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;SMTP is used for sending emails to the recipient’s email server, but it does not handle receiving emails.
 User1 sends an email via an email client, and the email is first sent to User1&amp;rsquo;s email server using SMTP. Then, the email server forwards it to the recipient&amp;rsquo;s email server using SMTP as well.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="email-sending-and-receiving-system">Email sending and receiving system</h2>

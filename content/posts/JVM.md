@@ -1,7 +1,7 @@
 ---
 date:  "2025-02-13"
 draft: false
-title: "Ambitious Cross-Platform Dream: JVM\'s Achievements and Limitations"
+title: "JVM\'s Achievements and Limitations"
 author: 'King Jin'
 tags: ["JVM","Java","Software Engineering"]
 showtoc: true

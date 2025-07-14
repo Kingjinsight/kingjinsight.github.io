@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Virtual Machine on King.io</title>
+    <link>https://example.org/tags/virtual-machine/</link>
+    <description>Recent content in Virtual Machine on King.io</description>
+    <generator>Hugo -- 0.147.9</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.org/tags/virtual-machine/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Virtual machine vs Container vs Sandbox</title>
+      <link>https://example.org/posts/container_sandbox_vm/</link>
+      <pubDate>Mon, 14 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/container_sandbox_vm/</guid>
+      <description>&lt;p&gt;Recently, I tried Distrobox, a tool that enables us to run different operating systems within the host OS. I&amp;rsquo;ve noticed it&amp;rsquo;s different from a virtual machine, as it uses containerization instead. Over the past year, I&amp;rsquo;ve heard a lot about containers (like Docker), sandboxes, and virtual machines, and I&amp;rsquo;d like to understand the distinctions between them.&lt;/p&gt;
+&lt;h2 id=&#34;virtualization&#34;&gt;Virtualization&lt;/h2&gt;
+&lt;h4 id=&#34;how-virtualization-work&#34;&gt;How virtualization work&lt;/h4&gt;
+&lt;p&gt;Virtualization is the technology that allows a single physical machine, known as the &lt;strong&gt;host&lt;/strong&gt;, to run multiple virtual machines or &lt;strong&gt;guests&lt;/strong&gt;.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Recently, I tried Distrobox, a tool that enables us to run different operating systems within the host OS. I&rsquo;ve noticed it&rsquo;s different from a virtual machine, as it uses containerization instead. Over the past year, I&rsquo;ve heard a lot about containers (like Docker), sandboxes, and virtual machines, and I&rsquo;d like to understand the distinctions between them.</p>
+<h2 id="virtualization">Virtualization</h2>
+<h4 id="how-virtualization-work">How virtualization work</h4>
+<p>Virtualization is the technology that allows a single physical machine, known as the <strong>host</strong>, to run multiple virtual machines or <strong>guests</strong>.</p>
+<p>The key of virtualization is hypervisor. It&rsquo;s the software that create and manages the virtual machines.</p>
+<ul>
+<li>Type 1 (Bare-Metal): This hypervisor is installed directly onto the host&rsquo;s hardware, acting as the operating system itself. Examples include VMware vSphere, Hyper-V. This type is common in data centers due to its high performance and efficiency</li>
+<li>Type 2 (Hosted): This hypervisor runs as an application on top of a conventional operating system(Like Windows, Linux). Examples include VMware Workstaion and Oracle VirtualBox. This approach is often used for desktop virtualization and development purposes.</li>
+</ul>
+<p>Once the hypervisor is in place, you can create one or more VMs. This involves</p>
+<ul>
+<li>Allocating resources(CPU cores, RAM, storage)</li>
+<li>Configuring virtual hardware(virtual network adapter, virtual storage controllers, virtual BIOS)</li>
+<li>Installing a guest OS, the guest os is unaware that it&rsquo;s running in a virtualized environment.
+<img alt="virtualization mechanism graph" loading="lazy" src="/Hand_write_note/virtualization.png"></li>
+</ul>
+<h4 id="how-wsl-work">How WSL work:</h4>
+<ul>
+<li>WSL 1: It did not run a real Linux kernel. Instead, it functioned as a real-time translation layer. It tricked Linux binaries into thinking they were communicating with a Linux kernel, when in reality, they were talking to a clever interpreter connected to the Windows kernel.</li>
+<li>WSL 2: Due to the limitations of translating every single Linux syscall, WSL 2 uses a lightweight, highly optimized type 1 virtual machine.</li>
+</ul>
+<h4 id="use-case">Use case</h4>
+<ol>
+<li>Server consolidation and optimization</li>
+<li>Development and testing envionments</li>
+<li>Application isolation and legacy application support</li>
+</ol>
+<h4 id="pros-and-cons">Pros and Cons</h4>
+<p>Pros:</p>
+<ol>
+<li>Strong isolation</li>
+<li>Total compatibility</li>
+</ol>
+<p>Cons:</p>
+<ol>
+<li>Heavyweight and slow</li>
+<li>Inefficient</li>
+</ol>
+<h2 id="containerization">Containerization</h2>
+<p>Containerization works by virtualizing the operating system, allowing an application to run in an isolated user space with all its dependencies, code and libraries. It all runs on a single host operating system and shared host OS&rsquo;s kernel, making containers incredibly lightweight and fast.</p>
+<h4 id="how-containers-work">How containers work</h4>
+<p>Containers work by creating isolated environments for applications using two key technologies built into the host OS&rsquo;s kernel:</p>
+<ol>
+<li>Namespaces: This feature provides isolation. Each container gets its own isolated view of resources like the network stack, process IDs, and filesystem mounts. This prevents conbtainers from seeing or interacting with each other or the host system.</li>
+<li>Control Groups(cgroups): This feature manages resource allocation. It limits and monitors how much of the host&rsquo;s physical resources, such as CPU, RAM, I/O, each container can consume. This ensures no single container can monopolize the host&rsquo;s resources.</li>
+</ol>
+<h4 id="how-container-engine-work">How container engine work</h4>
+<ul>
+<li>Rule: A tool to create, run and manage container. It&rsquo;s the translator/project manager between user and host&rsquo;s OS kernel.</li>
+<li>Workflow:
+<ul>
+<li>Creating a Dockerfile: A developer creates a text file defining all the steps required to build the application environment.</li>
+<li>Building an Image: The container engine reads the Dockerfile and packages it into a single, read-only, standardized image. This image serves as a static template for the container.</li>
+<li>Running a Container: The container engine uses this image to launch one or more container instances. During runtime, it creates an isolated namespace cgroups, while also adding a writable layer on top of the image to make the applications runnable.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="container_graph" loading="lazy" src="/Hand_write_note/containerization.png"></p>
+<h4 id="docker-vs-kubernetes-vs-podman">Docker vs Kubernetes vs Podman</h4>
+<p>These are container enginers, but they serve very different purposes.</p>
+<ul>
+<li>Docker: The industry standard, it provides an all-in-one platform that includes a daemon, a client and an image registry(Docker hub). It&rsquo;s easy to get started with and has a mature ecosystem</li>
+<li>Podman: A more security, daemonless alternative. Its command line is highly compatible with Docker&rsquo;s, its run as a non-root user by default, and its architecture is more streamlined.</li>
+<li>Kubernetes: When applications scale up and need to run across hundreds or thousands of containers and multiple servers, Kubernetes is needed. It is a container orchestrator and servers as the brain of a container cluster. Kubernetes is not responsible for the actual running of containers. Instead, it handles higher-level management tasks such as automated deployment, elastic scaling, service discovery, load balancing and self healing.</li>
+</ul>
+<h4 id="how-distrobox-works">How distrobox works</h4>
+<p>Distrobox is a clever tool that uses a container negine like Podman to create tightly integrated development environments. Its main purpose is to let you run any Linux distribution inside a container on your host OS but make it feel completely native.</p>
+<h4 id="use-case-1">Use case</h4>
+<ol>
+<li>Breaking down large, monolithic applications into smaller, independently deployable services</li>
+<li>Creating consistent and reproducible environments for building, testing and deploying software.</li>
+</ol>
+<h4 id="pros-and-cons-1">Pros and Cons</h4>
+<p>Pros</p>
+<ol>
+<li>Lightweight and fast</li>
+<li>Highly portable</li>
+</ol>
+<p>Cons</p>
+<ol>
+<li>Weaker isolation</li>
+<li>You can only run containers that are compatible with the host OS kernel.</li>
+</ol>
+<h2 id="sandbox">Sandbox</h2>
+<p>A sandbox is a secure, isolated environment on a computer where you can run untrusted program without risking harm to your host system.</p>
+<h4 id="how-to-create-a-sandbox">How to create a sandbox</h4>
+<ol>
+<li>Container</li>
+<li>Virtual machine</li>
+<li>Using dedicated sandbox software(like Sandboxie-Plus)</li>
+</ol>
+<h4 id="use-case-2">Use case</h4>
+<ol>
+<li>To be listed on the App Store or Google play store, and application must run in a sandbox. That&rsquo;s why when we open a new app, the user have t approve a list of resources that enable the app to access.</li>
+<li>Education</li>
+<li>Browser plugin</li>
+</ol>
+<h4 id="pros-and-cons-2">Pros and Cons</h4>
+<p>Pros</p>
+<ol>
+<li>Extremely lightweight  and fast: A sandbox applies rules to an already running process, adding minimal overhead. It&rsquo;s instantaneous</li>
+<li>Targeted security: It&rsquo;s perfect for its narrow purpose: running a single untrusted application and preventing it from accessing your personal files, network or hardware.</li>
+</ol>
+<p>Cons</p>
+<ol>
+<li>Weakest Isolation: It shares the host OS and kernel.</li>
+<li>Limited scape: It&rsquo;s purely a security feature, not a deployment or development tool.</li>
+</ol>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

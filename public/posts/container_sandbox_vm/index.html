@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Virtual machine vs Container vs Sandbox | King.io</title>
+<meta name="keywords" content="Virtual machine, Container, Sandbox">
+<meta name="description" content="Recently, I tried Distrobox, a tool that enables us to run different operating systems within the host OS. I&rsquo;ve noticed it&rsquo;s different from a virtual machine, as it uses containerization instead. Over the past year, I&rsquo;ve heard a lot about containers (like Docker), sandboxes, and virtual machines, and I&rsquo;d like to understand the distinctions between them.
+Virtualization
+How virtualization work
+Virtualization is the technology that allows a single physical machine, known as the host, to run multiple virtual machines or guests.">
+<meta name="author" content="King Jin">
+<link rel="canonical" href="https://example.org/posts/container_sandbox_vm/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.832afcd01590e9ef11f610767d26e7d7b6dc1aedff8fa1d558ad41f5b8bc062d.css" integrity="sha256-gyr80BWQ6e8R9hB2fSbn17bcGu3/j6HVWK1B9bi8Bi0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://example.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://example.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://example.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://example.org/apple-touch-icon.png">
+<link rel="mask-icon" href="https://example.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://example.org/posts/container_sandbox_vm/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://example.org/" accesskey="h" title="King.io (Alt + H)">King.io</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://example.org/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/aboutme/" title="About me">
+                    <span>About me</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Virtual machine vs Container vs Sandbox
+    </h1>
+    <div class="post-meta"><span title='2025-07-14 00:00:00 +0000 UTC'>July 14, 2025</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;King Jin
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#virtualization" aria-label="Virtualization">Virtualization</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#how-virtualization-work" aria-label="How virtualization work">How virtualization work</a></li>
+                <li>
+                    <a href="#how-wsl-work" aria-label="How WSL work:">How WSL work:</a></li>
+                <li>
+                    <a href="#use-case" aria-label="Use case">Use case</a></li>
+                <li>
+                    <a href="#pros-and-cons" aria-label="Pros and Cons">Pros and Cons</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#containerization" aria-label="Containerization">Containerization</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#how-containers-work" aria-label="How containers work">How containers work</a></li>
+                <li>
+                    <a href="#how-container-engine-work" aria-label="How container engine work">How container engine work</a></li>
+                <li>
+                    <a href="#docker-vs-kubernetes-vs-podman" aria-label="Docker vs Kubernetes vs Podman">Docker vs Kubernetes vs Podman</a></li>
+                <li>
+                    <a href="#how-distrobox-works" aria-label="How distrobox works">How distrobox works</a></li>
+                <li>
+                    <a href="#use-case-1" aria-label="Use case">Use case</a></li>
+                <li>
+                    <a href="#pros-and-cons-1" aria-label="Pros and Cons">Pros and Cons</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#sandbox" aria-label="Sandbox">Sandbox</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#how-to-create-a-sandbox" aria-label="How to create a sandbox">How to create a sandbox</a></li>
+                <li>
+                    <a href="#use-case-2" aria-label="Use case">Use case</a></li>
+                <li>
+                    <a href="#pros-and-cons-2" aria-label="Pros and Cons">Pros and Cons</a>
+                </li>
+            </ul>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>Recently, I tried Distrobox, a tool that enables us to run different operating systems within the host OS. I&rsquo;ve noticed it&rsquo;s different from a virtual machine, as it uses containerization instead. Over the past year, I&rsquo;ve heard a lot about containers (like Docker), sandboxes, and virtual machines, and I&rsquo;d like to understand the distinctions between them.</p>
+<h2 id="virtualization">Virtualization<a hidden class="anchor" aria-hidden="true" href="#virtualization">#</a></h2>
+<h4 id="how-virtualization-work">How virtualization work<a hidden class="anchor" aria-hidden="true" href="#how-virtualization-work">#</a></h4>
+<p>Virtualization is the technology that allows a single physical machine, known as the <strong>host</strong>, to run multiple virtual machines or <strong>guests</strong>.</p>
+<p>The key of virtualization is hypervisor. It&rsquo;s the software that create and manages the virtual machines.</p>
+<ul>
+<li>Type 1 (Bare-Metal): This hypervisor is installed directly onto the host&rsquo;s hardware, acting as the operating system itself. Examples include VMware vSphere, Hyper-V. This type is common in data centers due to its high performance and efficiency</li>
+<li>Type 2 (Hosted): This hypervisor runs as an application on top of a conventional operating system(Like Windows, Linux). Examples include VMware Workstaion and Oracle VirtualBox. This approach is often used for desktop virtualization and development purposes.</li>
+</ul>
+<p>Once the hypervisor is in place, you can create one or more VMs. This involves</p>
+<ul>
+<li>Allocating resources(CPU cores, RAM, storage)</li>
+<li>Configuring virtual hardware(virtual network adapter, virtual storage controllers, virtual BIOS)</li>
+<li>Installing a guest OS, the guest os is unaware that it&rsquo;s running in a virtualized environment.
+<img alt="virtualization mechanism graph" loading="lazy" src="/Hand_write_note/virtualization.png"></li>
+</ul>
+<h4 id="how-wsl-work">How WSL work:<a hidden class="anchor" aria-hidden="true" href="#how-wsl-work">#</a></h4>
+<ul>
+<li>WSL 1: It did not run a real Linux kernel. Instead, it functioned as a real-time translation layer. It tricked Linux binaries into thinking they were communicating with a Linux kernel, when in reality, they were talking to a clever interpreter connected to the Windows kernel.</li>
+<li>WSL 2: Due to the limitations of translating every single Linux syscall, WSL 2 uses a lightweight, highly optimized type 1 virtual machine.</li>
+</ul>
+<h4 id="use-case">Use case<a hidden class="anchor" aria-hidden="true" href="#use-case">#</a></h4>
+<ol>
+<li>Server consolidation and optimization</li>
+<li>Development and testing envionments</li>
+<li>Application isolation and legacy application support</li>
+</ol>
+<h4 id="pros-and-cons">Pros and Cons<a hidden class="anchor" aria-hidden="true" href="#pros-and-cons">#</a></h4>
+<p>Pros:</p>
+<ol>
+<li>Strong isolation</li>
+<li>Total compatibility</li>
+</ol>
+<p>Cons:</p>
+<ol>
+<li>Heavyweight and slow</li>
+<li>Inefficient</li>
+</ol>
+<h2 id="containerization">Containerization<a hidden class="anchor" aria-hidden="true" href="#containerization">#</a></h2>
+<p>Containerization works by virtualizing the operating system, allowing an application to run in an isolated user space with all its dependencies, code and libraries. It all runs on a single host operating system and shared host OS&rsquo;s kernel, making containers incredibly lightweight and fast.</p>
+<h4 id="how-containers-work">How containers work<a hidden class="anchor" aria-hidden="true" href="#how-containers-work">#</a></h4>
+<p>Containers work by creating isolated environments for applications using two key technologies built into the host OS&rsquo;s kernel:</p>
+<ol>
+<li>Namespaces: This feature provides isolation. Each container gets its own isolated view of resources like the network stack, process IDs, and filesystem mounts. This prevents conbtainers from seeing or interacting with each other or the host system.</li>
+<li>Control Groups(cgroups): This feature manages resource allocation. It limits and monitors how much of the host&rsquo;s physical resources, such as CPU, RAM, I/O, each container can consume. This ensures no single container can monopolize the host&rsquo;s resources.</li>
+</ol>
+<h4 id="how-container-engine-work">How container engine work<a hidden class="anchor" aria-hidden="true" href="#how-container-engine-work">#</a></h4>
+<ul>
+<li>Rule: A tool to create, run and manage container. It&rsquo;s the translator/project manager between user and host&rsquo;s OS kernel.</li>
+<li>Workflow:
+<ul>
+<li>Creating a Dockerfile: A developer creates a text file defining all the steps required to build the application environment.</li>
+<li>Building an Image: The container engine reads the Dockerfile and packages it into a single, read-only, standardized image. This image serves as a static template for the container.</li>
+<li>Running a Container: The container engine uses this image to launch one or more container instances. During runtime, it creates an isolated namespace cgroups, while also adding a writable layer on top of the image to make the applications runnable.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="container_graph" loading="lazy" src="/Hand_write_note/containerization.png"></p>
+<h4 id="docker-vs-kubernetes-vs-podman">Docker vs Kubernetes vs Podman<a hidden class="anchor" aria-hidden="true" href="#docker-vs-kubernetes-vs-podman">#</a></h4>
+<p>These are container enginers, but they serve very different purposes.</p>
+<ul>
+<li>Docker: The industry standard, it provides an all-in-one platform that includes a daemon, a client and an image registry(Docker hub). It&rsquo;s easy to get started with and has a mature ecosystem</li>
+<li>Podman: A more security, daemonless alternative. Its command line is highly compatible with Docker&rsquo;s, its run as a non-root user by default, and its architecture is more streamlined.</li>
+<li>Kubernetes: When applications scale up and need to run across hundreds or thousands of containers and multiple servers, Kubernetes is needed. It is a container orchestrator and servers as the brain of a container cluster. Kubernetes is not responsible for the actual running of containers. Instead, it handles higher-level management tasks such as automated deployment, elastic scaling, service discovery, load balancing and self healing.</li>
+</ul>
+<h4 id="how-distrobox-works">How distrobox works<a hidden class="anchor" aria-hidden="true" href="#how-distrobox-works">#</a></h4>
+<p>Distrobox is a clever tool that uses a container negine like Podman to create tightly integrated development environments. Its main purpose is to let you run any Linux distribution inside a container on your host OS but make it feel completely native.</p>
+<h4 id="use-case-1">Use case<a hidden class="anchor" aria-hidden="true" href="#use-case-1">#</a></h4>
+<ol>
+<li>Breaking down large, monolithic applications into smaller, independently deployable services</li>
+<li>Creating consistent and reproducible environments for building, testing and deploying software.</li>
+</ol>
+<h4 id="pros-and-cons-1">Pros and Cons<a hidden class="anchor" aria-hidden="true" href="#pros-and-cons-1">#</a></h4>
+<p>Pros</p>
+<ol>
+<li>Lightweight and fast</li>
+<li>Highly portable</li>
+</ol>
+<p>Cons</p>
+<ol>
+<li>Weaker isolation</li>
+<li>You can only run containers that are compatible with the host OS kernel.</li>
+</ol>
+<h2 id="sandbox">Sandbox<a hidden class="anchor" aria-hidden="true" href="#sandbox">#</a></h2>
+<p>A sandbox is a secure, isolated environment on a computer where you can run untrusted program without risking harm to your host system.</p>
+<h4 id="how-to-create-a-sandbox">How to create a sandbox<a hidden class="anchor" aria-hidden="true" href="#how-to-create-a-sandbox">#</a></h4>
+<ol>
+<li>Container</li>
+<li>Virtual machine</li>
+<li>Using dedicated sandbox software(like Sandboxie-Plus)</li>
+</ol>
+<h4 id="use-case-2">Use case<a hidden class="anchor" aria-hidden="true" href="#use-case-2">#</a></h4>
+<ol>
+<li>To be listed on the App Store or Google play store, and application must run in a sandbox. That&rsquo;s why when we open a new app, the user have t approve a list of resources that enable the app to access.</li>
+<li>Education</li>
+<li>Browser plugin</li>
+</ol>
+<h4 id="pros-and-cons-2">Pros and Cons<a hidden class="anchor" aria-hidden="true" href="#pros-and-cons-2">#</a></h4>
+<p>Pros</p>
+<ol>
+<li>Extremely lightweight  and fast: A sandbox applies rules to an already running process, adding minimal overhead. It&rsquo;s instantaneous</li>
+<li>Targeted security: It&rsquo;s perfect for its narrow purpose: running a single untrusted application and preventing it from accessing your personal files, network or hardware.</li>
+</ol>
+<p>Cons</p>
+<ol>
+<li>Weakest Isolation: It shares the host OS and kernel.</li>
+<li>Limited scape: It&rsquo;s purely a security feature, not a deployment or development tool.</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://example.org/tags/virtual-machine/">Virtual Machine</a></li>
+      <li><a href="https://example.org/tags/container/">Container</a></li>
+      <li><a href="https://example.org/tags/sandbox/">Sandbox</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://example.org/posts/techweekly/techweek5/">
+    <span class="title">»</span>
+    <br>
+    <span>Some Python Notes | King Weekly</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://example.org/">King.io</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

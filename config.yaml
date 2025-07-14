@@ -1,6 +1,6 @@
 baseURL: https://example.org/
 languageCode: en-us
-title: King's Blog
+title: King.io
 theme: ["PaperMod"]
 
 
@@ -16,7 +16,7 @@ params:
   customCSS: ["/css/diy.css"]
   
   homeInfoParams:
-    Title: "![King's Blog](/fontbolt.png)"
+    Title: "![King.io](/fontbolt.png)"
     Content: Hi, this is **King**. I'm studying AI at The Universiy of Edinburgh😎. This blog is documenting my learning journey and some random thoughts since 2025. Let's learning cool stuff together!
   socialIcons:
     - name: github
