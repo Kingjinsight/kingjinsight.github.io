@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Java on King.io</title>
-    <link>https://example.org/tags/java/</link>
+    <link>http://localhost:1313/tags/java/</link>
     <description>Recent content in Java on King.io</description>
     <generator>Hugo -- 0.147.9</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 13 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JVM&#39;s Achievements and Limitations</title>
-      <link>https://example.org/posts/jvm/</link>
+      <link>http://localhost:1313/posts/jvm/</link>
       <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/jvm/</guid>
+      <guid>http://localhost:1313/posts/jvm/</guid>
       <description>&lt;p&gt;This semester, I learned OOP from Inf1B, which using java as the official teaching language. What fascinates me the most is why Java has the JVM. I learned Python, C++, js and Haskell before, but all of them doesn&amp;rsquo;t have a jargon for virtual machine. And then I went to wikipeidia to find out why.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambitious dream: &amp;ldquo;Write Once, Run Anywhere.&amp;rdquo; This WORA philosophy became a reality through the JVM, enabling Java applications to run on any operating system with a compatible JVM. Before talking about the archivements and limitations, Let&amp;rsquo;s have a look about how JVM works.&lt;/p&gt;</description>

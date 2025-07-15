@@ -7,6 +7,7 @@ tags: ['Virtual machine','Container','Sandbox']
 showtoc: true
 ---
 Recently, I tried Distrobox, a tool that enables us to run different operating systems within the host OS. I've noticed it's different from a virtual machine, as it uses containerization instead. Over the past year, I've heard a lot about containers (like Docker), sandboxes, and virtual machines, and I'd like to understand the distinctions between them.
+![](/Interesting_thing/distrobox.png)
 
 ## Virtualization
 #### How virtualization work
