@@ -22,6 +22,8 @@ params:
   socialIcons:
     - name: github
       url: "https://github.com/Kingjinsight"
+    - name: email
+      url: "mailto:edevking@proton.me"
     - name: rss
       url: "/index.xml"
     
