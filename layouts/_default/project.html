@@ -1,0 +1,27 @@
+{{ define "main" }}
+<style>
+  .gallery-intro {
+        box-sizing: border-box;
+        padding: 1rem 0rem; 
+        max-width: 1000px;   
+        margin: 0 auto;    
+        text-align: center;
+    }
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 30%;
+    }
+    .center-wider {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+</style>
+
+ <div class="gallery-intro">
+    {{ .Content }}
+</div>
+{{ end }}

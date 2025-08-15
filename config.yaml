@@ -1,12 +1,12 @@
 baseURL: https://example.org/
 languageCode: en-us
-title: King.io
+title: Kingjin.io
 theme: ["PaperMod"]
 
 
 params:
-  defaultTheme: autogit
-  disableThemeToggle: false
+  defaultTheme: auto
+  disableThemeToggle: true
   ShowShareButtons: false
   ShowReadingTime: true
   ShowPostNavLinks: true
@@ -14,10 +14,11 @@ params:
   ShowFullTextinRSS: true
 
   customCSS: ["/css/diy.css"]
+
   
   homeInfoParams:
     Title: "![King.io](/fontbolt.png)"
-    Content: Hi, this is **King**. I'm studying AI at The Universiy of Edinburgh😎. This blog is documenting my learning journey and some random thoughts since 2025. Let's learning cool stuff together!
+    Content: Hi There, I'm **King**. I'm studying AI at The Universiy of Edinburgh😎. This blog is documenting my learning journey and some random thoughts since 2025.
   socialIcons:
     - name: github
       url: "https://github.com/Kingjinsight"

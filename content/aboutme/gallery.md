@@ -1,5 +1,5 @@
 ---
-title: "Full Screen Gallery"
+title: "Photography exhibition by King Jin"
 layout: "gallery"
 ---
 # 📷

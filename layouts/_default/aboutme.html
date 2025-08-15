@@ -1,0 +1,139 @@
+{{ define "main" }}
+
+<style>
+    main.main {
+        max-width: 1200px;
+    }
+
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+
+    .gallery-intro {
+        box-sizing: border-box;
+        padding: 1rem 0rem; 
+        max-width: 1000px;   
+        margin: 0 auto;    
+        text-align: center;
+    }
+        
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        padding: 2rem 0;
+    }
+
+    .card {
+        background: var(--card-background);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    
+    body.dark .card:hover {
+        box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    }
+
+    .card a {
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .card img {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        
+        object-fit: contain;
+        background-color: var(--code-bg); 
+        border-bottom: 1px solid var(--border);
+    }
+
+    .card-content {
+        padding: 1.5rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .card h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.1rem;
+        color: var(--primary);
+    }
+
+    .card p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--secondary);
+        line-height: 1.4;
+    }
+
+    @media (max-width: 992px) {
+        .card-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .card-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+
+ <div class="gallery-intro">
+    {{ .Content }}
+</div>
+
+<div class="card-grid">
+  <div class="card">
+    <a href="/aboutme/projects">
+      <img src="/Aboutme/projects_main.png" alt="Projects" />
+      <div class="card-content">
+        <h3>Projects</h3>
+        <p>Above: The first project I built in Haskell. It's an animation of a four-season scene outside a window</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="card">
+    <a href="/aboutme/gallery">
+      <img src="/Aboutme/photo_main_1.jpg" alt="Photography" />
+      <div class="card-content">
+        <h3>Photography</h3>
+        <p>Above: A collection of memorable moments in my life, captured with my vivo X100 Ultra.</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="card">
+    <a href="/aboutme/climbing">
+      <img src="/Aboutme/climbing_main.jpg" alt="Climbing" />
+      <div class="card-content">
+        <h3>Climbing</h3>
+        <p>Above: Bouldering is quite different from roped climbing, and this was my first time trying it.</p>
+      </div>
+    </a>
+  </div>
+
+
+  
+  </div>
+
+{{ end }}

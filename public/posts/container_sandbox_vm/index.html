@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Virtual machine vs Container vs Sandbox | King.io</title>
+<title>Virtual machine vs Container vs Sandbox | Kingjin.io</title>
 <meta name="keywords" content="Virtual machine, Container, Sandbox">
 <meta name="description" content="Recently, I tried Distrobox, a tool that enables us to run different operating systems within the host OS. I&rsquo;ve noticed it&rsquo;s different from a virtual machine, as it uses containerization instead. Over the past year, I&rsquo;ve heard a lot about containers (like Docker), sandboxes, and virtual machines, and I&rsquo;d like to understand the distinctions between them.
 
@@ -64,11 +64,7 @@ Virtualization is the technology that allows a single physical machine, known as
 
 <body class="" id="top">
 <script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.body.classList.add('dark');
     }
 
@@ -77,28 +73,8 @@ Virtualization is the technology that allows a single physical machine, known as
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="King.io (Alt + H)">King.io</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Kingjin.io (Alt + H)">Kingjin.io</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
             </div>
         </div>
         <ul id="menu">
@@ -331,7 +307,7 @@ Virtualization is the technology that allows a single physical machine, known as
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">King.io</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kingjin.io</a></span> · 
 
     <span>
         Powered by
@@ -385,18 +361,6 @@ Virtualization is the technology that allows a single physical machine, known as
             mybutton.style.opacity = "0";
         }
     };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
 
 </script>
 <script>

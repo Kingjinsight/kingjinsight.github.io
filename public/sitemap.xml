@@ -86,13 +86,23 @@
     <loc>http://localhost:1313/tags/software-engineering/</loc>
     <lastmod>2025-02-13T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/aboutme/climbing/</loc>
+  </url><url>
     <loc>http://localhost:1313/aboutme/</loc>
   </url><url>
     <loc>http://localhost:1313/archives/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
+    <loc>http://localhost:1313/aboutme/projects/lets_break_the_information_gap/</loc>
+  </url><url>
     <loc>http://localhost:1313/aboutme/gallery/</loc>
+  </url><url>
+    <loc>http://localhost:1313/aboutme/projects/</loc>
+  </url><url>
+    <loc>http://localhost:1313/projects/</loc>
+  </url><url>
+    <loc>http://localhost:1313/aboutme/projects/reflex/</loc>
   </url><url>
     <loc>http://localhost:1313/search/</loc>
   </url>

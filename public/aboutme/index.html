@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>About me | King.io</title>
+<title>About me | Kingjin.io</title>
 <meta name="keywords" content="">
 <meta name="description" content="aboutme">
 <meta name="author" content="">
@@ -60,11 +60,7 @@
 
 <body class="" id="top">
 <script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.body.classList.add('dark');
     }
 
@@ -73,28 +69,8 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="King.io (Alt + H)">King.io</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Kingjin.io (Alt + H)">Kingjin.io</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
             </div>
         </div>
         <ul id="menu">
@@ -128,40 +104,154 @@
 </header>
 <main class="main">
 
-<article class="post-single">
-  <header class="post-header">
+<style>
+    main.main {
+        max-width: 1200px;
+    }
+
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+
+    .gallery-intro {
+        box-sizing: border-box;
+        padding: 1rem 0rem; 
+        max-width: 1000px;   
+        margin: 0 auto;    
+        text-align: center;
+    }
+        
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        padding: 2rem 0;
+    }
+
+    .card {
+        background: var(--card-background);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
     
-    <h1 class="post-title entry-hint-parent">
-      About me
-    </h1>
-    <div class="post-meta">
+    body.dark .card:hover {
+        box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    }
 
+    .card a {
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .card img {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        
+        object-fit: contain;
+        background-color: var(--code-bg); 
+        border-bottom: 1px solid var(--border);
+    }
+
+    .card-content {
+        padding: 1.5rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .card h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.1rem;
+        color: var(--primary);
+    }
+
+    .card p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--secondary);
+        line-height: 1.4;
+    }
+
+    @media (max-width: 992px) {
+        .card-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .card-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+
+ <div class="gallery-intro">
+    <picture class="center">
+  <!-- Dark mode image -->
+  <source srcset="/Aboutme/name_dark.png" media="(prefers-color-scheme: dark)">
+  <!-- Light mode image -->
+  <source srcset="/Aboutme/name.png" media="(prefers-color-scheme: light)">
+  <!-- Fallback image -->
+  <img src="/Aboutme/name.png" alt="signiture image">
+</picture>
 </div>
-  </header> 
-  <div class="post-content"><h1></h1>
-<div class="card" style="border: 1px solid #ccc; padding: 1rem; margin-bottom: 1rem;">
-  <div class="card-body">
-    <p><a href="/aboutme/gallery">
-    <img src=/Aboutme/photo_main.jpg alt="a">
-    </a></p>
-    <p><a href="/aboutme/gallery"><h2 style="text-align: center;">Photography</h2></a></p>
-  <p>Above: A collection of memorable moments in my life - fragments of lights and time, captured with my vivo X100 Ultra. Each photo holds a memory, a feeling, a story worth remembering</p>
-  </div>
-</div>
 
-
+<div class="card-grid">
+  <div class="card">
+    <a href="/aboutme/projects">
+      <img src="/Aboutme/projects_main.png" alt="Projects" />
+      <div class="card-content">
+        <h3>Projects</h3>
+        <p>Above: The first project I built in Haskell. It's an animation of a four-season scene outside a window</p>
+      </div>
+    </a>
   </div>
 
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
+  <div class="card">
+    <a href="/aboutme/gallery">
+      <img src="/Aboutme/photo_main_1.jpg" alt="Photography" />
+      <div class="card-content">
+        <h3>Photography</h3>
+        <p>Above: A collection of memorable moments in my life, captured with my vivo X100 Ultra.</p>
+      </div>
+    </a>
+  </div>
 
-  </footer>
-</article>
+  <div class="card">
+    <a href="/aboutme/climbing">
+      <img src="/Aboutme/climbing_main.jpg" alt="Climbing" />
+      <div class="card-content">
+        <h3>Climbing</h3>
+        <p>Above: Bouldering is quite different from roped climbing, and this was my first time trying it.</p>
+      </div>
+    </a>
+  </div>
+
+
+  
+  </div>
+
+
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">King.io</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kingjin.io</a></span> · 
 
     <span>
         Powered by
@@ -215,18 +305,6 @@
             mybutton.style.opacity = "0";
         }
     };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
 
 </script>
 <script>

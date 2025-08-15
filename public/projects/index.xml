@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Projects on Kingjin.io</title>
+    <link>http://localhost:1313/projects/</link>
+    <description>Recent content in Projects on Kingjin.io</description>
+    <generator>Hugo -- 0.148.2</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Let&#39;s break the information gap</title>
+      <link>http://localhost:1313/aboutme/projects/lets_break_the_information_gap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/aboutme/projects/lets_break_the_information_gap/</guid>
+      <description>aboutme</description>
+      <content:encoded><![CDATA[<blockquote>
+<p>A free web application that create a two-host daily podcast of the news that matters to you. Just add your favorite RSS feeds from news sites, blogs, and social media. Our app will automatically generate conversational scripts using an LLM and then produce a customized audio episode with text-to-speech. It&rsquo;s the perfect way to stay updated on your commute.</p></blockquote>
+<p><a href="https://github.com/Kingjinsight/Lets-break-the-information-gap">code available in github</a></p>
+<iframe width=100% height=450 src="https://www.youtube.com/embed/Xx2ari_n_f0?si=af_64RookXLDccYE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>   
+<h2 id="motivation">Motivation</h2>
+<p>The idea of having a  J.A.R.V.I.S. from the Marvel movies, is a common dream. With today&rsquo;s advancements in LLM and TTS technology, we can now offer a real-world experience that captures a part of that dream.</p>
+<p>For me, I love to start my mornings by checking my favorite blogs for updates, scrolling through X for new tech news, or quickly scanning the day&rsquo;s headlines. With this application, I could simply wake up, click a button to generate my podcast, and then, while having breakfast or commuting, listen to a personalized summary of everything that happened overnight. If a specific story catches my interest, I can then go back and read the full article later. I think its an efficient way to stay informed.</p>
+<h2 id="tech-stack">Tech stack</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Area</th>
+          <th style="text-align: left">Technology</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Backend</strong></td>
+          <td style="text-align: left">FastAPI, Python, SQLAlchemy, PostgreSQL, Pydantic</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Frontend</strong></td>
+          <td style="text-align: left">React, Javascript, TypeScript, Vite, Tailwind CSS</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>AI &amp; TTS</strong></td>
+          <td style="text-align: left">Google Gemini 2.5 Pro API</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Deployment</strong></td>
+          <td style="text-align: left">Render (Web Service, Static Site, background worker), Docker (local dev for velkey(alternative for redis))</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>AI assistant</strong></td>
+          <td style="text-align: left">Gemini 2.5 pro, Claude sonnet 4</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="issues-i-met">Issues I met</h2>
+<ol>
+<li>Gemini api timeout:
+<ul>
+<li>The current Gemini API has a 60-second request timeout, which is insufficient for generating a 10-minute podcast with a single text-to-speech (TTS) request. To solve this, my initial thought was to segment the entire podcast script into smaller parts and generate each segment separately.</li>
+<li>However, a new challenge arose with the TTS service&rsquo;s free plan, which limits me to just 15 requests per day. This makes the segmentation approach impractical for daily use.</li>
+<li>My temporary fix has been to adjust the script prompt to generate shorter content, but this method is unreliable and doesn&rsquo;t always prevent timeouts.</li>
+<li>The long-term solution will be to upgrade to a paid TTS service with a longer API request timeout. This will allow for single, uninterrupted podcast generation, solving the issue at its root.</li>
+</ul>
+</li>
+</ol>
+<h2 id="roadmap">Roadmap</h2>
+<ul>
+<li>2025-09: Migrate deployment from Render to my personal server</li>
+<li>2025-10: Add more social medias RSS feeds</li>
+<li>2025-12: Multi-format input file support</li>
+<li>Future:
+<ul>
+<li>Use fine-tuning TTS model</li>
+<li>Improve user experience</li>
+<li>Support spotify export</li>
+</ul>
+</li>
+</ul>
+<h2 id="summary">Summary</h2>
+<p>This project takes me 1 month from learning tech stacks to final outcome. I want to say AI really helped me a lot during the building process, whereas from learning tech stacks to fix bugs. From this prject, I experience both frontend and backend project building, frontend is just like building an artwprk, it really need me to keep patient, backend is more interesting since it relative to many different fields like crud operations, building database schemas and endpoints and connection between database, background worker. I also experience the magic of containerization, its so convenient. - 2025.08.14</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Reflex</title>
+      <link>http://localhost:1313/aboutme/projects/reflex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/aboutme/projects/reflex/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;An AI-powered English learning application built on Electron. The app&amp;rsquo;s core function is a dictionary, which records each word you searched. The search history is then used to generate a unique review story, allowing you to practice new vocabulary in conversational contexts rather than just through translation.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Kingjinsight/Reflex&#34;&gt;code available in github&lt;/a&gt;
+&lt;img alt=&#34;reflex_dashboard&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/Aboutme/reflex_dashboard.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;I dislike the traditional method of using a dictionary to search a word, gettings its translation and storing it in a new word notebook. This relies on rote memorization, but using a word is the most efficient way to remember it. Therefore, a fter a day&amp;rsquo;s record, a user can generate a short conversational story with an LLM to help recall the meaning of each new word, which should make a stronger impression.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<blockquote>
+<p>An AI-powered English learning application built on Electron. The app&rsquo;s core function is a dictionary, which records each word you searched. The search history is then used to generate a unique review story, allowing you to practice new vocabulary in conversational contexts rather than just through translation.</p></blockquote>
+<p><a href="https://github.com/Kingjinsight/Reflex">code available in github</a>
+<img alt="reflex_dashboard" loading="lazy" src="/Aboutme/reflex_dashboard.png"></p>
+<h2 id="motivation">Motivation</h2>
+<p>I dislike the traditional method of using a dictionary to search a word, gettings its translation and storing it in a new word notebook. This relies on rote memorization, but using a word is the most efficient way to remember it. Therefore, a fter a day&rsquo;s record, a user can generate a short conversational story with an LLM to help recall the meaning of each new word, which should make a stronger impression.</p>
+<h2 id="tech-stack">Tech stack</h2>
+<p>Frontend: HTML, Tailwind CSS, Electron, Javascript</p>
+<h2 id="roadmap">Roadmap</h2>
+<p>Future: support multi-language data record system</p>
+<h2 id="summary">Summary</h2>
+<p>This project takes me one week to build. To be honest, Electron is convenient for cross platform, but also it increase the size of the software.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>
