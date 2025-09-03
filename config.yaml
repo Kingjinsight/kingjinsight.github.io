@@ -18,12 +18,14 @@ params:
   
   homeInfoParams:
     Title: "![King.io](/fontbolt.png)"
-    Content: Hi There, I'm **King**. I'm studying AI at The Universiy of Edinburgh😎. This blog is documenting my learning journey and some random thoughts since 2025.
+    Content: Hi There, I'm **King**. I'm studying AI at The Universiy of Edinburgh😎. This blog is documenting my learning journey and some random thoughts since 2025. Find more about me in here:[ aboutme](/aboutme)
   socialIcons:
     - name: github
       url: "https://github.com/Kingjinsight"
     - name: email
       url: "mailto:edevking@proton.me"
+    - name: linkedin
+      url: "https://linkedin.com/in/kecheng-jin-224ab7349"
     - name: rss
       url: "/index.xml"
     
