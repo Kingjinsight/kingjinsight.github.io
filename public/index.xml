@@ -4,10 +4,21 @@
     <title>Kingjin.io</title>
     <link>http://localhost:1313/</link>
     <description>Recent content on Kingjin.io</description>
-    <generator>Hugo -- 0.148.2</generator>
+    <generator>Hugo -- 0.149.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lightroom Notes</title>
+      <link>http://localhost:1313/posts/lightroom/</link>
+      <pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/lightroom/</guid>
+      <description>&lt;p&gt;I really love the feeling about using photo to represent some themes. Recently, I tried lightroom, which is a post-process software for photos. I learned many color theorys and tools behind it. Let&amp;rsquo;s have a look.&lt;/p&gt;
+&lt;h2 id=&#34;basics&#34;&gt;Basics&lt;/h2&gt;</description>
+      <content:encoded><![CDATA[<p>I really love the feeling about using photo to represent some themes. Recently, I tried lightroom, which is a post-process software for photos. I learned many color theorys and tools behind it. Let&rsquo;s have a look.</p>
+<h2 id="basics">Basics</h2>
+]]></content:encoded>
+    </item>
     <item>
       <title>Virtual machine vs Container vs Sandbox</title>
       <link>http://localhost:1313/posts/container_sandbox_vm/</link>
@@ -827,8 +838,12 @@ As you start watching, the service begins playing the movie. Similarly, Java run
       <link>http://localhost:1313/aboutme/climbing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/aboutme/climbing/</guid>
-      <description>&lt;p&gt;Not available&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p>Not available</p>
+      <description>&lt;h2 id=&#34;location-auchinstarry-quarry&#34;&gt;Location: Auchinstarry Quarry&lt;/h2&gt;
+&lt;p&gt;Date: 2025.09.12
+&lt;img alt=&#34;rock and me&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/Aboutme/croy.jpg&#34;&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="location-auchinstarry-quarry">Location: Auchinstarry Quarry</h2>
+<p>Date: 2025.09.12
+<img alt="rock and me" loading="lazy" src="/Aboutme/croy.jpg"></p>
 ]]></content:encoded>
     </item>
     <item>
@@ -900,7 +915,7 @@ As you start watching, the service begins playing the movie. Similarly, Java run
 </li>
 </ul>
 <h2 id="summary">Summary</h2>
-<p>This project takes me 1 month from learning tech stacks to final outcome. I want to say AI really helped me a lot during the building process, whereas from learning tech stacks to fix bugs. From this prject, I experience both frontend and backend project building, frontend is just like building an artwprk, it really need me to keep patient, backend is more interesting since it relative to many different fields like crud operations, building database schemas and endpoints and connection between database, background worker. I also experience the magic of containerization, its so convenient. - 2025.08.14</p>
+<p>This project takes me 2 month from learning tech stacks to final outcome. I want to say AI really helped me a lot during the building process, whereas from learning tech stacks to fix bugs. From this prject, I experience both frontend and backend project building, frontend is just like building an artwprk, it really need me to keep patient, backend is more interesting since it relative to many different fields like crud operations, building database schemas and endpoints and connection between database, background worker. I also experience the magic of containerization, its so convenient. - 2025.08.14</p>
 ]]></content:encoded>
     </item>
     <item>

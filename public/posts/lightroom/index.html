@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Lightroom Notes | Kingjin.io</title>
+<meta name="keywords" content="Color theory, Photography">
+<meta name="description" content="I really love the feeling about using photo to represent some themes. Recently, I tried lightroom, which is a post-process software for photos. I learned many color theorys and tools behind it. Let&rsquo;s have a look.
+Color Theory.
+
+Additive Color: RGB for Red, Green and Blue.
+
+Red &#43; Green &#43; Blue = White
+
+
+Subtractive Color: These are created by mixing two additive colors.
+
+Red &#43; Green = Yellow
+Green &#43; Blue = Cyan
+Red &#43; Blue = Magenta
+Yellow &#43; Cyan &#43; Magenta = Black
+
+
+
+Basics
+
+Histogram: a graph that displays the brightness and color distribution of an image
+
+From left to right, each column represents the number of the white-black pixels in different level
+It has five different region, from left to right, they are blacks, shadows, exposure, highlights and whites.
+There are two triangles at the top left and top right.
+
+the top left one is shadow clipping which will show you whether your image has region that was too dark
+the top right one is highlight clipping which show you whether your image has region that was too light
+the reason using clipping is because we can&rsquo;t represent a value of a pixel by the number of bits. For example, the most common bit to represent image is 8 bits(0-255), such as (0，128， 254). When the value over 255 or less than 0, the pixel will be break, and the information will be clipped to 255 and 0.
+
+
+There are several colors in the triangle
+
+gray - all details are well preserved
+red - red channel overexposure/underexposure
+green - green channel overexposure/underexposure
+blue - blue channel overexposure/underexposure
+yellow - yellow channel overexposure/underexposure
+cyan - cyan channel overexposure/underexposure
+magenta - magenta channel overexposure/underexposure
+solid white - RGB channel channel overexposure/underexposure in the same time
+
+
+
+
+White balance
+
+Temperature
+Tint
+
+
+Tone
+
+Exposure: change the overall brightness of the photo
+Contrast: Increase or decrease the difference between highlights and shadows in a photo. It can make highlights brighter and shadows darker or vice versa.
+Highlights: Only the brighter areas in the photo are controlled, excluding the brightest pure white areas, such as cloud details in the sky, hightlights on the skins, etc.
+Shadows: Only the darker areas in the photo, but does not include the darkest pure black parts, such as the details of people in the shadows, the dark parts of buildings, etc.
+Whites: Define the brightest point in photo, it controls the rightmost end of the brightness range and determines which parts of your image become pure white.
+Blacks: Define the &ldquo;darkest point&rdquo; or &ldquo;black point&rdquo; of your photo. It controls the leftmost end of the brightness range and determines which parts of the image will become pure black.
+
+
+Presence
+
+Texture: Focus on the surface texture, such as skin pores, surface of rocks, etc.
+Clarity: 它不像“纹理”那么精细，而是让物体的轮廓和结构显得更“硬朗”或更“柔和”。It isn&rsquo;t as fine-detailed as &ldquo;Texture&rdquo;. Instead, it makes the outlines and structures of objects appear &ldquo;harder&rdquo; or &ldquo;softer&rdquo;.
+Dehaze: 主要用于消除照片中的大气薄雾、雾霾或朦胧感，同时增加色彩的饱和度。It is primarily used to eliminate atmospheric haze, smog, or mist in a photo, while simultaneously increasing color saturation.
+Vibrance: 它会优先提升画面中本身不太饱和的颜色（比如天空的蓝色、植物的绿色），而对于已经很饱和的颜色则影响较小. It selectively boosts the less saturated colors in an image (like the blue in the sky or the green in plants), while having a smaller impact on colors that are already highly saturated.
+Saturation: 一个“简单粗暴的”色彩增强工具。它会对画面中的所有颜色进行无差别的、同等程度的提升。A &ldquo;simple and heavy-handed&rdquo; color enhancement tool. It boosts all colors in the image indiscriminately and to the same degree.
+
+
+
+Tone Curve
+
+The square graph looks similar with histogram, but contain a line segment from bottom left to top right.
+We can pull the curve to change tone in specific region, pull the curve left and up will make region lighter(add more RGB) and right down make region darker(add more CMYK) for point curve.
+we can also pull RGB channel separately.
+S curve to increase contrast
+Tips: e.g. to increase Yellow, we can pull the blue-yellow curve to yellow more, or we can pull red-cyan to red more and green-magenta to green more.
+
+This post will update frequently.">
+<meta name="author" content="King Jin">
+<link rel="canonical" href="http://localhost:1313/posts/lightroom/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6e591b5865d633db2924f5db15545b1b7b3c306d625eb079c9d4274312ba88fd.css" integrity="sha256-blkbWGXWM9spJPXbFVRbG3s8MG1iXrB5ydQnQxK6iP0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/lightroom/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Kingjin.io (Alt + H)">Kingjin.io</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/aboutme/" title="About me">
+                    <span>About me</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Lightroom Notes
+    </h1>
+    <div class="post-meta"><span title='2025-09-04 00:00:00 +0000 UTC'>September 4, 2025</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;King Jin
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#color-theory" aria-label="Color Theory.">Color Theory.</a></li>
+                <li>
+                    <a href="#basics" aria-label="Basics">Basics</a></li>
+                <li>
+                    <a href="#tone-curve" aria-label="Tone Curve">Tone Curve</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>I really love the feeling about using photo to represent some themes. Recently, I tried lightroom, which is a post-process software for photos. I learned many color theorys and tools behind it. Let&rsquo;s have a look.</p>
+<h2 id="color-theory">Color Theory.<a hidden class="anchor" aria-hidden="true" href="#color-theory">#</a></h2>
+<ol>
+<li>Additive Color: RGB for Red, Green and Blue.
+<ul>
+<li>Red + Green + Blue = White</li>
+</ul>
+</li>
+<li>Subtractive Color: These are created by mixing two additive colors.
+<ul>
+<li>Red + Green = Yellow</li>
+<li>Green + Blue = Cyan</li>
+<li>Red + Blue = Magenta</li>
+<li>Yellow + Cyan + Magenta = Black</li>
+</ul>
+</li>
+</ol>
+<h2 id="basics">Basics<a hidden class="anchor" aria-hidden="true" href="#basics">#</a></h2>
+<ol>
+<li>Histogram: a graph that displays the brightness and color distribution of an image
+<ol>
+<li>From left to right, each column represents the number of the white-black pixels in different level</li>
+<li>It has five different region, from left to right, they are blacks, shadows, exposure, highlights and whites.</li>
+<li>There are two triangles at the top left and top right.
+<ol>
+<li>the top left one is shadow clipping which will show you whether your image has region that was too dark</li>
+<li>the top right one is highlight clipping which show you whether your image has region that was too light</li>
+<li>the reason using clipping is because we can&rsquo;t represent a value of a pixel by the number of bits. For example, the most common bit to represent image is 8 bits(0-255), such as (0，128， 254). When the value over 255 or less than 0, the pixel will be break, and the information will be clipped to 255 and 0.</li>
+</ol>
+</li>
+<li>There are several colors in the triangle
+<ol>
+<li>gray - all details are well preserved</li>
+<li>red - red channel overexposure/underexposure</li>
+<li>green - green channel overexposure/underexposure</li>
+<li>blue - blue channel overexposure/underexposure</li>
+<li>yellow - yellow channel overexposure/underexposure</li>
+<li>cyan - cyan channel overexposure/underexposure</li>
+<li>magenta - magenta channel overexposure/underexposure</li>
+<li>solid white - RGB channel channel overexposure/underexposure in the same time</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>White balance
+<ol>
+<li>Temperature</li>
+<li>Tint</li>
+</ol>
+</li>
+<li>Tone
+<ol>
+<li>Exposure: change the overall brightness of the photo</li>
+<li>Contrast: Increase or decrease the difference between highlights and shadows in a photo. It can make highlights brighter and shadows darker or vice versa.</li>
+<li>Highlights: Only the brighter areas in the photo are controlled, excluding the brightest pure white areas, such as cloud details in the sky, hightlights on the skins, etc.</li>
+<li>Shadows: Only the darker areas in the photo, but does not include the darkest pure black parts, such as the details of people in the shadows, the dark parts of buildings, etc.</li>
+<li>Whites: Define the brightest point in photo, it controls the rightmost end of the brightness range and determines which parts of your image become pure white.</li>
+<li>Blacks: Define the &ldquo;darkest point&rdquo; or &ldquo;black point&rdquo; of your photo. It controls the leftmost end of the brightness range and determines which parts of the image will become pure black.</li>
+</ol>
+</li>
+<li>Presence
+<ol>
+<li>Texture: Focus on the surface texture, such as skin pores, surface of rocks, etc.</li>
+<li>Clarity: 它不像“纹理”那么精细，而是让物体的轮廓和结构显得更“硬朗”或更“柔和”。It isn&rsquo;t as fine-detailed as &ldquo;Texture&rdquo;. Instead, it makes the outlines and structures of objects appear &ldquo;harder&rdquo; or &ldquo;softer&rdquo;.</li>
+<li>Dehaze: 主要用于消除照片中的大气薄雾、雾霾或朦胧感，同时增加色彩的饱和度。It is primarily used to eliminate atmospheric haze, smog, or mist in a photo, while simultaneously increasing color saturation.</li>
+<li>Vibrance: 它会优先提升画面中本身不太饱和的颜色（比如天空的蓝色、植物的绿色），而对于已经很饱和的颜色则影响较小. It selectively boosts the less saturated colors in an image (like the blue in the sky or the green in plants), while having a smaller impact on colors that are already highly saturated.</li>
+<li>Saturation: 一个“简单粗暴的”色彩增强工具。它会对画面中的所有颜色进行无差别的、同等程度的提升。A &ldquo;simple and heavy-handed&rdquo; color enhancement tool. It boosts all colors in the image indiscriminately and to the same degree.</li>
+</ol>
+</li>
+</ol>
+<h2 id="tone-curve">Tone Curve<a hidden class="anchor" aria-hidden="true" href="#tone-curve">#</a></h2>
+<ol>
+<li>The square graph looks similar with histogram, but contain a line segment from bottom left to top right.</li>
+<li>We can pull the curve to change tone in specific region, pull the curve left and up will make region lighter(add more RGB) and right down make region darker(add more CMYK) for point curve.</li>
+<li>we can also pull RGB channel separately.</li>
+<li>S curve to increase contrast</li>
+<li>Tips: e.g. to increase Yellow, we can pull the blue-yellow curve to yellow more, or we can pull red-cyan to red more and green-magenta to green more.</li>
+</ol>
+<p>This post will update frequently.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/color-theory/">Color Theory</a></li>
+      <li><a href="http://localhost:1313/tags/photography/">Photography</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/container_sandbox_vm/">
+    <span class="title">»</span>
+    <br>
+    <span>Virtual machine vs Container vs Sandbox</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kingjin.io</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

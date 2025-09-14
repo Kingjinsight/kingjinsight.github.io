@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Color Theory on Kingjin.io</title>
+    <link>http://localhost:1313/tags/color-theory/</link>
+    <description>Recent content in Color Theory on Kingjin.io</description>
+    <generator>Hugo -- 0.149.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/color-theory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lightroom Notes</title>
+      <link>http://localhost:1313/posts/lightroom/</link>
+      <pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/lightroom/</guid>
+      <description>&lt;p&gt;I really love the feeling about using photo to represent some themes. Recently, I tried lightroom, which is a post-process software for photos. I learned many color theorys and tools behind it. Let&amp;rsquo;s have a look.&lt;/p&gt;
+&lt;h2 id=&#34;basics&#34;&gt;Basics&lt;/h2&gt;</description>
+      <content:encoded><![CDATA[<p>I really love the feeling about using photo to represent some themes. Recently, I tried lightroom, which is a post-process software for photos. I learned many color theorys and tools behind it. Let&rsquo;s have a look.</p>
+<h2 id="basics">Basics</h2>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>
