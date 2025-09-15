@@ -14,9 +14,163 @@
       <pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/lightroom/</guid>
       <description>&lt;p&gt;I really love the feeling about using photo to represent some themes. Recently, I tried lightroom, which is a post-process software for photos. I learned many color theorys and tools behind it. Let&amp;rsquo;s have a look.&lt;/p&gt;
-&lt;h2 id=&#34;basics&#34;&gt;Basics&lt;/h2&gt;</description>
+&lt;h2 id=&#34;color-theory&#34;&gt;Color Theory.&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Additive Color: RGB for Red, Green and Blue.
+&lt;ul&gt;
+&lt;li&gt;Red + Green + Blue = White&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Subtractive Color: These are created by mixing two additive colors.
+&lt;ul&gt;
+&lt;li&gt;Red + Green = Yellow&lt;/li&gt;
+&lt;li&gt;Green + Blue = Cyan&lt;/li&gt;
+&lt;li&gt;Red + Blue = Magenta&lt;/li&gt;
+&lt;li&gt;Yellow + Cyan + Magenta = Black&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;basics&#34;&gt;Basics&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Histogram: a graph that displays the brightness and color distribution of an image
+&lt;ol&gt;
+&lt;li&gt;From left to right, each column represents the number of the white-black pixels in different level&lt;/li&gt;
+&lt;li&gt;It has five different region, from left to right, they are blacks, shadows, exposure, highlights and whites.&lt;/li&gt;
+&lt;li&gt;There are two triangles at the top left and top right.
+&lt;ol&gt;
+&lt;li&gt;the top left one is shadow clipping which will show you whether your image has region that was too dark&lt;/li&gt;
+&lt;li&gt;the top right one is highlight clipping which show you whether your image has region that was too light&lt;/li&gt;
+&lt;li&gt;the reason using clipping is because we can&amp;rsquo;t represent a value of a pixel by the number of bits. For example, the most common bit to represent image is 8 bits(0-255), such as (0，128， 254). When the value over 255 or less than 0, the pixel will be break, and the information will be clipped to 255 and 0.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;There are several colors in the triangle
+&lt;ol&gt;
+&lt;li&gt;gray - all details are well preserved&lt;/li&gt;
+&lt;li&gt;red - red channel overexposure/underexposure&lt;/li&gt;
+&lt;li&gt;green - green channel overexposure/underexposure&lt;/li&gt;
+&lt;li&gt;blue - blue channel overexposure/underexposure&lt;/li&gt;
+&lt;li&gt;yellow - yellow channel overexposure/underexposure&lt;/li&gt;
+&lt;li&gt;cyan - cyan channel overexposure/underexposure&lt;/li&gt;
+&lt;li&gt;magenta - magenta channel overexposure/underexposure&lt;/li&gt;
+&lt;li&gt;solid white - RGB channel channel overexposure/underexposure in the same time&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;White balance
+&lt;ol&gt;
+&lt;li&gt;Temperature&lt;/li&gt;
+&lt;li&gt;Tint&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Tone
+&lt;ol&gt;
+&lt;li&gt;Exposure: change the overall brightness of the photo&lt;/li&gt;
+&lt;li&gt;Contrast: Increase or decrease the difference between highlights and shadows in a photo. It can make highlights brighter and shadows darker or vice versa.&lt;/li&gt;
+&lt;li&gt;Highlights: Only the brighter areas in the photo are controlled, excluding the brightest pure white areas, such as cloud details in the sky, hightlights on the skins, etc.&lt;/li&gt;
+&lt;li&gt;Shadows: Only the darker areas in the photo, but does not include the darkest pure black parts, such as the details of people in the shadows, the dark parts of buildings, etc.&lt;/li&gt;
+&lt;li&gt;Whites: Define the brightest point in photo, it controls the rightmost end of the brightness range and determines which parts of your image become pure white.&lt;/li&gt;
+&lt;li&gt;Blacks: Define the &amp;ldquo;darkest point&amp;rdquo; or &amp;ldquo;black point&amp;rdquo; of your photo. It controls the leftmost end of the brightness range and determines which parts of the image will become pure black.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Presence
+&lt;ol&gt;
+&lt;li&gt;Texture: Focus on the surface texture, such as skin pores, surface of rocks, etc.&lt;/li&gt;
+&lt;li&gt;Clarity: 它不像“纹理”那么精细，而是让物体的轮廓和结构显得更“硬朗”或更“柔和”。It isn&amp;rsquo;t as fine-detailed as &amp;ldquo;Texture&amp;rdquo;. Instead, it makes the outlines and structures of objects appear &amp;ldquo;harder&amp;rdquo; or &amp;ldquo;softer&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Dehaze: 主要用于消除照片中的大气薄雾、雾霾或朦胧感，同时增加色彩的饱和度。It is primarily used to eliminate atmospheric haze, smog, or mist in a photo, while simultaneously increasing color saturation.&lt;/li&gt;
+&lt;li&gt;Vibrance: 它会优先提升画面中本身不太饱和的颜色（比如天空的蓝色、植物的绿色），而对于已经很饱和的颜色则影响较小. It selectively boosts the less saturated colors in an image (like the blue in the sky or the green in plants), while having a smaller impact on colors that are already highly saturated.&lt;/li&gt;
+&lt;li&gt;Saturation: 一个“简单粗暴的”色彩增强工具。它会对画面中的所有颜色进行无差别的、同等程度的提升。A &amp;ldquo;simple and heavy-handed&amp;rdquo; color enhancement tool. It boosts all colors in the image indiscriminately and to the same degree.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tone-curve&#34;&gt;Tone Curve&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;The square graph looks similar with histogram, but contain a line segment from bottom left to top right.&lt;/li&gt;
+&lt;li&gt;We can pull the curve to change tone in specific region, pull the curve left and up will make region lighter(add more RGB) and right down make region darker(add more CMYK) for point curve.&lt;/li&gt;
+&lt;li&gt;we can also pull RGB channel separately.&lt;/li&gt;
+&lt;li&gt;S curve to increase contrast&lt;/li&gt;
+&lt;li&gt;Tips: e.g. to increase Yellow, we can pull the blue-yellow curve to yellow more, or we can pull red-cyan to red more and green-magenta to green more.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This post will update frequently.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>I really love the feeling about using photo to represent some themes. Recently, I tried lightroom, which is a post-process software for photos. I learned many color theorys and tools behind it. Let&rsquo;s have a look.</p>
+<h2 id="color-theory">Color Theory.</h2>
+<ol>
+<li>Additive Color: RGB for Red, Green and Blue.
+<ul>
+<li>Red + Green + Blue = White</li>
+</ul>
+</li>
+<li>Subtractive Color: These are created by mixing two additive colors.
+<ul>
+<li>Red + Green = Yellow</li>
+<li>Green + Blue = Cyan</li>
+<li>Red + Blue = Magenta</li>
+<li>Yellow + Cyan + Magenta = Black</li>
+</ul>
+</li>
+</ol>
 <h2 id="basics">Basics</h2>
+<ol>
+<li>Histogram: a graph that displays the brightness and color distribution of an image
+<ol>
+<li>From left to right, each column represents the number of the white-black pixels in different level</li>
+<li>It has five different region, from left to right, they are blacks, shadows, exposure, highlights and whites.</li>
+<li>There are two triangles at the top left and top right.
+<ol>
+<li>the top left one is shadow clipping which will show you whether your image has region that was too dark</li>
+<li>the top right one is highlight clipping which show you whether your image has region that was too light</li>
+<li>the reason using clipping is because we can&rsquo;t represent a value of a pixel by the number of bits. For example, the most common bit to represent image is 8 bits(0-255), such as (0，128， 254). When the value over 255 or less than 0, the pixel will be break, and the information will be clipped to 255 and 0.</li>
+</ol>
+</li>
+<li>There are several colors in the triangle
+<ol>
+<li>gray - all details are well preserved</li>
+<li>red - red channel overexposure/underexposure</li>
+<li>green - green channel overexposure/underexposure</li>
+<li>blue - blue channel overexposure/underexposure</li>
+<li>yellow - yellow channel overexposure/underexposure</li>
+<li>cyan - cyan channel overexposure/underexposure</li>
+<li>magenta - magenta channel overexposure/underexposure</li>
+<li>solid white - RGB channel channel overexposure/underexposure in the same time</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>White balance
+<ol>
+<li>Temperature</li>
+<li>Tint</li>
+</ol>
+</li>
+<li>Tone
+<ol>
+<li>Exposure: change the overall brightness of the photo</li>
+<li>Contrast: Increase or decrease the difference between highlights and shadows in a photo. It can make highlights brighter and shadows darker or vice versa.</li>
+<li>Highlights: Only the brighter areas in the photo are controlled, excluding the brightest pure white areas, such as cloud details in the sky, hightlights on the skins, etc.</li>
+<li>Shadows: Only the darker areas in the photo, but does not include the darkest pure black parts, such as the details of people in the shadows, the dark parts of buildings, etc.</li>
+<li>Whites: Define the brightest point in photo, it controls the rightmost end of the brightness range and determines which parts of your image become pure white.</li>
+<li>Blacks: Define the &ldquo;darkest point&rdquo; or &ldquo;black point&rdquo; of your photo. It controls the leftmost end of the brightness range and determines which parts of the image will become pure black.</li>
+</ol>
+</li>
+<li>Presence
+<ol>
+<li>Texture: Focus on the surface texture, such as skin pores, surface of rocks, etc.</li>
+<li>Clarity: 它不像“纹理”那么精细，而是让物体的轮廓和结构显得更“硬朗”或更“柔和”。It isn&rsquo;t as fine-detailed as &ldquo;Texture&rdquo;. Instead, it makes the outlines and structures of objects appear &ldquo;harder&rdquo; or &ldquo;softer&rdquo;.</li>
+<li>Dehaze: 主要用于消除照片中的大气薄雾、雾霾或朦胧感，同时增加色彩的饱和度。It is primarily used to eliminate atmospheric haze, smog, or mist in a photo, while simultaneously increasing color saturation.</li>
+<li>Vibrance: 它会优先提升画面中本身不太饱和的颜色（比如天空的蓝色、植物的绿色），而对于已经很饱和的颜色则影响较小. It selectively boosts the less saturated colors in an image (like the blue in the sky or the green in plants), while having a smaller impact on colors that are already highly saturated.</li>
+<li>Saturation: 一个“简单粗暴的”色彩增强工具。它会对画面中的所有颜色进行无差别的、同等程度的提升。A &ldquo;simple and heavy-handed&rdquo; color enhancement tool. It boosts all colors in the image indiscriminately and to the same degree.</li>
+</ol>
+</li>
+</ol>
+<h2 id="tone-curve">Tone Curve</h2>
+<ol>
+<li>The square graph looks similar with histogram, but contain a line segment from bottom left to top right.</li>
+<li>We can pull the curve to change tone in specific region, pull the curve left and up will make region lighter(add more RGB) and right down make region darker(add more CMYK) for point curve.</li>
+<li>we can also pull RGB channel separately.</li>
+<li>S curve to increase contrast</li>
+<li>Tips: e.g. to increase Yellow, we can pull the blue-yellow curve to yellow more, or we can pull red-cyan to red more and green-magenta to green more.</li>
+</ol>
+<p>This post will update frequently.</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -831,19 +985,25 @@ As you start watching, the service begins playing the movie. Similarly, Java run
   <source srcset="/Aboutme/name.png" media="(prefers-color-scheme: light)">
   <!-- Fallback image -->
   <img src="/Aboutme/name.png" alt="signiture image">
-</picture>]]></content:encoded>
+</picture>
+<br>
+<br>
+<h2>🤗</h2>
+<br>]]></content:encoded>
     </item>
     <item>
       <title>Climbing road</title>
       <link>http://localhost:1313/aboutme/climbing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/aboutme/climbing/</guid>
-      <description>&lt;h2 id=&#34;location-auchinstarry-quarry&#34;&gt;Location: Auchinstarry Quarry&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;location-auchinstarry-quarry-scotland&#34;&gt;Location: Auchinstarry Quarry, Scotland&lt;/h2&gt;
 &lt;p&gt;Date: 2025.09.12
-&lt;img alt=&#34;rock and me&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/Aboutme/croy.jpg&#34;&gt;&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<h2 id="location-auchinstarry-quarry">Location: Auchinstarry Quarry</h2>
+&lt;img alt=&#34;rock and me&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/Aboutme/croy_rock_and_me.jpg&#34;&gt;
+A great first-time rock climbing experience, meet interesting people and learned some rope skills.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="location-auchinstarry-quarry-scotland">Location: Auchinstarry Quarry, Scotland</h2>
 <p>Date: 2025.09.12
-<img alt="rock and me" loading="lazy" src="/Aboutme/croy.jpg"></p>
+<img alt="rock and me" loading="lazy" src="/Aboutme/croy_rock_and_me.jpg">
+A great first-time rock climbing experience, meet interesting people and learned some rope skills.</p>
 ]]></content:encoded>
     </item>
     <item>
