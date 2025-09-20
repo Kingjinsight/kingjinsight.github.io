@@ -4,7 +4,7 @@
     <title>Projects on Kingjin.io</title>
     <link>http://localhost:1313/projects/</link>
     <description>Recent content in Projects on Kingjin.io</description>
-    <generator>Hugo -- 0.149.1</generator>
+    <generator>Hugo -- 0.150.0</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -15,7 +15,8 @@
       <description>aboutme</description>
       <content:encoded><![CDATA[<blockquote>
 <p>A free web application that create a two-host daily podcast of the news that matters to you. Just add your favorite RSS feeds from news sites, blogs, and social media. Our app will automatically generate conversational scripts using an LLM and then produce a customized audio episode with text-to-speech. It&rsquo;s the perfect way to stay updated on your commute.</p></blockquote>
-<p><a href="https://github.com/Kingjinsight/Lets-break-the-information-gap">code available in github</a></p>
+<p><a href="https://lbtig.kingportal.tech">Official website</a>
+<a href="https://github.com/Kingjinsight/Lets-break-the-information-gap">Code available in github</a></p>
 <iframe width=100% height=450 src="https://www.youtube.com/embed/Xx2ari_n_f0?si=af_64RookXLDccYE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>   
 <h2 id="motivation">Motivation</h2>
 <p>The idea of having a  J.A.R.V.I.S. from the Marvel movies, is a common dream. With today&rsquo;s advancements in LLM and TTS technology, we can now offer a real-world experience that captures a part of that dream.</p>
@@ -43,7 +44,7 @@
       </tr>
       <tr>
           <td style="text-align: left"><strong>Deployment</strong></td>
-          <td style="text-align: left">Render (Web Service, Static Site, background worker), Docker (local dev for velkey(alternative for redis))</td>
+          <td style="text-align: left">Self-host(personal server), Docker Compose(Backend, Frontend, background worker, PostgreSQL, Valkey)</td>
       </tr>
       <tr>
           <td style="text-align: left"><strong>AI assistant</strong></td>
@@ -64,7 +65,7 @@
 </ol>
 <h2 id="roadmap">Roadmap</h2>
 <ul>
-<li>2025-09: Migrate deployment from Render to my personal server</li>
+<li>2025-09: Migrate deployment from Render to my personal server ✅ - 2025.09.21</li>
 <li>2025-10: Add more social medias RSS feeds</li>
 <li>2025-12: Multi-format input file support</li>
 <li>Future:

@@ -6,7 +6,8 @@ ShowReadingTime: false
 ---
 > A free web application that create a two-host daily podcast of the news that matters to you. Just add your favorite RSS feeds from news sites, blogs, and social media. Our app will automatically generate conversational scripts using an LLM and then produce a customized audio episode with text-to-speech. It's the perfect way to stay updated on your commute.
 
-[code available in github](https://github.com/Kingjinsight/Lets-break-the-information-gap)
+[Official website](https://lbtig.kingportal.tech)  
+[Source code](https://github.com/Kingjinsight/Lets-break-the-information-gap)
 
 <iframe width=100% height=450 src="https://www.youtube.com/embed/Xx2ari_n_f0?si=af_64RookXLDccYE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>   
 
@@ -23,7 +24,7 @@ For me, I love to start my mornings by checking my favorite blogs for updates, s
 | **Backend** | FastAPI, Python, SQLAlchemy, PostgreSQL, Pydantic |
 | **Frontend** | React, Javascript, TypeScript, Vite, Tailwind CSS |
 | **AI & TTS** | Google Gemini 2.5 Pro API |
-| **Deployment** | Render (Web Service, Static Site, background worker), Docker (local dev for velkey(alternative for redis)) |
+| **Deployment** | Self-host(personal server), Docker Compose(Backend, Frontend, background worker, PostgreSQL, Valkey) |
 | **AI assistant** | Gemini 2.5 pro, Claude sonnet 4 |
 ## Issues I met
 1. Gemini api timeout: 
@@ -33,7 +34,7 @@ For me, I love to start my mornings by checking my favorite blogs for updates, s
    - The long-term solution will be to upgrade to a paid TTS service with a longer API request timeout. This will allow for single, uninterrupted podcast generation, solving the issue at its root.
 
 ## Roadmap
-- 2025-09: Migrate deployment from Render to my personal server
+- 2025-09: Migrate deployment from Render to my personal server ✅ - 2025.09.21
 - 2025-10: Add more social medias RSS feeds
 - 2025-12: Multi-format input file support
 - Future:

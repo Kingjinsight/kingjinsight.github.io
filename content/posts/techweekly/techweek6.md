@@ -13,8 +13,6 @@ showtoc: true
 ## Trivias 
 1. Google developed the V8 engine, and Mozilla developed SpiderMonkey. Both are JavaScript engines used to execute JavaScript code. The V8 engine is the core of Chrome and Chromium, while SpiderMonkey is the core of Firefox.
 2. ipython enables to run unix commands, run functions and run one line of code at a time in your terminal.
-3. RGB - Red, Green, Blue; CMYK - Cyan, Magenta, Yellow, and Key (Black).
-4. Red + Green = Yellow, Red + Blue = Magenta, Green + Blue = Cyan. 
 
 
 ## Resources
