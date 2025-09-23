@@ -15,8 +15,8 @@
       <description>aboutme</description>
       <content:encoded><![CDATA[<blockquote>
 <p>A free web application that create a two-host daily podcast of the news that matters to you. Just add your favorite RSS feeds from news sites, blogs, and social media. Our app will automatically generate conversational scripts using an LLM and then produce a customized audio episode with text-to-speech. It&rsquo;s the perfect way to stay updated on your commute.</p></blockquote>
-<p><a href="https://lbtig.kingportal.tech">Official website</a>
-<a href="https://github.com/Kingjinsight/Lets-break-the-information-gap">Code available in github</a></p>
+<p><a href="https://lbtig.kingportal.tech">Official website</a><br>
+<a href="https://github.com/Kingjinsight/Lets-break-the-information-gap">Source code</a></p>
 <iframe width=100% height=450 src="https://www.youtube.com/embed/Xx2ari_n_f0?si=af_64RookXLDccYE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>   
 <h2 id="motivation">Motivation</h2>
 <p>The idea of having a  J.A.R.V.I.S. from the Marvel movies, is a common dream. With today&rsquo;s advancements in LLM and TTS technology, we can now offer a real-world experience that captures a part of that dream.</p>
