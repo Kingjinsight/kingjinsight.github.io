@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>AI on Kingjin.io</title>
-    <link>http://localhost:1313/tags/ai/</link>
+    <link>https://example.org/tags/ai/</link>
     <description>Recent content in AI on Kingjin.io</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 30 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bitcoin Basic | King Weekly</title>
-      <link>http://localhost:1313/posts/techweekly/techweek4/</link>
+      <link>https://example.org/posts/techweekly/techweek4/</link>
       <pubDate>Fri, 30 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/techweekly/techweek4/</guid>
+      <guid>https://example.org/posts/techweekly/techweek4/</guid>
       <description>&lt;h2 id=&#34;bitcoin&#34;&gt;Bitcoin&lt;/h2&gt;
 &lt;p&gt;The legend of Bitcoin has shown its magic for a long time. Recently, I have started to explore this field, and this is a record of my learning.&lt;/p&gt;
 &lt;hr&gt;
@@ -110,9 +110,9 @@
     </item>
     <item>
       <title>Hopfield Network</title>
-      <link>http://localhost:1313/posts/hopfieldnetwork/</link>
+      <link>https://example.org/posts/hopfieldnetwork/</link>
       <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/hopfieldnetwork/</guid>
+      <guid>https://example.org/posts/hopfieldnetwork/</guid>
       <description>&lt;p&gt;2024 Nobel Physics prize was earned by Professor John Hopfield and Professor Geoffrey Hinton, to thanks their distribution on machine learning.
 However, I felt very suprised that why it gives to machine learning? Anyway, I hadn&amp;rsquo;t deeply find the answer in that time.&lt;/p&gt;
 &lt;p&gt;Recently, Professor Geoffrey Hinton gived us a short lecture about Boltzmann machine virtually.
@@ -146,15 +146,15 @@ In LLM, we can say the user&rsquo;s prompt and question is the most unstable sta
     </item>
     <item>
       <title>Jarvis Will Coming Soon | King Weekly</title>
-      <link>http://localhost:1313/posts/techweekly/techweek2/</link>
+      <link>https://example.org/posts/techweekly/techweek2/</link>
       <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/techweekly/techweek2/</guid>
+      <guid>https://example.org/posts/techweekly/techweek2/</guid>
       <description>&lt;h2 id=&#34;model-context-protocol-overview&#34;&gt;Model Context Protocol overview&lt;/h2&gt;
 &lt;p&gt;MCP (Model Context Protocol) can be understood as a &amp;ldquo;universal language&amp;rdquo; for communication between AI and external tools. It&amp;rsquo;s like a translator, allowing different AI applications (such as chatbots, code assistants) and different tools (like databases, GitHub, calendars) to easily communicate without needing to develop a new interface every time.&lt;/p&gt;
 &lt;h4 id=&#34;why-is-mcp-needed&#34;&gt;Why is MCP needed?&lt;/h4&gt;
 &lt;p&gt;In the past, if you wanted an AI assistant to access different tools, like a calendar, email, or task manager, you would need to develop a separate interface for each tool (function calling), which resulted in a huge amount of work (N AI applications × M tools = N×M interfaces).&lt;br&gt;
 MCP simplifies everything: all AI applications only need to support MCP, and all tools only need to support MCP. This way, they can communicate with each other, reducing development costs (N+M interfaces).
-&lt;img alt=&#34;components mcp include&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/TechStuff/mcp.png&#34;&gt;&lt;/p&gt;</description>
+&lt;img alt=&#34;components mcp include&#34; loading=&#34;lazy&#34; src=&#34;https://example.org/TechStuff/mcp.png&#34;&gt;&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="model-context-protocol-overview">Model Context Protocol overview</h2>
 <p>MCP (Model Context Protocol) can be understood as a &ldquo;universal language&rdquo; for communication between AI and external tools. It&rsquo;s like a translator, allowing different AI applications (such as chatbots, code assistants) and different tools (like databases, GitHub, calendars) to easily communicate without needing to develop a new interface every time.</p>
 <h4 id="why-is-mcp-needed">Why is MCP needed?</h4>

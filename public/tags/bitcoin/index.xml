@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Bitcoin on Kingjin.io</title>
-    <link>http://localhost:1313/tags/bitcoin/</link>
+    <link>https://example.org/tags/bitcoin/</link>
     <description>Recent content in Bitcoin on Kingjin.io</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 30 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/bitcoin/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/tags/bitcoin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bitcoin Basic | King Weekly</title>
-      <link>http://localhost:1313/posts/techweekly/techweek4/</link>
+      <link>https://example.org/posts/techweekly/techweek4/</link>
       <pubDate>Fri, 30 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/techweekly/techweek4/</guid>
+      <guid>https://example.org/posts/techweekly/techweek4/</guid>
       <description>&lt;h2 id=&#34;bitcoin&#34;&gt;Bitcoin&lt;/h2&gt;
 &lt;p&gt;The legend of Bitcoin has shown its magic for a long time. Recently, I have started to explore this field, and this is a record of my learning.&lt;/p&gt;
 &lt;hr&gt;

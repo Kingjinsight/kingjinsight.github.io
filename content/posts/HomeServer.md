@@ -53,13 +53,13 @@ reboot or close. This issue will be solved easily when I have a router. Nowadays
 since I have 3 different operating systems in my three daily devices, phone for android, laptop for arachlinux and ipad for ipados, I installed nextcloud docker to try to integrate them into one ecosystem, that pretty awesome.
 
 
-# Update
+# Roadmap
 1. Nextcloud for cloud storage. - 2025.03
 2. Able to build game server. - 2025.03
 3. Music and video live streaming server. - 2025.03
 4. Deployed my full stack project by containerization. - 2025.09
 
-# Year 1
+## Year 1
 ![](/Interesting_thing/homelab_version1.png)
-# Year 2
+## Year 2
 ![](/Interesting_thing/homelab_version2.png)

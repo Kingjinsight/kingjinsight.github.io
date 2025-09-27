@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Python on Kingjin.io</title>
-    <link>http://localhost:1313/tags/python/</link>
+    <link>https://example.org/tags/python/</link>
     <description>Recent content in Python on Kingjin.io</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 30 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Some Python Notes | King Weekly</title>
-      <link>http://localhost:1313/posts/techweekly/techweek5/</link>
+      <link>https://example.org/posts/techweekly/techweek5/</link>
       <pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/techweekly/techweek5/</guid>
+      <guid>https://example.org/posts/techweekly/techweek5/</guid>
       <description>&lt;h2 id=&#34;the-global-interpreter-lock-gil&#34;&gt;The Global Interpreter Lock (GIL)&lt;/h2&gt;
 &lt;p&gt;At its core, the Global Interpreter Lock, or GIL, is a lock that only allows one thread to execute Python bytecode at a time within a single process. This means that even on a multi-core processor, a standard Python program with multiple threads will only utilize a single core for executing Python code.
 It is also for compatibility with large number extension modules written in C. These C extensions may not have built-in thread safety mechanisms, so GIL provides a safety net to ensure that they are executed in a single-threaded environment.
