@@ -2,17 +2,128 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Kingjin.io</title>
-    <link>https://example.org/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Kingjin.io</description>
-    <generator>Hugo -- 0.150.0</generator>
+    <generator>Hugo -- 0.151.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Sep 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to Point Cloud | EUFS</title>
+      <link>http://localhost:1313/posts/eufs/pointcloud/</link>
+      <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/eufs/pointcloud/</guid>
+      <description>&lt;p&gt;Earlier this month, I joined the perception team at EUFS(Edinburgh University Formula Student). I learned many interesting topics in autonomous vehicle perception and teamwork tools. Today, I would like to share what I&amp;rsquo;ve learned about point cloud technology.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is a new series of for my blog, stay tuned 😎！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;what-is-point-cloud&#34;&gt;What is Point Cloud?&lt;/h2&gt;
+&lt;p&gt;A point cloud is a collection of millions of 3D points that represent everything around you. Usually we use a sensor called LiDAR(Light Detection and Ranging) to create these point clouds.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Earlier this month, I joined the perception team at EUFS(Edinburgh University Formula Student). I learned many interesting topics in autonomous vehicle perception and teamwork tools. Today, I would like to share what I&rsquo;ve learned about point cloud technology.</p>
+<blockquote>
+<p>This is a new series of for my blog, stay tuned 😎！</p>
+</blockquote>
+<h2 id="what-is-point-cloud">What is Point Cloud?</h2>
+<p>A point cloud is a collection of millions of 3D points that represent everything around you. Usually we use a sensor called LiDAR(Light Detection and Ranging) to create these point clouds.</p>
+<h2 id="how-point-cloud-work">How Point Cloud work:</h2>
+<ol>
+<li>The system emits a laser pulse (usually a single-wavelength infrared light)</li>
+<li>measures the time it takes for the laser to reflect back. This calculates the distance and generates a 3D point cloud.</li>
+<li>Each point contains only the spatial coordinates (x, y, z) and the reflection intensity, without RGB color information.
+<img alt="pointcloud" loading="lazy" src="/TechStuff/pointcloud.png"></li>
+</ol>
+<h2 id="point-cloud-property">Point Cloud property:</h2>
+<ol>
+<li>unorder</li>
+<li>sparsity</li>
+<li>unstructured</li>
+<li>geometric transformability</li>
+</ol>
+<h2 id="how-can-we-process-point-clouds">How can we process point clouds</h2>
+<h3 id="1pcl">1.PCL</h3>
+<p>We use a popular library called PCL that provides tools for:</p>
+<ul>
+<li>Filtering: Removing noise and irrelevant points</li>
+<li>Segmentation: Grouping points that belong to the same object</li>
+<li>Clustering : Finding groups of point that might be cones</li>
+<li>Feature extraction: Calculating geometric properties like shapes and sizes.</li>
+</ul>
+<h3 id="2-grid-based-approaches">2. Grid-Based Approaches</h3>
+<ul>
+<li>Divide the space around the car into a 2D grid</li>
+<li>Count how many points fell into each grid cell</li>
+<li>Look for patern that match cone shapes</li>
+<li>Extract potential cone locations</li>
+</ul>
+<h3 id="3-pointpillars">3. PointPillars</h3>
+<p>See details in this blog: <a href="../../pointpillars">Understanding PointPillars</a></p>
+<h2 id="common-point-cloud-tasks">Common Point Cloud tasks:</h2>
+<ol>
+<li>3d shape classification: categorizing entire point clouds into object classes(car, pedestrain)</li>
+<li>3d object detection and tracking: Locating objects with 3D bounding boxes and following them across frames</li>
+<li>3d point cloud segmentation: Assigning a class label to every single point.</li>
+</ol>
+<h2 id="common-library-used-in-point-cloud">Common Library used in Point Cloud:</h2>
+<p>The point cloud ecosystem offers several powerful libraries:</p>
+<ol>
+<li>PCL: C++ library for classical algorithms</li>
+<li>VCGLib: Specialized for mesh processing and geometry</li>
+<li>CGAL: Computational geometry algorithms library</li>
+<li>Open3d: Python library with excellent visualization</li>
+</ol>
+<h2 id="high-quality-point-cloud-datasets">High quality point cloud datasets:</h2>
+<ol>
+<li>KITTI</li>
+<li>waymo</li>
+<li>nuScenes</li>
+</ol>
+<h2 id="other-methods-for-3d-object-detection">Other Methods for 3D object detection:</h2>
+<p>while LiDAR is powerful, various other approaches exists for 3D perception.</p>
+<ol>
+<li>monocular camera
+<ol>
+<li>D4LCN</li>
+<li>Mono3D-PLiDAR</li>
+</ol>
+</li>
+<li>binocular camera
+<ol>
+<li>Stereo R-CNN</li>
+<li>PSMNet</li>
+</ol>
+</li>
+<li>RGB-D
+<ol>
+<li>F-PointNets</li>
+</ol>
+</li>
+<li>LiDAR
+<ol>
+<li>PV-RCNN</li>
+<li>PointPillar</li>
+<li>PointRCNN</li>
+</ol>
+</li>
+<li>RGB+Li-dar
+<ol>
+<li>EPNet</li>
+<li>CLOCs</li>
+<li>3D-CVF
+Each approach has trade-offs in term of accuracy, speed, cost and robustness.</li>
+</ol>
+</li>
+</ol>
+<h2 id="series-perception">Series Perception</h2>
+<ol>
+<li><a href="../pointcloud">Introduction to Point Cloud</a></li>
+</ol>
+]]></content:encoded>
+    </item>
     <item>
       <title>Lightroom Notes</title>
-      <link>https://example.org/posts/lightroom/</link>
+      <link>http://localhost:1313/posts/lightroom/</link>
       <pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/lightroom/</guid>
+      <guid>http://localhost:1313/posts/lightroom/</guid>
       <description>&lt;p&gt;I really love the feeling about using photo to represent some themes. Recently, I tried lightroom, which is a post-process software for photos. I learned many color theorys and tools behind it. Let&amp;rsquo;s have a look.&lt;/p&gt;
 &lt;h2 id=&#34;color-theory&#34;&gt;Color Theory.&lt;/h2&gt;
 &lt;ol&gt;
@@ -175,11 +286,11 @@
     </item>
     <item>
       <title>Virtual machine vs Container vs Sandbox</title>
-      <link>https://example.org/posts/container_sandbox_vm/</link>
+      <link>http://localhost:1313/posts/container_sandbox_vm/</link>
       <pubDate>Mon, 14 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/container_sandbox_vm/</guid>
+      <guid>http://localhost:1313/posts/container_sandbox_vm/</guid>
       <description>&lt;p&gt;Recently, I tried Distrobox, a tool that enables us to run different operating systems within the host OS. I&amp;rsquo;ve noticed it&amp;rsquo;s different from a virtual machine, as it uses containerization instead. Over the past year, I&amp;rsquo;ve heard a lot about containers (like Docker), sandboxes, and virtual machines, and I&amp;rsquo;d like to understand the distinctions between them.
-&lt;img loading=&#34;lazy&#34; src=&#34;https://example.org/Interesting_thing/distrobox.png&#34;&gt;&lt;/p&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/Interesting_thing/distrobox.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;virtualization&#34;&gt;Virtualization&lt;/h2&gt;
 &lt;h4 id=&#34;how-virtualization-work&#34;&gt;How virtualization work&lt;/h4&gt;
 &lt;p&gt;Virtualization is the technology that allows a single physical machine, known as the &lt;strong&gt;host&lt;/strong&gt;, to run multiple virtual machines or &lt;strong&gt;guests&lt;/strong&gt;.&lt;/p&gt;</description>
@@ -296,14 +407,18 @@
     </item>
     <item>
       <title>Some Python Notes | King Weekly</title>
-      <link>https://example.org/posts/techweekly/techweek5/</link>
+      <link>http://localhost:1313/posts/techweekly/techweek5/</link>
       <pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/techweekly/techweek5/</guid>
-      <description>&lt;h2 id=&#34;the-global-interpreter-lock-gil&#34;&gt;The Global Interpreter Lock (GIL)&lt;/h2&gt;
+      <guid>http://localhost:1313/posts/techweekly/techweek5/</guid>
+      <description>&lt;h2 id=&#34;basic&#34;&gt;Basic&lt;/h2&gt;
+&lt;p&gt;Difference between == and is: &lt;strong&gt;==&lt;/strong&gt; compares values, and &lt;strong&gt;is&lt;/strong&gt; compares identity.&lt;/p&gt;
+&lt;h2 id=&#34;the-global-interpreter-lock-gil&#34;&gt;The Global Interpreter Lock (GIL)&lt;/h2&gt;
 &lt;p&gt;At its core, the Global Interpreter Lock, or GIL, is a lock that only allows one thread to execute Python bytecode at a time within a single process. This means that even on a multi-core processor, a standard Python program with multiple threads will only utilize a single core for executing Python code.
 It is also for compatibility with large number extension modules written in C. These C extensions may not have built-in thread safety mechanisms, so GIL provides a safety net to ensure that they are executed in a single-threaded environment.
 The primary reason for the GIL&amp;rsquo;s existence lies in Python&amp;rsquo;s memory management.&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<h2 id="the-global-interpreter-lock-gil">The Global Interpreter Lock (GIL)</h2>
+      <content:encoded><![CDATA[<h2 id="basic">Basic</h2>
+<p>Difference between == and is: <strong>==</strong> compares values, and <strong>is</strong> compares identity.</p>
+<h2 id="the-global-interpreter-lock-gil">The Global Interpreter Lock (GIL)</h2>
 <p>At its core, the Global Interpreter Lock, or GIL, is a lock that only allows one thread to execute Python bytecode at a time within a single process. This means that even on a multi-core processor, a standard Python program with multiple threads will only utilize a single core for executing Python code.
 It is also for compatibility with large number extension modules written in C. These C extensions may not have built-in thread safety mechanisms, so GIL provides a safety net to ensure that they are executed in a single-threaded environment.
 The primary reason for the GIL&rsquo;s existence lies in Python&rsquo;s memory management.</p>
@@ -400,9 +515,9 @@ The primary reason for the GIL&rsquo;s existence lies in Python&rsquo;s memory m
     </item>
     <item>
       <title>Bitcoin Basic | King Weekly</title>
-      <link>https://example.org/posts/techweekly/techweek4/</link>
+      <link>http://localhost:1313/posts/techweekly/techweek4/</link>
       <pubDate>Fri, 30 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/techweekly/techweek4/</guid>
+      <guid>http://localhost:1313/posts/techweekly/techweek4/</guid>
       <description>&lt;h2 id=&#34;bitcoin&#34;&gt;Bitcoin&lt;/h2&gt;
 &lt;p&gt;The legend of Bitcoin has shown its magic for a long time. Recently, I have started to explore this field, and this is a record of my learning.&lt;/p&gt;
 &lt;hr&gt;
@@ -469,7 +584,8 @@ The primary reason for the GIL&rsquo;s existence lies in Python&rsquo;s memory m
 <p>Calculate computing performance: <a href="https://www.nicehash.com/profitability-calculator">https://www.nicehash.com/profitability-calculator</a></p>
 <blockquote>
 <p>This is the computating power of my personal game laptop(one dollar per day hhh)
-<img loading="lazy" src="/Interesting_thing/computating_power.png"></p></blockquote>
+<img loading="lazy" src="/Interesting_thing/computating_power.png"></p>
+</blockquote>
 <h4 id="resources">Resources:</h4>
 <p>Youtube channels</p>
 <ul>
@@ -500,9 +616,9 @@ The primary reason for the GIL&rsquo;s existence lies in Python&rsquo;s memory m
     </item>
     <item>
       <title>Hopfield Network</title>
-      <link>https://example.org/posts/hopfieldnetwork/</link>
+      <link>http://localhost:1313/posts/hopfieldnetwork/</link>
       <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/hopfieldnetwork/</guid>
+      <guid>http://localhost:1313/posts/hopfieldnetwork/</guid>
       <description>&lt;p&gt;2024 Nobel Physics prize was earned by Professor John Hopfield and Professor Geoffrey Hinton, to thanks their distribution on machine learning.
 However, I felt very suprised that why it gives to machine learning? Anyway, I hadn&amp;rsquo;t deeply find the answer in that time.&lt;/p&gt;
 &lt;p&gt;Recently, Professor Geoffrey Hinton gived us a short lecture about Boltzmann machine virtually.
@@ -536,9 +652,9 @@ In LLM, we can say the user&rsquo;s prompt and question is the most unstable sta
     </item>
     <item>
       <title>For UNIX Week | King Weekly</title>
-      <link>https://example.org/posts/techweekly/techweek3/</link>
+      <link>http://localhost:1313/posts/techweekly/techweek3/</link>
       <pubDate>Mon, 21 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/techweekly/techweek3/</guid>
+      <guid>http://localhost:1313/posts/techweekly/techweek3/</guid>
       <description>&lt;h2 id=&#34;book---unix-a-history-and-a-memoir&#34;&gt;Book - Unix: A History and a Memoir&lt;/h2&gt;
 &lt;p&gt;Recently, I read this fantastic book. It bring me back to that 1960s - a period without modern computer and how the most clever minds in this world changed the world.
 During the reading, I found many answers to the &amp;ldquo;why&amp;rdquo; questions I had when I learning linux system.&lt;/p&gt;
@@ -618,15 +734,15 @@ KISS.</p>
     </item>
     <item>
       <title>Jarvis Will Coming Soon | King Weekly</title>
-      <link>https://example.org/posts/techweekly/techweek2/</link>
+      <link>http://localhost:1313/posts/techweekly/techweek2/</link>
       <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/techweekly/techweek2/</guid>
+      <guid>http://localhost:1313/posts/techweekly/techweek2/</guid>
       <description>&lt;h2 id=&#34;model-context-protocol-overview&#34;&gt;Model Context Protocol overview&lt;/h2&gt;
 &lt;p&gt;MCP (Model Context Protocol) can be understood as a &amp;ldquo;universal language&amp;rdquo; for communication between AI and external tools. It&amp;rsquo;s like a translator, allowing different AI applications (such as chatbots, code assistants) and different tools (like databases, GitHub, calendars) to easily communicate without needing to develop a new interface every time.&lt;/p&gt;
 &lt;h4 id=&#34;why-is-mcp-needed&#34;&gt;Why is MCP needed?&lt;/h4&gt;
 &lt;p&gt;In the past, if you wanted an AI assistant to access different tools, like a calendar, email, or task manager, you would need to develop a separate interface for each tool (function calling), which resulted in a huge amount of work (N AI applications × M tools = N×M interfaces).&lt;br&gt;
 MCP simplifies everything: all AI applications only need to support MCP, and all tools only need to support MCP. This way, they can communicate with each other, reducing development costs (N+M interfaces).
-&lt;img alt=&#34;components mcp include&#34; loading=&#34;lazy&#34; src=&#34;https://example.org/TechStuff/mcp.png&#34;&gt;&lt;/p&gt;</description>
+&lt;img alt=&#34;components mcp include&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/TechStuff/mcp.png&#34;&gt;&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="model-context-protocol-overview">Model Context Protocol overview</h2>
 <p>MCP (Model Context Protocol) can be understood as a &ldquo;universal language&rdquo; for communication between AI and external tools. It&rsquo;s like a translator, allowing different AI applications (such as chatbots, code assistants) and different tools (like databases, GitHub, calendars) to easily communicate without needing to develop a new interface every time.</p>
 <h4 id="why-is-mcp-needed">Why is MCP needed?</h4>
@@ -722,12 +838,12 @@ After watched the coverage keynotes, I was just feel like our mankind is in an s
     </item>
     <item>
       <title>Start | King Weekly</title>
-      <link>https://example.org/posts/techweekly/techweek1/</link>
+      <link>http://localhost:1313/posts/techweekly/techweek1/</link>
       <pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/techweekly/techweek1/</guid>
+      <guid>http://localhost:1313/posts/techweekly/techweek1/</guid>
       <description>&lt;h2 id=&#34;email-sending-and-receiving-system&#34;&gt;Email sending and receiving system&lt;/h2&gt;
 &lt;p&gt;The main system is build based on three protocols: SMTP, POP3 and IMAP.
-&lt;img alt=&#34;process of email system&#34; loading=&#34;lazy&#34; src=&#34;https://example.org/emailsys.png&#34;&gt;&lt;/p&gt;
+&lt;img alt=&#34;process of email system&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/emailsys.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;SMTP is used for sending emails to the recipient’s email server, but it does not handle receiving emails.
 User1 sends an email via an email client, and the email is first sent to User1&amp;rsquo;s email server using SMTP. Then, the email server forwards it to the recipient&amp;rsquo;s email server using SMTP as well.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="email-sending-and-receiving-system">Email sending and receiving system</h2>
@@ -808,9 +924,9 @@ If someone reads it, that&rsquo;s great. If not, you’ve still completed your w
     </item>
     <item>
       <title>Time Complexity Notations</title>
-      <link>https://example.org/posts/the-difference-between-tn--on-and-%CE%B8n/</link>
+      <link>http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/</link>
       <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/the-difference-between-tn--on-and-%CE%B8n/</guid>
+      <guid>http://localhost:1313/posts/the-difference-between-tn--on-and-%CE%B8n/</guid>
       <description>&lt;p&gt;In this semester, I listened the course mit 6.006 in youtube channel. Duirng the course, the professor used different notations to represents time complexity of an algorithm. I learned Big O &lt;code&gt;O(n)&lt;/code&gt; notation before, but for Big theta &lt;code&gt;θ(n)&lt;/code&gt; and reccurence relations &lt;code&gt;T(n)&lt;/code&gt;, I never heard them before. Today, I hope I can finally figure them out.&lt;/p&gt;
 &lt;h1 id=&#34;what&#34;&gt;What&lt;/h1&gt;
 &lt;p&gt;T(n) represents the actual running time of an algorithm&lt;br&gt;
@@ -847,19 +963,20 @@ There are two methods to convert T(n) into O(n)</p>
     </item>
     <item>
       <title>My Homelab</title>
-      <link>https://example.org/posts/homeserver/</link>
+      <link>http://localhost:1313/posts/homeserver/</link>
       <pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/homeserver/</guid>
+      <guid>http://localhost:1313/posts/homeserver/</guid>
       <description>&lt;p&gt;This week, I browsed many old machines at ebay to use for my first attempt at setting up a homelab. Initially, I planned to build a machine myself during the summer holiday, but in today I found a great performance and a high cost-effective machine that changed my mind.&lt;/p&gt;
 &lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;The machine model is &lt;code&gt;HP-Elitedesk-800-G4-SFF&lt;/code&gt;. Compared to its previous generation, the chipset supports 8th and 9th generation of intel core cpu, which offers a significant improvement(6c6t) compare with 6th/7th core cpu(4c4t). Furthermore it provides NVme express in this generation. With these components, I can build a highly cost-effective homelab. The total cost is £150.&lt;br&gt;
-&lt;img loading=&#34;lazy&#34; src=&#34;https://example.org/TechStuff/serverbill.png&#34;&gt;&lt;/p&gt;</description>
+&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/TechStuff/serverbill.png&#34;&gt;&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>This week, I browsed many old machines at ebay to use for my first attempt at setting up a homelab. Initially, I planned to build a machine myself during the summer holiday, but in today I found a great performance and a high cost-effective machine that changed my mind.</p>
 <h1 id="overview">Overview</h1>
 <p>The machine model is <code>HP-Elitedesk-800-G4-SFF</code>. Compared to its previous generation, the chipset supports 8th and 9th generation of intel core cpu, which offers a significant improvement(6c6t) compare with 6th/7th core cpu(4c4t). Furthermore it provides NVme express in this generation. With these components, I can build a highly cost-effective homelab. The total cost is £150.<br>
 <img loading="lazy" src="/TechStuff/serverbill.png"></p>
 <blockquote>
-<p>If you want to learn more here is the machine datasheet:<a href="/server_datasheet.pdf">server_datasheet</a></p></blockquote>
+<p>If you want to learn more here is the machine datasheet:<a href="/server_datasheet.pdf">server_datasheet</a></p>
+</blockquote>
 <h1 id="hardware">Hardware</h1>
 <ul>
 <li>Motherboard: Q370
@@ -911,15 +1028,16 @@ reboot or close. This issue will be solved easily when I have a router. Nowadays
     </item>
     <item>
       <title>JVM&#39;s Achievements and Limitations</title>
-      <link>https://example.org/posts/jvm/</link>
+      <link>http://localhost:1313/posts/jvm/</link>
       <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/jvm/</guid>
+      <guid>http://localhost:1313/posts/jvm/</guid>
       <description>&lt;p&gt;This semester, I learned OOP from Inf1B, which using java as the official teaching language. What fascinates me the most is why Java has the JVM. I learned Python, C++, js and Haskell before, but all of them doesn&amp;rsquo;t have a jargon for virtual machine. And then I went to wikipeidia to find out why.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambitious dream: &amp;ldquo;Write Once, Run Anywhere.&amp;rdquo; This WORA philosophy became a reality through the JVM, enabling Java applications to run on any operating system with a compatible JVM. Before talking about the archivements and limitations, Let&amp;rsquo;s have a look about how JVM works.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>This semester, I learned OOP from Inf1B, which using java as the official teaching language. What fascinates me the most is why Java has the JVM. I learned Python, C++, js and Haskell before, but all of them doesn&rsquo;t have a jargon for virtual machine. And then I went to wikipeidia to find out why.</p>
 <blockquote>
-<p>In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambitious dream: &ldquo;Write Once, Run Anywhere.&rdquo; This WORA philosophy became a reality through the JVM, enabling Java applications to run on any operating system with a compatible JVM. Before talking about the archivements and limitations, Let&rsquo;s have a look about how JVM works.</p></blockquote>
+<p>In 1995, Sun Microsystems introduced Java and the JVM to the world with an ambitious dream: &ldquo;Write Once, Run Anywhere.&rdquo; This WORA philosophy became a reality through the JVM, enabling Java applications to run on any operating system with a compatible JVM. Before talking about the archivements and limitations, Let&rsquo;s have a look about how JVM works.</p>
+</blockquote>
 <h2 id="how-the-jvm-works">How the JVM works</h2>
 <p>The JVM executes er programs in several stages:</p>
 <ol>
@@ -975,9 +1093,9 @@ As you start watching, the service begins playing the movie. Similarly, Java run
     </item>
     <item>
       <title>About me</title>
-      <link>https://example.org/aboutme/</link>
+      <link>http://localhost:1313/aboutme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/aboutme/</guid>
+      <guid>http://localhost:1313/aboutme/</guid>
       <description>aboutme</description>
       <content:encoded><![CDATA[<picture class="center">
   <!-- Dark mode image -->
@@ -994,12 +1112,12 @@ As you start watching, the service begins playing the movie. Similarly, Java run
     </item>
     <item>
       <title>Climbing road</title>
-      <link>https://example.org/aboutme/climbing/</link>
+      <link>http://localhost:1313/aboutme/climbing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/aboutme/climbing/</guid>
+      <guid>http://localhost:1313/aboutme/climbing/</guid>
       <description>&lt;h2 id=&#34;location-auchinstarry-quarry-scotland&#34;&gt;Location: Auchinstarry Quarry, Scotland&lt;/h2&gt;
 &lt;p&gt;Date: 2025.09.12
-&lt;img alt=&#34;rock and me&#34; loading=&#34;lazy&#34; src=&#34;https://example.org/Aboutme/croy_rock_and_me.jpg&#34;&gt;
+&lt;img alt=&#34;rock and me&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/Aboutme/croy_rock_and_me.jpg&#34;&gt;
 A great first-time rock climbing experience, meet interesting people and learned some rope skills.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="location-auchinstarry-quarry-scotland">Location: Auchinstarry Quarry, Scotland</h2>
 <p>Date: 2025.09.12
@@ -1009,12 +1127,13 @@ A great first-time rock climbing experience, meet interesting people and learned
     </item>
     <item>
       <title>Let&#39;s break the information gap</title>
-      <link>https://example.org/aboutme/projects/lets_break_the_information_gap/</link>
+      <link>http://localhost:1313/aboutme/projects/lets_break_the_information_gap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/aboutme/projects/lets_break_the_information_gap/</guid>
+      <guid>http://localhost:1313/aboutme/projects/lets_break_the_information_gap/</guid>
       <description>aboutme</description>
       <content:encoded><![CDATA[<blockquote>
-<p>A free web application that create a two-host daily podcast of the news that matters to you. Just add your favorite RSS feeds from news sites, blogs, and social media. Our app will automatically generate conversational scripts using an LLM and then produce a customized audio episode with text-to-speech. It&rsquo;s the perfect way to stay updated on your commute.</p></blockquote>
+<p>A free web application that create a two-host daily podcast of the news that matters to you. Just add your favorite RSS feeds from news sites, blogs, and social media. Our app will automatically generate conversational scripts using an LLM and then produce a customized audio episode with text-to-speech. It&rsquo;s the perfect way to stay updated on your commute.</p>
+</blockquote>
 <p><a href="https://lbtig.kingportal.tech">Official website</a><br>
 <a href="https://github.com/Kingjinsight/Lets-break-the-information-gap">Source code</a></p>
 <iframe width=100% height=450 src="https://www.youtube.com/embed/Xx2ari_n_f0?si=af_64RookXLDccYE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>   
@@ -1082,9 +1201,9 @@ A great first-time rock climbing experience, meet interesting people and learned
     </item>
     <item>
       <title>Photography exhibition by King Jin</title>
-      <link>https://example.org/aboutme/gallery/</link>
+      <link>http://localhost:1313/aboutme/gallery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/aboutme/gallery/</guid>
+      <guid>http://localhost:1313/aboutme/gallery/</guid>
       <description>&lt;h1 id=&#34;heading&#34;&gt;📷&lt;/h1&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;welcome-to-my-photography-exhibition&#34;&gt;Welcome to my photography exhibition!&lt;/h1&gt;</description>
       <content:encoded><![CDATA[<h1 id="heading">📷</h1>
@@ -1093,32 +1212,32 @@ A great first-time rock climbing experience, meet interesting people and learned
     </item>
     <item>
       <title>Project by King Jin</title>
-      <link>https://example.org/aboutme/projects/</link>
+      <link>http://localhost:1313/aboutme/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/aboutme/projects/</guid>
+      <guid>http://localhost:1313/aboutme/projects/</guid>
       <description>&lt;picture class=&#34;center&#34;&gt;
   &lt;!-- Dark mode image --&gt;
-  &lt;source srcset=&#34;https://example.org/Aboutme/projects_dark.png&#34; media=&#34;(prefers-color-scheme: dark)&#34;&gt;
+  &lt;source srcset=&#34;http://localhost:1313/Aboutme/projects_dark.png&#34; media=&#34;(prefers-color-scheme: dark)&#34;&gt;
   &lt;!-- Light mode image --&gt;
-  &lt;source srcset=&#34;https://example.org/Aboutme/projects.png&#34; media=&#34;(prefers-color-scheme: light)&#34;&gt;
+  &lt;source srcset=&#34;http://localhost:1313/Aboutme/projects.png&#34; media=&#34;(prefers-color-scheme: light)&#34;&gt;
   &lt;!-- Fallback image --&gt;
-  &lt;img src=&#34;https://example.org/Aboutme/projects.png&#34; alt=&#34;Project image&#34;&gt;
+  &lt;img src=&#34;http://localhost:1313/Aboutme/projects.png&#34; alt=&#34;Project image&#34;&gt;
 &lt;/picture&gt;
 &lt;br&gt;
 &lt;br&gt;
 &lt;!-- Project lbtig --&gt;
-&lt;p&gt;&lt;u&gt;&lt;h2&gt;&lt;a href=&#34;https://example.org/aboutme/projects/lets_break_the_information_gap&#34;&gt;Let&amp;rsquo;s break the information gap&lt;/a&gt;&lt;/h2&gt;&lt;/u&gt;
+&lt;p&gt;&lt;u&gt;&lt;h2&gt;&lt;a href=&#34;http://localhost:1313/aboutme/projects/lets_break_the_information_gap&#34;&gt;Let&amp;rsquo;s break the information gap&lt;/a&gt;&lt;/h2&gt;&lt;/u&gt;
 &lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://example.org/aboutme/projects/lets_break_the_information_gap&#34;&gt;&lt;img src=&#34;https://example.org/Aboutme/lbtig_preview.png&#34; class=&#34;center&#34;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/aboutme/projects/lets_break_the_information_gap&#34;&gt;&lt;img src=&#34;http://localhost:1313/Aboutme/lbtig_preview.png&#34; class=&#34;center&#34;&gt;&lt;/a&gt;
 &lt;br&gt;&lt;/p&gt;
 &lt;p class=&#34;center-wider&#34;&gt; A free web application that create a two-host daily podcast of the news that matters to you.
 &lt;/p&gt;
 &lt;hr&gt;
 &lt;br&gt;
 &lt;!-- Project reflex --&gt;
-&lt;p&gt;&lt;u&gt;&lt;h2&gt;&lt;a href=&#34;https://example.org/aboutme/projects/reflex&#34;&gt;Reflex&lt;/a&gt;&lt;/h2&gt;&lt;/u&gt;
+&lt;p&gt;&lt;u&gt;&lt;h2&gt;&lt;a href=&#34;http://localhost:1313/aboutme/projects/reflex&#34;&gt;Reflex&lt;/a&gt;&lt;/h2&gt;&lt;/u&gt;
 &lt;br&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&#34;https://example.org/aboutme/projects/reflex&#34;&gt;&lt;img src=&#34;https://example.org/Aboutme/reflex_preview.png&#34; class=&#34;center&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a href=&#34;http://localhost:1313/aboutme/projects/reflex&#34;&gt;&lt;img src=&#34;http://localhost:1313/Aboutme/reflex_preview.png&#34; class=&#34;center&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;br&gt;
 &lt;p class=&#34;center-wider&#34;&gt; An AI-powered, English translator that generates a unique conversational story each day based on your search history.
 &lt;/p&gt;</description>
@@ -1152,17 +1271,19 @@ A great first-time rock climbing experience, meet interesting people and learned
     </item>
     <item>
       <title>Reflex</title>
-      <link>https://example.org/aboutme/projects/reflex/</link>
+      <link>http://localhost:1313/aboutme/projects/reflex/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/aboutme/projects/reflex/</guid>
+      <guid>http://localhost:1313/aboutme/projects/reflex/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;An AI-powered English learning application built on Electron. The app&amp;rsquo;s core function is a dictionary, which records each word you searched. The search history is then used to generate a unique review story, allowing you to practice new vocabulary in conversational contexts rather than just through translation.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;An AI-powered English learning application built on Electron. The app&amp;rsquo;s core function is a dictionary, which records each word you searched. The search history is then used to generate a unique review story, allowing you to practice new vocabulary in conversational contexts rather than just through translation.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/Kingjinsight/Reflex&#34;&gt;code available in github&lt;/a&gt;
-&lt;img alt=&#34;reflex_dashboard&#34; loading=&#34;lazy&#34; src=&#34;https://example.org/Aboutme/reflex_dashboard.png&#34;&gt;&lt;/p&gt;
+&lt;img alt=&#34;reflex_dashboard&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/Aboutme/reflex_dashboard.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
 &lt;p&gt;I dislike the traditional method of using a dictionary to search a word, gettings its translation and storing it in a new word notebook. This relies on rote memorization, but using a word is the most efficient way to remember it. Therefore, a fter a day&amp;rsquo;s record, a user can generate a short conversational story with an LLM to help recall the meaning of each new word, which should make a stronger impression.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<blockquote>
-<p>An AI-powered English learning application built on Electron. The app&rsquo;s core function is a dictionary, which records each word you searched. The search history is then used to generate a unique review story, allowing you to practice new vocabulary in conversational contexts rather than just through translation.</p></blockquote>
+<p>An AI-powered English learning application built on Electron. The app&rsquo;s core function is a dictionary, which records each word you searched. The search history is then used to generate a unique review story, allowing you to practice new vocabulary in conversational contexts rather than just through translation.</p>
+</blockquote>
 <p><a href="https://github.com/Kingjinsight/Reflex">code available in github</a>
 <img alt="reflex_dashboard" loading="lazy" src="/Aboutme/reflex_dashboard.png"></p>
 <h2 id="motivation">Motivation</h2>

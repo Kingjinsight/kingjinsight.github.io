@@ -6,6 +6,9 @@ author: 'King Jin'
 tags: ["Tech_Weekly","Python"]
 showtoc: true
 ---
+## Basic 
+Difference between == and is: **==** compares values, and **is** compares identity.
+
 ## The Global Interpreter Lock (GIL)
 At its core, the Global Interpreter Lock, or GIL, is a lock that only allows one thread to execute Python bytecode at a time within a single process. This means that even on a multi-core processor, a standard Python program with multiple threads will only utilize a single core for executing Python code.
 It is also for compatibility with large number extension modules written in C. These C extensions may not have built-in thread safety mechanisms, so GIL provides a safety net to ensure that they are executed in a single-threaded environment.

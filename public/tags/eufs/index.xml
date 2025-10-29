@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>EUFS on Kingjin.io</title>
+    <link>http://localhost:1313/tags/eufs/</link>
+    <description>Recent content in EUFS on Kingjin.io</description>
+    <generator>Hugo -- 0.151.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/eufs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pointcloud | King Weekly</title>
+      <link>http://localhost:1313/posts/techweekly/techweek7/</link>
+      <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/techweekly/techweek7/</guid>
+      <description>&lt;p&gt;At the beginning of this month, I had become a member of perception team in EUFS. There are many interesting topics in what our team does, and today I would like to talk about pointcloud.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I may share several blogs related to these interesting topics in the future&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;what-is-point-cloud&#34;&gt;What is Point Cloud?&lt;/h2&gt;
+&lt;p&gt;A point cloud is a collection of millions of 3D points that represent everything around you. Usually we use a sensor called LiDAR(Light Detection and Ranging) to create these point clouds.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>At the beginning of this month, I had become a member of perception team in EUFS. There are many interesting topics in what our team does, and today I would like to talk about pointcloud.</p>
+<blockquote>
+<p>I may share several blogs related to these interesting topics in the future</p>
+</blockquote>
+<h2 id="what-is-point-cloud">What is Point Cloud?</h2>
+<p>A point cloud is a collection of millions of 3D points that represent everything around you. Usually we use a sensor called LiDAR(Light Detection and Ranging) to create these point clouds.</p>
+<h2 id="how-pointcloud-work">How pointcloud work:</h2>
+<ol>
+<li>The system emits a laser pulse (usually a single-wavelength infrared light)</li>
+<li>measures the time it takes for the laser to reflect back. This calculates the distance and generates a 3D point cloud.</li>
+<li>Each point contains only the spatial coordinates (x, y, z) and the reflection intensity, without RGB color information.</li>
+</ol>
+<p>Methods for 3D object detection:</p>
+<ol>
+<li>monocular camera
+<ol>
+<li>D4LCN</li>
+<li>Mono3D-PLiDAR</li>
+</ol>
+</li>
+<li>binocular camera
+<ol>
+<li>Stereo R-CNN</li>
+<li>PSMNet</li>
+</ol>
+</li>
+<li>RGB-D
+<ol>
+<li>F-PointNets</li>
+</ol>
+</li>
+<li>LiDAR
+<ol>
+<li>PV-RCNN</li>
+<li>PointPillar</li>
+<li>PointRCNN</li>
+</ol>
+</li>
+<li>RGB+Li-dar
+<ol>
+<li>EPNet</li>
+<li>CLOCs</li>
+<li>3D-CVF</li>
+</ol>
+</li>
+</ol>
+<p>pointcloud property:</p>
+<ol>
+<li>unorder</li>
+<li>sparsity</li>
+<li>unstructured</li>
+<li>geometric transformability</li>
+</ol>
+<p>pointcloud task type:</p>
+<ol>
+<li>3d shape classification</li>
+<li>3d object detection and tracking</li>
+<li>3d point cloud segmentation</li>
+</ol>
+<p>Library:</p>
+<ol>
+<li>PCL</li>
+<li>vcglib</li>
+<li>cgal</li>
+<li>open3d</li>
+</ol>
+<p>Datasets:</p>
+<ol>
+<li>KITTI</li>
+<li>waymo</li>
+<li>nuScenes</li>
+</ol>
+<h2 id="fun-facts">Fun Facts:</h2>
+<ol>
+<li>Powersort: Default sorting algorithm for python</li>
+</ol>
+<h2 id="resources">Resources:</h2>
+<ol>
+<li>LeRobot is an open-source project by Hugging Face that makes it easy to explore the world of robotics. Their open-sourced robotic arm S0-101 is great for beginner.</li>
+</ol>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

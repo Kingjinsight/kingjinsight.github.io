@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Some Python Notes | King Weekly | Kingjin.io</title>
 <meta name="keywords" content="Tech_Weekly, Python">
-<meta name="description" content="The Global Interpreter Lock (GIL)
+<meta name="description" content="Basic
+Difference between == and is: == compares values, and is compares identity.
+The Global Interpreter Lock (GIL)
 At its core, the Global Interpreter Lock, or GIL, is a lock that only allows one thread to execute Python bytecode at a time within a single process. This means that even on a multi-core processor, a standard Python program with multiple threads will only utilize a single core for executing Python code.
 It is also for compatibility with large number extension modules written in C. These C extensions may not have built-in thread safety mechanisms, so GIL provides a safety net to ensure that they are executed in a single-threaded environment.
 The primary reason for the GIL&rsquo;s existence lies in Python&rsquo;s memory management.">
 <meta name="author" content="King Jin">
-<link rel="canonical" href="https://example.org/posts/techweekly/techweek5/">
+<link rel="canonical" href="http://localhost:1313/posts/techweekly/techweek5/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.6e591b5865d633db2924f5db15545b1b7b3c306d625eb079c9d4274312ba88fd.css" integrity="sha256-blkbWGXWM9spJPXbFVRbG3s8MG1iXrB5ydQnQxK6iP0=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://example.org/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://example.org/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://example.org/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://example.org/apple-touch-icon.png">
-<link rel="mask-icon" href="https://example.org/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://example.org/posts/techweekly/techweek5/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/techweekly/techweek5/">
 <noscript>
     <style>
         #theme-toggle,
@@ -59,9 +61,6 @@ The primary reason for the GIL&rsquo;s existence lies in Python&rsquo;s memory m
 
     </style>
 </noscript>
-
-
-
 </head>
 
 <body class="" id="top">
@@ -75,33 +74,33 @@ The primary reason for the GIL&rsquo;s existence lies in Python&rsquo;s memory m
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://example.org/" accesskey="h" title="Kingjin.io (Alt + H)">Kingjin.io</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Kingjin.io (Alt + H)">Kingjin.io</a>
             <div class="logo-switches">
             </div>
         </div>
         <ul id="menu">
             <li>
-                <a href="https://example.org/posts/" title="Posts">
+                <a href="http://localhost:1313/posts/" title="Posts">
                     <span>Posts</span>
                 </a>
             </li>
             <li>
-                <a href="https://example.org/archives/" title="Archives">
+                <a href="http://localhost:1313/archives/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="https://example.org/tags/" title="Tags">
+                <a href="http://localhost:1313/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="https://example.org/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://example.org/aboutme/" title="About me">
+                <a href="http://localhost:1313/aboutme/" title="About me">
                     <span>About me</span>
                 </a>
             </li>
@@ -127,6 +126,8 @@ The primary reason for the GIL&rsquo;s existence lies in Python&rsquo;s memory m
 
         <div class="inner"><ul>
                 <li>
+                    <a href="#basic" aria-label="Basic">Basic</a></li>
+                <li>
                     <a href="#the-global-interpreter-lock-gil" aria-label="The Global Interpreter Lock (GIL)">The Global Interpreter Lock (GIL)</a></li>
                 <li>
                     <a href="#pythons-memory-management" aria-label="Python&rsquo;s Memory Management">Python&rsquo;s Memory Management</a></li>
@@ -146,7 +147,9 @@ The primary reason for the GIL&rsquo;s existence lies in Python&rsquo;s memory m
     </details>
 </div>
 
-  <div class="post-content"><h2 id="the-global-interpreter-lock-gil">The Global Interpreter Lock (GIL)<a hidden class="anchor" aria-hidden="true" href="#the-global-interpreter-lock-gil">#</a></h2>
+  <div class="post-content"><h2 id="basic">Basic<a hidden class="anchor" aria-hidden="true" href="#basic">#</a></h2>
+<p>Difference between == and is: <strong>==</strong> compares values, and <strong>is</strong> compares identity.</p>
+<h2 id="the-global-interpreter-lock-gil">The Global Interpreter Lock (GIL)<a hidden class="anchor" aria-hidden="true" href="#the-global-interpreter-lock-gil">#</a></h2>
 <p>At its core, the Global Interpreter Lock, or GIL, is a lock that only allows one thread to execute Python bytecode at a time within a single process. This means that even on a multi-core processor, a standard Python program with multiple threads will only utilize a single core for executing Python code.
 It is also for compatibility with large number extension modules written in C. These C extensions may not have built-in thread safety mechanisms, so GIL provides a safety net to ensure that they are executed in a single-threaded environment.
 The primary reason for the GIL&rsquo;s existence lies in Python&rsquo;s memory management.</p>
@@ -245,16 +248,16 @@ The primary reason for the GIL&rsquo;s existence lies in Python&rsquo;s memory m
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://example.org/tags/tech_weekly/">Tech_Weekly</a></li>
-      <li><a href="https://example.org/tags/python/">Python</a></li>
+      <li><a href="http://localhost:1313/tags/tech_weekly/">Tech_Weekly</a></li>
+      <li><a href="http://localhost:1313/tags/python/">Python</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://example.org/posts/container_sandbox_vm/">
+  <a class="prev" href="http://localhost:1313/posts/container_sandbox_vm/">
     <span class="title">«</span>
     <br>
     <span>Virtual machine vs Container vs Sandbox</span>
   </a>
-  <a class="next" href="https://example.org/posts/techweekly/techweek4/">
+  <a class="next" href="http://localhost:1313/posts/techweekly/techweek4/">
     <span class="title">»</span>
     <br>
     <span>Bitcoin Basic | King Weekly</span>
@@ -266,7 +269,7 @@ The primary reason for the GIL&rsquo;s existence lies in Python&rsquo;s memory m
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://example.org/">Kingjin.io</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kingjin.io</a></span> · 
 
     <span>
         Powered by

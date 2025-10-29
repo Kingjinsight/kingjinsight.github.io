@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Understanding Pointpillars | EUFS | Kingjin.io</title>
+<meta name="keywords" content="Pointcloud, EUFS">
+<meta name="description" content="Why we need to know PointPillar? Well since most autonumous vehicle companies use or reference this algorithm in their perception system, e.g. Waymo, Baidu Apollo.
+What is PointPillars
+PointPillar is a deep learning architecture specifically designed for 3D object detection from point clouds.
+The name &ldquo;PointPillars&rdquo; comes from how it processes data: instead of treating the point cloud as random 3D points or complex 3D voxels, it organizes into vertical columns called &ldquo;pillars&rdquo;.">
+<meta name="author" content="King Jin">
+<link rel="canonical" href="http://localhost:1313/posts/eufs/pointpillars/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6e591b5865d633db2924f5db15545b1b7b3c306d625eb079c9d4274312ba88fd.css" integrity="sha256-blkbWGXWM9spJPXbFVRbG3s8MG1iXrB5ydQnQxK6iP0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/eufs/pointpillars/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Kingjin.io (Alt + H)">Kingjin.io</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/aboutme/" title="About me">
+                    <span>About me</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Understanding Pointpillars | EUFS
+    </h1>
+    <div class="post-meta"><span title='2025-10-29 00:00:00 +0000 UTC'>October 29, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;King Jin
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#what-is-pointpillars" aria-label="What is PointPillars">What is PointPillars</a></li>
+                <li>
+                    <a href="#how-pointpillar-works" aria-label="How PointPillar works?">How PointPillar works?</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#step-1-from-point-clouds-to-pillars" aria-label="Step 1: From point clouds to Pillars">Step 1: From point clouds to Pillars</a></li>
+                <li>
+                    <a href="#step-2-pillar-feature-encoding" aria-label="Step 2: Pillar Feature Encoding">Step 2: Pillar Feature Encoding</a></li>
+                <li>
+                    <a href="#step-3-birds-eye-view-representation" aria-label="Step 3: Bird’s Eye View Representation">Step 3: Bird’s Eye View Representation</a></li>
+                <li>
+                    <a href="#step-4-2d-backbone-network" aria-label="Step 4: 2D Backbone Network">Step 4: 2D Backbone Network</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#series-perception" aria-label="Series Perception">Series Perception</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>Why we need to know PointPillar? Well since most autonumous vehicle companies use or reference this algorithm in their perception system, e.g. Waymo, Baidu Apollo.</p>
+<h2 id="what-is-pointpillars">What is PointPillars<a hidden class="anchor" aria-hidden="true" href="#what-is-pointpillars">#</a></h2>
+<p>PointPillar is a deep learning architecture specifically designed for 3D object detection from point clouds.</p>
+<p>The name &ldquo;PointPillars&rdquo; comes from how it processes data: instead of treating the point cloud as random 3D points or complex 3D voxels, it organizes into vertical columns called &ldquo;pillars&rdquo;.</p>
+<h2 id="how-pointpillar-works">How PointPillar works?<a hidden class="anchor" aria-hidden="true" href="#how-pointpillar-works">#</a></h2>
+<h4 id="step-1-from-point-clouds-to-pillars">Step 1: From point clouds to Pillars<a hidden class="anchor" aria-hidden="true" href="#step-1-from-point-clouds-to-pillars">#</a></h4>
+<ul>
+<li>We start with input point clouds data that detected by our LiDAR</li>
+<li>We then divide the ground plane into a grid of small cells</li>
+<li>Each cell is like a vertical column or pillar extending upward</li>
+<li>We assign each 3D point to the pillar it falls into</li>
+</ul>
+<h4 id="step-2-pillar-feature-encoding">Step 2: Pillar Feature Encoding<a hidden class="anchor" aria-hidden="true" href="#step-2-pillar-feature-encoding">#</a></h4>
+<p>For each pillar, we need to extract meaningful features from all the points inside it:</p>
+<ul>
+<li>The average location of points in the pillar</li>
+<li>How spread out the points are</li>
+<li>The shape formed by the points</li>
+<li>How the poins relate to the pillar&rsquo;s center
+This step converts irregular, variable-length point sets into fixed-size feature vectors that a neural network can process.</li>
+</ul>
+<h4 id="step-3-birds-eye-view-representation">Step 3: Bird’s Eye View Representation<a hidden class="anchor" aria-hidden="true" href="#step-3-birds-eye-view-representation">#</a></h4>
+<p>The pillar features are “scattered” back to their original 2D grid positions, creating a Bird’s Eye View (BEV) representation.</p>
+<p>Imagine looking down at the track from a drone above the car. This BEV image represents:</p>
+<ul>
+<li>Where pillars contain points (occupied space)</li>
+<li>What features those points have (learned by the network)</li>
+<li>The spatial relationship between different areas</li>
+</ul>
+<p>Why this is clever: By converting 3D point clouds into a 2D BEV image, we can now use standard 2D CNNs</p>
+<h4 id="step-4-2d-backbone-network">Step 4: 2D Backbone Network<a hidden class="anchor" aria-hidden="true" href="#step-4-2d-backbone-network">#</a></h4>
+<p>Now we have a 2D image, we can process it with CNNs:</p>
+<p>What happens:</p>
+<ul>
+<li>Multiple layers of convolutions extract increasingly abstract features</li>
+<li>Early layers might detect edges and basic shapes</li>
+<li>Deeper layers combine information to understand “this pattern looks like a cone”</li>
+<li>Multiple resolution levels are processed and combined</li>
+</ul>
+<h2 id="series-perception">Series Perception<a hidden class="anchor" aria-hidden="true" href="#series-perception">#</a></h2>
+<ol>
+<li><a href="../pointcloud">Introduction to point cloud</a></li>
+<li><a href="../pointpillars">Introduction to PointPillars</a></li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/pointcloud/">Pointcloud</a></li>
+      <li><a href="http://localhost:1313/tags/eufs/">EUFS</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/eufs/pointcloud/">
+    <span class="title">»</span>
+    <br>
+    <span>Introduction to Point Cloud | EUFS</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kingjin.io</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
