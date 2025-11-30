@@ -9,6 +9,7 @@ showtoc: true
 
 ## Fun Facts:
 1. Powersort: Default sorting algorithm for python
+2. The reason why Nvidia Jetson has a low power consumption is because it uses arm architecture. Therefore you need to use their specific torch or other frameworks version.
 
 ## Resources:
 1. LeRobot is an open-source project by Hugging Face that makes it easy to explore the world of robotics. Their open-sourced robotic arm S0-101 is great for beginner.

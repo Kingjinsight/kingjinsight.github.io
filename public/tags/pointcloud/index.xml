@@ -4,34 +4,81 @@
     <title>Pointcloud on Kingjin.io</title>
     <link>http://localhost:1313/tags/pointcloud/</link>
     <description>Recent content in Pointcloud on Kingjin.io</description>
-    <generator>Hugo -- 0.151.2</generator>
+    <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 22 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/pointcloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Pointcloud | King Weekly</title>
-      <link>http://localhost:1313/posts/techweekly/techweek7/</link>
+      <title>Introduction to Point Cloud | EUFS</title>
+      <link>http://localhost:1313/posts/eufs/pointcloud/</link>
       <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/techweekly/techweek7/</guid>
-      <description>&lt;p&gt;At the beginning of this month, I had become a member of perception team in EUFS. There are many interesting topics in what our team does, and today I would like to talk about pointcloud.&lt;/p&gt;
+      <guid>http://localhost:1313/posts/eufs/pointcloud/</guid>
+      <description>&lt;p&gt;Earlier this month, I joined the perception team at EUFS(Edinburgh University Formula Student). I learned many interesting topics in autonomous vehicle perception and teamwork tools. Today, I would like to share what I&amp;rsquo;ve learned about point cloud technology.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;I may share several blogs related to these interesting topics in the future&lt;/p&gt;
+&lt;p&gt;This is a new series of for my blog, stay tuned 😎！&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;what-is-point-cloud&#34;&gt;What is Point Cloud?&lt;/h2&gt;
 &lt;p&gt;A point cloud is a collection of millions of 3D points that represent everything around you. Usually we use a sensor called LiDAR(Light Detection and Ranging) to create these point clouds.&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p>At the beginning of this month, I had become a member of perception team in EUFS. There are many interesting topics in what our team does, and today I would like to talk about pointcloud.</p>
+      <content:encoded><![CDATA[<p>Earlier this month, I joined the perception team at EUFS(Edinburgh University Formula Student). I learned many interesting topics in autonomous vehicle perception and teamwork tools. Today, I would like to share what I&rsquo;ve learned about point cloud technology.</p>
 <blockquote>
-<p>I may share several blogs related to these interesting topics in the future</p>
+<p>This is a new series of for my blog, stay tuned 😎！</p>
 </blockquote>
 <h2 id="what-is-point-cloud">What is Point Cloud?</h2>
 <p>A point cloud is a collection of millions of 3D points that represent everything around you. Usually we use a sensor called LiDAR(Light Detection and Ranging) to create these point clouds.</p>
-<h2 id="how-pointcloud-work">How pointcloud work:</h2>
+<h2 id="how-point-cloud-work">How Point Cloud work:</h2>
 <ol>
 <li>The system emits a laser pulse (usually a single-wavelength infrared light)</li>
 <li>measures the time it takes for the laser to reflect back. This calculates the distance and generates a 3D point cloud.</li>
-<li>Each point contains only the spatial coordinates (x, y, z) and the reflection intensity, without RGB color information.</li>
+<li>Each point contains only the spatial coordinates (x, y, z) and the reflection intensity, without RGB color information.
+<img alt="pointcloud" loading="lazy" src="/TechStuff/pointcloud.png"></li>
 </ol>
-<p>Methods for 3D object detection:</p>
+<h2 id="point-cloud-property">Point Cloud property:</h2>
+<ol>
+<li>unorder</li>
+<li>sparsity</li>
+<li>unstructured</li>
+<li>geometric transformability</li>
+</ol>
+<h2 id="how-can-we-process-point-clouds">How can we process point clouds</h2>
+<h3 id="1pcl">1.PCL</h3>
+<p>We use a popular library called PCL that provides tools for:</p>
+<ul>
+<li>Filtering: Removing noise and irrelevant points</li>
+<li>Segmentation: Grouping points that belong to the same object</li>
+<li>Clustering : Finding groups of point that might be cones</li>
+<li>Feature extraction: Calculating geometric properties like shapes and sizes.</li>
+</ul>
+<h3 id="2-grid-based-approaches">2. Grid-Based Approaches</h3>
+<ul>
+<li>Divide the space around the car into a 2D grid</li>
+<li>Count how many points fell into each grid cell</li>
+<li>Look for patern that match cone shapes</li>
+<li>Extract potential cone locations</li>
+</ul>
+<h3 id="3-pointpillars">3. PointPillars</h3>
+<p>See details in this blog: <a href="../../pointpillars">Understanding PointPillars</a></p>
+<h2 id="common-point-cloud-tasks">Common Point Cloud tasks:</h2>
+<ol>
+<li>3d shape classification: categorizing entire point clouds into object classes(car, pedestrain)</li>
+<li>3d object detection and tracking: Locating objects with 3D bounding boxes and following them across frames</li>
+<li>3d point cloud segmentation: Assigning a class label to every single point.</li>
+</ol>
+<h2 id="common-library-used-in-point-cloud">Common Library used in Point Cloud:</h2>
+<p>The point cloud ecosystem offers several powerful libraries:</p>
+<ol>
+<li>PCL: C++ library for classical algorithms</li>
+<li>VCGLib: Specialized for mesh processing and geometry</li>
+<li>CGAL: Computational geometry algorithms library</li>
+<li>Open3d: Python library with excellent visualization</li>
+</ol>
+<h2 id="high-quality-point-cloud-datasets">High quality point cloud datasets:</h2>
+<ol>
+<li>KITTI</li>
+<li>waymo</li>
+<li>nuScenes</li>
+</ol>
+<h2 id="other-methods-for-3d-object-detection">Other Methods for 3D object detection:</h2>
+<p>while LiDAR is powerful, various other approaches exists for 3D perception.</p>
 <ol>
 <li>monocular camera
 <ol>
@@ -61,43 +108,14 @@
 <ol>
 <li>EPNet</li>
 <li>CLOCs</li>
-<li>3D-CVF</li>
+<li>3D-CVF
+Each approach has trade-offs in term of accuracy, speed, cost and robustness.</li>
 </ol>
 </li>
 </ol>
-<p>pointcloud property:</p>
+<h2 id="series-perception">Series Perception</h2>
 <ol>
-<li>unorder</li>
-<li>sparsity</li>
-<li>unstructured</li>
-<li>geometric transformability</li>
-</ol>
-<p>pointcloud task type:</p>
-<ol>
-<li>3d shape classification</li>
-<li>3d object detection and tracking</li>
-<li>3d point cloud segmentation</li>
-</ol>
-<p>Library:</p>
-<ol>
-<li>PCL</li>
-<li>vcglib</li>
-<li>cgal</li>
-<li>open3d</li>
-</ol>
-<p>Datasets:</p>
-<ol>
-<li>KITTI</li>
-<li>waymo</li>
-<li>nuScenes</li>
-</ol>
-<h2 id="fun-facts">Fun Facts:</h2>
-<ol>
-<li>Powersort: Default sorting algorithm for python</li>
-</ol>
-<h2 id="resources">Resources:</h2>
-<ol>
-<li>LeRobot is an open-source project by Hugging Face that makes it easy to explore the world of robotics. Their open-sourced robotic arm S0-101 is great for beginner.</li>
+<li><a href="../pointcloud">Introduction to Point Cloud</a></li>
 </ol>
 ]]></content:encoded>
     </item>

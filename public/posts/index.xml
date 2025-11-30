@@ -4,10 +4,55 @@
     <title>Posts on Kingjin.io</title>
     <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Kingjin.io</description>
-    <generator>Hugo -- 0.151.2</generator>
+    <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 30 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stomach nourishing guide</title>
+      <link>http://localhost:1313/posts/keep_stomach_health/</link>
+      <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/keep_stomach_health/</guid>
+      <description>&lt;h1 id=&#34;stomach-nourishing-guide&#34;&gt;Stomach nourishing guide&lt;/h1&gt;
+&lt;h2 id=&#34;tips&#34;&gt;Tips:&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Avoid foods that are too cold, too hot, or too spicy, as these can irritate the stomach lining&lt;/li&gt;
+&lt;li&gt;Eat regularly and in appropriate portions&lt;/li&gt;
+&lt;li&gt;Chewing thoroughly can reduce the digestive burden on the stomach&lt;/li&gt;
+&lt;li&gt;Do not watch your phone during the eating&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;food&#34;&gt;Food:&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Millet porridge + red dates&lt;/li&gt;
+&lt;li&gt;Pumpkin porridge + red dates&lt;/li&gt;
+&lt;li&gt;yam&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;drinks&#34;&gt;Drinks&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;barley tea&lt;/li&gt;
+&lt;li&gt;Ginger and red date tea&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <content:encoded><![CDATA[<h1 id="stomach-nourishing-guide">Stomach nourishing guide</h1>
+<h2 id="tips">Tips:</h2>
+<ol>
+<li>Avoid foods that are too cold, too hot, or too spicy, as these can irritate the stomach lining</li>
+<li>Eat regularly and in appropriate portions</li>
+<li>Chewing thoroughly can reduce the digestive burden on the stomach</li>
+<li>Do not watch your phone during the eating</li>
+</ol>
+<h2 id="food">Food:</h2>
+<ol>
+<li>Millet porridge + red dates</li>
+<li>Pumpkin porridge + red dates</li>
+<li>yam</li>
+</ol>
+<h2 id="drinks">Drinks</h2>
+<ol>
+<li>barley tea</li>
+<li>Ginger and red date tea</li>
+</ol>
+]]></content:encoded>
+    </item>
     <item>
       <title>Introduction to Point Cloud | EUFS</title>
       <link>http://localhost:1313/posts/eufs/pointcloud/</link>

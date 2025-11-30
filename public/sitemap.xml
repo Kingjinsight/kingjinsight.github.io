@@ -2,22 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tags/food/</loc>
+    <lastmod>2025-11-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/health/</loc>
+    <lastmod>2025-11-30T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-10-27T00:00:00+00:00</lastmod>
+    <lastmod>2025-11-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-10-27T00:00:00+00:00</lastmod>
+    <lastmod>2025-11-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/keep_stomach_health/</loc>
+    <lastmod>2025-11-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-11-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/eufs/</loc>
     <lastmod>2025-10-22T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/posts/eufs/pointcloud/</loc>
+    <lastmod>2025-10-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/pointcloud/</loc>
-    <lastmod>2025-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/techweekly/techweek7/</loc>
-    <lastmod>2025-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-10-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/color-theory/</loc>
@@ -103,8 +112,6 @@
   </url><url>
     <loc>http://localhost:1313/tags/software-engineering/</loc>
     <lastmod>2025-02-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/trading/</loc>
   </url><url>
     <loc>http://localhost:1313/aboutme/</loc>
   </url><url>

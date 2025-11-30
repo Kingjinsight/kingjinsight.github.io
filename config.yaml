@@ -18,7 +18,7 @@ params:
   
   homeInfoParams:
     Title: "![King.io](/fontbolt.png)"
-    Content: Hi There, I'm **King**. I'm studying AI at The Universiy of Edinburgh😎. This blog is documenting my learning journey and some random thoughts since 2025. Find more about me in here:[ aboutme](/aboutme)
+    Content: Hi There, I'm **King**. I'm studying AI at The Universiy of Edinburgh😎. This blog is used to share my life and some random thoughts since 2025. Find more about me in here:[ aboutme](/aboutme). I also have a [personal technical wiki](https://kingjinsight.github.io/wiki_for_all/)
   socialIcons:
     - name: github
       url: "https://github.com/Kingjinsight"
