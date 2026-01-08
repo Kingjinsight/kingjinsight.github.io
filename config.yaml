@@ -25,7 +25,7 @@ params:
     - name: email
       url: "mailto:edevking@proton.me"
     - name: linkedin
-      url: "https://linkedin.com/in/kecheng-jin-224ab7349"
+      url: "https://linkedin.com/in/kcjin31"
     - name: cv 
       url: "/King_resume.pdf"
     - name: rss
