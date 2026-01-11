@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Aboutmes on Kingjin.io</title>
+    <link>http://localhost:1313/aboutme/</link>
+    <description>Recent content in Aboutmes on Kingjin.io</description>
+    <generator>Hugo -- 0.154.2</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/aboutme/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Climbing road</title>
+      <link>http://localhost:1313/aboutme/climbing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/aboutme/climbing/</guid>
+      <description>&lt;h2 id=&#34;location-auchinstarry-quarry-scotland&#34;&gt;Location: Auchinstarry Quarry, Scotland&lt;/h2&gt;
+&lt;p&gt;Date: 2025.09.12
+&lt;img alt=&#34;rock and me&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/Aboutme/croy_rock_and_me.jpg&#34;&gt;
+A great first-time rock climbing experience, meet interesting people and learned some rope skills.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="location-auchinstarry-quarry-scotland">Location: Auchinstarry Quarry, Scotland</h2>
+<p>Date: 2025.09.12
+<img alt="rock and me" loading="lazy" src="/Aboutme/croy_rock_and_me.jpg">
+A great first-time rock climbing experience, meet interesting people and learned some rope skills.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Photography exhibition by King Jin</title>
+      <link>http://localhost:1313/aboutme/gallery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/aboutme/gallery/</guid>
+      <description>&lt;h1 id=&#34;heading&#34;&gt;📷&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;welcome-to-my-photography-exhibition&#34;&gt;Welcome to my photography exhibition!&lt;/h1&gt;</description>
+      <content:encoded><![CDATA[<h1 id="heading">📷</h1>
+<pre tabindex="0"><code></code></pre><h1 id="welcome-to-my-photography-exhibition">Welcome to my photography exhibition!</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Project by King Jin</title>
+      <link>http://localhost:1313/aboutme/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/aboutme/projects/</guid>
+      <description>&lt;picture class=&#34;center&#34;&gt;
+  &lt;!-- Dark mode image --&gt;
+  &lt;source srcset=&#34;http://localhost:1313/Aboutme/projects_dark.png&#34; media=&#34;(prefers-color-scheme: dark)&#34;&gt;
+  &lt;!-- Light mode image --&gt;
+  &lt;source srcset=&#34;http://localhost:1313/Aboutme/projects.png&#34; media=&#34;(prefers-color-scheme: light)&#34;&gt;
+  &lt;!-- Fallback image --&gt;
+  &lt;img src=&#34;http://localhost:1313/Aboutme/projects.png&#34; alt=&#34;Project image&#34;&gt;
+&lt;/picture&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;!-- Project lbtig --&gt;
+&lt;p&gt;&lt;u&gt;&lt;h2&gt;&lt;a href=&#34;http://localhost:1313/aboutme/projects/lets_break_the_information_gap&#34;&gt;Let&amp;rsquo;s break the information gap&lt;/a&gt;&lt;/h2&gt;&lt;/u&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/aboutme/projects/lets_break_the_information_gap&#34;&gt;&lt;img src=&#34;http://localhost:1313/Aboutme/lbtig_preview.png&#34; class=&#34;center&#34;&gt;&lt;/a&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;p class=&#34;center-wider&#34;&gt; A free web application that create a two-host daily podcast of the news that matters to you.
+&lt;/p&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;!-- Project reflex --&gt;
+&lt;p&gt;&lt;u&gt;&lt;h2&gt;&lt;a href=&#34;http://localhost:1313/aboutme/projects/reflex&#34;&gt;Reflex&lt;/a&gt;&lt;/h2&gt;&lt;/u&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&#34;http://localhost:1313/aboutme/projects/reflex&#34;&gt;&lt;img src=&#34;http://localhost:1313/Aboutme/reflex_preview.png&#34; class=&#34;center&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;br&gt;
+&lt;p class=&#34;center-wider&#34;&gt; An AI-powered, English translator that generates a unique conversational story each day based on your search history.
+&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<picture class="center">
+  <!-- Dark mode image -->
+  <source srcset="/Aboutme/projects_dark.png" media="(prefers-color-scheme: dark)">
+  <!-- Light mode image -->
+  <source srcset="/Aboutme/projects.png" media="(prefers-color-scheme: light)">
+  <!-- Fallback image -->
+  <img src="/Aboutme/projects.png" alt="Project image">
+</picture>
+<br>
+<br>
+<!-- Project lbtig -->
+<p><u><h2><a href="/aboutme/projects/lets_break_the_information_gap">Let&rsquo;s break the information gap</a></h2></u>
+<br></p>
+<p><a href="/aboutme/projects/lets_break_the_information_gap"><img src="/Aboutme/lbtig_preview.png" class="center"></a>
+<br></p>
+<p class="center-wider"> A free web application that create a two-host daily podcast of the news that matters to you.
+</p>
+<hr>
+<br>
+<!-- Project reflex -->
+<p><u><h2><a href="/aboutme/projects/reflex">Reflex</a></h2></u>
+<br></p>
+<h2><a href="/aboutme/projects/reflex"><img src="/Aboutme/reflex_preview.png" class="center"></a></h2>
+<br>
+<p class="center-wider"> An AI-powered, English translator that generates a unique conversational story each day based on your search history.
+</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>
