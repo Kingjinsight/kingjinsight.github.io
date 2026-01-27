@@ -6,7 +6,7 @@ ShowReadingTime: false
 ---
 > A free web application that create a two-host daily podcast of the news that matters to you. Just add your favorite RSS feeds from news sites, blogs, and social media. Our app will automatically generate conversational scripts using an LLM and then produce a customized audio episode with text-to-speech. It's the perfect way to stay updated on your commute.
 
-[Official website](https://lbtig.kingportal.tech)  
+[Official website](https://lbtig.kingportal.cc)  
 [Source code](https://github.com/Kingjinsight/Lets-break-the-information-gap)
 
 <iframe width=100% height=450 src="https://www.youtube.com/embed/Xx2ari_n_f0?si=af_64RookXLDccYE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>   
