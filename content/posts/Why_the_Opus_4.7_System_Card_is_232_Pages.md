@@ -1,7 +1,7 @@
 ---
 date:  "2026-04-22"
 draft: false
-title: "Why the Opus 4.7 System Card is 232 Pages"
+title: "Why Claude Opus 4.7 System Card is 232 Pages"
 author: 'King Jin'
 tags: ["Anthropic","AI","Safety","Transparency"]
 showtoc: true
