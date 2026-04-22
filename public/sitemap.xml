@@ -2,32 +2,71 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tags/ai/</loc>
+    <lastmod>2026-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/anthropic/</loc>
+    <lastmod>2026-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2026-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/safety/</loc>
+    <lastmod>2026-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/transparency/</loc>
+    <lastmod>2026-04-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/why_the_opus_4.7_system_card_is_232_pages/</loc>
+    <lastmod>2026-04-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/food/</loc>
     <lastmod>2025-11-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/health/</loc>
     <lastmod>2025-11-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-11-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-11-30T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/keep_stomach_health/</loc>
     <lastmod>2025-11-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-11-30T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/eufs/</loc>
-    <lastmod>2025-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2025-10-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/pointcloud/</loc>
+    <lastmod>2025-10-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/eufs/pointpillars/</loc>
+    <lastmod>2025-10-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/electric-guitar/</loc>
+    <lastmod>2025-10-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/electric_guitar/</loc>
+    <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/eufs/pointcloud/</loc>
     <lastmod>2025-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/pointcloud/</loc>
-    <lastmod>2025-10-22T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/cryptocurrency/</loc>
+    <lastmod>2025-09-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/how_to_create_a_cryptocurrency/</loc>
+    <lastmod>2025-09-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/solana/</loc>
+    <lastmod>2025-09-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/techweekly/techweek7/</loc>
+    <lastmod>2025-09-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/trading/</loc>
+    <lastmod>2025-09-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/color-theory/</loc>
     <lastmod>2025-09-04T00:00:00+00:00</lastmod>
@@ -50,6 +89,9 @@
     <loc>http://localhost:1313/posts/container_sandbox_vm/</loc>
     <lastmod>2025-07-14T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/posts/techweekly/techweek6/</loc>
+    <lastmod>2025-06-30T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/python/</loc>
     <lastmod>2025-06-30T00:00:00+00:00</lastmod>
   </url><url>
@@ -58,9 +100,6 @@
   </url><url>
     <loc>http://localhost:1313/tags/tech_weekly/</loc>
     <lastmod>2025-06-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/ai/</loc>
-    <lastmod>2025-05-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/bitcoin/</loc>
     <lastmod>2025-05-30T00:00:00+00:00</lastmod>

@@ -4,10 +4,65 @@
     <title>Pointcloud on Kingjin.io</title>
     <link>http://localhost:1313/tags/pointcloud/</link>
     <description>Recent content in Pointcloud on Kingjin.io</description>
-    <generator>Hugo -- 0.154.2</generator>
+    <generator>Hugo -- 0.160.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/pointcloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding Pointpillars | EUFS</title>
+      <link>http://localhost:1313/posts/eufs/pointpillars/</link>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/eufs/pointpillars/</guid>
+      <description>&lt;p&gt;Why we need to know PointPillar? Well since most autonumous vehicle companies use or reference this algorithm in their perception system, e.g. Waymo, Baidu Apollo.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-pointpillars&#34;&gt;What is PointPillars&lt;/h2&gt;
+&lt;p&gt;PointPillar is a deep learning architecture specifically designed for 3D object detection from point clouds.&lt;/p&gt;
+&lt;p&gt;The name &amp;ldquo;PointPillars&amp;rdquo; comes from how it processes data: instead of treating the point cloud as random 3D points or complex 3D voxels, it organizes into vertical columns called &amp;ldquo;pillars&amp;rdquo;.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Why we need to know PointPillar? Well since most autonumous vehicle companies use or reference this algorithm in their perception system, e.g. Waymo, Baidu Apollo.</p>
+<h2 id="what-is-pointpillars">What is PointPillars</h2>
+<p>PointPillar is a deep learning architecture specifically designed for 3D object detection from point clouds.</p>
+<p>The name &ldquo;PointPillars&rdquo; comes from how it processes data: instead of treating the point cloud as random 3D points or complex 3D voxels, it organizes into vertical columns called &ldquo;pillars&rdquo;.</p>
+<h2 id="how-pointpillar-works">How PointPillar works?</h2>
+<h4 id="step-1-from-point-clouds-to-pillars">Step 1: From point clouds to Pillars</h4>
+<ul>
+<li>We start with input point clouds data that detected by our LiDAR</li>
+<li>We then divide the ground plane into a grid of small cells</li>
+<li>Each cell is like a vertical column or pillar extending upward</li>
+<li>We assign each 3D point to the pillar it falls into</li>
+</ul>
+<h4 id="step-2-pillar-feature-encoding">Step 2: Pillar Feature Encoding</h4>
+<p>For each pillar, we need to extract meaningful features from all the points inside it:</p>
+<ul>
+<li>The average location of points in the pillar</li>
+<li>How spread out the points are</li>
+<li>The shape formed by the points</li>
+<li>How the poins relate to the pillar&rsquo;s center
+This step converts irregular, variable-length point sets into fixed-size feature vectors that a neural network can process.</li>
+</ul>
+<h4 id="step-3-birds-eye-view-representation">Step 3: Bird’s Eye View Representation</h4>
+<p>The pillar features are “scattered” back to their original 2D grid positions, creating a Bird’s Eye View (BEV) representation.</p>
+<p>Imagine looking down at the track from a drone above the car. This BEV image represents:</p>
+<ul>
+<li>Where pillars contain points (occupied space)</li>
+<li>What features those points have (learned by the network)</li>
+<li>The spatial relationship between different areas</li>
+</ul>
+<p>Why this is clever: By converting 3D point clouds into a 2D BEV image, we can now use standard 2D CNNs</p>
+<h4 id="step-4-2d-backbone-network">Step 4: 2D Backbone Network</h4>
+<p>Now we have a 2D image, we can process it with CNNs:</p>
+<p>What happens:</p>
+<ul>
+<li>Multiple layers of convolutions extract increasingly abstract features</li>
+<li>Early layers might detect edges and basic shapes</li>
+<li>Deeper layers combine information to understand “this pattern looks like a cone”</li>
+<li>Multiple resolution levels are processed and combined</li>
+</ul>
+<h2 id="series-perception">Series Perception</h2>
+<ol>
+<li><a href="../pointcloud">Introduction to point cloud</a></li>
+<li><a href="../pointpillars">Introduction to PointPillars</a></li>
+</ol>
+]]></content:encoded>
+    </item>
     <item>
       <title>Introduction to Point Cloud | EUFS</title>
       <link>http://localhost:1313/posts/eufs/pointcloud/</link>

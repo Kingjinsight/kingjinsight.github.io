@@ -1,6 +1,6 @@
 ---
 date:  "2025-11-30"
-draft: false
+draft: true
 title: "Stomach nourishing guide"
 author: 'King Jin'
 tags: ["Food","Health"]

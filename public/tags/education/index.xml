@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Education on Kingjin.io</title>
+    <link>http://localhost:1313/tags/education/</link>
+    <description>Recent content in Education on Kingjin.io</description>
+    <generator>Hugo -- 0.160.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/education/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Limitations of Current AI: Architecture, Embodiment, and Education</title>
+      <link>http://localhost:1313/posts/limitation_of_current_ai/</link>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/limitation_of_current_ai/</guid>
+      <description>&lt;p&gt;video link：&lt;a href=&#34;https://www.youtube.com/watch?v=-Et3GJRSI_0&amp;amp;t=5788s&#34;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;一ai面临的三大困境架构层面&#34;&gt;一、AI面临的三大困境（架构层面）&lt;/h2&gt;
+&lt;p&gt;刘嘉教授认为，当前基于 transformer 的大模型，与人脑相比存在三个根本性的结构缺陷：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. 神经元复杂度不足&lt;/strong&gt; 人脑在进化中走了两条路：神经元数量增加 + 神经元复杂度增加。但现在的 AI 神经元极其简单——输入求和，过一个激活函数就完了。而生物神经元是一个四维结构（三维空间 + 时间维度t），有动力学，单个精细神经元的算力相当于5-8层深度神经网络。Transformer 没有时间维度，没有偏微分，是一个&amp;quot;二维&amp;quot;系统。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. 缺乏长程 feedback 连接&lt;/strong&gt; 人脑中约有 40% 是长程反馈连接（如额叶直接连回视觉皮层），用于解决不确定问题、产生假设和创造力。Transformer 是纯粹的前馈网络（feedforward），训练完之后没有任何 feedback，这正是它推理能力有上限的原因。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. 缺乏并行加工能力&lt;/strong&gt; Transformer 的本质是&amp;quot;预测下一个 token&amp;quot;，天然是串行的。但人类面对危险时会瞬间并行处理海量视觉信息——你不会一个 token 一个 token 地分析飞来的物体，而是直接闪开。这种并行感知能力，是 transformer 架构根本做不到的。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;二具身智能的两大难点&#34;&gt;二、具身智能的两大难点&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;1. 感知难点：并行实时感知（对应上面第三点）&lt;/strong&gt; 真正的具身智能需要像人类祖先在野外那样，瞬间捕捉到&amp;quot;一晃而过&amp;quot;的危险并做出反应。这是一个开放性问题（open-ended），不像自动驾驶那样是封闭数据集。现有机器人（包括 Optimus）都没有真正的&amp;quot;眼睛&amp;quot;，本质上仍是预编程的工业机械臂换了个形状。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. 运动控制难点：小脑的 world model（系统一）&lt;/strong&gt; 人类 860 亿神经元中，有约 700 亿在小脑，是大脑皮层的 6-7 倍。小脑构建了人类对物理世界的直觉模型（world model）——比如拿一杯满水和空杯时自动调整力度，把一本书扔到桌上，这些对人类轻而易举，但对机器人是极端困难的计算问题。&lt;/p&gt;
+&lt;p&gt;目前 AI 解决的是&amp;quot;系统二&amp;quot;（大脑皮层，推理/语言/数学），完全没有触碰&amp;quot;系统一&amp;quot;（小脑/基底神经节，直觉/运动/感知）。真正的具身智能，需要一场&lt;strong&gt;基于脑科学的第二次启蒙运动&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;三ai-时代的教育&#34;&gt;三、AI 时代的教育&lt;/h2&gt;
+&lt;p&gt;刘嘉认为，当前教育（从小学到大学）是基于第一次工业革命建立的，到了 AI 时代全部变成&amp;quot;伪需求&amp;quot;。他提出三个核心方向：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. 强调&amp;quot;我&amp;quot;这个概念&lt;/strong&gt; 工业时代把&amp;quot;我&amp;quot;埋进集体分工中，人只需把螺丝拧好。但 AI 时代，一个人加上一万张显卡可以构成一人公司，最大的动力来源是&lt;strong&gt;自己的兴趣&lt;/strong&gt;。教育的核心应是帮孩子找到&amp;quot;我是谁、我想要什么&amp;quot;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. 培养 AI 原生思维（AI native thinking）&lt;/strong&gt; 会用 AI 工具不等于 AI 原生思维。AI 原生是一种&lt;strong&gt;思维范式的根本性转变&lt;/strong&gt;——把 AI 当成身体的一部分，而不是工具。成年人因为有思维定势所以很难改，孩子更容易从零建立这种思维。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>video link：<a href="https://www.youtube.com/watch?v=-Et3GJRSI_0&amp;t=5788s">link</a></p>
+<h2 id="一ai面临的三大困境架构层面">一、AI面临的三大困境（架构层面）</h2>
+<p>刘嘉教授认为，当前基于 transformer 的大模型，与人脑相比存在三个根本性的结构缺陷：</p>
+<p><strong>1. 神经元复杂度不足</strong> 人脑在进化中走了两条路：神经元数量增加 + 神经元复杂度增加。但现在的 AI 神经元极其简单——输入求和，过一个激活函数就完了。而生物神经元是一个四维结构（三维空间 + 时间维度t），有动力学，单个精细神经元的算力相当于5-8层深度神经网络。Transformer 没有时间维度，没有偏微分，是一个&quot;二维&quot;系统。</p>
+<p><strong>2. 缺乏长程 feedback 连接</strong> 人脑中约有 40% 是长程反馈连接（如额叶直接连回视觉皮层），用于解决不确定问题、产生假设和创造力。Transformer 是纯粹的前馈网络（feedforward），训练完之后没有任何 feedback，这正是它推理能力有上限的原因。</p>
+<p><strong>3. 缺乏并行加工能力</strong> Transformer 的本质是&quot;预测下一个 token&quot;，天然是串行的。但人类面对危险时会瞬间并行处理海量视觉信息——你不会一个 token 一个 token 地分析飞来的物体，而是直接闪开。这种并行感知能力，是 transformer 架构根本做不到的。</p>
+<hr>
+<h2 id="二具身智能的两大难点">二、具身智能的两大难点</h2>
+<p><strong>1. 感知难点：并行实时感知（对应上面第三点）</strong> 真正的具身智能需要像人类祖先在野外那样，瞬间捕捉到&quot;一晃而过&quot;的危险并做出反应。这是一个开放性问题（open-ended），不像自动驾驶那样是封闭数据集。现有机器人（包括 Optimus）都没有真正的&quot;眼睛&quot;，本质上仍是预编程的工业机械臂换了个形状。</p>
+<p><strong>2. 运动控制难点：小脑的 world model（系统一）</strong> 人类 860 亿神经元中，有约 700 亿在小脑，是大脑皮层的 6-7 倍。小脑构建了人类对物理世界的直觉模型（world model）——比如拿一杯满水和空杯时自动调整力度，把一本书扔到桌上，这些对人类轻而易举，但对机器人是极端困难的计算问题。</p>
+<p>目前 AI 解决的是&quot;系统二&quot;（大脑皮层，推理/语言/数学），完全没有触碰&quot;系统一&quot;（小脑/基底神经节，直觉/运动/感知）。真正的具身智能，需要一场<strong>基于脑科学的第二次启蒙运动</strong>。</p>
+<hr>
+<h2 id="三ai-时代的教育">三、AI 时代的教育</h2>
+<p>刘嘉认为，当前教育（从小学到大学）是基于第一次工业革命建立的，到了 AI 时代全部变成&quot;伪需求&quot;。他提出三个核心方向：</p>
+<p><strong>1. 强调&quot;我&quot;这个概念</strong> 工业时代把&quot;我&quot;埋进集体分工中，人只需把螺丝拧好。但 AI 时代，一个人加上一万张显卡可以构成一人公司，最大的动力来源是<strong>自己的兴趣</strong>。教育的核心应是帮孩子找到&quot;我是谁、我想要什么&quot;。</p>
+<p><strong>2. 培养 AI 原生思维（AI native thinking）</strong> 会用 AI 工具不等于 AI 原生思维。AI 原生是一种<strong>思维范式的根本性转变</strong>——把 AI 当成身体的一部分，而不是工具。成年人因为有思维定势所以很难改，孩子更容易从零建立这种思维。</p>
+<p><strong>3. 掌握演绎推理 / 第一性原理</strong> AI 可以回答一切表面问题，但找到&quot;逻辑原点&quot;是 AI 做不到的事。一定要训练孩子在做任何选择前，先想清楚：<strong>我的逻辑原点是什么？</strong>。这既是防止在信息爆炸中迷失的锚点，也是 0-1 创造力的根源。</p>
+<blockquote>
+<p>他最后总结说：<strong>记忆知识的教育已经彻底没有价值</strong>（因为大模型唾手可得），未来最核心的教育，是教人<strong>如何成为他自己</strong>。</p>
+</blockquote>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

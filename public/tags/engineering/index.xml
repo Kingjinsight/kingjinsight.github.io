@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Engineering on Kingjin.io</title>
+    <link>http://localhost:1313/tags/engineering/</link>
+    <description>Recent content in Engineering on Kingjin.io</description>
+    <generator>Hugo -- 0.160.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Context Engineering</title>
+      <link>http://localhost:1313/posts/context_engineering/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/context_engineering/</guid>
+      <description>&lt;p&gt;We have several parts in context:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;System prompt&lt;/li&gt;
+&lt;li&gt;User Prompt&lt;/li&gt;
+&lt;li&gt;Dialogue history&lt;/li&gt;
+&lt;li&gt;Memory&lt;/li&gt;
+&lt;li&gt;Relavent information from other sources&lt;/li&gt;
+&lt;li&gt;Tool use&lt;/li&gt;
+&lt;li&gt;Reasoning&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;what-is-context-engineering&#34;&gt;What is context engineering&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Prompt Engineering&lt;/strong&gt; is about how to write instructions. &lt;strong&gt;Context Engineering&lt;/strong&gt; is broader - it covers strategies for curating and maintaining the optimal set of tokens during inference, including everything that lands in context window beyond just the system prompt: tools, MCP servers, Skills, external data, message history and so on.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>We have several parts in context:</p>
+<ul>
+<li>System prompt</li>
+<li>User Prompt</li>
+<li>Dialogue history</li>
+<li>Memory</li>
+<li>Relavent information from other sources</li>
+<li>Tool use</li>
+<li>Reasoning</li>
+</ul>
+<h2 id="what-is-context-engineering">What is context engineering</h2>
+<p><strong>Prompt Engineering</strong> is about how to write instructions. <strong>Context Engineering</strong> is broader - it covers strategies for curating and maintaining the optimal set of tokens during inference, including everything that lands in context window beyond just the system prompt: tools, MCP servers, Skills, external data, message history and so on.</p>
+<h2 id="system-prompt">System prompt</h2>
+<p>Claude&rsquo;s system prompt: <a href="https://platform.claude.com/docs/en/release-notes/system-prompts">link</a></p>
+<h2 id="context-retrieval">Context Retrieval</h2>
+<ul>
+<li>Just in time context strategies</li>
+<li>Rather than pre-loading all relevant data up front, agents maintain lightweight identifiers(file paths, stored queries, web links) and dynamically load data into context at runtime using tools.</li>
+</ul>
+<h2 id="long-horizon-tasks-three-techniques">Long-Horizon Tasks: Three techniques</h2>
+<ul>
+<li>
+<p>Compaction</p>
+<ul>
+<li>It takes a conversation nearing the context window limit, summarizes it, and reinitializes a new context window with the summary.</li>
+<li>The art lies in selecting what to keep vs. discard, overly aggressive compaction can lose subtle but critical context. Anthropic recommends starting by maximizing recall.</li>
+</ul>
+</li>
+<li>
+<p>Structured Note-Taking</p>
+<ul>
+<li>It involves the agent regularly writing notes persisted to memory outside the context window, which get pulled back in later.</li>
+</ul>
+</li>
+<li>
+<p>Sub-Agent Architectures</p>
+<ul>
+<li>Rather than one agent maintaining state across an entire project, specialized sub-agents handle focus tasks with clean context windows. The main agent coordinates with a high-level plan while sub-agents perform deep technical work. Each sub-agent may use tens of thousands of tokens in its exploration but returns only a condensed summary of 1,000–2,000 tokens to the lead agent — achieving a clear separation of concerns.</li>
+</ul>
+</li>
+</ul>
+<h2 id="my-understanding">My understanding</h2>
+<p>Write good and precise prompt at beginning. Just-in-time strategies is clever, it just work like human brain, when we need a reference/tool, we take it, otherwise we place it in somewhere, rather than memorized all these resources.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

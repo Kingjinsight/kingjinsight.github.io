@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Electric Guitar on Kingjin.io</title>
+    <link>http://localhost:1313/tags/electric-guitar/</link>
+    <description>Recent content in Electric Guitar on Kingjin.io</description>
+    <generator>Hugo -- 0.160.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/electric-guitar/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>XiaoHei</title>
+      <link>http://localhost:1313/posts/electric_guitar/</link>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/electric_guitar/</guid>
+      <description>&lt;p&gt;Say hello to XiaoHei:
+[audio link]&lt;/p&gt;
+&lt;p&gt;This is my new SSS electric guitar – a Fender Squier Affinity Stratocaster with a SSS pickup configuration. I got this Amazon bundle that includes a Mustang Micro, gig bag, strap, headphones, and picks. Since I already have Edifier MR4 monitor speakers, I can connect the Mustang Micro directly to them using a 3.5mm to dual 6.35mm TRS cable.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Say hello to XiaoHei:
+[audio link]</p>
+<p>This is my new SSS electric guitar – a Fender Squier Affinity Stratocaster with a SSS pickup configuration. I got this Amazon bundle that includes a Mustang Micro, gig bag, strap, headphones, and picks. Since I already have Edifier MR4 monitor speakers, I can connect the Mustang Micro directly to them using a 3.5mm to dual 6.35mm TRS cable.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

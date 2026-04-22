@@ -4,7 +4,7 @@
     <title>Algorithm on Kingjin.io</title>
     <link>http://localhost:1313/tags/algorithm/</link>
     <description>Recent content in Algorithm on Kingjin.io</description>
-    <generator>Hugo -- 0.154.2</generator>
+    <generator>Hugo -- 0.160.1</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 26 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
@@ -149,7 +149,7 @@ O(n) represents the asymptotic upper bound of the running time of an algorithm<b
 <ul>
 <li>Normally we can directly transfer T(n) to O(n) or θ(n).</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Int sum <span style="color:#f92672">=</span> 0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Int sum <span style="color:#f92672">=</span> 0
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">for</span> (i <span style="color:#f92672">=</span> 1; i <span style="color:#f92672">&lt;=</span> n, i <span style="color:#f92672">++</span>) {
 </span></span><span style="display:flex;"><span>    sum <span style="color:#f92672">=</span> sum <span style="color:#f92672">+</span> i
 </span></span><span style="display:flex;"><span>}

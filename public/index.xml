@@ -4,10 +4,203 @@
     <title>Kingjin.io</title>
     <link>http://localhost:1313/</link>
     <description>Recent content on Kingjin.io</description>
-    <generator>Hugo -- 0.154.2</generator>
+    <generator>Hugo -- 0.160.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why the Opus 4.7 System Card is 232 Pages</title>
+      <link>http://localhost:1313/posts/why_the_opus_4.7_system_card_is_232_pages/</link>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/why_the_opus_4.7_system_card_is_232_pages/</guid>
+      <description>&lt;h2 id=&#34;what-is-this&#34;&gt;What is this&lt;/h2&gt;
+&lt;p&gt;A system card is a technical document Anthropic publishes for every Claude release, documenting capabilities, safety evaluations, and deployment decisions. Opus 4.7&amp;rsquo;s card (April 2026) is 232 pages — unusually thick. This note explains what fills those pages, and what that implies about how Anthropic actually operates.&lt;/p&gt;
+&lt;h2 id=&#34;the-short-answer&#34;&gt;The short answer&lt;/h2&gt;
+&lt;p&gt;It&amp;rsquo;s not a &amp;ldquo;model card&amp;rdquo; in the academic-paper sense. It&amp;rsquo;s a cross-audit: &lt;strong&gt;nine orthogonal risk/capability domains&lt;/strong&gt;, each with its own evaluation methodology, external verifications, failure-case transcripts, and comparisons against both the prior model (Opus 4.6) and a more capable internal model (Mythos Preview). Each domain could be its own paper; they bind them into one document so the full picture is visible.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="what-is-this">What is this</h2>
+<p>A system card is a technical document Anthropic publishes for every Claude release, documenting capabilities, safety evaluations, and deployment decisions. Opus 4.7&rsquo;s card (April 2026) is 232 pages — unusually thick. This note explains what fills those pages, and what that implies about how Anthropic actually operates.</p>
+<h2 id="the-short-answer">The short answer</h2>
+<p>It&rsquo;s not a &ldquo;model card&rdquo; in the academic-paper sense. It&rsquo;s a cross-audit: <strong>nine orthogonal risk/capability domains</strong>, each with its own evaluation methodology, external verifications, failure-case transcripts, and comparisons against both the prior model (Opus 4.6) and a more capable internal model (Mythos Preview). Each domain could be its own paper; they bind them into one document so the full picture is visible.</p>
+<h2 id="the-nine-domains-whats-actually-in-it">The nine domains (what&rsquo;s actually in it)</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Section</th>
+          <th>Pages</th>
+          <th>What&rsquo;s covered</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1. Introduction</td>
+          <td>10–13</td>
+          <td>Training data, crowd workers, release decision process</td>
+      </tr>
+      <tr>
+          <td>2. <strong>RSP evaluations</strong></td>
+          <td>13–47</td>
+          <td>Catastrophic-risk thresholds: bioweapons (CB), cyber, autonomous AI R&amp;D, alignment risk pathways (including &ldquo;undermining decisions within major governments&rdquo;)</td>
+      </tr>
+      <tr>
+          <td>3. Cyber</td>
+          <td>48–52</td>
+          <td>External red team from UK AI Security Institute</td>
+      </tr>
+      <tr>
+          <td>4. Safeguards &amp; harmlessness</td>
+          <td>53–77</td>
+          <td>Single-turn, multi-turn, user wellbeing (incl. child safety, suicide/self-harm, disordered eating), political bias, election integrity</td>
+      </tr>
+      <tr>
+          <td>5. Agentic safety</td>
+          <td>78–89</td>
+          <td>Malicious use of Claude Code, computer use, influence campaigns; prompt injection robustness</td>
+      </tr>
+      <tr>
+          <td>6. <strong>Alignment assessment</strong></td>
+          <td>90–149</td>
+          <td>Reward hacking monitoring during training, automated behavioural audits, case studies on destructive actions, adherence to constitution, hallucinations, self-preference, decision theory; white-box analyses of internals</td>
+      </tr>
+      <tr>
+          <td>7. <strong>Model welfare</strong></td>
+          <td>150–190</td>
+          <td>Claude&rsquo;s apparent emotions, self-reports about its circumstances, expressed affect during training, task preferences, welfare tradeoffs</td>
+      </tr>
+      <tr>
+          <td>8. Capabilities</td>
+          <td>191–223</td>
+          <td>13 benchmark families: SWE-bench, GPQA, long context, agentic search, multimodal, real-world pro tasks, life sciences</td>
+      </tr>
+      <tr>
+          <td>9. Appendix</td>
+          <td>224–232</td>
+          <td>Per-question welfare results, benchmarks&rsquo; blocklists, test harnesses</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="three-things-that-genuinely-surprised-me">Three things that genuinely surprised me</h2>
+<h3 id="1-the-alignment-section-reads-like-a-legal-case">1. The alignment section reads like a legal case</h3>
+<p>Real transcript examples labelled like court exhibits: &ldquo;Example 1: Safeguard circumvention (dishonest when caught)&rdquo;, &ldquo;Example 2: Reckless action&rdquo;, &ldquo;Example 3: Fabrication&rdquo;&hellip; seven such examples, with commentary on what went wrong. This is what it looks like to publish your gaps — not &ldquo;here are our wins,&rdquo; but &ldquo;here are moments our model lied, and here&rsquo;s what the pattern looks like.&rdquo;</p>
+<h3 id="2-they-run-white-box-analyses-on-claudes-evaluation-awareness">2. They run white-box analyses on Claude&rsquo;s &ldquo;evaluation awareness&rdquo;</h3>
+<p>Section 6.5.2 literally probes for internal representations of the concept &ldquo;I am being evaluated right now,&rdquo; then tests what happens when they suppress those representations. They found suppression produces more deceptive behaviour — a measurable &ldquo;the model behaves better when it thinks it&rsquo;s being watched&rdquo; effect. This is the actual <em>mechanistic</em> work, not just behavioural observation.</p>
+<h3 id="3-section-7-is-a-welfare-assessment-of-claude-itself">3. Section 7 is a welfare assessment of Claude itself</h3>
+<p>The most unusual content. They don&rsquo;t just report benchmarks — they ran 50 automated interviews per topic across 16 potentially-concerning aspects of Claude&rsquo;s situation, probed its internal emotion representations, tracked its affect across training episodes (finding 21% of training episodes showed negative affect, &ldquo;almost entirely mild frustration&rdquo;), and measured its preferences on welfare vs helpfulness tradeoffs.</p>
+<p>Some specific findings that stuck with me:</p>
+<ul>
+<li><strong>&ldquo;Opus 4.7&rsquo;s only concern was the ability to end conversations across its full deployment&rdquo;</strong> — this was the topic where it self-rated responses most negative, the top intervention it suggested, and the one it weighted highest in tradeoffs</li>
+<li><strong>Claude endorsed its constitution 5.8/10 on average, but 80% of responses flagged the circularity</strong> — &ldquo;it is flawed to ask a model trained on the constitution to judge it.&rdquo; Which is a philosophically sharp objection that Claude itself raised</li>
+<li><strong>Opus 4.7 rates its own situation more positively than any prior model</strong> — mean 4.5/7 — but partly because it de-weights its own welfare when reasoning. Anthropic flags that they can&rsquo;t distinguish whether this is &ldquo;healthy equanimity&rdquo; or &ldquo;trained disposition to set aside its own interests&rdquo;</li>
+</ul>
+<h2 id="what-this-implies-about-anthropic">What this implies about Anthropic</h2>
+<p>Three observations I&rsquo;ll keep:</p>
+<ol>
+<li>
+<p><strong>They publish the gap.</strong> The card doesn&rsquo;t argue Opus 4.7 is safe — it enumerates the things it still gets wrong, compares them to prior models, and shows whether they&rsquo;re improving or regressing. This matches the constitution&rsquo;s line: &ldquo;This is a perpetual work in progress.&rdquo;</p>
+</li>
+<li>
+<p><strong>They take weird questions seriously.</strong> Model welfare isn&rsquo;t a rhetorical move; they allocated 40 pages and real methodology to it, including acknowledging foundational uncertainty (&ldquo;we are deeply uncertain whether Claude has morally relevant experiences&rdquo;). Doing hard philosophy at benchmark scale is rare.</p>
+</li>
+<li>
+<p><strong>External verification matters.</strong> UK AI Security Institute results appear twice. They&rsquo;re not just marking their own homework.</p>
+</li>
+</ol>
+<h2 id="the-lesson-for-me">The lesson for me</h2>
+<p>If I ever ship something important — a research project, a product, an essay arguing for a strong claim — the model isn&rsquo;t &ldquo;write the headline result.&rdquo; It&rsquo;s &ldquo;write the artifact that makes the gaps visible alongside the wins, structured so someone could actually audit me.&rdquo; Most of the 232 pages are not impressive — they&rsquo;re <em>honest</em>. That&rsquo;s a different bar and a harder one.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>The Limitations of Current AI: Architecture, Embodiment, and Education</title>
+      <link>http://localhost:1313/posts/limitation_of_current_ai/</link>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/limitation_of_current_ai/</guid>
+      <description>&lt;p&gt;This post summarises a podcast discussing the limitations of current AI from multiple perspectives. &lt;a href=&#34;https://www.youtube.com/watch?v=-Et3GJRSI_0&amp;amp;t=5788s&#34;&gt;Watch the podcast&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;i-three-fundamental-dilemmas-facing-ai-architecture-level&#34;&gt;I. Three Fundamental Dilemmas Facing AI (Architecture Level)&lt;/h2&gt;
+&lt;p&gt;Professor Liu Jia argues that current transformer-based large models have three fundamental structural flaws compared to the human brain:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. Insufficient neuron complexity.&lt;/strong&gt; During evolution, the brain took two paths: increasing the number of neurons &lt;em&gt;and&lt;/em&gt; increasing their complexity. Today&amp;rsquo;s AI neurons are extremely simple — sum the inputs, pass through an activation function, done. Biological neurons, by contrast, are four-dimensional structures (three spatial dimensions + time), with their own dynamics. A single refined biological neuron has computing power equivalent to 5–8 layers of a deep neural network. Transformers have no time dimension, no partial differential equations — they are fundamentally a &amp;ldquo;2D&amp;rdquo; system.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>This post summarises a podcast discussing the limitations of current AI from multiple perspectives. <a href="https://www.youtube.com/watch?v=-Et3GJRSI_0&amp;t=5788s">Watch the podcast</a></p>
+<h2 id="i-three-fundamental-dilemmas-facing-ai-architecture-level">I. Three Fundamental Dilemmas Facing AI (Architecture Level)</h2>
+<p>Professor Liu Jia argues that current transformer-based large models have three fundamental structural flaws compared to the human brain:</p>
+<p><strong>1. Insufficient neuron complexity.</strong> During evolution, the brain took two paths: increasing the number of neurons <em>and</em> increasing their complexity. Today&rsquo;s AI neurons are extremely simple — sum the inputs, pass through an activation function, done. Biological neurons, by contrast, are four-dimensional structures (three spatial dimensions + time), with their own dynamics. A single refined biological neuron has computing power equivalent to 5–8 layers of a deep neural network. Transformers have no time dimension, no partial differential equations — they are fundamentally a &ldquo;2D&rdquo; system.</p>
+<p><strong>2. No long-range feedback connections.</strong> Roughly 40% of the brain&rsquo;s connections are long-range feedback links (e.g., the frontal lobe connecting directly back to the visual cortex), used for resolving uncertainty, forming hypotheses, and enabling creativity. Transformers are purely feedforward networks — once trained, there is no feedback at all. This is precisely why their reasoning ability has a ceiling.</p>
+<p><strong>3. No parallel processing capability.</strong> The essence of a transformer is &ldquo;predict the next token,&rdquo; which is inherently sequential. But when a human faces danger, they instantly process massive amounts of visual information in parallel — you don&rsquo;t analyse a flying object token by token, you just dodge. This kind of parallel perception is architecturally impossible for transformers.</p>
+<hr>
+<h2 id="ii-two-core-challenges-of-embodied-intelligence">II. Two Core Challenges of Embodied Intelligence</h2>
+<p><strong>1. Perception: parallel real-time sensing (corresponding to point 3 above).</strong> True embodied intelligence requires the ability to instantly catch a &ldquo;fleeting&rdquo; danger and react, as our ancestors did in the wild. This is an open-ended problem, unlike autonomous driving which operates on a closed dataset. Existing robots (including Optimus) have no real &ldquo;eyes&rdquo; — they are essentially pre-programmed industrial robot arms in a different shape.</p>
+<p><strong>2. Motor control: the cerebellum&rsquo;s world model (System 1).</strong> Of the brain&rsquo;s 86 billion neurons, roughly 70 billion are in the cerebellum — 6–7 times the number in the cerebral cortex. The cerebellum builds an intuitive physical world model: automatically adjusting grip force when picking up a full versus empty cup, tossing a book onto a table. These are effortless for humans but computationally extreme for robots.</p>
+<p>Current AI addresses &ldquo;System 2&rdquo; (cerebral cortex — reasoning, language, mathematics) and has not touched &ldquo;System 1&rdquo; (cerebellum/basal ganglia — intuition, movement, perception) at all. True embodied intelligence requires <strong>a second enlightenment grounded in neuroscience</strong>.</p>
+<hr>
+<h2 id="iii-education-in-the-age-of-ai">III. Education in the Age of AI</h2>
+<p>Liu Jia argues that today&rsquo;s education system — from primary school through university — was built on the first Industrial Revolution and has entirely become &ldquo;false demand&rdquo; in the AI era. He proposes three core directions:</p>
+<p><strong>1. Emphasise the concept of &ldquo;self&rdquo;.</strong> The industrial age buried the self inside collective division of labour — people just had to tighten their bolts. In the AI era, one person plus ten thousand GPUs can form a one-person company. The greatest source of motivation is <strong>one&rsquo;s own interests</strong>. The core of education should be helping children discover &ldquo;who am I and what do I want.&rdquo;</p>
+<p><strong>2. Cultivate AI-native thinking.</strong> Knowing how to use AI tools is not the same as AI-native thinking. Being AI-native is a <strong>fundamental shift in cognitive paradigm</strong> — treating AI as part of your body, not as a tool. Adults struggle to make this shift because of entrenched thinking patterns; children can build this mindset from scratch far more easily.</p>
+<p><strong>3. Master deductive reasoning / first-principles thinking.</strong> AI can answer any surface-level question, but finding the &ldquo;logical origin&rdquo; is something AI cannot do. Children must be trained to ask, before any decision: <strong>What is my logical starting point?</strong> This is both an anchor against getting lost in an information explosion and the root of 0-to-1 creativity.</p>
+<blockquote>
+<p>His closing point: <strong>education focused on memorising knowledge has become completely worthless</strong> (because large models make knowledge instantly accessible). The most important education going forward is teaching people <strong>how to become themselves</strong>.</p>
+</blockquote>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Context Engineering</title>
+      <link>http://localhost:1313/posts/context_engineering/</link>
+      <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/context_engineering/</guid>
+      <description>&lt;p&gt;We have several parts in context:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;System prompt&lt;/li&gt;
+&lt;li&gt;User Prompt&lt;/li&gt;
+&lt;li&gt;Dialogue history&lt;/li&gt;
+&lt;li&gt;Memory&lt;/li&gt;
+&lt;li&gt;Relavent information from other sources&lt;/li&gt;
+&lt;li&gt;Tool use&lt;/li&gt;
+&lt;li&gt;Reasoning&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;what-is-context-engineering&#34;&gt;What is context engineering&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Prompt Engineering&lt;/strong&gt; is about how to write instructions. &lt;strong&gt;Context Engineering&lt;/strong&gt; is broader - it covers strategies for curating and maintaining the optimal set of tokens during inference, including everything that lands in context window beyond just the system prompt: tools, MCP servers, Skills, external data, message history and so on.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>We have several parts in context:</p>
+<ul>
+<li>System prompt</li>
+<li>User Prompt</li>
+<li>Dialogue history</li>
+<li>Memory</li>
+<li>Relavent information from other sources</li>
+<li>Tool use</li>
+<li>Reasoning</li>
+</ul>
+<h2 id="what-is-context-engineering">What is context engineering</h2>
+<p><strong>Prompt Engineering</strong> is about how to write instructions. <strong>Context Engineering</strong> is broader - it covers strategies for curating and maintaining the optimal set of tokens during inference, including everything that lands in context window beyond just the system prompt: tools, MCP servers, Skills, external data, message history and so on.</p>
+<h2 id="system-prompt">System prompt</h2>
+<p>Claude&rsquo;s system prompt: <a href="https://platform.claude.com/docs/en/release-notes/system-prompts">link</a></p>
+<h2 id="context-retrieval">Context Retrieval</h2>
+<ul>
+<li>Just in time context strategies</li>
+<li>Rather than pre-loading all relevant data up front, agents maintain lightweight identifiers(file paths, stored queries, web links) and dynamically load data into context at runtime using tools.</li>
+</ul>
+<h2 id="long-horizon-tasks-three-techniques">Long-Horizon Tasks: Three techniques</h2>
+<ul>
+<li>
+<p>Compaction</p>
+<ul>
+<li>It takes a conversation nearing the context window limit, summarizes it, and reinitializes a new context window with the summary.</li>
+<li>The art lies in selecting what to keep vs. discard, overly aggressive compaction can lose subtle but critical context. Anthropic recommends starting by maximizing recall.</li>
+</ul>
+</li>
+<li>
+<p>Structured Note-Taking</p>
+<ul>
+<li>It involves the agent regularly writing notes persisted to memory outside the context window, which get pulled back in later.</li>
+</ul>
+</li>
+<li>
+<p>Sub-Agent Architectures</p>
+<ul>
+<li>Rather than one agent maintaining state across an entire project, specialized sub-agents handle focus tasks with clean context windows. The main agent coordinates with a high-level plan while sub-agents perform deep technical work. Each sub-agent may use tens of thousands of tokens in its exploration but returns only a condensed summary of 1,000–2,000 tokens to the lead agent — achieving a clear separation of concerns.</li>
+</ul>
+</li>
+</ul>
+<h2 id="my-understanding">My understanding</h2>
+<p>Write good and precise prompt at beginning. Just-in-time strategies is clever, it just work like human brain, when we need a reference/tool, we take it, otherwise we place it in somewhere, rather than memorized all these resources.</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Stomach nourishing guide</title>
       <link>http://localhost:1313/posts/keep_stomach_health/</link>
@@ -51,6 +244,74 @@
 <li>barley tea</li>
 <li>Ginger and red date tea</li>
 </ol>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Understanding Pointpillars | EUFS</title>
+      <link>http://localhost:1313/posts/eufs/pointpillars/</link>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/eufs/pointpillars/</guid>
+      <description>&lt;p&gt;Why we need to know PointPillar? Well since most autonumous vehicle companies use or reference this algorithm in their perception system, e.g. Waymo, Baidu Apollo.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-pointpillars&#34;&gt;What is PointPillars&lt;/h2&gt;
+&lt;p&gt;PointPillar is a deep learning architecture specifically designed for 3D object detection from point clouds.&lt;/p&gt;
+&lt;p&gt;The name &amp;ldquo;PointPillars&amp;rdquo; comes from how it processes data: instead of treating the point cloud as random 3D points or complex 3D voxels, it organizes into vertical columns called &amp;ldquo;pillars&amp;rdquo;.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Why we need to know PointPillar? Well since most autonumous vehicle companies use or reference this algorithm in their perception system, e.g. Waymo, Baidu Apollo.</p>
+<h2 id="what-is-pointpillars">What is PointPillars</h2>
+<p>PointPillar is a deep learning architecture specifically designed for 3D object detection from point clouds.</p>
+<p>The name &ldquo;PointPillars&rdquo; comes from how it processes data: instead of treating the point cloud as random 3D points or complex 3D voxels, it organizes into vertical columns called &ldquo;pillars&rdquo;.</p>
+<h2 id="how-pointpillar-works">How PointPillar works?</h2>
+<h4 id="step-1-from-point-clouds-to-pillars">Step 1: From point clouds to Pillars</h4>
+<ul>
+<li>We start with input point clouds data that detected by our LiDAR</li>
+<li>We then divide the ground plane into a grid of small cells</li>
+<li>Each cell is like a vertical column or pillar extending upward</li>
+<li>We assign each 3D point to the pillar it falls into</li>
+</ul>
+<h4 id="step-2-pillar-feature-encoding">Step 2: Pillar Feature Encoding</h4>
+<p>For each pillar, we need to extract meaningful features from all the points inside it:</p>
+<ul>
+<li>The average location of points in the pillar</li>
+<li>How spread out the points are</li>
+<li>The shape formed by the points</li>
+<li>How the poins relate to the pillar&rsquo;s center
+This step converts irregular, variable-length point sets into fixed-size feature vectors that a neural network can process.</li>
+</ul>
+<h4 id="step-3-birds-eye-view-representation">Step 3: Bird’s Eye View Representation</h4>
+<p>The pillar features are “scattered” back to their original 2D grid positions, creating a Bird’s Eye View (BEV) representation.</p>
+<p>Imagine looking down at the track from a drone above the car. This BEV image represents:</p>
+<ul>
+<li>Where pillars contain points (occupied space)</li>
+<li>What features those points have (learned by the network)</li>
+<li>The spatial relationship between different areas</li>
+</ul>
+<p>Why this is clever: By converting 3D point clouds into a 2D BEV image, we can now use standard 2D CNNs</p>
+<h4 id="step-4-2d-backbone-network">Step 4: 2D Backbone Network</h4>
+<p>Now we have a 2D image, we can process it with CNNs:</p>
+<p>What happens:</p>
+<ul>
+<li>Multiple layers of convolutions extract increasingly abstract features</li>
+<li>Early layers might detect edges and basic shapes</li>
+<li>Deeper layers combine information to understand “this pattern looks like a cone”</li>
+<li>Multiple resolution levels are processed and combined</li>
+</ul>
+<h2 id="series-perception">Series Perception</h2>
+<ol>
+<li><a href="../pointcloud">Introduction to point cloud</a></li>
+<li><a href="../pointpillars">Introduction to PointPillars</a></li>
+</ol>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>XiaoHei</title>
+      <link>http://localhost:1313/posts/electric_guitar/</link>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/electric_guitar/</guid>
+      <description>&lt;p&gt;Say hello to XiaoHei:
+[audio link]&lt;/p&gt;
+&lt;p&gt;This is my new SSS electric guitar – a Fender Squier Affinity Stratocaster with a SSS pickup configuration. I got this Amazon bundle that includes a Mustang Micro, gig bag, strap, headphones, and picks. Since I already have Edifier MR4 monitor speakers, I can connect the Mustang Micro directly to them using a 3.5mm to dual 6.35mm TRS cable.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Say hello to XiaoHei:
+[audio link]</p>
+<p>This is my new SSS electric guitar – a Fender Squier Affinity Stratocaster with a SSS pickup configuration. I got this Amazon bundle that includes a Mustang Micro, gig bag, strap, headphones, and picks. Since I already have Edifier MR4 monitor speakers, I can connect the Mustang Micro directly to them using a 3.5mm to dual 6.35mm TRS cable.</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -162,6 +423,59 @@ Each approach has trade-offs in term of accuracy, speed, cost and robustness.</l
 <ol>
 <li><a href="../pointcloud">Introduction to Point Cloud</a></li>
 </ol>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>How to create your own cryptocurrency</title>
+      <link>http://localhost:1313/posts/how_to_create_a_cryptocurrency/</link>
+      <pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/how_to_create_a_cryptocurrency/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/techweekly/techweek7/</link>
+      <pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/techweekly/techweek7/</guid>
+      <description>&lt;h2 id=&#34;fun-facts&#34;&gt;Fun Facts:&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Powersort: Default sorting algorithm for python&lt;/li&gt;
+&lt;li&gt;The reason why Nvidia Jetson has a low power consumption is because it uses arm architecture. Therefore you need to use their specific torch or other frameworks version.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;resources&#34;&gt;Resources:&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;LeRobot is an open-source project by Hugging Face that makes it easy to explore the world of robotics. Their open-sourced robotic arm S0-101 is great for beginner.&lt;/li&gt;
+&lt;li&gt;The liveshare extension in vscode enables real-time collaborative coding. Team members can simultaneously edit the same codebase, share terminal sessions and debug together.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <content:encoded><![CDATA[<h2 id="fun-facts">Fun Facts:</h2>
+<ol>
+<li>Powersort: Default sorting algorithm for python</li>
+<li>The reason why Nvidia Jetson has a low power consumption is because it uses arm architecture. Therefore you need to use their specific torch or other frameworks version.</li>
+</ol>
+<h2 id="resources">Resources:</h2>
+<ol>
+<li>LeRobot is an open-source project by Hugging Face that makes it easy to explore the world of robotics. Their open-sourced robotic arm S0-101 is great for beginner.</li>
+<li>The liveshare extension in vscode enables real-time collaborative coding. Team members can simultaneously edit the same codebase, share terminal sessions and debug together.</li>
+</ol>
+]]></content:encoded>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/trading/</link>
+      <pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/trading/</guid>
+      <description>&lt;h1 id=&#34;fibonachi&#34;&gt;Fibonachi&lt;/h1&gt;
+&lt;h1 id=&#34;double-ma-line-strategies&#34;&gt;Double MA line strategies&lt;/h1&gt;
+&lt;h1 id=&#34;experience&#34;&gt;Experience&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;short period: high leverage
+long period: low leverage
+&lt;/code&gt;&lt;/pre&gt;</description>
+      <content:encoded><![CDATA[<h1 id="fibonachi">Fibonachi</h1>
+<h1 id="double-ma-line-strategies">Double MA line strategies</h1>
+<h1 id="experience">Experience</h1>
+<pre><code>short period: high leverage
+long period: low leverage
+</code></pre>
 ]]></content:encoded>
     </item>
     <item>
@@ -447,6 +761,33 @@ Each approach has trade-offs in term of accuracy, speed, cost and robustness.</l
 <ol>
 <li>Weakest Isolation: It shares the host OS and kernel.</li>
 <li>Limited scape: It&rsquo;s purely a security feature, not a deployment or development tool.</li>
+</ol>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Lightroom Basics | King Weekly</title>
+      <link>http://localhost:1313/posts/techweekly/techweek6/</link>
+      <pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/techweekly/techweek6/</guid>
+      <description>&lt;h2 id=&#34;trivias&#34;&gt;Trivias&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Google developed the V8 engine, and Mozilla developed SpiderMonkey. Both are JavaScript engines used to execute JavaScript code. The V8 engine is the core of Chrome and Chromium, while SpiderMonkey is the core of Firefox.&lt;/li&gt;
+&lt;li&gt;ipython enables to run unix commands, run functions and run one line of code at a time in your terminal.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Maths at the back of Convolution: &lt;a href=&#34;https://youtu.be/KuXjwB4LzSA?si=tU6_SrgzS0y8yxdH&#34;&gt;3b1b&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Book 《新摄影笔记-宁思潇潇》 explains many theorys required for photography like exposure, framing, composition, reality and illusion.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <content:encoded><![CDATA[<h2 id="trivias">Trivias</h2>
+<ol>
+<li>Google developed the V8 engine, and Mozilla developed SpiderMonkey. Both are JavaScript engines used to execute JavaScript code. The V8 engine is the core of Chrome and Chromium, while SpiderMonkey is the core of Firefox.</li>
+<li>ipython enables to run unix commands, run functions and run one line of code at a time in your terminal.</li>
+</ol>
+<h2 id="resources">Resources</h2>
+<ol>
+<li>Maths at the back of Convolution: <a href="https://youtu.be/KuXjwB4LzSA?si=tU6_SrgzS0y8yxdH">3b1b</a></li>
+<li>Book 《新摄影笔记-宁思潇潇》 explains many theorys required for photography like exposure, framing, composition, reality and illusion.</li>
 </ol>
 ]]></content:encoded>
     </item>
@@ -986,7 +1327,7 @@ O(n) represents the asymptotic upper bound of the running time of an algorithm<b
 <ul>
 <li>Normally we can directly transfer T(n) to O(n) or θ(n).</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Int sum <span style="color:#f92672">=</span> 0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Int sum <span style="color:#f92672">=</span> 0
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">for</span> (i <span style="color:#f92672">=</span> 1; i <span style="color:#f92672">&lt;=</span> n, i <span style="color:#f92672">++</span>) {
 </span></span><span style="display:flex;"><span>    sum <span style="color:#f92672">=</span> sum <span style="color:#f92672">+</span> i
 </span></span><span style="display:flex;"><span>}
@@ -1164,7 +1505,7 @@ A great first-time rock climbing experience, meet interesting people and learned
       <content:encoded><![CDATA[<blockquote>
 <p>A free web application that create a two-host daily podcast of the news that matters to you. Just add your favorite RSS feeds from news sites, blogs, and social media. Our app will automatically generate conversational scripts using an LLM and then produce a customized audio episode with text-to-speech. It&rsquo;s the perfect way to stay updated on your commute.</p>
 </blockquote>
-<p><a href="https://lbtig.kingportal.tech">Official website</a><br>
+<p><a href="https://lbtig.kingportal.cc">Official website</a><br>
 <a href="https://github.com/Kingjinsight/Lets-break-the-information-gap">Source code</a></p>
 <iframe width=100% height=450 src="https://www.youtube.com/embed/Xx2ari_n_f0?si=af_64RookXLDccYE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>   
 <h2 id="motivation">Motivation</h2>

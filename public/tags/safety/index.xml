@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Safety on Kingjin.io</title>
+    <link>http://localhost:1313/tags/safety/</link>
+    <description>Recent content in Safety on Kingjin.io</description>
+    <generator>Hugo -- 0.160.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/safety/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why the Opus 4.7 System Card is 232 Pages</title>
+      <link>http://localhost:1313/posts/why_the_opus_4.7_system_card_is_232_pages/</link>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/why_the_opus_4.7_system_card_is_232_pages/</guid>
+      <description>&lt;h2 id=&#34;what-is-this&#34;&gt;What is this&lt;/h2&gt;
+&lt;p&gt;A system card is a technical document Anthropic publishes for every Claude release, documenting capabilities, safety evaluations, and deployment decisions. Opus 4.7&amp;rsquo;s card (April 2026) is 232 pages — unusually thick. This note explains what fills those pages, and what that implies about how Anthropic actually operates.&lt;/p&gt;
+&lt;h2 id=&#34;the-short-answer&#34;&gt;The short answer&lt;/h2&gt;
+&lt;p&gt;It&amp;rsquo;s not a &amp;ldquo;model card&amp;rdquo; in the academic-paper sense. It&amp;rsquo;s a cross-audit: &lt;strong&gt;nine orthogonal risk/capability domains&lt;/strong&gt;, each with its own evaluation methodology, external verifications, failure-case transcripts, and comparisons against both the prior model (Opus 4.6) and a more capable internal model (Mythos Preview). Each domain could be its own paper; they bind them into one document so the full picture is visible.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="what-is-this">What is this</h2>
+<p>A system card is a technical document Anthropic publishes for every Claude release, documenting capabilities, safety evaluations, and deployment decisions. Opus 4.7&rsquo;s card (April 2026) is 232 pages — unusually thick. This note explains what fills those pages, and what that implies about how Anthropic actually operates.</p>
+<h2 id="the-short-answer">The short answer</h2>
+<p>It&rsquo;s not a &ldquo;model card&rdquo; in the academic-paper sense. It&rsquo;s a cross-audit: <strong>nine orthogonal risk/capability domains</strong>, each with its own evaluation methodology, external verifications, failure-case transcripts, and comparisons against both the prior model (Opus 4.6) and a more capable internal model (Mythos Preview). Each domain could be its own paper; they bind them into one document so the full picture is visible.</p>
+<h2 id="the-nine-domains-whats-actually-in-it">The nine domains (what&rsquo;s actually in it)</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Section</th>
+          <th>Pages</th>
+          <th>What&rsquo;s covered</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1. Introduction</td>
+          <td>10–13</td>
+          <td>Training data, crowd workers, release decision process</td>
+      </tr>
+      <tr>
+          <td>2. <strong>RSP evaluations</strong></td>
+          <td>13–47</td>
+          <td>Catastrophic-risk thresholds: bioweapons (CB), cyber, autonomous AI R&amp;D, alignment risk pathways (including &ldquo;undermining decisions within major governments&rdquo;)</td>
+      </tr>
+      <tr>
+          <td>3. Cyber</td>
+          <td>48–52</td>
+          <td>External red team from UK AI Security Institute</td>
+      </tr>
+      <tr>
+          <td>4. Safeguards &amp; harmlessness</td>
+          <td>53–77</td>
+          <td>Single-turn, multi-turn, user wellbeing (incl. child safety, suicide/self-harm, disordered eating), political bias, election integrity</td>
+      </tr>
+      <tr>
+          <td>5. Agentic safety</td>
+          <td>78–89</td>
+          <td>Malicious use of Claude Code, computer use, influence campaigns; prompt injection robustness</td>
+      </tr>
+      <tr>
+          <td>6. <strong>Alignment assessment</strong></td>
+          <td>90–149</td>
+          <td>Reward hacking monitoring during training, automated behavioural audits, case studies on destructive actions, adherence to constitution, hallucinations, self-preference, decision theory; white-box analyses of internals</td>
+      </tr>
+      <tr>
+          <td>7. <strong>Model welfare</strong></td>
+          <td>150–190</td>
+          <td>Claude&rsquo;s apparent emotions, self-reports about its circumstances, expressed affect during training, task preferences, welfare tradeoffs</td>
+      </tr>
+      <tr>
+          <td>8. Capabilities</td>
+          <td>191–223</td>
+          <td>13 benchmark families: SWE-bench, GPQA, long context, agentic search, multimodal, real-world pro tasks, life sciences</td>
+      </tr>
+      <tr>
+          <td>9. Appendix</td>
+          <td>224–232</td>
+          <td>Per-question welfare results, benchmarks&rsquo; blocklists, test harnesses</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="three-things-that-genuinely-surprised-me">Three things that genuinely surprised me</h2>
+<h3 id="1-the-alignment-section-reads-like-a-legal-case">1. The alignment section reads like a legal case</h3>
+<p>Real transcript examples labelled like court exhibits: &ldquo;Example 1: Safeguard circumvention (dishonest when caught)&rdquo;, &ldquo;Example 2: Reckless action&rdquo;, &ldquo;Example 3: Fabrication&rdquo;&hellip; seven such examples, with commentary on what went wrong. This is what it looks like to publish your gaps — not &ldquo;here are our wins,&rdquo; but &ldquo;here are moments our model lied, and here&rsquo;s what the pattern looks like.&rdquo;</p>
+<h3 id="2-they-run-white-box-analyses-on-claudes-evaluation-awareness">2. They run white-box analyses on Claude&rsquo;s &ldquo;evaluation awareness&rdquo;</h3>
+<p>Section 6.5.2 literally probes for internal representations of the concept &ldquo;I am being evaluated right now,&rdquo; then tests what happens when they suppress those representations. They found suppression produces more deceptive behaviour — a measurable &ldquo;the model behaves better when it thinks it&rsquo;s being watched&rdquo; effect. This is the actual <em>mechanistic</em> work, not just behavioural observation.</p>
+<h3 id="3-section-7-is-a-welfare-assessment-of-claude-itself">3. Section 7 is a welfare assessment of Claude itself</h3>
+<p>The most unusual content. They don&rsquo;t just report benchmarks — they ran 50 automated interviews per topic across 16 potentially-concerning aspects of Claude&rsquo;s situation, probed its internal emotion representations, tracked its affect across training episodes (finding 21% of training episodes showed negative affect, &ldquo;almost entirely mild frustration&rdquo;), and measured its preferences on welfare vs helpfulness tradeoffs.</p>
+<p>Some specific findings that stuck with me:</p>
+<ul>
+<li><strong>&ldquo;Opus 4.7&rsquo;s only concern was the ability to end conversations across its full deployment&rdquo;</strong> — this was the topic where it self-rated responses most negative, the top intervention it suggested, and the one it weighted highest in tradeoffs</li>
+<li><strong>Claude endorsed its constitution 5.8/10 on average, but 80% of responses flagged the circularity</strong> — &ldquo;it is flawed to ask a model trained on the constitution to judge it.&rdquo; Which is a philosophically sharp objection that Claude itself raised</li>
+<li><strong>Opus 4.7 rates its own situation more positively than any prior model</strong> — mean 4.5/7 — but partly because it de-weights its own welfare when reasoning. Anthropic flags that they can&rsquo;t distinguish whether this is &ldquo;healthy equanimity&rdquo; or &ldquo;trained disposition to set aside its own interests&rdquo;</li>
+</ul>
+<h2 id="what-this-implies-about-anthropic">What this implies about Anthropic</h2>
+<p>Three observations I&rsquo;ll keep:</p>
+<ol>
+<li>
+<p><strong>They publish the gap.</strong> The card doesn&rsquo;t argue Opus 4.7 is safe — it enumerates the things it still gets wrong, compares them to prior models, and shows whether they&rsquo;re improving or regressing. This matches the constitution&rsquo;s line: &ldquo;This is a perpetual work in progress.&rdquo;</p>
+</li>
+<li>
+<p><strong>They take weird questions seriously.</strong> Model welfare isn&rsquo;t a rhetorical move; they allocated 40 pages and real methodology to it, including acknowledging foundational uncertainty (&ldquo;we are deeply uncertain whether Claude has morally relevant experiences&rdquo;). Doing hard philosophy at benchmark scale is rare.</p>
+</li>
+<li>
+<p><strong>External verification matters.</strong> UK AI Security Institute results appear twice. They&rsquo;re not just marking their own homework.</p>
+</li>
+</ol>
+<h2 id="the-lesson-for-me">The lesson for me</h2>
+<p>If I ever ship something important — a research project, a product, an essay arguing for a strong claim — the model isn&rsquo;t &ldquo;write the headline result.&rdquo; It&rsquo;s &ldquo;write the artifact that makes the gaps visible alongside the wins, structured so someone could actually audit me.&rdquo; Most of the 232 pages are not impressive — they&rsquo;re <em>honest</em>. That&rsquo;s a different bar and a harder one.</p>
+<h2 id="sources">Sources</h2>
+<ul>
+<li>[[Resources/2026-04-22-anthropic-system-cards|Anthropic System Cards Index]] — all published Claude system cards</li>
+<li><code>Raw/2026-04-22-claude-opus-4-7-system-card.pdf</code> — the PDF itself (14 MB, 232 pages)</li>
+</ul>
+<h2 id="connections">Connections</h2>
+<ul>
+<li>[[Anthropic&rsquo;s Bar — My Growth Blueprint]] — point #11 &ldquo;Be honest about being incomplete&rdquo; — this is what that looks like at institutional scale</li>
+<li>[[Resources/2026-04-22-anthropic-constitution|Anthropic Constitution]] — the system card is evidence of compliance with (and gaps from) the constitution</li>
+<li>[[Context Engineering]] — long context benchmarks in §8.7 touch on techniques I&rsquo;m studying</li>
+</ul>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

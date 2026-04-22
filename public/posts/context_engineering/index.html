@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Context Engineering | Kingjin.io</title>
+<meta name="keywords" content="AI, Engineering">
+<meta name="description" content="We have several parts in context:
+
+System prompt
+User Prompt
+Dialogue history
+Memory
+Relavent information from other sources
+Tool use
+Reasoning
+
+What is context engineering
+Prompt Engineering is about how to write instructions. Context Engineering is broader - it covers strategies for curating and maintaining the optimal set of tokens during inference, including everything that lands in context window beyond just the system prompt: tools, MCP servers, Skills, external data, message history and so on.">
+<meta name="author" content="King Jin">
+<link rel="canonical" href="http://localhost:1313/posts/context_engineering/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.4c059f1f8918bd9bd845f25179a8ee65fdd6b66d8169f960699cf5c669a369ff.css" integrity="sha256-TAWfH4kYvZvYRfJReajuZf3Wtm2BaflgaZz1xmmjaf8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/context_engineering/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Kingjin.io (Alt + H)">Kingjin.io</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/aboutme/" title="About me">
+                    <span>About me</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Context Engineering
+    </h1>
+    <div class="post-meta"><span title='2026-03-11 00:00:00 +0000 UTC'>March 11, 2026</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;King Jin
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#what-is-context-engineering" aria-label="What is context engineering">What is context engineering</a></li>
+                <li>
+                    <a href="#system-prompt" aria-label="System prompt">System prompt</a></li>
+                <li>
+                    <a href="#context-retrieval" aria-label="Context Retrieval">Context Retrieval</a></li>
+                <li>
+                    <a href="#long-horizon-tasks-three-techniques" aria-label="Long-Horizon Tasks: Three techniques">Long-Horizon Tasks: Three techniques</a></li>
+                <li>
+                    <a href="#my-understanding" aria-label="My understanding">My understanding</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>We have several parts in context:</p>
+<ul>
+<li>System prompt</li>
+<li>User Prompt</li>
+<li>Dialogue history</li>
+<li>Memory</li>
+<li>Relavent information from other sources</li>
+<li>Tool use</li>
+<li>Reasoning</li>
+</ul>
+<h2 id="what-is-context-engineering">What is context engineering<a hidden class="anchor" aria-hidden="true" href="#what-is-context-engineering">#</a></h2>
+<p><strong>Prompt Engineering</strong> is about how to write instructions. <strong>Context Engineering</strong> is broader - it covers strategies for curating and maintaining the optimal set of tokens during inference, including everything that lands in context window beyond just the system prompt: tools, MCP servers, Skills, external data, message history and so on.</p>
+<h2 id="system-prompt">System prompt<a hidden class="anchor" aria-hidden="true" href="#system-prompt">#</a></h2>
+<p>Claude&rsquo;s system prompt: <a href="https://platform.claude.com/docs/en/release-notes/system-prompts">link</a></p>
+<h2 id="context-retrieval">Context Retrieval<a hidden class="anchor" aria-hidden="true" href="#context-retrieval">#</a></h2>
+<ul>
+<li>Just in time context strategies</li>
+<li>Rather than pre-loading all relevant data up front, agents maintain lightweight identifiers(file paths, stored queries, web links) and dynamically load data into context at runtime using tools.</li>
+</ul>
+<h2 id="long-horizon-tasks-three-techniques">Long-Horizon Tasks: Three techniques<a hidden class="anchor" aria-hidden="true" href="#long-horizon-tasks-three-techniques">#</a></h2>
+<ul>
+<li>
+<p>Compaction</p>
+<ul>
+<li>It takes a conversation nearing the context window limit, summarizes it, and reinitializes a new context window with the summary.</li>
+<li>The art lies in selecting what to keep vs. discard, overly aggressive compaction can lose subtle but critical context. Anthropic recommends starting by maximizing recall.</li>
+</ul>
+</li>
+<li>
+<p>Structured Note-Taking</p>
+<ul>
+<li>It involves the agent regularly writing notes persisted to memory outside the context window, which get pulled back in later.</li>
+</ul>
+</li>
+<li>
+<p>Sub-Agent Architectures</p>
+<ul>
+<li>Rather than one agent maintaining state across an entire project, specialized sub-agents handle focus tasks with clean context windows. The main agent coordinates with a high-level plan while sub-agents perform deep technical work. Each sub-agent may use tens of thousands of tokens in its exploration but returns only a condensed summary of 1,000–2,000 tokens to the lead agent — achieving a clear separation of concerns.</li>
+</ul>
+</li>
+</ul>
+<h2 id="my-understanding">My understanding<a hidden class="anchor" aria-hidden="true" href="#my-understanding">#</a></h2>
+<p>Write good and precise prompt at beginning. Just-in-time strategies is clever, it just work like human brain, when we need a reference/tool, we take it, otherwise we place it in somewhere, rather than memorized all these resources.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/ai/">AI</a></li>
+      <li><a href="http://localhost:1313/tags/engineering/">Engineering</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/limitation_of_current_ai/">
+    <span class="title">«</span>
+    <br>
+    <span>The Limitations of Current AI: Architecture, Embodiment, and Education</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/keep_stomach_health/">
+    <span class="title">»</span>
+    <br>
+    <span>Stomach nourishing guide</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Kingjin.io</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

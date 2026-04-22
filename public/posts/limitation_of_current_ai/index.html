@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>The Limitations of Current AI: Architecture, Embodiment, and Education | Kingjin.io</title>
+<meta name="keywords" content="AI, brain-science, education">
+<meta name="description" content="This post summarises a podcast discussing the limitations of current AI from multiple perspectives. Watch the podcast
+I. Three Fundamental Dilemmas Facing AI (Architecture Level)
+Professor Liu Jia argues that current transformer-based large models have three fundamental structural flaws compared to the human brain:
+1. Insufficient neuron complexity. During evolution, the brain took two paths: increasing the number of neurons and increasing their complexity. Today&rsquo;s AI neurons are extremely simple — sum the inputs, pass through an activation function, done. Biological neurons, by contrast, are four-dimensional structures (three spatial dimensions &#43; time), with their own dynamics. A single refined biological neuron has computing power equivalent to 5–8 layers of a deep neural network. Transformers have no time dimension, no partial differential equations — they are fundamentally a &ldquo;2D&rdquo; system.">
+<meta name="author" content="King Jin">
+<link rel="canonical" href="http://localhost:1313/posts/limitation_of_current_ai/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.4c059f1f8918bd9bd845f25179a8ee65fdd6b66d8169f960699cf5c669a369ff.css" integrity="sha256-TAWfH4kYvZvYRfJReajuZf3Wtm2BaflgaZz1xmmjaf8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/limitation_of_current_ai/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Kingjin.io (Alt + H)">Kingjin.io</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/aboutme/" title="About me">
+                    <span>About me</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      The Limitations of Current AI: Architecture, Embodiment, and Education
+    </h1>
+    <div class="post-meta"><span title='2026-04-02 00:00:00 +0000 UTC'>April 2, 2026</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;King Jin
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#i-three-fundamental-dilemmas-facing-ai-architecture-level" aria-label="I. Three Fundamental Dilemmas Facing AI (Architecture Level)">I. Three Fundamental Dilemmas Facing AI (Architecture Level)</a></li>
+                <li>
+                    <a href="#ii-two-core-challenges-of-embodied-intelligence" aria-label="II. Two Core Challenges of Embodied Intelligence">II. Two Core Challenges of Embodied Intelligence</a></li>
+                <li>
+                    <a href="#iii-education-in-the-age-of-ai" aria-label="III. Education in the Age of AI">III. Education in the Age of AI</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>This post summarises a podcast discussing the limitations of current AI from multiple perspectives. <a href="https://www.youtube.com/watch?v=-Et3GJRSI_0&amp;t=5788s">Watch the podcast</a></p>
+<h2 id="i-three-fundamental-dilemmas-facing-ai-architecture-level">I. Three Fundamental Dilemmas Facing AI (Architecture Level)<a hidden class="anchor" aria-hidden="true" href="#i-three-fundamental-dilemmas-facing-ai-architecture-level">#</a></h2>
+<p>Professor Liu Jia argues that current transformer-based large models have three fundamental structural flaws compared to the human brain:</p>
+<p><strong>1. Insufficient neuron complexity.</strong> During evolution, the brain took two paths: increasing the number of neurons <em>and</em> increasing their complexity. Today&rsquo;s AI neurons are extremely simple — sum the inputs, pass through an activation function, done. Biological neurons, by contrast, are four-dimensional structures (three spatial dimensions + time), with their own dynamics. A single refined biological neuron has computing power equivalent to 5–8 layers of a deep neural network. Transformers have no time dimension, no partial differential equations — they are fundamentally a &ldquo;2D&rdquo; system.</p>
+<p><strong>2. No long-range feedback connections.</strong> Roughly 40% of the brain&rsquo;s connections are long-range feedback links (e.g., the frontal lobe connecting directly back to the visual cortex), used for resolving uncertainty, forming hypotheses, and enabling creativity. Transformers are purely feedforward networks — once trained, there is no feedback at all. This is precisely why their reasoning ability has a ceiling.</p>
+<p><strong>3. No parallel processing capability.</strong> The essence of a transformer is &ldquo;predict the next token,&rdquo; which is inherently sequential. But when a human faces danger, they instantly process massive amounts of visual information in parallel — you don&rsquo;t analyse a flying object token by token, you just dodge. This kind of parallel perception is architecturally impossible for transformers.</p>
+<hr>
+<h2 id="ii-two-core-challenges-of-embodied-intelligence">II. Two Core Challenges of Embodied Intelligence<a hidden class="anchor" aria-hidden="true" href="#ii-two-core-challenges-of-embodied-intelligence">#</a></h2>
+<p><strong>1. Perception: parallel real-time sensing (corresponding to point 3 above).</strong> True embodied intelligence requires the ability to instantly catch a &ldquo;fleeting&rdquo; danger and react, as our ancestors did in the wild. This is an open-ended problem, unlike autonomous driving which operates on a closed dataset. Existing robots (including Optimus) have no real &ldquo;eyes&rdquo; — they are essentially pre-programmed industrial robot arms in a different shape.</p>
+<p><strong>2. Motor control: the cerebellum&rsquo;s world model (System 1).</strong> Of the brain&rsquo;s 86 billion neurons, roughly 70 billion are in the cerebellum — 6–7 times the number in the cerebral cortex. The cerebellum builds an intuitive physical world model: automatically adjusting grip force when picking up a full versus empty cup, tossing a book onto a table. These are effortless for humans but computationally extreme for robots.</p>
+<p>Current AI addresses &ldquo;System 2&rdquo; (cerebral cortex — reasoning, language, mathematics) and has not touched &ldquo;System 1&rdquo; (cerebellum/basal ganglia — intuition, movement, perception) at all. True embodied intelligence requires <strong>a second enlightenment grounded in neuroscience</strong>.</p>
+<hr>
+<h2 id="iii-education-in-the-age-of-ai">III. Education in the Age of AI<a hidden class="anchor" aria-hidden="true" href="#iii-education-in-the-age-of-ai">#</a></h2>
+<p>Liu Jia argues that today&rsquo;s education system — from primary school through university — was built on the first Industrial Revolution and has entirely become &ldquo;false demand&rdquo; in the AI era. He proposes three core directions:</p>
+<p><strong>1. Emphasise the concept of &ldquo;self&rdquo;.</strong> The industrial age buried the self inside collective division of labour — people just had to tighten their bolts. In the AI era, one person plus ten thousand GPUs can form a one-person company. The greatest source of motivation is <strong>one&rsquo;s own interests</strong>. The core of education should be helping children discover &ldquo;who am I and what do I want.&rdquo;</p>
+<p><strong>2. Cultivate AI-native thinking.</strong> Knowing how to use AI tools is not the same as AI-native thinking. Being AI-native is a <strong>fundamental shift in cognitive paradigm</strong> — treating AI as part of your body, not as a tool. Adults struggle to make this shift because of entrenched thinking patterns; children can build this mindset from scratch far more easily.</p>
+<p><strong>3. Master deductive reasoning / first-principles thinking.</strong> AI can answer any surface-level question, but finding the &ldquo;logical origin&rdquo; is something AI cannot do. Children must be trained to ask, before any decision: <strong>What is my logical starting point?</strong> This is both an anchor against getting lost in an information explosion and the root of 0-to-1 creativity.</p>
+<blockquote>
+<p>His closing point: <strong>education focused on memorising knowledge has become completely worthless</strong> (because large models make knowledge instantly accessible). The most important education going forward is teaching people <strong>how to become themselves</strong>.</p>
+</blockquote>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/ai/">AI</a></li>
+      <li><a href="http://localhost:1313/tags/brain-science/">Brain-Science</a></li>
+      <li><a href="http://localhost:1313/tags/education/">Education</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/why_the_opus_4.7_system_card_is_232_pages/">
+    <span class="title">«</span>
+    <br>
+    <span>Why the Opus 4.7 System Card is 232 Pages</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/context_engineering/">
+    <span class="title">»</span>
+    <br>
+    <span>Context Engineering</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Kingjin.io</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

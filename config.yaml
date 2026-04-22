@@ -32,6 +32,8 @@ params:
       url: "/index.xml"
     
 
+  author: "King"
+
   fuseOpts:
     isCaseSensitive: false
     shouldSort: true

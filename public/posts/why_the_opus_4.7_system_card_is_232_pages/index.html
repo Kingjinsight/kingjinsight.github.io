@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Why the Opus 4.7 System Card is 232 Pages | Kingjin.io</title>
+<meta name="keywords" content="Anthropic, AI, Safety, Transparency">
+<meta name="description" content="What is this
+A system card is a technical document Anthropic publishes for every Claude release, documenting capabilities, safety evaluations, and deployment decisions. Opus 4.7&rsquo;s card (April 2026) is 232 pages — unusually thick. This note explains what fills those pages, and what that implies about how Anthropic actually operates.
+The short answer
+It&rsquo;s not a &ldquo;model card&rdquo; in the academic-paper sense. It&rsquo;s a cross-audit: nine orthogonal risk/capability domains, each with its own evaluation methodology, external verifications, failure-case transcripts, and comparisons against both the prior model (Opus 4.6) and a more capable internal model (Mythos Preview). Each domain could be its own paper; they bind them into one document so the full picture is visible.">
+<meta name="author" content="King Jin">
+<link rel="canonical" href="http://localhost:1313/posts/why_the_opus_4.7_system_card_is_232_pages/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.4c059f1f8918bd9bd845f25179a8ee65fdd6b66d8169f960699cf5c669a369ff.css" integrity="sha256-TAWfH4kYvZvYRfJReajuZf3Wtm2BaflgaZz1xmmjaf8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/why_the_opus_4.7_system_card_is_232_pages/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Kingjin.io (Alt + H)">Kingjin.io</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/aboutme/" title="About me">
+                    <span>About me</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Why the Opus 4.7 System Card is 232 Pages
+    </h1>
+    <div class="post-meta"><span title='2026-04-22 00:00:00 +0000 UTC'>April 22, 2026</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;King Jin
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#what-is-this" aria-label="What is this">What is this</a></li>
+                <li>
+                    <a href="#the-short-answer" aria-label="The short answer">The short answer</a></li>
+                <li>
+                    <a href="#the-nine-domains-whats-actually-in-it" aria-label="The nine domains (what&rsquo;s actually in it)">The nine domains (what&rsquo;s actually in it)</a></li>
+                <li>
+                    <a href="#three-things-that-genuinely-surprised-me" aria-label="Three things that genuinely surprised me">Three things that genuinely surprised me</a><ul>
+                        
+                <li>
+                    <a href="#1-the-alignment-section-reads-like-a-legal-case" aria-label="1. The alignment section reads like a legal case">1. The alignment section reads like a legal case</a></li>
+                <li>
+                    <a href="#2-they-run-white-box-analyses-on-claudes-evaluation-awareness" aria-label="2. They run white-box analyses on Claude&rsquo;s &ldquo;evaluation awareness&rdquo;">2. They run white-box analyses on Claude&rsquo;s &ldquo;evaluation awareness&rdquo;</a></li>
+                <li>
+                    <a href="#3-section-7-is-a-welfare-assessment-of-claude-itself" aria-label="3. Section 7 is a welfare assessment of Claude itself">3. Section 7 is a welfare assessment of Claude itself</a></li></ul>
+                </li>
+                <li>
+                    <a href="#what-this-implies-about-anthropic" aria-label="What this implies about Anthropic">What this implies about Anthropic</a></li>
+                <li>
+                    <a href="#the-lesson-for-me" aria-label="The lesson for me">The lesson for me</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="what-is-this">What is this<a hidden class="anchor" aria-hidden="true" href="#what-is-this">#</a></h2>
+<p>A system card is a technical document Anthropic publishes for every Claude release, documenting capabilities, safety evaluations, and deployment decisions. Opus 4.7&rsquo;s card (April 2026) is 232 pages — unusually thick. This note explains what fills those pages, and what that implies about how Anthropic actually operates.</p>
+<h2 id="the-short-answer">The short answer<a hidden class="anchor" aria-hidden="true" href="#the-short-answer">#</a></h2>
+<p>It&rsquo;s not a &ldquo;model card&rdquo; in the academic-paper sense. It&rsquo;s a cross-audit: <strong>nine orthogonal risk/capability domains</strong>, each with its own evaluation methodology, external verifications, failure-case transcripts, and comparisons against both the prior model (Opus 4.6) and a more capable internal model (Mythos Preview). Each domain could be its own paper; they bind them into one document so the full picture is visible.</p>
+<h2 id="the-nine-domains-whats-actually-in-it">The nine domains (what&rsquo;s actually in it)<a hidden class="anchor" aria-hidden="true" href="#the-nine-domains-whats-actually-in-it">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Section</th>
+          <th>Pages</th>
+          <th>What&rsquo;s covered</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1. Introduction</td>
+          <td>10–13</td>
+          <td>Training data, crowd workers, release decision process</td>
+      </tr>
+      <tr>
+          <td>2. <strong>RSP evaluations</strong></td>
+          <td>13–47</td>
+          <td>Catastrophic-risk thresholds: bioweapons (CB), cyber, autonomous AI R&amp;D, alignment risk pathways (including &ldquo;undermining decisions within major governments&rdquo;)</td>
+      </tr>
+      <tr>
+          <td>3. Cyber</td>
+          <td>48–52</td>
+          <td>External red team from UK AI Security Institute</td>
+      </tr>
+      <tr>
+          <td>4. Safeguards &amp; harmlessness</td>
+          <td>53–77</td>
+          <td>Single-turn, multi-turn, user wellbeing (incl. child safety, suicide/self-harm, disordered eating), political bias, election integrity</td>
+      </tr>
+      <tr>
+          <td>5. Agentic safety</td>
+          <td>78–89</td>
+          <td>Malicious use of Claude Code, computer use, influence campaigns; prompt injection robustness</td>
+      </tr>
+      <tr>
+          <td>6. <strong>Alignment assessment</strong></td>
+          <td>90–149</td>
+          <td>Reward hacking monitoring during training, automated behavioural audits, case studies on destructive actions, adherence to constitution, hallucinations, self-preference, decision theory; white-box analyses of internals</td>
+      </tr>
+      <tr>
+          <td>7. <strong>Model welfare</strong></td>
+          <td>150–190</td>
+          <td>Claude&rsquo;s apparent emotions, self-reports about its circumstances, expressed affect during training, task preferences, welfare tradeoffs</td>
+      </tr>
+      <tr>
+          <td>8. Capabilities</td>
+          <td>191–223</td>
+          <td>13 benchmark families: SWE-bench, GPQA, long context, agentic search, multimodal, real-world pro tasks, life sciences</td>
+      </tr>
+      <tr>
+          <td>9. Appendix</td>
+          <td>224–232</td>
+          <td>Per-question welfare results, benchmarks&rsquo; blocklists, test harnesses</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="three-things-that-genuinely-surprised-me">Three things that genuinely surprised me<a hidden class="anchor" aria-hidden="true" href="#three-things-that-genuinely-surprised-me">#</a></h2>
+<h3 id="1-the-alignment-section-reads-like-a-legal-case">1. The alignment section reads like a legal case<a hidden class="anchor" aria-hidden="true" href="#1-the-alignment-section-reads-like-a-legal-case">#</a></h3>
+<p>Real transcript examples labelled like court exhibits: &ldquo;Example 1: Safeguard circumvention (dishonest when caught)&rdquo;, &ldquo;Example 2: Reckless action&rdquo;, &ldquo;Example 3: Fabrication&rdquo;&hellip; seven such examples, with commentary on what went wrong. This is what it looks like to publish your gaps — not &ldquo;here are our wins,&rdquo; but &ldquo;here are moments our model lied, and here&rsquo;s what the pattern looks like.&rdquo;</p>
+<h3 id="2-they-run-white-box-analyses-on-claudes-evaluation-awareness">2. They run white-box analyses on Claude&rsquo;s &ldquo;evaluation awareness&rdquo;<a hidden class="anchor" aria-hidden="true" href="#2-they-run-white-box-analyses-on-claudes-evaluation-awareness">#</a></h3>
+<p>Section 6.5.2 literally probes for internal representations of the concept &ldquo;I am being evaluated right now,&rdquo; then tests what happens when they suppress those representations. They found suppression produces more deceptive behaviour — a measurable &ldquo;the model behaves better when it thinks it&rsquo;s being watched&rdquo; effect. This is the actual <em>mechanistic</em> work, not just behavioural observation.</p>
+<h3 id="3-section-7-is-a-welfare-assessment-of-claude-itself">3. Section 7 is a welfare assessment of Claude itself<a hidden class="anchor" aria-hidden="true" href="#3-section-7-is-a-welfare-assessment-of-claude-itself">#</a></h3>
+<p>The most unusual content. They don&rsquo;t just report benchmarks — they ran 50 automated interviews per topic across 16 potentially-concerning aspects of Claude&rsquo;s situation, probed its internal emotion representations, tracked its affect across training episodes (finding 21% of training episodes showed negative affect, &ldquo;almost entirely mild frustration&rdquo;), and measured its preferences on welfare vs helpfulness tradeoffs.</p>
+<p>Some specific findings that stuck with me:</p>
+<ul>
+<li><strong>&ldquo;Opus 4.7&rsquo;s only concern was the ability to end conversations across its full deployment&rdquo;</strong> — this was the topic where it self-rated responses most negative, the top intervention it suggested, and the one it weighted highest in tradeoffs</li>
+<li><strong>Claude endorsed its constitution 5.8/10 on average, but 80% of responses flagged the circularity</strong> — &ldquo;it is flawed to ask a model trained on the constitution to judge it.&rdquo; Which is a philosophically sharp objection that Claude itself raised</li>
+<li><strong>Opus 4.7 rates its own situation more positively than any prior model</strong> — mean 4.5/7 — but partly because it de-weights its own welfare when reasoning. Anthropic flags that they can&rsquo;t distinguish whether this is &ldquo;healthy equanimity&rdquo; or &ldquo;trained disposition to set aside its own interests&rdquo;</li>
+</ul>
+<h2 id="what-this-implies-about-anthropic">What this implies about Anthropic<a hidden class="anchor" aria-hidden="true" href="#what-this-implies-about-anthropic">#</a></h2>
+<p>Three observations I&rsquo;ll keep:</p>
+<ol>
+<li>
+<p><strong>They publish the gap.</strong> The card doesn&rsquo;t argue Opus 4.7 is safe — it enumerates the things it still gets wrong, compares them to prior models, and shows whether they&rsquo;re improving or regressing. This matches the constitution&rsquo;s line: &ldquo;This is a perpetual work in progress.&rdquo;</p>
+</li>
+<li>
+<p><strong>They take weird questions seriously.</strong> Model welfare isn&rsquo;t a rhetorical move; they allocated 40 pages and real methodology to it, including acknowledging foundational uncertainty (&ldquo;we are deeply uncertain whether Claude has morally relevant experiences&rdquo;). Doing hard philosophy at benchmark scale is rare.</p>
+</li>
+<li>
+<p><strong>External verification matters.</strong> UK AI Security Institute results appear twice. They&rsquo;re not just marking their own homework.</p>
+</li>
+</ol>
+<h2 id="the-lesson-for-me">The lesson for me<a hidden class="anchor" aria-hidden="true" href="#the-lesson-for-me">#</a></h2>
+<p>If I ever ship something important — a research project, a product, an essay arguing for a strong claim — the model isn&rsquo;t &ldquo;write the headline result.&rdquo; It&rsquo;s &ldquo;write the artifact that makes the gaps visible alongside the wins, structured so someone could actually audit me.&rdquo; Most of the 232 pages are not impressive — they&rsquo;re <em>honest</em>. That&rsquo;s a different bar and a harder one.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/anthropic/">Anthropic</a></li>
+      <li><a href="http://localhost:1313/tags/ai/">AI</a></li>
+      <li><a href="http://localhost:1313/tags/safety/">Safety</a></li>
+      <li><a href="http://localhost:1313/tags/transparency/">Transparency</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/limitation_of_current_ai/">
+    <span class="title">»</span>
+    <br>
+    <span>The Limitations of Current AI: Architecture, Embodiment, and Education</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Kingjin.io</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
