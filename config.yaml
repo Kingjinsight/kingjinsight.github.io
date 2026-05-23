@@ -70,7 +70,7 @@ menu:
     
     - identifier: aboutme
       name: About me
-      url: /aboutme/
+      url: https://kingportal.cc
       weight: 20
 
 outputs:

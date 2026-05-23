@@ -9,7 +9,7 @@
     <lastBuildDate>Wed, 22 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/safety/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Why the Opus 4.7 System Card is 232 Pages</title>
+      <title>Why Claude Opus 4.7 System Card is 232 Pages</title>
       <link>http://localhost:1313/posts/why_the_opus_4.7_system_card_is_232_pages/</link>
       <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/why_the_opus_4.7_system_card_is_232_pages/</guid>
@@ -106,17 +106,6 @@
 </ol>
 <h2 id="the-lesson-for-me">The lesson for me</h2>
 <p>If I ever ship something important — a research project, a product, an essay arguing for a strong claim — the model isn&rsquo;t &ldquo;write the headline result.&rdquo; It&rsquo;s &ldquo;write the artifact that makes the gaps visible alongside the wins, structured so someone could actually audit me.&rdquo; Most of the 232 pages are not impressive — they&rsquo;re <em>honest</em>. That&rsquo;s a different bar and a harder one.</p>
-<h2 id="sources">Sources</h2>
-<ul>
-<li>[[Resources/2026-04-22-anthropic-system-cards|Anthropic System Cards Index]] — all published Claude system cards</li>
-<li><code>Raw/2026-04-22-claude-opus-4-7-system-card.pdf</code> — the PDF itself (14 MB, 232 pages)</li>
-</ul>
-<h2 id="connections">Connections</h2>
-<ul>
-<li>[[Anthropic&rsquo;s Bar — My Growth Blueprint]] — point #11 &ldquo;Be honest about being incomplete&rdquo; — this is what that looks like at institutional scale</li>
-<li>[[Resources/2026-04-22-anthropic-constitution|Anthropic Constitution]] — the system card is evidence of compliance with (and gaps from) the constitution</li>
-<li>[[Context Engineering]] — long context benchmarks in §8.7 touch on techniques I&rsquo;m studying</li>
-</ul>
 ]]></content:encoded>
     </item>
   </channel>
