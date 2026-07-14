@@ -4,10 +4,200 @@
     <title>Anthropic on Kingjin.io</title>
     <link>http://localhost:1313/tags/anthropic/</link>
     <description>Recent content in Anthropic on Kingjin.io</description>
-    <generator>Hugo -- 0.160.1</generator>
+    <generator>Hugo -- 0.164.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/anthropic/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NLP | Word Embedding</title>
+      <link>http://localhost:1313/posts/word_embedding/</link>
+      <pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/word_embedding/</guid>
+      <description>&lt;h1 id=&#34;word2vec-and-word-embeddings&#34;&gt;Word2Vec and Word Embeddings&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Word embedding 把离散的符号（词）映射为 dense vectors，使语义关系可以用 vector space 中的距离和方向来表达。本文沿着 CS224N Lecture 2 的思路，依次梳理 Word2Vec、Negative Sampling、count-based methods、GloVe、evaluation、word senses 以及基于窗口的神经网络分类器；最后补充 Transformer 如何把初始的 token embedding 转化为 contextual representation。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;1-one-hot-encoding&#34;&gt;1. One-hot Encoding&lt;/h2&gt;
+&lt;p&gt;词表大小为 $V$ 时，第 $i$ 个词的 one-hot vector 为：&lt;/p&gt;
+$$ e_i=[0,\ldots,0,1,0,\ldots,0]\in\mathbb{R}^{V} $$&lt;p&gt;这是一种 localist representation：每个词独占一个维度，vectors 之间互不重叠。它只能表示词在 vocabulary 中的 identity，既不包含词在句子中的位置信息，也不包含词与词之间的语义相似度。&lt;/p&gt;
+&lt;p&gt;不同词的 one-hot vectors 彼此正交：&lt;/p&gt;
+$$ e_i^\top e_j=0,\quad i\neq j $$&lt;p&gt;因此在 one-hot 空间中，&lt;code&gt;cat&lt;/code&gt;–&lt;code&gt;dog&lt;/code&gt; 与 &lt;code&gt;cat&lt;/code&gt;–&lt;code&gt;car&lt;/code&gt; 之间的&amp;quot;距离&amp;quot;完全相同，无法体现两者语义相似度上的差异。&lt;/p&gt;
+&lt;h2 id=&#34;2-word2vec-learning-from-local-context&#34;&gt;2. Word2Vec: Learning from Local Context&lt;/h2&gt;
+&lt;p&gt;Word2Vec 的基本假设是 distributional hypothesis：经常出现在相似上下文中的词，通常具有相似的语义。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1 id="word2vec-and-word-embeddings">Word2Vec and Word Embeddings</h1>
+<blockquote>
+<p>Word embedding 把离散的符号（词）映射为 dense vectors，使语义关系可以用 vector space 中的距离和方向来表达。本文沿着 CS224N Lecture 2 的思路，依次梳理 Word2Vec、Negative Sampling、count-based methods、GloVe、evaluation、word senses 以及基于窗口的神经网络分类器；最后补充 Transformer 如何把初始的 token embedding 转化为 contextual representation。</p>
+</blockquote>
+<h2 id="1-one-hot-encoding">1. One-hot Encoding</h2>
+<p>词表大小为 $V$ 时，第 $i$ 个词的 one-hot vector 为：</p>
+$$ e_i=[0,\ldots,0,1,0,\ldots,0]\in\mathbb{R}^{V} $$<p>这是一种 localist representation：每个词独占一个维度，vectors 之间互不重叠。它只能表示词在 vocabulary 中的 identity，既不包含词在句子中的位置信息，也不包含词与词之间的语义相似度。</p>
+<p>不同词的 one-hot vectors 彼此正交：</p>
+$$ e_i^\top e_j=0,\quad i\neq j $$<p>因此在 one-hot 空间中，<code>cat</code>–<code>dog</code> 与 <code>cat</code>–<code>car</code> 之间的&quot;距离&quot;完全相同，无法体现两者语义相似度上的差异。</p>
+<h2 id="2-word2vec-learning-from-local-context">2. Word2Vec: Learning from Local Context</h2>
+<p>Word2Vec 的基本假设是 distributional hypothesis：经常出现在相似上下文中的词，通常具有相似的语义。</p>
+<blockquote>
+<p><strong>Tip — 核心机制</strong></p>
+<p>Word2Vec 并不直接对&quot;词义&quot;做监督学习，而是训练模型去预测 local context。共享相似上下文的词，在反复的参数更新之后，会逐渐获得相似的向量表示。</p>
+</blockquote>
+<h3 id="21-skip-gram-and-cbow">2.1 Skip-gram and CBOW</h3>
+<p>句子：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>the quick brown fox jumps
+</span></span></code></pre></div><p>窗口大小为 2，中心词为 <code>brown</code>：</p>
+<table>
+	<thead>
+			<tr>
+					<th>Model</th>
+					<th>Input</th>
+					<th>Target</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Skip-gram</td>
+					<td><code>brown</code></td>
+					<td>分别预测 <code>the</code>、<code>quick</code>、<code>fox</code>、<code>jumps</code></td>
+			</tr>
+			<tr>
+					<td>CBOW</td>
+					<td><code>the</code>、<code>quick</code>、<code>fox</code>、<code>jumps</code> 的平均表示</td>
+					<td>预测 <code>brown</code></td>
+			</tr>
+	</tbody>
+</table>
+<p>Skip-gram 把一个窗口拆成多个&quot;词对&quot;，训练样本数量更多，低频词通常能得到更充分的训练；CBOW 把上下文合并成一个平均表示，训练更快、结果也更平滑。两者默认都不编码窗口内的精确词序，因此仍然带有 bag-of-words 的局限性。</p>
+<h3 id="22-input-and-output-vectors">2.2 Input and Output Vectors</h3>
+<p>Word2Vec 为每个词维护两套 vectors：</p>
+$$ W_{in}\in\mathbb{R}^{V\times d},\qquad W_{out}\in\mathbb{R}^{V\times d} $$<p>同一个词 $w$ 对应：</p>
+$$ v_w=W_{in}[w],\qquad u_w=W_{out}[w] $$<ul>
+<li>$v_w$：词作为 input / center word 时的表示；</li>
+<li>$u_w$：词作为 output candidate / outside word 时的表示。</li>
+</ul>
+<p>对中心词 $c$ 与上下文词 $o$：</p>
+$$ score(c,o)=u_o^\top v_c $$<p>维护两套 vectors，是因为一个词在&quot;作为中心词&quot;和&quot;作为上下文词&quot;时扮演的是两种不同角色，分别对应两个独立的参数空间——并不是为了避免一个词和自己做点积。如果强行令 $W_{in}=W_{out}$，两种角色就必须共用同一份参数，会限制模型的表达能力。训练结束后通常只使用 $W_{in}$，也可以把两套 vectors 组合起来，例如取平均。</p>
+<h3 id="23-softmax-objective-and-loss">2.3 Softmax Objective and Loss</h3>
+<p>完整 Softmax：</p>
+$$ P(o\mid c)=\frac{\exp(u_o^\top v_c)}{\sum_{w\in V}\exp(u_w^\top v_c)} $$<p>Skip-gram 最大化真实上下文的 log probability：</p>
+$$ \max \sum_{o\in Context(c)}\log P(o\mid c) $$<p>训练代码中通常写成最小化 negative log-likelihood：</p>
+$$ L=-\sum_{o\in Context(c)}\log P(o\mid c) $$<p>Softmax 把 logits 转成概率分布；negative log-likelihood 则专门惩罚&quot;真实上下文词的预测概率过低&quot;这种情况。</p>
+<h2 id="3-negative-sampling">3. Negative Sampling</h2>
+<p>Full Softmax 在每个训练样本上都要遍历词表中全部 $V$ 个词，计算复杂度约为 $O(Vd)$。Negative Sampling 直接替换了训练目标：不再问&quot;词表中哪个词才是正确的 outside word&quot;，而是判断&quot;这个 word pair 是真实观察到的（observed pair），还是随机构造出来的噪声（noise pair）&quot;。</p>
+<p>真实词对 $(c,o)$ 标记为 1，再随机抽 $k$ 个负样本 $n_1,\ldots,n_k$ 标记为 0：</p>
+$$ L_{NS}= -\log\sigma(u_o^\top v_c) -\sum_{i=1}^{k}\log\sigma(-u_{n_i}^\top v_c) $$<p>其中：</p>
+$$ \sigma(x)=\frac{1}{1+e^{-x}} $$<p>对 score $x=u^\top v$：</p>
+$$ \frac{\partial L_{positive}}{\partial x}=\sigma(x)-1 $$$$ \frac{\partial L_{negative}}{\partial x}=\sigma(x) $$<p>梯度下降因此会增大Positive Sample的点积，减小Negative Sample的点积。每次只更新中心词、真实上下文词和少量Negative Sample对应的 vectors，计算复杂度降为 $O((k+1)d)$。</p>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>Negative sample 不等于语义上绝对无关 随机采样得到的Negative Sample，有时恰好与中心词语义相关，形成 false negative。单次训练中的这类信号可能是错的，但真实的观测词对会在大规模语料中反复出现，所以少量噪声通常不会压过整体的统计趋势。因此，Negative Sampling 是一种带噪声但计算高效的 alternative objective，而不是对 Full Softmax 概率的严格近似。</p>
+</blockquote>
+<h2 id="4-count-based-methods-co-occurrence-svd-and-glove">4. Count-based Methods: Co-occurrence, SVD, and GloVe</h2>
+<p>Word2Vec 是 predictive method：从局部窗口的预测任务中学习 vectors。Count-based methods 则先统计全局 co-occurrence，再把这份高维统计结构压缩为低维表示。</p>
+<h3 id="41-co-occurrence-matrix">4.1 Co-occurrence Matrix</h3>
+<p>令：</p>
+$$ X_{ij}=\text{词 }j\text{ 在词 }i\text{ 的窗口中出现的次数} $$<p>第 $i$ 行就是 word $i$ 的完整 context profile。如果 <code>cat</code> 和 <code>dog</code> 的 rows 相似，即使它们不直接 co-occur，也会因为共享 <code>pet</code>、<code>animal</code>、<code>eat</code> 等 context words 而获得相似的 vectors。</p>
+<p>问题是 $X\in\mathbb{R}^{V\times V}$ 巨大、稀疏，并且容易被高频词支配。</p>
+<h3 id="42-svd--lsa">4.2 SVD / LSA</h3>
+$$ X=U\Sigma V^\top $$<p>保留最大的前 $k$ 个 singular values：</p>
+$$ X\approx U_k\Sigma_kV_k^\top $$<p>singular value 越大，说明对应的 latent direction 能解释的 matrix variation 或 energy 越多。这里彼此正交的是 $U$、$V$ 中的 latent directions 本身，而不是每一个 word vector；因此 <code>cat</code> 与 <code>dog</code> 仍然可以在低维空间中彼此靠近。</p>
+<h3 id="43-glove">4.3 GloVe</h3>
+<p>GloVe 先统计 global co-occurrence，再学习 low-dimensional vectors 来还原其中的规律，也就是用低维向量表达高维 co-occurrence matrix：</p>
+$$ w_i^\top\tilde w_j+b_i+\tilde b_j\approx\log X_{ij} $$<p>完整目标：</p>
+$$ J=\sum_{i,j}f(X_{ij}) \left( w_i^\top\tilde w_j+b_i+\tilde b_j-\log X_{ij} \right)^2 $$<p>训练循环：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>建立稀疏共现矩阵 X
+</span></span><span style="display:flex;"><span>-&gt; 随机初始化两套向量和 bias
+</span></span><span style="display:flex;"><span>-&gt; 取一个非零词对 (i,j)
+</span></span><span style="display:flex;"><span>-&gt; prediction = dot product + bias
+</span></span><span style="display:flex;"><span>-&gt; target = log X_ij
+</span></span><span style="display:flex;"><span>-&gt; 计算加权平方误差
+</span></span><span style="display:flex;"><span>-&gt; 梯度下降更新参数
+</span></span><span style="display:flex;"><span>-&gt; 重复多个 epoch
+</span></span></code></pre></div><ul>
+<li><code>log</code> 压缩了共现次数的数量级，避免极端高频的词对主导训练；</li>
+<li>bias 项吸收了每个词自身的总体使用频率，让点积部分专注于词与词之间的关系；</li>
+<li>$f(X_{ij})$ 用来降低稀有、噪声较大的词对的权重：共现次数越大，权重越高，但达到上限后不再增加，从而避免高频词对完全主导 loss。</li>
+</ul>
+<p>GloVe 论文用概率比来解释语义差异：如果 <code>solid</code> 更偏向 <code>ice</code>，<code>gas</code> 更偏向 <code>steam</code>，而 <code>water</code> 同时关联两者，那么 $w_{ice}-w_{steam}$ 就会编码固体与气体之间的差异。</p>
+<h3 id="44-method-comparison">4.4 Method Comparison</h3>
+<table>
+	<thead>
+			<tr>
+					<th>Method</th>
+					<th>Training Signal</th>
+					<th>Optimization</th>
+					<th>Output</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>SVD / LSA</td>
+					<td>全局计数矩阵</td>
+					<td>直接矩阵分解</td>
+					<td>低维静态表示</td>
+			</tr>
+			<tr>
+					<td>Word2Vec</td>
+					<td>局部窗口预测</td>
+					<td>Softmax 或 Negative Sampling</td>
+					<td>静态 embedding</td>
+			</tr>
+			<tr>
+					<td>GloVe</td>
+					<td>全局共现次数</td>
+					<td>加权平方误差 + 梯度下降</td>
+					<td>静态 embedding</td>
+			</tr>
+	</tbody>
+</table>
+<p>三种 methods 的训练方式不同，但目标一致：把相似的 context profiles 压缩成相似的 vectors。</p>
+<h2 id="5-word-embedding-evaluation">5. Word Embedding Evaluation</h2>
+<p>Intrinsic evaluation 检查向量空间本身；extrinsic evaluation 检查向量能否改善真实任务。两者描述的是不同的 evaluation target，和机器学习中常说的 validation set、test set 并不是一回事。</p>
+<h3 id="51-intrinsic-evaluation">5.1 Intrinsic Evaluation</h3>
+<p>直接检查向量空间：</p>
+<ul>
+<li>cosine similarity 是否符合人类的相似度判断；</li>
+<li>最近邻是否合理；</li>
+<li>analogy 是否形成稳定的线性方向。</li>
+</ul>
+<p>Cosine similarity：</p>
+$$ \cos(v_i,v_j)=\frac{v_i^\top v_j}{|v_i||v_j|} $$<p>Dot product 同时受 direction 和 magnitude 影响；cosine normalization 去掉了 magnitude 的影响，更专注于两个 vectors 的方向是否相似。</p>
+<p>经典 analogy：</p>
+$$ v_{king}-v_{man}+v_{woman}\approx v_{queen} $$<p>Intrinsic evaluation 速度快、成本低，适合快速筛选模型，但分数高不代表在真实任务上表现更好。</p>
+<h3 id="52-extrinsic-evaluation">5.2 Extrinsic Evaluation</h3>
+<p>把 embedding 放进 NER、情感分类、翻译等下游任务，比较 accuracy、F1 等任务指标。如果产品目标是 NER，就应该优先选择 NER F1 更高的 embedding，而不是 analogy 分数更高的 embedding。</p>
+<h2 id="6-word-senses-and-polysemy">6. Word Senses and Polysemy</h2>
+<p>Word2Vec 与 GloVe 都为每个词只保存一个固定向量。<code>bank</code> 的金融义和河岸义会被压进同一个表示：</p>
+$$ v_{bank}\approx p_1v_{finance}+p_2v_{river} $$<p>多个 senses 叠加在同一个 vector 中的现象，可以理解为 superposition：高频 sense 的权重更大，低频 sense 容易被淹没。</p>
+<p>针对这个问题，早期的改进思路包括：</p>
+<ul>
+<li><strong>Multiple prototypes</strong>：先对同一个词的所有出现语境做聚类，把每一类看作一个独立的词义，再为每个词义分别学习一个向量，多个向量各自单独存储；</li>
+<li><strong>Global context</strong>：利用更大范围的句子或篇章信息，在实际使用时动态判断当前语境对应的是哪一个词义；</li>
+<li><strong>Sparse coding</strong>：假设混合向量是由少量&quot;语义原子&quot;线性组合而成，通过 sparse coding 从这个混合向量中反解出各个独立的语义成分。</li>
+</ul>
+<h2 id="7-window-based-neural-classifier-for-ner">7. Window-based Neural Classifier for NER</h2>
+<p>NER 要为每个 target word 预测 <code>PERSON</code>、<code>LOCATION</code>、<code>ORGANIZATION</code> 或 <code>O</code>。只看 target word 本身容易产生歧义，因此 CS224N 使用 fixed window：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Museums in Paris are amazing
+</span></span></code></pre></div><p>以 <code>Paris</code> 为中心、窗口大小为 2，拼接五个词向量：</p>
+$$ x=[v_{Museums};v_{in};v_{Paris};v_{are};v_{amazing}] $$<p>这里用的是 concatenation 而不是平均，因此保留了相对位置信息，这一点和 CBOW 的 averaging 不同。</p>
+<p>线性分类器：</p>
+$$ z=Wx+b $$<p>加入 hidden layer 与非线性激活后：</p>
+$$ h=\tanh(W_1x+b_1) $$$$ z=W_2h+b_2 $$<p>非线性激活是必要的：如果没有 <code>tanh</code> 这样的激活函数，多层线性变换最终仍会合并成一个线性变换，无法学到&quot;目标词大写 + 左侧出现 <code>in</code> + 周围出现地点相关词&quot;这类特征组合。</p>
+<p>Softmax 把类别 logits 转成概率：</p>
+$$ p_c=\frac{e^{z_c}}{\sum_j e^{z_j}} $$<p>Cross-Entropy：</p>
+$$ L=-\sum_c y_c\log p_c=-\log p_{true} $$<p>若 <code>Paris</code> 的真实类别是 <code>LOCATION</code>，$p_{LOCATION}$ 越高，loss 越小。反向传播会更新分类器；若 embedding 没被冻结，也会让词向量随之适应 NER 任务。</p>
+<h2 id="8-transformer-token-embeddings">8. Transformer Token Embeddings</h2>
+<p>前面的 Word2Vec 和 GloVe 为每个词学习一个 static vector。Transformer 仍然从 embedding lookup 开始，但会用 self-attention 为每一次 token occurrence 计算不同的 contextual representation。</p>
+<p>现代 Transformer 有自己的 embedding matrix：</p>
+$$ E\in\mathbb{R}^{V\times d} $$<p>从头训练时它通常随机初始化，并随着整个模型一起，通过语言模型的 loss 联合更新。它既不是直接加载 Word2Vec 训练好的 vectors，也不是人为写入的词典释义，而是模型自己学出来的&quot;什么样的初始表示最有助于完成预测任务&quot;。</p>
+<p>初始 token 表示：</p>
+$$ x_i=E[token_i] $$<p>Self-attention 再根据当前上下文动态计算：</p>
+$$ q_i=x_iW_Q,\qquad k_j=x_jW_K,\qquad v_j=x_jW_V $$$$ \alpha_{ij}=\operatorname{softmax}_j\left(\frac{q_i^\top k_j}{\sqrt{d_k}}\right) $$$$ context_i=\sum_j\alpha_{ij}v_j $$<p>所以两个句子中的 <code>bank</code>，它们的 initial embedding 是相同的，但经过 context computation 之后得到的 hidden states 会不同。也就是说，Transformer 保留了固定的 embedding lookup，同时又为每次 token occurrence 动态计算 contextual representation。Inference 阶段只计算临时的 hidden states，不会现场重新训练或修改 embedding matrix。</p>
+<h2 id="9-connections">9. Connections</h2>
+<ul>
+<li>Belongs to: Architecture</li>
+<li>Related: Evaluation, GloVe, neural classifiers, contextual token representations</li>
+<li>Used in: Phase 1 / CS224N, NER、词语相似度、analogy <strong>evaluation</strong></li>
+</ul>
+]]></content:encoded>
+    </item>
     <item>
       <title>Why Claude Opus 4.7 System Card is 232 Pages</title>
       <link>http://localhost:1313/posts/why_the_opus_4.7_system_card_is_232_pages/</link>
@@ -23,60 +213,60 @@
 <p>It&rsquo;s not a &ldquo;model card&rdquo; in the academic-paper sense. It&rsquo;s a cross-audit: <strong>nine orthogonal risk/capability domains</strong>, each with its own evaluation methodology, external verifications, failure-case transcripts, and comparisons against both the prior model (Opus 4.6) and a more capable internal model (Mythos Preview). Each domain could be its own paper; they bind them into one document so the full picture is visible.</p>
 <h2 id="the-nine-domains-whats-actually-in-it">The nine domains (what&rsquo;s actually in it)</h2>
 <table>
-  <thead>
-      <tr>
-          <th>Section</th>
-          <th>Pages</th>
-          <th>What&rsquo;s covered</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>1. Introduction</td>
-          <td>10–13</td>
-          <td>Training data, crowd workers, release decision process</td>
-      </tr>
-      <tr>
-          <td>2. <strong>RSP evaluations</strong></td>
-          <td>13–47</td>
-          <td>Catastrophic-risk thresholds: bioweapons (CB), cyber, autonomous AI R&amp;D, alignment risk pathways (including &ldquo;undermining decisions within major governments&rdquo;)</td>
-      </tr>
-      <tr>
-          <td>3. Cyber</td>
-          <td>48–52</td>
-          <td>External red team from UK AI Security Institute</td>
-      </tr>
-      <tr>
-          <td>4. Safeguards &amp; harmlessness</td>
-          <td>53–77</td>
-          <td>Single-turn, multi-turn, user wellbeing (incl. child safety, suicide/self-harm, disordered eating), political bias, election integrity</td>
-      </tr>
-      <tr>
-          <td>5. Agentic safety</td>
-          <td>78–89</td>
-          <td>Malicious use of Claude Code, computer use, influence campaigns; prompt injection robustness</td>
-      </tr>
-      <tr>
-          <td>6. <strong>Alignment assessment</strong></td>
-          <td>90–149</td>
-          <td>Reward hacking monitoring during training, automated behavioural audits, case studies on destructive actions, adherence to constitution, hallucinations, self-preference, decision theory; white-box analyses of internals</td>
-      </tr>
-      <tr>
-          <td>7. <strong>Model welfare</strong></td>
-          <td>150–190</td>
-          <td>Claude&rsquo;s apparent emotions, self-reports about its circumstances, expressed affect during training, task preferences, welfare tradeoffs</td>
-      </tr>
-      <tr>
-          <td>8. Capabilities</td>
-          <td>191–223</td>
-          <td>13 benchmark families: SWE-bench, GPQA, long context, agentic search, multimodal, real-world pro tasks, life sciences</td>
-      </tr>
-      <tr>
-          <td>9. Appendix</td>
-          <td>224–232</td>
-          <td>Per-question welfare results, benchmarks&rsquo; blocklists, test harnesses</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Section</th>
+					<th>Pages</th>
+					<th>What&rsquo;s covered</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1. Introduction</td>
+					<td>10–13</td>
+					<td>Training data, crowd workers, release decision process</td>
+			</tr>
+			<tr>
+					<td>2. <strong>RSP evaluations</strong></td>
+					<td>13–47</td>
+					<td>Catastrophic-risk thresholds: bioweapons (CB), cyber, autonomous AI R&amp;D, alignment risk pathways (including &ldquo;undermining decisions within major governments&rdquo;)</td>
+			</tr>
+			<tr>
+					<td>3. Cyber</td>
+					<td>48–52</td>
+					<td>External red team from UK AI Security Institute</td>
+			</tr>
+			<tr>
+					<td>4. Safeguards &amp; harmlessness</td>
+					<td>53–77</td>
+					<td>Single-turn, multi-turn, user wellbeing (incl. child safety, suicide/self-harm, disordered eating), political bias, election integrity</td>
+			</tr>
+			<tr>
+					<td>5. Agentic safety</td>
+					<td>78–89</td>
+					<td>Malicious use of Claude Code, computer use, influence campaigns; prompt injection robustness</td>
+			</tr>
+			<tr>
+					<td>6. <strong>Alignment assessment</strong></td>
+					<td>90–149</td>
+					<td>Reward hacking monitoring during training, automated behavioural audits, case studies on destructive actions, adherence to constitution, hallucinations, self-preference, decision theory; white-box analyses of internals</td>
+			</tr>
+			<tr>
+					<td>7. <strong>Model welfare</strong></td>
+					<td>150–190</td>
+					<td>Claude&rsquo;s apparent emotions, self-reports about its circumstances, expressed affect during training, task preferences, welfare tradeoffs</td>
+			</tr>
+			<tr>
+					<td>8. Capabilities</td>
+					<td>191–223</td>
+					<td>13 benchmark families: SWE-bench, GPQA, long context, agentic search, multimodal, real-world pro tasks, life sciences</td>
+			</tr>
+			<tr>
+					<td>9. Appendix</td>
+					<td>224–232</td>
+					<td>Per-question welfare results, benchmarks&rsquo; blocklists, test harnesses</td>
+			</tr>
+	</tbody>
 </table>
 <h2 id="three-things-that-genuinely-surprised-me">Three things that genuinely surprised me</h2>
 <h3 id="1-the-alignment-section-reads-like-a-legal-case">1. The alignment section reads like a legal case</h3>

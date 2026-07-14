@@ -2,7 +2,7 @@
 <html lang="en" dir="auto">
 
 <head>
-	<meta name="generator" content="Hugo 0.160.1"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+	<meta name="generator" content="Hugo 0.164.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
@@ -59,6 +59,7 @@
 
     </style>
 </noscript>
+
 </head>
 
 <body class="list" id="top">
@@ -194,6 +195,24 @@
 </div>
 
     </footer>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">NLP | Word Embedding
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Word2Vec and Word Embeddings Word embedding 把离散的符号（词）映射为 dense vectors，使语义关系可以用 vector space 中的距离和方向来表达。本文沿着 CS224N Lecture 2 的思路，依次梳理 Word2Vec、Negative Sampling、count-based methods、GloVe、evaluation、word senses 以及基于窗口的神经网络分类器；最后补充 Transformer 如何把初始的 token embedding 转化为 contextual representation。
+1. One-hot Encoding 词表大小为 $V$ 时，第 $i$ 个词的 one-hot vector 为：
+$$ e_i=[0,\ldots,0,1,0,\ldots,0]\in\mathbb{R}^{V} $$这是一种 localist representation：每个词独占一个维度，vectors 之间互不重叠。它只能表示词在 vocabulary 中的 identity，既不包含词在句子中的位置信息，也不包含词与词之间的语义相似度。
+不同词的 one-hot vectors 彼此正交：
+$$ e_i^\top e_j=0,\quad i\neq j $$因此在 one-hot 空间中，cat–dog 与 cat–car 之间的&#34;距离&#34;完全相同，无法体现两者语义相似度上的差异。
+2. Word2Vec: Learning from Local Context Word2Vec 的基本假设是 distributional hypothesis：经常出现在相似上下文中的词，通常具有相似的语义。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-07-14 00:00:00 +0000 UTC'>July 14, 2026</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;King Jin</footer>
+  <a class="entry-link" aria-label="post link to NLP | Word Embedding" href="http://localhost:1313/posts/word_embedding/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -347,24 +366,6 @@ What is Point Cloud? A point cloud is a collection of millions of 3D points that
   </div>
   <footer class="entry-footer"><span title='2025-09-04 00:00:00 +0000 UTC'>September 4, 2025</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;King Jin</footer>
   <a class="entry-link" aria-label="post link to " href="http://localhost:1313/posts/techweekly/techweek7/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">
-      <span class="entry-hint" title="Draft">
-        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" fill="currentColor">
-          <path
-            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
-        </svg>
-      </span>
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Fibonachi Double MA line strategies Experience short period: high leverage long period: low leverage </p>
-  </div>
-  <footer class="entry-footer"><span title='2025-09-04 00:00:00 +0000 UTC'>September 4, 2025</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;King Jin</footer>
-  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/posts/trading/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

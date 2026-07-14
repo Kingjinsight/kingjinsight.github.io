@@ -57,6 +57,7 @@
 
     </style>
 </noscript>
+
 </head>
 
 <body class="list" id="top">
@@ -139,6 +140,24 @@
     AI
   </h1>
 </header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">NLP | Word Embedding
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Word2Vec and Word Embeddings Word embedding 把离散的符号（词）映射为 dense vectors，使语义关系可以用 vector space 中的距离和方向来表达。本文沿着 CS224N Lecture 2 的思路，依次梳理 Word2Vec、Negative Sampling、count-based methods、GloVe、evaluation、word senses 以及基于窗口的神经网络分类器；最后补充 Transformer 如何把初始的 token embedding 转化为 contextual representation。
+1. One-hot Encoding 词表大小为 $V$ 时，第 $i$ 个词的 one-hot vector 为：
+$$ e_i=[0,\ldots,0,1,0,\ldots,0]\in\mathbb{R}^{V} $$这是一种 localist representation：每个词独占一个维度，vectors 之间互不重叠。它只能表示词在 vocabulary 中的 identity，既不包含词在句子中的位置信息，也不包含词与词之间的语义相似度。
+不同词的 one-hot vectors 彼此正交：
+$$ e_i^\top e_j=0,\quad i\neq j $$因此在 one-hot 空间中，cat–dog 与 cat–car 之间的&#34;距离&#34;完全相同，无法体现两者语义相似度上的差异。
+2. Word2Vec: Learning from Local Context Word2Vec 的基本假设是 distributional hypothesis：经常出现在相似上下文中的词，通常具有相似的语义。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-07-14 00:00:00 +0000 UTC'>July 14, 2026</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;King Jin</footer>
+  <a class="entry-link" aria-label="post link to NLP | Word Embedding" href="http://localhost:1313/posts/word_embedding/"></a>
+</article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">

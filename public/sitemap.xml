@@ -3,25 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/tags/ai/</loc>
-    <lastmod>2026-04-22T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/anthropic/</loc>
-    <lastmod>2026-04-22T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-04-22T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/word_embedding/</loc>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2026-04-22T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/safety/</loc>
-    <lastmod>2026-04-22T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-04-22T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/transparency/</loc>
-    <lastmod>2026-04-22T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/why_the_opus_4.7_system_card_is_232_pages/</loc>
     <lastmod>2026-04-22T00:00:00+00:00</lastmod>

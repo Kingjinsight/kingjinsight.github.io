@@ -4,7 +4,7 @@
     <title>Python on Kingjin.io</title>
     <link>http://localhost:1313/tags/python/</link>
     <description>Recent content in Python on Kingjin.io</description>
-    <generator>Hugo -- 0.160.1</generator>
+    <generator>Hugo -- 0.164.0</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 30 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
@@ -56,55 +56,55 @@ The primary reason for the GIL&rsquo;s existence lies in Python&rsquo;s memory m
 </li>
 <li>Windows vs Linux
 <table>
-  <thead>
-      <tr>
-          <th>Aspect</th>
-          <th>Linux</th>
-          <th>Windows</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>System Usage</strong></td>
-          <td>Lightweight, minimal background processes</td>
-          <td>Heavy, many preloaded services and features</td>
-      </tr>
-      <tr>
-          <td><strong>Bloatware</strong></td>
-          <td>No pre-installed junk, user chooses all</td>
-          <td>Comes with many default apps and features</td>
-      </tr>
-      <tr>
-          <td><strong>Transparency</strong></td>
-          <td>Fully open, config files are plain text</td>
-          <td>Many hidden processes, registry-based config</td>
-      </tr>
-      <tr>
-          <td><strong>Customizability</strong></td>
-          <td>Highly customizable, from kernel to GUI</td>
-          <td>Limited customization without hacking</td>
-      </tr>
-      <tr>
-          <td><strong>Privacy &amp; Security</strong></td>
-          <td>User-controlled, minimal telemetry</td>
-          <td>Sends telemetry, often needs antivirus</td>
-      </tr>
-      <tr>
-          <td><strong>Software Support</strong></td>
-          <td>Great for dev tools, less for gaming</td>
-          <td>Excellent app/game compatibility</td>
-      </tr>
-      <tr>
-          <td><strong>System Control</strong></td>
-          <td>Full control over system and services</td>
-          <td>Some restrictions, frequent auto-updates</td>
-      </tr>
-      <tr>
-          <td><strong>Hardware Support</strong></td>
-          <td>Good but sometimes manual setup required</td>
-          <td>Plug-and-play for most consumer hardware</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Aspect</th>
+					<th>Linux</th>
+					<th>Windows</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>System Usage</strong></td>
+					<td>Lightweight, minimal background processes</td>
+					<td>Heavy, many preloaded services and features</td>
+			</tr>
+			<tr>
+					<td><strong>Bloatware</strong></td>
+					<td>No pre-installed junk, user chooses all</td>
+					<td>Comes with many default apps and features</td>
+			</tr>
+			<tr>
+					<td><strong>Transparency</strong></td>
+					<td>Fully open, config files are plain text</td>
+					<td>Many hidden processes, registry-based config</td>
+			</tr>
+			<tr>
+					<td><strong>Customizability</strong></td>
+					<td>Highly customizable, from kernel to GUI</td>
+					<td>Limited customization without hacking</td>
+			</tr>
+			<tr>
+					<td><strong>Privacy &amp; Security</strong></td>
+					<td>User-controlled, minimal telemetry</td>
+					<td>Sends telemetry, often needs antivirus</td>
+			</tr>
+			<tr>
+					<td><strong>Software Support</strong></td>
+					<td>Great for dev tools, less for gaming</td>
+					<td>Excellent app/game compatibility</td>
+			</tr>
+			<tr>
+					<td><strong>System Control</strong></td>
+					<td>Full control over system and services</td>
+					<td>Some restrictions, frequent auto-updates</td>
+			</tr>
+			<tr>
+					<td><strong>Hardware Support</strong></td>
+					<td>Good but sometimes manual setup required</td>
+					<td>Plug-and-play for most consumer hardware</td>
+			</tr>
+	</tbody>
 </table>
 </li>
 </ol>
